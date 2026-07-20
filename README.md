@@ -5,11 +5,12 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 ## Estado
 
 - Release de gobernanza: `v0.2.0`
-- Fase: Sprint 0 completado localmente
+- Fase: Sprint 0 completado y publicado
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal previsto: `https://decision.javierforero.co`
 - Practice Lab externo: `https://dashboards.javierforero.co`
+- Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
 La etiqueta `v0.2.0` ratifica la arquitectura y la gobernanza; **no** afirma que CDI sea todavía un estándar internacional reconocido ni que PULSE cuente con validación científica generalizable.
 
@@ -37,4 +38,3 @@ python3 scripts/validate_sprint0.py
 ## Licenciamiento
 
 No se concede licencia de reutilización en esta release. ADR-003 preserva todos los derechos mientras se realiza una revisión legal independiente para contenido, código, marca, tipografía y activos de terceros.
-

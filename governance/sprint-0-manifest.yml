@@ -36,6 +36,10 @@ gates:
   brand_source_registered: passed
   adr_009_011_accepted: passed
   automated_integrity_validation: passed-119-checks
-  github_remote_created: blocked-environment
-  github_first_push: blocked-environment
+  github_remote_created: passed
+  github_first_publication: passed
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  canonical_branch: main
+  initial_ratification_commit: 5aa6fd98409176d4d039a586d1922753f29020ac
 next_sprint: Sprint 1 - technical publication foundation

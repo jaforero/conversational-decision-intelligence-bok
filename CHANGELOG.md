@@ -19,11 +19,10 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - `brand-source.yml`, design tokens en JSON/CSS y manifiesto de activos.
 - ADR-001 a ADR-011, incluidos los cierres de marca, IgraSans y accesibilidad.
 - Validador reproducible del Sprint 0.
+- Publicación del repositorio oficial en GitHub y establecimiento de `main` como rama canónica.
 
 ### Limitaciones explícitas
 
-- La publicación en el remoto de GitHub queda pendiente del primer `push`.
 - No se declara conformidad WCAG 2.2 AA hasta auditar una release completa del portal.
 - IgraSans no se redistribuye dentro del repositorio hasta verificar derechos y licencia.
 - No se otorga licencia de reutilización en `v0.2.0`.
-
