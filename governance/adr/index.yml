@@ -13,4 +13,6 @@ decisions:
   - { id: ADR-009, status: accepted, file: ADR-009-brand-architecture.md }
   - { id: ADR-010, status: accepted, file: ADR-010-igrasans-distribution.md }
   - { id: ADR-011, status: accepted, file: ADR-011-accessibility-conformance.md }
+  - { id: ADR-012, status: accepted, file: ADR-012-pages-publication-architecture.md }
+  - { id: ADR-013, status: accepted, file: ADR-013-public-navigation-architecture.md }
 

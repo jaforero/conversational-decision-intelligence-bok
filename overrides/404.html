@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <a class="md-skip" href="#main-content">Saltar a contenido</a>
+  <h1 id="main-content">Esta decisión necesita otra ruta</h1>
+  <p>La página solicitada no existe, fue movida o pertenece a una versión diferente del CDI-BoK.</p>
+  <p>
+    <a class="md-button md-button--primary" href="{{ config.site_url }}">Volver al inicio</a>
+    <a class="md-button" href="{{ config.site_url }}/versions/">Consultar versiones</a>
+  </p>
+{% endblock %}
