@@ -27,8 +27,8 @@ gates:
   brand_tokens_synchronized: passed
   strict_build: passed
   static_accessibility_audit: passed-automated-scope
-  visual_regression: passed-local
-  pull_request_checks: configured-pending-first-pr
+  visual_regression: github-actions-baseline-normalized-pending-rerun
+  pull_request_checks: validate-passed-visual-rerun-pending
   pages_enabled: external-action-required
   custom_domain_dns: external-action-required
 publication:

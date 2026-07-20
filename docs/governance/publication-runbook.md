@@ -57,6 +57,6 @@ Los cambios DNS pueden tardar en propagarse. La presencia de `docs/CNAME` conser
 - `main` es la única rama de producción.
 - Un pull request valida sin desplegar.
 - El build debe pasar `mkdocs build --strict` y las auditorías del repositorio.
+- GitHub Actions sobre Ubuntu mantiene la referencia canónica de las capturas Playwright; una actualización de baseline exige revisión visual explícita en el pull request.
 - El workflow de deploy utiliza permisos mínimos y el entorno `github-pages`.
 - La conformidad WCAG solo puede declararse después de auditar la release desplegada.
-
