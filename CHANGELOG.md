@@ -22,9 +22,13 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - 127 controles de integridad heredados del Sprint 0.
 - 20 pruebas de navegador aprobadas; cuatro duplicados de Axe en móvil se omiten deliberadamente porque el mismo conjunto automatizado se ejecuta en escritorio.
 
+### Validado en GitHub Actions
+
+- Preflight editorial, integridad, sincronización de marca, build estricto y auditoría semántica aprobados.
+- Dieciséis comparaciones visuales y cuatro ejecuciones de reglas Axe aprobadas sobre el runner canónico Ubuntu; cuatro duplicados móviles se omiten deliberadamente.
+
 ### Pendiente antes de promover la release
 
-- Ejecución satisfactoria de los workflows en el primer pull request.
 - Merge explícito a `main`.
 - Activación de Pages, configuración del dominio, propagación DNS y HTTPS.
 - Auditoría humana de accesibilidad de la release desplegada; no se declara todavía conformidad WCAG 2.2 AA.
