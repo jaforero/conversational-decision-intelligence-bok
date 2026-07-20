@@ -1,0 +1,21 @@
+id: CDI-TYPE-000
+title: Título del activo
+short_title: Título corto
+status: draft
+artifact_type: concept
+authority_level: guidance
+normative: false
+version: 0.1.0
+owner: Nombre o rol
+language: es
+created: YYYY-MM-DD
+last_reviewed: YYYY-MM-DD
+review_cycle: annual
+domains: []
+concept_ids: []
+claim_ids: []
+source_ids: []
+related_pulse_elements: []
+supersedes: []
+superseded_by: null
+

@@ -1,0 +1,56 @@
+schema_version: 1.0.0
+manifest_id: CDI-BRAND-ASSETS
+release: 0.2.0
+authority: brand/brand-source.yml
+policy:
+  default: deny-unregistered-assets
+  require_provenance: true
+  require_license_status: true
+  prohibit_placeholder_as_official: true
+assets:
+  - asset_id: BRAND-SOURCE-SNAPSHOT
+    kind: source-document
+    name: Javier_Forero_Branding_v2.md
+    location: library
+    library_file_id: libfile_380da03d59c8819197a664d746860db7
+    status: available
+    license_status: owner-controlled-not-redistributed
+    use: authority-reference
+  - asset_id: BRAND-TOKENS-JSON
+    kind: design-tokens
+    name: tokens.json
+    location: brand/tokens.json
+    status: available
+    license_status: repository-content-policy
+    use: canonical-machine-readable-tokens
+  - asset_id: BRAND-TOKENS-CSS
+    kind: stylesheet
+    name: tokens.css
+    location: brand/tokens.css
+    status: available
+    license_status: repository-code-policy
+    use: generated-web-distribution
+  - asset_id: FONT-IGRASANS-WOFF2
+    kind: font
+    name: IgraSans.woff2
+    location: https://javierforero.com/fonts/IgraSans.woff2
+    status: external-authorized-reference
+    license_status: redistribution-rights-unverified
+    repository_distribution: prohibited-until-license-evidence
+    fallback_stack: "Aptos, Helvetica, Arial, sans-serif"
+    governed_by: ADR-010
+  - asset_id: CDI-BOK-LOGO
+    kind: logo
+    name: CDI-BoK logo
+    location: null
+    status: not-provided
+    license_status: not-applicable
+    use: prohibited-until-approved-asset-exists
+  - asset_id: JF-PORTRAIT
+    kind: portrait
+    name: Javier Forero portrait
+    location: null
+    status: not-provided
+    license_status: unknown
+    use: prohibited-until-registered
+

@@ -1,0 +1,9 @@
+schema_version: 1.0.0
+registry_id: CDI-BRAND-ASSET-REGISTRY
+authoritative_manifest: brand/asset-manifest.yml
+governed_by:
+  - ADR-009
+  - ADR-010
+  - ADR-011
+validation_rule: Asset metadata is maintained only in the authoritative manifest; this registry must not duplicate individual asset records.
+

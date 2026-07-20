@@ -1,0 +1,37 @@
+schema_version: 1.0.0
+brand_system_id: JF-BRAND
+name: Javier Forero Brand System
+owner: Javier Forero
+relationship_to_cdi_bok: endorsed-masterbrand
+source_of_truth:
+  declared_system: javier-forero-brand
+  source_type: skill
+  authority: primary
+snapshot:
+  source_id: SRC-BRAND-001
+  file_name: Javier_Forero_Branding_v2.md
+  library_file_id: libfile_380da03d59c8819197a664d746860db7
+  declared_version: "1.0"
+  document_date: 2026-07-19
+  captured_for_release: 0.2.0
+  status: verified-readable-snapshot
+precedence:
+  - current-authorized-brand-system
+  - this-snapshot
+  - derived-tokens
+  - page-specific-styles
+change_policy:
+  requires_adr_when:
+    - brand-architecture-changes
+    - canonical-colors-change
+    - primary-typeface-changes
+    - seal-or-attribution-changes
+  downstream_files:
+    - brand/tokens.json
+    - brand/tokens.css
+    - brand/asset-manifest.yml
+    - governance/registries/brand-assets.yml
+notes:
+  - The snapshot is a consolidated readable guide; it declares the brand skill as the superior source.
+  - Values not present in the guide must not be invented as official brand rules.
+

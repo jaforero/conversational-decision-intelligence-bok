@@ -1,0 +1,16 @@
+schema_version: 1.0.0
+registry_id: CDI-ADR
+release: 0.2.0
+decisions:
+  - { id: ADR-001, status: accepted, file: ADR-001-repository-name.md }
+  - { id: ADR-002, status: accepted, file: ADR-002-canonical-language.md }
+  - { id: ADR-003, status: accepted, file: ADR-003-licensing-posture.md }
+  - { id: ADR-004, status: accepted, file: ADR-004-publication-status.md }
+  - { id: ADR-005, status: accepted, file: ADR-005-versioning-model.md }
+  - { id: ADR-006, status: accepted, file: ADR-006-dashboards-practice-lab.md }
+  - { id: ADR-007, status: accepted, file: ADR-007-claim-boundaries.md }
+  - { id: ADR-008, status: accepted, file: ADR-008-originality-threshold.md }
+  - { id: ADR-009, status: accepted, file: ADR-009-brand-architecture.md }
+  - { id: ADR-010, status: accepted, file: ADR-010-igrasans-distribution.md }
+  - { id: ADR-011, status: accepted, file: ADR-011-accessibility-conformance.md }
+

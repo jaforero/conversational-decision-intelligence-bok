@@ -1,0 +1,45 @@
+schema_version: 1.0.0
+map_id: CDI-CONTENT-MAP
+release: 0.2.0
+canonical_language: es
+root_governance: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
+collections:
+  governance:
+    authority: normative
+    paths:
+      - governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
+      - governance/adr/
+  registries:
+    authority: controlled-metadata
+    paths:
+      - governance/registries/concepts.yml
+      - governance/registries/claims.yml
+      - governance/registries/sources.yml
+      - governance/registries/brand-assets.yml
+      - governance/registries/external-demos.yml
+  pulse_constitution:
+    authority: constitutional-for-pulse
+    paths:
+      - sources/constitutional/00_PULSE_DNA.md
+      - sources/constitutional/00A_PULSE_Documentation_Map.md
+      - sources/constitutional/00_PULSE_Identity.md
+  brand:
+    authority: approved-derived-system
+    paths:
+      - brand/brand-source.yml
+      - brand/tokens.json
+      - brand/tokens.css
+      - brand/asset-manifest.yml
+publication_rules:
+  navigable_statuses:
+    - candidate
+    - approved
+    - deprecated
+    - superseded
+  excluded_statuses:
+    - idea
+    - draft
+    - review
+  unresolved_pointer: prohibited
+  duplicate_canonical_definition: prohibited
+

@@ -1,0 +1,87 @@
+schema_version: 1.0.0
+registry_id: CDI-CONCEPTS
+release: 0.2.0
+knowledge_areas:
+  - Foundations and Identity
+  - Decisions and Intelligence
+  - Conversations and Human-AI Collaboration
+  - Data, Semantics and Knowledge
+  - Narratives and Communication
+  - Systems, Agents and Architectures
+  - Governance, Quality and Responsibility
+  - Adoption, Maturity and Evidence
+domains:
+  - Foundations
+  - Decision Intelligence
+  - Conversational Decision Intelligence
+  - PULSE
+  - Decision Architectures
+  - Decision Systems
+  - Decision Copilots
+  - Decision Agents
+  - Conversational Analytics
+  - Business Intelligence Evolution
+  - AI Native Analytics
+  - Semantic Layers
+  - Knowledge Graphs
+  - Decision Science
+  - Behavioral Decision Making
+  - Decision Narratives
+  - Narrative Intelligence
+  - Data Storytelling
+  - Decision Governance
+  - Responsible AI
+  - Decision Quality
+  - Decision Metrics
+  - Decision Maturity
+  - Decision Patterns
+  - Decision Anti-patterns
+  - Enterprise Implementation
+  - Case Studies
+  - Research
+  - Future Directions
+concepts:
+  - concept_id: CDI
+    canonical_term: Conversational Decision Intelligence
+    owner: Javier Forero
+    status: foundational-candidate
+    canonical_definition_location: pending-constitution
+    definition_claim_id: CLAIM-CDI-001
+  - concept_id: CDI-BOK
+    canonical_term: Conversational Decision Intelligence Body of Knowledge
+    owner: Javier Forero
+    status: approved
+    canonical_definition_location: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
+    definition_claim_id: CLAIM-CDIBOK-001
+  - concept_id: PULSE
+    canonical_term: PULSE
+    owner: Javier Forero
+    status: constitutional
+    canonical_definition_location: sources/constitutional/00_PULSE_Identity.md
+    definition_claim_id: CLAIM-PULSE-001
+  - concept_id: PDAMR
+    canonical_term: Priority-Decision-Action-Metric-Risk
+    owner: Javier Forero
+    status: candidate
+    canonical_definition_location: pending-pulse-specification
+  - concept_id: PULSE-DECISION-CIRCLE
+    canonical_term: PULSE Decision Circle
+    owner: Javier Forero
+    status: candidate
+    canonical_definition_location: pending-pulse-specification
+  - concept_id: DECISION-EXPERIENCE
+    canonical_term: Decision Experience
+    owner: Javier Forero
+    status: candidate
+    canonical_definition_location: pending-comparative-review
+  - concept_id: ORIGINAL-CONTRIBUTION
+    canonical_term: Original Contribution
+    owner: Editor-in-Chief
+    status: approved-governance-term
+    canonical_definition_location: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
+  - concept_id: JF-MASTERBRAND
+    canonical_term: Javier Forero endorsed masterbrand
+    owner: Javier Forero
+    status: approved
+    canonical_definition_location: governance/adr/ADR-009-brand-architecture.md
+

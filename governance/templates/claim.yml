@@ -1,0 +1,11 @@
+claim_id: CLAIM-000
+statement: Formulación atómica y verificable.
+claim_class: empirical
+evidence_status: unverified
+maturity: draft
+owner: Nombre o rol
+source_ids: []
+scope: Alcance en el que se sostiene.
+limits: Condiciones que impiden generalizar.
+last_verified: YYYY-MM-DD
+

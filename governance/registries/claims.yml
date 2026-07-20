@@ -1,0 +1,47 @@
+schema_version: 1.0.0
+registry_id: CDI-CLAIMS
+release: 0.2.0
+claims:
+  - claim_id: CLAIM-CDI-001
+    statement: Conversational Decision Intelligence es la disciplina propuesta que estudia cómo humanos e inteligencia artificial colaboran mediante conversaciones naturales para comprender datos, construir contexto, explorar escenarios y tomar mejores decisiones.
+    claim_class: project-definition
+    evidence_status: normative-project-language
+    maturity: foundational-candidate
+    owner: Javier Forero
+    source_ids: []
+    limits: No afirma reconocimiento académico o profesional internacional.
+  - claim_id: CLAIM-CDIBOK-001
+    statement: El CDI-BoK es el sistema de conocimiento versionado que organiza el conocimiento oficial del proyecto CDI.
+    claim_class: institutional-definition
+    evidence_status: approved-governance
+    maturity: approved
+    owner: Javier Forero
+    source_ids: []
+    governed_by: CDI-GOV-001
+  - claim_id: CLAIM-PULSE-001
+    statement: PULSE is a human-centered Decision Intelligence methodology and operating philosophy that reduces the distance between organizational reality and better decisions by turning trusted data and context into shared understanding, action, and measurable learning.
+    claim_class: constitutional-definition
+    evidence_status: owner-authoritative
+    maturity: constitutional
+    owner: Javier Forero
+    source_ids:
+      - SRC-PULSE-DNA-001
+      - SRC-PULSE-IDENTITY-002
+    limits: Es una definición oficial; no constituye por sí sola evidencia de eficacia generalizable.
+  - claim_id: CLAIM-DASH-001
+    statement: dashboards.javierforero.co funciona dentro del ecosistema como Practice Lab externo del CDI-BoK.
+    claim_class: ecosystem-designation
+    evidence_status: approved-governance
+    maturity: approved
+    owner: Javier Forero
+    source_ids: []
+    governed_by: ADR-006
+  - claim_id: CLAIM-STD-001
+    statement: El CDI-BoK aspira a convertirse en un estándar internacional de referencia para Conversational Decision Intelligence.
+    claim_class: aspiration
+    evidence_status: not-a-recognition-claim
+    maturity: declared-direction
+    owner: Javier Forero
+    source_ids: []
+    limits: No usar como si ya existiera reconocimiento de un organismo de estandarización.
+

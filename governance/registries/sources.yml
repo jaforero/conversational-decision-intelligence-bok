@@ -1,0 +1,117 @@
+schema_version: 1.0.0
+registry_id: CDI-SOURCES
+release: 0.2.0
+records:
+  - source_id: SRC-PULSE-DNA-001
+    title: PULSE DNA
+    source_file_name: 00_PULSE_DNA.md
+    canonical_repo_path: sources/constitutional/00_PULSE_DNA.md
+    library_file_id: libfile_0547765b257c81918a7b84183acfc359
+    declared_version: 1.0.0
+    sha256: 5fc14299902be85ce364307e45c4a0cbe1ca2b58ada8196c39e3697b1dbf041e
+    authority_level: constitutional
+    status: active
+    provenance: user-authored-upload
+  - source_id: SRC-PULSE-MAP-001
+    title: PULSE Documentation Map
+    source_file_name: 00A_PULSE_Documentation_Map.md
+    canonical_repo_path: sources/constitutional/00A_PULSE_Documentation_Map.md
+    library_file_id: libfile_cfd7164ab5b88191845581dcc154487e
+    declared_version: 1.0.0
+    sha256: 68bc6d073f4c67e38eb136d0d4919c8c586a0da8c092d0722f8bd5b815aa5400
+    authority_level: documentation-governance
+    status: active
+    provenance: user-authored-upload
+  - source_id: SRC-PULSE-IDENTITY-002
+    title: PULSE Identity
+    source_file_name: 00_PULSE_Identity(1).md
+    canonical_file_name: 00_PULSE_Identity.md
+    canonical_repo_path: sources/constitutional/00_PULSE_Identity.md
+    library_file_id: libfile_e7fa6ee57e40819183c526e91643cac3
+    declared_version: 2.0.0
+    sha256: 3ef92ab480e4fe4f64f67bf9f01b02a9c42f064266623e475cb2aa74f3efb7d9
+    authority_level: official-identity
+    status: active
+    provenance: user-authored-upload
+    supersedes: SRC-PULSE-IDENTITY-001
+  - source_id: SRC-PULSE-IDENTITY-001
+    title: PULSE Identity
+    source_file_name: 00_PULSE_Identity.md
+    library_file_id: libfile_95bbe63d1c8c8191b78453e220d74d64
+    declared_version: "1.0"
+    authority_level: historical
+    status: superseded
+    superseded_by: SRC-PULSE-IDENTITY-002
+    materialized: false
+  - source_id: SRC-BRAND-001
+    title: Javier Forero Branding v2
+    source_file_name: Javier_Forero_Branding_v2.md
+    library_file_id: libfile_380da03d59c8819197a664d746860db7
+    declared_version: "1.0"
+    authority_level: brand-snapshot
+    status: active
+    provenance: user-authored-upload
+    governing_record: brand/brand-source.yml
+  - source_id: SRC-JF-001
+    title: Los fundamentos técnicos de PULSE
+    source_file_name: Los fundamentos técnicos de PULSE.md
+    library_file_id: libfile_f7b16a0373f081918ed1e347a734b572
+    authority_level: author-pov
+    status: source-copy-incomplete
+    materialized: false
+  - source_id: SRC-JF-002
+    title: La IA Conversacional Revoluciona Dashboards y Analítica
+    source_file_name: La IA Conversacional Revoluciona Dashboards y Analítica.md
+    library_file_id: libfile_af67f7a86a0081919316cb47fe50d4e5
+    authority_level: author-pov
+    status: active-background
+    materialized: false
+  - source_id: SRC-JF-003
+    title: PULSE, tómale el pulso a tus decisiones
+    source_file_name: PULSE tómale el pulso a tus decisiones.md
+    library_file_id: libfile_e94740b4162081918d1d331275446aba
+    authority_level: author-pov
+    status: source-copy-incomplete
+    materialized: false
+  - source_id: SRC-JF-004
+    title: Arquitectura de datos moderna, fábula
+    source_file_name: arquitectura-de-datos-moderna-fabula_.md
+    library_file_id: libfile_1558b9c2aab48191ab29e6d72cbbbf6f
+    authority_level: pedagogical-example
+    status: active-background
+    materialized: false
+  - source_id: SRC-JF-005
+    title: IA, datos, analítica, valor y decisiones
+    source_file_name: ia-datos-analitica-valor-decisiones.md
+    library_file_id: libfile_8229f9b51ff08191942325ca3610bca5
+    authority_level: author-pov
+    status: active-background
+    materialized: false
+  - source_id: SRC-JF-006
+    title: Analítica de datos en cinco niveles
+    source_file_name: analitica-datos-5-niveles_.md
+    library_file_id: libfile_13da0bcce7f081919a26111483bf9cee
+    authority_level: author-framework
+    status: active-background
+    materialized: false
+  - source_id: SRC-DR-001
+    title: Building the Future of Decision Intelligence
+    source_file_name: Gemini_Building the Future of Decision Intelligence.md
+    library_file_id: libfile_0e698c1e8c248191b8e13a1fb9f31801
+    authority_level: ai-assisted-research-map
+    status: evidence-unverified
+    materialized: false
+  - source_id: SRC-DR-002
+    title: Claude Deep Research PULSE
+    source_file_name: claude-deep-research-pulse
+    library_file_id: libfile_57bc29bc6a388191b06963b6c9316339
+    authority_level: ai-assisted-research-map
+    status: evidence-unverified
+    materialized: false
+  - source_id: SRC-ARCH-001
+    title: PULSE Arquitectura Conceptual Fase 2
+    source_file_name: PULSE_Arquitectura_Conceptual_Fase2.md
+    library_file_id: libfile_2ebdf4f38fec8191b4c798fddaf792ff
+    authority_level: derived-architecture
+    status: candidate
+    materialized: false

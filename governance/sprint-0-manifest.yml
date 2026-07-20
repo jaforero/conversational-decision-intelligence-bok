@@ -1,0 +1,41 @@
+schema_version: 1.0.0
+sprint: 0
+release: 0.2.0
+ratified_by: Javier Forero
+ratified_on: 2026-07-19
+objectives:
+  - Ratify the architecture and editorial governance.
+  - Materialize the constitutional PULSE sources.
+  - Establish controlled editorial registries.
+  - Codify brand provenance, tokens and asset governance.
+  - Resolve ADR-001 through ADR-011.
+deliverables:
+  - path: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
+    status: complete
+  - path: governance/content-map.yml
+    status: complete
+  - path: governance/registries/
+    status: complete
+  - path: governance/adr/
+    status: complete
+  - path: sources/constitutional/
+    status: complete
+  - path: brand/brand-source.yml
+    status: complete
+  - path: brand/tokens.json
+    status: complete
+  - path: brand/tokens.css
+    status: complete
+  - path: brand/asset-manifest.yml
+    status: complete
+  - path: scripts/validate_sprint0.py
+    status: complete
+gates:
+  governance_ratified: passed
+  constitutional_sources_registered: passed
+  brand_source_registered: passed
+  adr_009_011_accepted: passed
+  automated_integrity_validation: passed-119-checks
+  github_remote_created: blocked-environment
+  github_first_push: blocked-environment
+next_sprint: Sprint 1 - technical publication foundation

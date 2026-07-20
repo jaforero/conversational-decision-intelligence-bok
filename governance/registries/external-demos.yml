@@ -1,0 +1,14 @@
+schema_version: 1.0.0
+registry_id: CDI-EXTERNAL-DEMOS
+demos:
+  - demo_id: JF-DASHBOARDS
+    name: AI Dashboards by Javier Forero
+    url: https://dashboards.javierforero.co
+    ecosystem_role: practice-lab
+    owner: Javier Forero
+    integration: linked-external-property
+    embedding: prohibited-by-default
+    content_authority: practice-evidence-only
+    evidence_policy: A demo becomes a CDI-BoK case only after documenting decision, baseline, data, intervention, result and limitations.
+    governed_by: ADR-006
+
