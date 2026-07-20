@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <meta name="theme-color" content="#4e00ff">
+  <meta name="author" content="Javier Forero">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CDI-BoK">
+  <meta property="og:title" content="Conversational Decision Intelligence Body of Knowledge">
+  <meta property="og:description" content="Una propuesta abierta y versionada para organizar la práctica emergente de Conversational Decision Intelligence.">
+  <meta property="og:url" content="https://decision.javierforero.co">
+  <meta name="twitter:card" content="summary">
+{% endblock %}
+
+{% block announce %}
+  <strong>Portal v0.3.0-rc.1</strong> · La release normativa vigente es CDI-GOV-001 v0.2.0.
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  <footer class="cdi-brand-footer" aria-label="Identidad y estado editorial">
+    <div class="cdi-brand-footer__inner">
+      <strong>Javier Forero</strong>
+      <span class="cdi-brand-footer__dot" aria-hidden="true">·</span>
+      <a href="https://javierforero.co">javierforero.co</a>
+      <span aria-hidden="true">|</span>
+      <span>CDI-BoK · v0.3.0-rc.1</span>
+      <span aria-hidden="true">|</span>
+      <a href="{{ config.repo_url }}">Fuente y versiones</a>
+    </div>
+  </footer>
+{% endblock %}
+

@@ -1,0 +1,132 @@
+site_name: Conversational Decision Intelligence Body of Knowledge
+site_description: Una propuesta abierta y versionada para organizar la práctica emergente de Conversational Decision Intelligence.
+site_author: Javier Forero
+site_url: https://decision.javierforero.co
+repo_url: https://github.com/jaforero/conversational-decision-intelligence-bok
+repo_name: jaforero/conversational-decision-intelligence-bok
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+strict: true
+copyright: "Javier Forero · javierforero.co"
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: es
+  font: false
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a tema oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a tema claro
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Inicio: index.md
+  - Empieza aquí:
+      - Visión general: start-here/index.md
+      - Cómo usar el CDI-BoK: start-here/how-to-use.md
+  - CDI-BoK: 00-foundation/index.md
+  - PULSE: 03-pulse/index.md
+  - Practice Lab: practice-lab/index.md
+  - Research: research/index.md
+  - Gobernanza:
+      - Sistema de autoridad: governance/index.md
+      - Arquitectura editorial: governance/architecture.md
+      - Claims y evidencia: governance/claims-evidence.md
+      - Publicación y dominio: governance/publication-runbook.md
+  - Versiones: versions/index.md
+  - Acerca de: about/index.md
+
+plugins:
+  - search:
+      lang: es
+      separator: '[\\s\\-\\.\\_]+'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: En esta página
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - assets/stylesheets/brand-tokens.css
+  - assets/stylesheets/brand.css
+  - assets/stylesheets/cdi-bok.css
+
+extra_javascript:
+  - assets/javascripts/site.js
+
+extra:
+  release:
+    normative: v0.2.0
+    portal: v0.3.0-rc.1
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jaforero
+      name: Javier Forero en GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jforero/
+      name: Javier Forero en LinkedIn
+    - icon: fontawesome/solid/globe
+      link: https://javierforero.co
+      name: Sitio de Javier Forero
+
+validation:
+  nav:
+    omitted_files: ignore
+    not_found: warn
+  links:
+    not_found: warn
+    absolute_links: info
+    unrecognized_links: warn
+    anchors: warn
+

@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "IgraSans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://javierforero.com/fonts/IgraSans.woff2") format("woff2");
+}
+
+:root {
+  --md-text-font: "IgraSans", Aptos, Helvetica, Arial, sans-serif;
+  --md-code-font: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: var(--jf-bg);
+  --md-default-fg-color: var(--jf-text);
+  --md-default-fg-color--light: var(--jf-muted);
+  --md-default-fg-color--lighter: var(--jf-border);
+  --md-primary-fg-color: var(--jf-deep-blue);
+  --md-primary-fg-color--light: var(--jf-purple);
+  --md-primary-fg-color--dark: var(--jf-deep-blue);
+  --md-accent-fg-color: var(--jf-purple);
+  --md-typeset-a-color: var(--jf-vibrant-blue);
+  --cdi-surface: var(--jf-white);
+  --cdi-surface-soft: var(--jf-soft-lilac);
+  --cdi-border: var(--jf-border);
+  --cdi-focus: var(--jf-purple);
+  --cdi-link: var(--jf-vibrant-blue);
+  --cdi-heading: var(--jf-deep-blue);
+  --cdi-secondary: var(--jf-muted);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--jf-deep-blue);
+  --md-default-fg-color: var(--jf-white);
+  --md-default-fg-color--light: var(--jf-border);
+  --md-default-fg-color--lighter: var(--jf-muted);
+  --md-primary-fg-color: var(--jf-deep-blue);
+  --md-primary-fg-color--light: var(--jf-text);
+  --md-primary-fg-color--dark: var(--jf-deep-blue);
+  --md-accent-fg-color: var(--jf-white);
+  --md-typeset-a-color: var(--jf-soft-lilac);
+  --cdi-surface: var(--jf-text);
+  --cdi-surface-soft: color-mix(in srgb, var(--jf-deep-blue) 78%, var(--jf-white));
+  --cdi-border: color-mix(in srgb, var(--jf-deep-blue) 68%, var(--jf-white));
+  --cdi-focus: var(--jf-purple-light);
+  --cdi-link: var(--jf-soft-lilac);
+  --cdi-heading: var(--jf-white);
+  --cdi-secondary: var(--jf-border);
+}
+
+html,
+body,
+input {
+  font-family: var(--jf-font-family);
+}
+
+.md-header {
+  background: var(--jf-gradient-horizontal);
+}
+
+.md-tabs {
+  background: var(--jf-deep-blue);
+}
+
+.md-search__form {
+  border: 1px solid color-mix(in srgb, var(--jf-white) 35%, transparent);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  color: var(--cdi-heading);
+  font-family: var(--jf-font-family);
+}
+
+.md-typeset a {
+  color: var(--cdi-link);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+.md-typeset .md-button {
+  align-items: center;
+  border-color: var(--jf-purple);
+  border-radius: var(--jf-radius-pill);
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  min-height: var(--jf-target-min);
+  padding: 0.6rem 1.1rem;
+}
+
+.md-typeset .md-button--primary {
+  background: var(--jf-purple);
+  color: var(--jf-white);
+}
+
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus-visible {
+  background: var(--jf-deep-blue);
+  color: var(--jf-white);
+}
+
+:where(a, button, input, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--cdi-focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--jf-purple);
+  color: var(--jf-white);
+}
+

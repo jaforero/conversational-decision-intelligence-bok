@@ -1,0 +1,37 @@
+schema_version: 1.0.0
+sprint: 1
+release_candidate: 0.3.0-rc.1
+started_on: 2026-07-20
+owner: Javier Forero
+objective: Establish a minimal, transparent and reproducible public portal without drafting long-form doctrine.
+scope:
+  - MkDocs Material configuration
+  - Controlled public navigation
+  - Brand token synchronization
+  - Light and dark themes
+  - Accessibility and visual checks
+  - GitHub Actions validation and Pages deployment
+  - Custom domain runbook and CNAME
+  - Start Here, Governance, Versioning and About
+out_of_scope:
+  - Long-form CDI chapters
+  - Full PULSE specification
+  - Public multi-version selector
+  - Conversational copilot
+  - Analytics tracking without a privacy decision
+decisions:
+  - ADR-012
+  - ADR-013
+gates:
+  navigation_registered: passed
+  brand_tokens_synchronized: passed
+  strict_build: passed
+  static_accessibility_audit: passed-automated-scope
+  visual_regression: passed-local
+  pull_request_checks: configured-pending-first-pr
+  pages_enabled: external-action-required
+  custom_domain_dns: external-action-required
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch_strategy: agent/sprint-1-mkdocs-foundation-to-main
+  target_url: https://decision.javierforero.co

@@ -1,0 +1,30 @@
+/* Generated from brand/tokens.json for CDI-BoK v0.2.0. */
+:root {
+  --jf-purple: #4e00ff;
+  --jf-purple-light: #7c4dff;
+  --jf-deep-blue: #041c59;
+  --jf-vibrant-blue: #0048ff;
+  --jf-bg: #f5f7fb;
+  --jf-white: #ffffff;
+  --jf-border: #e3e8f5;
+  --jf-soft-lilac: #f6f3ff;
+  --jf-text: #1f2937;
+  --jf-muted: #5f6b7a;
+
+  --jf-gradient-hero: linear-gradient(135deg, #041c59 0%, #4e00ff 68%, #7c4dff 100%);
+  --jf-gradient-horizontal: linear-gradient(90deg, #041c59 0%, #4e00ff 60%, #7c4dff 100%);
+  --jf-gradient-soft: linear-gradient(135deg, #f6f3ff 0%, #ffffff 55%, #f5f7fb 100%);
+  --jf-gradient-cta: linear-gradient(135deg, #4e00ff 0%, #7c4dff 100%);
+
+  --jf-font-family: 'IgraSans', Aptos, Helvetica, Arial, sans-serif;
+  --jf-radius-card: 18px;
+  --jf-radius-hero: 24px;
+  --jf-radius-pill: 999px;
+  --jf-shadow-soft: 0 6px 18px rgba(4, 28, 89, 0.04);
+  --jf-content-line-length: 65ch;
+  --jf-target-min: 44px;
+  --jf-target-gap: 8px;
+  --jf-breakpoint-tablet: 640px;
+  --jf-breakpoint-desktop: 1024px;
+}
+

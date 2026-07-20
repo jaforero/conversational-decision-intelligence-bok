@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -91,8 +92,8 @@ check(identity["declared_version"] == "2.0.0", "PULSE Identity v2.0.0 is not can
 check(identity["supersedes"] == "SRC-PULSE-IDENTITY-001", "Identity supersession is missing")
 
 adr_index = load_yaml("governance/adr/index.yml")["decisions"]
-check(len(adr_index) == 11, "Expected ADR-001 through ADR-011")
-check({item["id"] for item in adr_index} == {f"ADR-{n:03d}" for n in range(1, 12)}, "ADR range is incomplete")
+check(len(adr_index) >= 11, "Expected at least ADR-001 through ADR-011")
+check({f"ADR-{n:03d}" for n in range(1, 12)}.issubset({item["id"] for item in adr_index}), "Sprint 0 ADR range is incomplete")
 for decision in adr_index:
     check(decision["status"] == "accepted", f"ADR not accepted: {decision['id']}")
     adr_path = ROOT / "governance" / "adr" / decision["file"]
@@ -123,7 +124,7 @@ expected_colors = {
 for key, value in expected_colors.items():
     check(tokens["color"][key]["value"] == value, f"Wrong brand color: {key}")
 check(tokens["typography"]["familyWeb"]["value"] == "'IgraSans', Aptos, Helvetica, Arial, sans-serif", "Wrong font stack")
-check(tokens["modes"]["dark"]["status"] == "pending-derived-token-contrast-audit", "Dark tokens must remain pending audit")
+check(tokens["modes"]["dark"]["status"] in {"pending-derived-token-contrast-audit", "implemented-pending-release-audit"}, "Dark token status is invalid")
 
 assets = load_yaml("brand/asset-manifest.yml")["assets"]
 asset_ids = [item["asset_id"] for item in assets]
@@ -132,7 +133,14 @@ for asset in assets:
     check("license_status" in asset, f"Missing license_status: {asset['asset_id']}")
 font = next(item for item in assets if item["asset_id"] == "FONT-IGRASANS-WOFF2")
 check(font["repository_distribution"] == "prohibited-until-license-evidence", "Font redistribution gate is absent")
-font_binaries = [path for path in ROOT.rglob("*") if path.suffix.lower() in {".woff", ".woff2", ".ttf", ".otf"}]
+repository_files = subprocess.check_output(
+    ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"], cwd=ROOT
+).decode().split("\0")
+font_binaries = [
+    ROOT / name
+    for name in repository_files
+    if name and (ROOT / name).suffix.lower() in {".woff", ".woff2", ".ttf", ".otf"}
+]
 check(not font_binaries, "Font binary exists before license verification")
 
 demo = load_yaml("governance/registries/external-demos.yml")["demos"][0]
@@ -150,4 +158,3 @@ if ERRORS:
     sys.exit(1)
 
 print(f"PASS: Sprint 0 integrity validated ({CHECKS} checks)")
-

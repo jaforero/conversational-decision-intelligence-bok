@@ -5,10 +5,11 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 ## Estado
 
 - Release de gobernanza: `v0.2.0`
-- Fase: Sprint 0 completado y publicado
+- Portal candidato: `v0.3.0-rc.1`
+- Fase: Sprint 1 en validación mediante pull request
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
-- Portal previsto: `https://decision.javierforero.co`
+- Portal objetivo: `https://decision.javierforero.co`
 - Practice Lab externo: `https://dashboards.javierforero.co`
 - Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
@@ -22,18 +23,38 @@ La etiqueta `v0.2.0` ratifica la arquitectura y la gobernanza; **no** afirma que
 4. ADR aceptados.
 5. Guías, casos y evidencia con alcance explícito.
 
-## Estructura Sprint 0
+## Estructura del sistema
 
 - `governance/`: norma fundacional, ADR, registros y contratos editoriales.
 - `brand/`: fuente de marca, tokens y manifiesto de activos.
+- `docs/`: proyección pública controlada del CDI-BoK.
+- `overrides/`: componentes de interfaz de MkDocs Material.
 - `sources/constitutional/`: copias controladas de las fuentes constitucionales de PULSE.
-- `scripts/`: validadores de integridad del repositorio.
+- `scripts/`: sincronizadores y validadores de integridad.
+- `tests/`: regresión visual y reglas de accesibilidad automatizables.
+- `.github/workflows/`: validación, pruebas de navegador y despliegue a Pages.
 
 ## Uso local
 
+Requiere Python 3.12 y Node.js 24.
+
 ```bash
-python3 scripts/validate_sprint0.py
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --require-hashes -r requirements.lock
+npm ci
+python scripts/preflight_sprint1.py
+python -m mkdocs serve
 ```
+
+Las pruebas de navegador se ejecutan con `npm test` después de instalar Chromium mediante `npx playwright install chromium`.
+
+## Publicación
+
+- Todo pull request ejecuta los controles editoriales, de build, visuales y de accesibilidad automatizada.
+- Solo un merge a `main` puede desplegar el portal.
+- El dominio y DNS se activan siguiendo `docs/governance/publication-runbook.md`.
+- Un resultado automatizado sin violaciones no constituye por sí solo una declaración de conformidad WCAG 2.2 AA.
 
 ## Licenciamiento
 
