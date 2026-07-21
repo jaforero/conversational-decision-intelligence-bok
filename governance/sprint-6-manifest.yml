@@ -63,6 +63,11 @@ evidence:
     initial_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29869612567
     initial_browser_result: 49-passed-35-skipped-12-failed-target-size
     correction: Expanded every navigation link to the WCAG 2.2 automated target-size floor after the additional top-level section exposed 18.2px links.
+    corrected_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29869958534
+    corrected_validation_result: success
+    corrected_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29869958525
+    corrected_browser_result: 59-passed-35-skipped-2-governance-snapshot-differences
+    snapshot_review: The two remaining desktop differences were inspected from the canonical Playwright artifact. They are limited to the rebuilt Sprint 6 navigation and the intentional 24px target-height correction; page content, theme behavior and the other 18 visual comparisons remain unchanged.
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-6-conversational-patterns
