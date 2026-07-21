@@ -96,6 +96,10 @@ input {
   padding: 0.6rem 1.1rem;
 }
 
+.md-typeset .md-button:not(.md-button--primary) {
+  color: var(--cdi-link);
+}
+
 .md-typeset .md-button--primary {
   background: var(--jf-purple);
   color: var(--jf-white);
@@ -116,4 +120,3 @@ input {
   background: var(--jf-purple);
   color: var(--jf-white);
 }
-
