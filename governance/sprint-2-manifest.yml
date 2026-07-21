@@ -31,10 +31,21 @@ gates:
   concepts_claims_sources_consistent: passed
   strict_build: passed
   static_accessibility_audit: passed-static-scope
-  visual_regression: pending-github-actions-browser-unavailable-locally
-  pull_request_checks: pending
+  visual_regression: passed-github-actions-canonical-runner
+  pull_request_checks: passed
+evidence:
+  validated_commit: 6c937910d28e7f3b44241d728a15ee28b6ab5ad9
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/2
+  validation_workflow: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29840301433
+  browser_workflow: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29840301214
+  browser_results:
+    visual_comparisons_passed: 16
+    automated_axe_runs_passed: 9
+    duplicate_mobile_axe_runs_skipped: 9
+  note: The GitHub-hosted Ubuntu runner is the canonical browser-baseline environment; no WCAG conformance claim follows from automated checks alone.
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-2-foundational-core
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/2
   target_url: https://decision.javierforero.co
-  status: candidate-not-yet-published
+  status: candidate-pr-ready-for-ratification

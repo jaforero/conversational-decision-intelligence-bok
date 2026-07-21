@@ -20,10 +20,15 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - La evidencia sobre colaboración humano–IA se presenta como heterogénea y dependiente del contexto.
 - La especificación pública de PULSE no adquiere autoridad independiente ni redefine sus fuentes.
 
+### Validado en GitHub Actions
+
+- Preflight completo: 96 controles de Sprint 2, 147 controles heredados, sincronización, auditorías y build estricto.
+- Dieciséis comparaciones visuales y nueve ejecuciones automatizadas de Axe aprobadas en el runner canónico Ubuntu; nueve duplicados móviles de Axe se omiten deliberadamente.
+- Las pruebas automatizadas no constituyen por sí solas una declaración de conformidad WCAG 2.2 AA.
+
 ### Pendiente antes de promover
 
 - Ratificación explícita del núcleo fundacional candidato.
-- Preflight completo, regresión visual/accesibilidad y checks del pull request.
 - Merge a `main`, despliegue y verificación de la release publicada.
 
 ## [0.3.0-rc.1] - 2026-07-20
