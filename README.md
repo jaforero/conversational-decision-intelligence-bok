@@ -5,16 +5,16 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 ## Estado
 
 - Release de gobernanza: `v0.2.0`
-- Portal técnico desplegado: `v0.3.0-rc.1`
-- Núcleo fundacional candidato: `v0.4.0-rc.1`
-- Fase: Sprint 2 — Constitución, fronteras, glosario, dominios y PULSE
+- Release estable del portal y núcleo fundacional: `v0.4.0`
+- Candidato promovido: `v0.4.0-rc.1`
+- Fase cerrada: Sprint 2 — Constitución, fronteras, glosario, dominios y PULSE
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal objetivo: `https://decision.javierforero.co`
 - Practice Lab externo: `https://dashboards.javierforero.co`
 - Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
-La etiqueta `v0.2.0` ratifica la arquitectura y la gobernanza; **no** afirma que CDI sea todavía un estándar internacional reconocido ni que PULSE cuente con validación científica generalizable.
+La release `v0.4.0` ratifica el núcleo fundacional con autoridad diferenciada. **No** afirma que CDI sea un estándar internacional reconocido ni que PULSE cuente con validación científica generalizable.
 
 ## Fuentes de autoridad
 
@@ -44,7 +44,7 @@ python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install --require-hashes -r requirements.lock
 npm ci
-python scripts/preflight_sprint2.py
+python scripts/preflight_release.py
 python -m mkdocs serve
 ```
 

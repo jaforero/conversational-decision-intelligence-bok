@@ -1,11 +1,11 @@
 ---
 title: Constitución del CDI-BoK
 description: Propósito, autoridad, principios, límites y reglas de evolución del Conversational Decision Intelligence Body of Knowledge.
-status: candidate
-version: 0.4.0-rc.1
+status: approved
+version: 0.4.0
 artifact_type: constitution
-authority_level: foundational-candidate
-normative: false
+authority_level: foundational-approved
+normative: true
 owner: Javier Forero
 domains:
   - Foundations
@@ -25,8 +25,8 @@ last_reviewed: 2026-07-21
 
 # Constitución del CDI-BoK
 
-!!! warning "Estatus de esta Constitución"
-    Este documento es una **constitución candidata**. Organiza el núcleo fundacional propuesto para revisión y ratificación; todavía no declara a CDI como disciplina académica consolidada, al CDI-BoK como estándar reconocido ni a PULSE como metodología validada de manera generalizable.
+!!! info "Estatus de esta Constitución"
+    Esta Constitución fue **ratificada por Javier Forero el 21 de julio de 2026** y es normativa dentro del CDI-BoK desde `v0.4.0`. Su autoridad institucional no declara a CDI como disciplina académica consolidada, al CDI-BoK como estándar reconocido ni a PULSE como metodología validada de manera generalizable.
 
 ## Artículo 1 — Identidad
 

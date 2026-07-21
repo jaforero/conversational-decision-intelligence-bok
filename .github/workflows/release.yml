@@ -1,0 +1,98 @@
+name: Publish stable release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - governance/releases/v0.4.0.yml
+      - governance/releases/v0.4.0-notes.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stable-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Validate, tag and publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.lock
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install Python dependencies
+        run: python -m pip install --require-hashes -r requirements.lock
+
+      - name: Install browser test dependencies
+        run: npm ci
+
+      - name: Run stable release preflight
+        run: python scripts/preflight_release.py
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run visual and accessibility gates
+        run: npm test
+
+      - name: Resolve release identity
+        id: release
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          from pathlib import Path
+          import yaml
+
+          manifest = yaml.safe_load(Path("governance/releases/v0.4.0.yml").read_text(encoding="utf-8"))
+          if manifest["status"] != "stable":
+              raise SystemExit("Release manifest is not stable")
+          if manifest["tag"] != f"v{manifest['release']}":
+              raise SystemExit("Release tag and version differ")
+          print(f"version={manifest['release']}")
+          print(f"tag={manifest['tag']}")
+          PY
+
+      - name: Create tag and GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_VERSION: ${{ steps.release.outputs.version }}
+        shell: bash
+        run: |
+          if git rev-parse --verify --quiet "refs/tags/${RELEASE_TAG}"; then
+            EXISTING_TARGET="$(git rev-list -n 1 "${RELEASE_TAG}")"
+            if [ "${EXISTING_TARGET}" != "${GITHUB_SHA}" ]; then
+              echo "${RELEASE_TAG} already points to ${EXISTING_TARGET}, not ${GITHUB_SHA}" >&2
+              exit 1
+            fi
+          fi
+
+          if gh release view "${RELEASE_TAG}" >/dev/null 2>&1; then
+            echo "${RELEASE_TAG} already exists at the validated commit."
+            exit 0
+          fi
+
+          gh release create "${RELEASE_TAG}" \
+            --target "${GITHUB_SHA}" \
+            --title "CDI-BoK ${RELEASE_TAG} — Núcleo fundacional estable" \
+            --notes-file governance/releases/v0.4.0-notes.md
+

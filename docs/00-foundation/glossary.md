@@ -1,11 +1,11 @@
 ---
 title: Glosario normativo inicial
-description: Vocabulario controlado del CDI-BoK con definiciones candidatas, owners conceptuales y límites de uso.
-status: candidate
-version: 0.4.0-rc.1
+description: Vocabulario controlado del CDI-BoK con definiciones aprobadas, owners conceptuales y límites de uso.
+status: approved
+version: 0.4.0
 artifact_type: controlled-glossary
-authority_level: normative-candidate
-normative: false
+authority_level: approved-controlled
+normative: true
 owner: Javier Forero
 domains:
   - Foundations
@@ -22,7 +22,7 @@ last_reviewed: 2026-07-21
 # Glosario normativo inicial
 
 !!! info "Cómo interpretar este glosario"
-    **Normativo inicial** describe su función prevista; en `v0.4.0-rc.1` todas las entradas permanecen candidatas. Los conceptos propiedad de PULSE reproducen o resumen su DNA y no adquieren una definición independiente aquí.
+    Desde `v0.4.0`, este es el vocabulario controlado inicial del CDI-BoK. Los conceptos propiedad de PULSE reproducen o resumen su DNA y no adquieren una definición independiente aquí.
 
 | Término | Definición controlada | Owner conceptual | Límite clave |
 |---|---|---|---|
@@ -31,8 +31,8 @@ last_reviewed: 2026-07-21
 | **Aprendizaje** | Ajuste producido al comparar lo esperado con lo ocurrido y modificar percepción, supuestos, criterios, decisiones, acciones o controles. | PULSE DNA | Registrar una lección sin cambiar el siguiente ciclo no basta. |
 | **CDI-BoK** | Sistema público, gobernado y versionado que organiza el conocimiento oficial del proyecto CDI. | CDI-GOV-001 | No es automáticamente un estándar reconocido. |
 | **Contexto** | Procesos, reglas, historia, restricciones, excepciones, objetivos, relaciones e información local que dan significado operacional a la evidencia. | PULSE DNA | Más documentos no garantizan contexto suficiente. |
-| **Conversación decisional** | Interacción iterativa humano–IA orientada a clarificar evidencia, supuestos, alternativas, criterios y próximos pasos de una decisión explícita. | CDI Constitution candidate | No equivale a conversación casual ni a simple NLQ. |
-| **Conversational Decision Intelligence (CDI)** | Dominio de práctica interdisciplinar propuesto que estudia y diseña cómo humanos e IA colaboran mediante conversaciones para convertir evidencia y contexto en decisión, acción y aprendizaje. | CDI Constitution candidate | Definición del proyecto; reconocimiento externo pendiente. |
+| **Conversación decisional** | Interacción iterativa humano–IA orientada a clarificar evidencia, supuestos, alternativas, criterios y próximos pasos de una decisión explícita. | CDI Constitution | No equivale a conversación casual ni a simple NLQ. |
+| **Conversational Decision Intelligence (CDI)** | Dominio de práctica interdisciplinar propuesto que estudia y diseña cómo humanos e IA colaboran mediante conversaciones para convertir evidencia y contexto en decisión, acción y aprendizaje. | CDI Constitution | Definición oficial del proyecto; reconocimiento externo pendiente. |
 | **Copiloto de decisión** | Sistema habilitado por IA que apoya a una persona con evidencia, contexto, opciones, escenarios y workflow sin asumir accountability final. | PULSE DNA | Copilot no significa aprobación automática. |
 | **Criterio de decisión** | Atributo o regla usada para comparar alternativas frente a objetivos, riesgos y restricciones. | CDI foundational core | Debe ser explícito y no confundirse con una métrica de desempeño. |
 | **Datos confiables** | Evidencia con calidad, procedencia, definición, ownership, seguridad y relevancia suficientes para un uso específico. | PULSE DNA | “Confiable” siempre es fitness for purpose, no perfección absoluta. |
@@ -61,4 +61,3 @@ last_reviewed: 2026-07-21
 3. Los términos en inglés se conservan cuando son lenguaje canónico de PULSE o evitan ambigüedad.
 4. **Must**, **should**, **may** y **must not** se reservan para requisitos, recomendaciones, opciones y prohibiciones respectivamente.
 5. Un cambio semántico requiere análisis de impacto sobre navegación, claims, fuentes, casos y sistemas de recuperación.
-

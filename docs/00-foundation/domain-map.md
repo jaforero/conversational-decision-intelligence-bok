@@ -1,11 +1,11 @@
 ---
 title: Mapa de dominios del CDI-BoK
 description: Ocho áreas y 29 dominios con propósito, preguntas rectoras, dependencias y criterio de activación editorial.
-status: candidate
-version: 0.4.0-rc.1
+status: approved
+version: 0.4.0
 artifact_type: knowledge-map
-authority_level: foundational-candidate
-normative: false
+authority_level: approved-controlled
+normative: true
 owner: Javier Forero
 domains:
   - Foundations
@@ -42,7 +42,7 @@ El diagrama expresa dependencias frecuentes, no una secuencia obligatoria. Una d
 
 | Dominio | Pregunta rectora | Madurez inicial |
 |---|---|---|
-| **Foundations** | ¿Qué conceptos y fuentes permiten construir CDI con lenguaje coherente? | Núcleo candidato |
+| **Foundations** | ¿Qué conceptos y fuentes permiten construir CDI con lenguaje coherente? | Núcleo aprobado del proyecto |
 | **Conversational Decision Intelligence** | ¿Qué hace que una colaboración conversacional sea verdaderamente decisional? | Dominio propuesto |
 | **Business Intelligence Evolution** | ¿Qué capacidades heredamos de reportes, BI, DSS y analítica aumentada? | Campo histórico maduro; síntesis candidata |
 | **Future Directions** | ¿Qué futuros son plausibles, deseables o riesgosos y bajo qué supuestos? | Exploratorio |
@@ -94,7 +94,7 @@ El diagrama expresa dependencias frecuentes, no una secuencia obligatoria. Una d
 
 | Dominio | Pregunta rectora | Madurez inicial |
 |---|---|---|
-| **Decision Governance** | ¿Quién puede ver, recomendar, decidir, aprobar, ejecutar, detener y responder? | Núcleo candidato |
+| **Decision Governance** | ¿Quién puede ver, recomendar, decidir, aprobar, ejecutar, detener y responder? | Núcleo aprobado del proyecto |
 | **Decision Patterns** | ¿Qué estructuras reutilizables resuelven situaciones decisionales recurrentes? | Por desarrollar |
 | **Decision Anti-patterns** | ¿Qué diseños producen falsa confianza, bloqueo, automatización impropia o aprendizaje erróneo? | Por desarrollar |
 
@@ -130,4 +130,3 @@ Un dominio obtiene o amplía una página pública solo si existe una necesidad r
 ## Control de cambios
 
 Agregar, fusionar, renombrar o retirar un dominio cambia la arquitectura intelectual y requiere ADR. Mover una página dentro de la navegación sin cambiar propiedad conceptual es una decisión editorial menor.
-

@@ -1,11 +1,11 @@
 ---
 title: Alcance y fronteras de CDI
-description: Definición candidata de Conversational Decision Intelligence, relación con campos adyacentes y criterios de inclusión y exclusión.
-status: candidate
-version: 0.4.0-rc.1
+description: Definición oficial del proyecto Conversational Decision Intelligence, relación con campos adyacentes y criterios de inclusión y exclusión.
+status: approved
+version: 0.4.0
 artifact_type: scope-standard
-authority_level: foundational-candidate
-normative: false
+authority_level: institutional-approved
+normative: true
 owner: Javier Forero
 domains:
   - Conversational Decision Intelligence
@@ -27,11 +27,11 @@ last_reviewed: 2026-07-21
 
 # Alcance y fronteras de CDI
 
-## Definición candidata
+## Definición oficial del proyecto
 
 > **Conversational Decision Intelligence (CDI) es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.**
 
-Esta es una **definición del proyecto**, no una definición aceptada universalmente. CDI se presenta como dominio de práctica emergente mientras se desarrolla revisión comparativa, evidencia aplicada y evaluación externa.
+Esta es la **definición oficial del proyecto desde `v0.4.0`**, no una definición aceptada universalmente. CDI se presenta como dominio de práctica emergente mientras se desarrolla revisión comparativa, evidencia aplicada y evaluación externa.
 
 ## Qué hace específica a CDI
 
@@ -122,4 +122,3 @@ La investigación disponible muestra resultados heterogéneos: algunas formas de
 - Akeel Attar, [“Turbo charge your Conversational AI with Conversational Decision Intelligence”](https://www.linkedin.com/pulse/turbo-charge-your-conversational-ai-decision-akeel-attar), 2022. Antecedente terminológico y de producto.
 - Ma et al., [“Towards Human-AI Deliberation”](https://doi.org/10.1145/3706598.3713423), CHI 2025. Estudio exploratorio de deliberación humano–IA.
 - Ben-Michael et al., [“Does AI help humans make better decisions?”](https://arxiv.org/abs/2403.12108), 2024. Framework de evaluación y evidencia de que la asistencia no mejora automáticamente el desempeño.
-

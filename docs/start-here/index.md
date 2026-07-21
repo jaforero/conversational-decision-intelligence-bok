@@ -1,8 +1,8 @@
 ---
 title: Empieza aquí
 description: Qué es Conversational Decision Intelligence, qué no es y cómo se relacionan CDI, CDI-BoK y PULSE.
-status: candidate
-version: 0.4.0-rc.1
+status: approved
+version: 0.4.0
 artifact_type: orientation-guide
 authority_level: guidance
 normative: false
@@ -54,7 +54,7 @@ Esta trayectoria es una hipótesis organizadora, no una ley inevitable. Las inte
 ## Cómo continuar
 
 - [Aprende a usar el CDI-BoK](how-to-use.md).
-- [Lee la Constitución candidata](../00-foundation/constitution.md).
+- [Lee la Constitución aprobada](../00-foundation/constitution.md).
 - [Revisa el alcance y las fronteras de CDI](../00-foundation/cdi-scope-boundaries.md).
 - [Explora la arquitectura de conocimiento](../00-foundation/domain-map.md).
 - [Conoce PULSE](../03-pulse/index.md).

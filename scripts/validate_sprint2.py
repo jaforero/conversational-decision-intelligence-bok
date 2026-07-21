@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the CDI-BoK Sprint 2 foundational-core contract."""
+"""Validate the ratified CDI-BoK Sprint 2 core and stable v0.4.0 contract."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 CHECKS = 0
-RELEASE = "0.4.0-rc.1"
+RELEASE = "0.4.0"
 
 
 def check(condition: bool, message: str) -> None:
@@ -39,23 +39,44 @@ def markdown(relative: str) -> tuple[dict, str]:
 
 
 required_docs = {
-    "docs/00-foundation/constitution.md": "constitution",
-    "docs/00-foundation/cdi-scope-boundaries.md": "scope-standard",
-    "docs/00-foundation/glossary.md": "controlled-glossary",
-    "docs/00-foundation/domain-map.md": "knowledge-map",
-    "docs/03-pulse/specification.md": "framework-specification",
+    "docs/00-foundation/constitution.md": {
+        "artifact_type": "constitution",
+        "authority_level": "foundational-approved",
+        "normative": True,
+    },
+    "docs/00-foundation/cdi-scope-boundaries.md": {
+        "artifact_type": "scope-standard",
+        "authority_level": "institutional-approved",
+        "normative": True,
+    },
+    "docs/00-foundation/glossary.md": {
+        "artifact_type": "controlled-glossary",
+        "authority_level": "approved-controlled",
+        "normative": True,
+    },
+    "docs/00-foundation/domain-map.md": {
+        "artifact_type": "knowledge-map",
+        "authority_level": "approved-controlled",
+        "normative": True,
+    },
+    "docs/03-pulse/specification.md": {
+        "artifact_type": "framework-specification",
+        "authority_level": "constitutional-derived-approved",
+        "normative": False,
+    },
 }
 documents: dict[str, tuple[dict, str]] = {}
-for path, artifact_type in required_docs.items():
+for path, expected in required_docs.items():
     check((ROOT / path).exists(), f"Missing Sprint 2 document: {path}")
     if not (ROOT / path).exists():
         continue
     metadata, body = markdown(path)
     documents[path] = (metadata, body)
     check(metadata.get("version") == RELEASE, f"Wrong Sprint 2 version: {path}")
-    check(metadata.get("status") == "candidate", f"Foundational document must be candidate: {path}")
-    check(metadata.get("normative") is False, f"Candidate must not claim normative status: {path}")
-    check(metadata.get("artifact_type") == artifact_type, f"Wrong artifact type: {path}")
+    check(metadata.get("status") == "approved", f"Ratified document must be approved: {path}")
+    check(metadata.get("normative") is expected["normative"], f"Wrong normative flag: {path}")
+    check(metadata.get("artifact_type") == expected["artifact_type"], f"Wrong artifact type: {path}")
+    check(metadata.get("authority_level") == expected["authority_level"], f"Wrong authority level: {path}")
     check(bool(metadata.get("source_ids")), f"Missing source_ids: {path}")
 
 definition = (
@@ -127,17 +148,58 @@ for claim in claims:
 
 adr_index = load_yaml("governance/adr/index.yml")
 adr_by_id = {item["id"]: item for item in adr_index["decisions"]}
-for adr_id in ["ADR-014", "ADR-015", "ADR-016"]:
+for adr_id in ["ADR-014", "ADR-015", "ADR-016", "ADR-017"]:
     check(adr_by_id.get(adr_id, {}).get("status") == "accepted", f"Missing accepted {adr_id}")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["public_portal"]["release_candidate"] == RELEASE, "Content map release mismatch")
+check(content_map["release"] == RELEASE, "Content map registry release mismatch")
+check(content_map["public_portal"]["release"] == RELEASE, "Content map portal release mismatch")
 registered = {item["path"] for item in content_map["public_portal"]["navigation"]}
 check(set(required_docs).issubset(registered), "Sprint 2 documents are absent from public content map")
+check("docs/versions/v0.4.0.md" in registered, "Stable release note is absent from public content map")
 
 manifest = load_yaml("governance/sprint-2-manifest.yml")
-check(manifest["release_candidate"] == RELEASE, "Sprint 2 manifest release mismatch")
+check(manifest["release"] == RELEASE, "Sprint 2 manifest release mismatch")
+check(manifest["source_candidate"] == "0.4.0-rc.1", "Sprint 2 source candidate is missing")
 check(manifest["gates"]["pages_live"] == "passed-http-200", "Sprint 1 deployment is not recorded as verified")
+check(manifest["gates"]["owner_ratification"] == "passed-2026-07-21", "Owner ratification is not recorded")
+check(manifest["ratification"]["ratified_by"] == "Javier Forero", "Ratifier differs from the owner decision")
+check(manifest["ratification"]["governed_by"] == "ADR-017", "Ratification lacks ADR-017")
+
+release_manifest = load_yaml("governance/releases/v0.4.0.yml")
+check(release_manifest["release"] == RELEASE, "Stable release manifest version mismatch")
+check(release_manifest["tag"] == f"v{RELEASE}", "Stable release tag mismatch")
+check(release_manifest["status"] == "stable", "Release manifest is not stable")
+check(release_manifest["source_candidate"] == "0.4.0-rc.1", "Release lineage is incomplete")
+check(release_manifest["ratification"]["governed_by"] == "ADR-017", "Release manifest lacks ADR-017")
+promotion_by_path = {item["path"]: item for item in release_manifest["promotions"]}
+for path, expected in required_docs.items():
+    promotion = promotion_by_path.get(path, {})
+    check(promotion.get("status") == "approved", f"Release promotion status mismatch: {path}")
+    check(promotion.get("authority_level") == expected["authority_level"], f"Release promotion authority mismatch: {path}")
+    check(promotion.get("normative") is expected["normative"], f"Release promotion normative mismatch: {path}")
+
+for registry_path in [
+    "governance/registries/concepts.yml",
+    "governance/registries/claims.yml",
+    "governance/registries/sources.yml",
+    "governance/adr/index.yml",
+]:
+    check(load_yaml(registry_path)["release"] == RELEASE, f"Registry release mismatch: {registry_path}")
+
+check(concept_by_id["CDI"]["status"] == "approved", "CDI concept was not promoted")
+check(claim_by_id["CLAIM-CDI-001"]["maturity"] == "approved-project-definition", "CDI definition claim was not promoted")
+check(claim_by_id["CLAIM-DOMAINS-001"]["maturity"] == "approved-institutional-taxonomy", "Domain taxonomy claim was not promoted")
+check(claim_by_id["CLAIM-PULSE-ROLE-001"]["maturity"] == "approved-derived", "PULSE role claim was not promoted")
+
+portal_files = {
+    "mkdocs.yml": "portal: v0.4.0",
+    "overrides/main.html": "Portal v0.4.0",
+    "README.md": "`v0.4.0`",
+    "package.json": '"version": "0.4.0"',
+}
+for path, marker in portal_files.items():
+    check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Stable portal marker missing: {path}")
 
 all_foundational_text = "\n".join(body for _, body in documents.values()).lower()
 for prohibited in [
@@ -154,5 +216,4 @@ if ERRORS:
         print(f"- {error}", file=sys.stderr)
     sys.exit(1)
 
-print(f"PASS: Sprint 2 foundational core validated ({CHECKS} checks)")
-
+print(f"PASS: Sprint 2 stable foundational core validated ({CHECKS} checks)")

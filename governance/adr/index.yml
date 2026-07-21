@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-ADR
-release: 0.4.0-rc.1
+release: 0.4.0
 decisions:
   - { id: ADR-001, status: accepted, file: ADR-001-repository-name.md }
   - { id: ADR-002, status: accepted, file: ADR-002-canonical-language.md }
@@ -18,3 +18,4 @@ decisions:
   - { id: ADR-014, status: accepted, file: ADR-014-sprint2-release-lineage.md }
   - { id: ADR-015, status: accepted, file: ADR-015-cdi-definition-prior-art.md }
   - { id: ADR-016, status: accepted, file: ADR-016-pulse-public-projection.md }
+  - { id: ADR-017, status: accepted, file: ADR-017-v040-stable-promotion.md }
