@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 sprint: 4
 release: 0.6.0-rc.1
-status: candidate-implemented-not-ratified
+status: candidate-ratified-merged
 started_on: 2026-07-21
 owner: Javier Forero
 objective: Make the CDI-BoK value explicit from the first viewport and convert foundational knowledge into a usable learning path without inventing organizational impact.
@@ -26,7 +26,7 @@ gates:
   strict_build: passed-mkdocs-1.6.1-run-29854919088
   static_accessibility_audit: passed-axe-and-semantics-run-29854919410
   visual_regression: passed-20-comparisons-run-29854919410
-  owner_ratification: pending
+  owner_ratification: passed-user-ratification-2026-07-21
 evidence:
   source_scope:
     - SRC-PULSE-DNA-001
@@ -63,9 +63,16 @@ evidence:
     visual_comparisons_passed: 20
     automated_axe_audits_passed: 10
     foundational_semantic_checks_passed: 16
+  final_pull_request_evidence:
+    validation_run_id: 29855188428
+    browser_run_id: 29855188362
+    result: success
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-4-learning-experience
   pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/7
+  merge_commit: 958e2ee0c5326b2329e3f0a64259d149362571df
+  merged_on: 2026-07-21
   target_url: https://decision.javierforero.co
-  status: not-published
+  deployment_verification: pending
+  status: merged-awaiting-deployment-verification

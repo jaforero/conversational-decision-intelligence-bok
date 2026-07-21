@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-SOURCES
-release: 0.6.0-rc.1
+release: 0.7.0-rc.1
 records:
   - source_id: SRC-PULSE-DNA-001
     title: PULSE DNA
@@ -192,4 +192,45 @@ records:
     authority_level: academic-preprint-and-empirical-evaluation
     status: active-with-review-status-caveat
     limits: Evaluation framework and one decision context; not evidence that AI assistance always harms or helps.
+    materialized: false
+  - source_id: SRC-DQ-SDP-001
+    title: Decision Quality
+    author: Society of Decision Professionals
+    url: https://www.decisionprofessionals.com/who-we-are/decision-quality
+    observed_on: 2026-07-21
+    authority_level: professional-body-practice-reference
+    status: active
+    purpose: Referencia para los seis elementos de Decision Quality y la metáfora de la cadena; no es validación del sistema CDI.
+    materialized: false
+  - source_id: SRC-ACADEMIC-OUTCOME-BIAS-001
+    title: Outcome bias in decision evaluation
+    authors: Jonathan Baron; John C. Hershey
+    publication: Journal of Personality and Social Psychology
+    publication_year: 1988
+    doi: 10.1037/0022-3514.54.4.569
+    url: https://pubmed.ncbi.nlm.nih.gov/3367280/
+    authority_level: peer-reviewed-primary-study
+    status: active
+    limits: Experimentos controlados que evidencian outcome bias; no estiman una magnitud universal para organizaciones o dominios de decisión.
+    materialized: false
+  - source_id: SRC-ACADEMIC-SCORING-RULES-001
+    title: Strictly Proper Scoring Rules, Prediction, and Estimation
+    authors: Tilmann Gneiting; Adrian E. Raftery
+    publication: Journal of the American Statistical Association
+    publication_year: 2007
+    doi: 10.1198/016214506000001437
+    url: https://doi.org/10.1198/016214506000001437
+    authority_level: peer-reviewed-methodological-review
+    status: active
+    limits: Sustenta evaluación de pronósticos probabilísticos; no justifica aplicar una puntuación a una decisión única ni mezclar eventos no comparables.
+    materialized: false
+  - source_id: SRC-NIST-AIRMF-001
+    title: Artificial Intelligence Risk Management Framework 1.0
+    author: National Institute of Standards and Technology
+    publication_year: 2023
+    doi: 10.6028/NIST.AI.100-1
+    url: https://doi.org/10.6028/NIST.AI.100-1
+    authority_level: public-risk-management-framework
+    status: active
+    limits: Marco voluntario para riesgo y confiabilidad de sistemas de IA; no define Decision Quality ni valida la síntesis CDI.
     materialized: false

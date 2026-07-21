@@ -2,7 +2,7 @@
 title: Ruta de aprendizaje
 description: Cinco módulos y una plantilla para pasar de una prioridad a una decisión gobernada y un ciclo de aprendizaje medible.
 status: candidate
-version: 0.6.0-rc.1
+version: 0.7.0-rc.1
 artifact_type: learning-path
 authority_level: guidance
 normative: false
@@ -58,6 +58,12 @@ Cada módulo combina cinco elementos:
 | **Checklist** | Convierte el modelo en una revisión aplicable. |
 | **Prueba de estrés** | Expone supuestos, incertidumbre y contraargumentos. |
 | **Entregable** | Deja una salida reutilizable para el Decision Brief. |
+
+## Profundiza en calidad y medición
+
+La ruta enseña a fijar expectativas y aprender. El candidato `v0.7.0-rc.1` añade un sistema para instrumentar decisiones repetidas o materiales sin reducirlas a velocidad, adopción o ROI aislados.
+
+[Explorar Decision Quality & Measurement →](../07-governance-quality/index.md){ .md-button }
 
 ## Tres formas de entrar
 

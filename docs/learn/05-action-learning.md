@@ -2,7 +2,7 @@
 title: 5. Actuar, medir y aprender
 description: Prerregistra expectativas, separa calidad de decisión y resultado, y convierte la desviación en el siguiente ciclo.
 status: candidate
-version: 0.6.0-rc.1
+version: 0.7.0-rc.1
 artifact_type: learning-module
 authority_level: guidance-derived-from-pulse
 normative: false
@@ -104,4 +104,4 @@ Owner y fecha de revisión:
 
 Puedes aprender el método con un ejemplo o una demo. Para afirmar impacto organizacional necesitas una decisión real, un owner, una acción observada y evidencia suficiente. El CDI-BoK mantiene separadas esas dos clases de aprendizaje.
 
-**Siguiente:** [integrar los cinco módulos en un Decision Brief →](decision-brief.md)
+**Siguiente:** [integrar los cinco módulos en un Decision Brief →](decision-brief.md) o [diseñar el sistema de medición →](../07-governance-quality/decision-measurement-system.md)

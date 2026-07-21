@@ -1,0 +1,84 @@
+schema_version: 1.0.0
+template_version: 0.7.0-rc.1
+record_id: null
+record_status: draft
+decision_snapshot:
+  frozen_at: null
+  decision: null
+  decision_owner: null
+  committed_at: null
+  chosen_option: null
+  alternatives_considered: []
+  people_or_groups_affected: []
+  action:
+    description: null
+    accountable_owner: null
+    planned_start: null
+    stop_condition: null
+    reversibility: null
+  baseline:
+    value: null
+    unit: null
+    population: null
+    source: null
+    cutoff_at: null
+  expectation:
+    lower: null
+    central: null
+    upper: null
+    probability_statement: null
+    horizon_end: null
+    mechanism: null
+  metrics:
+    priority_outcome:
+      name: null
+      definition: null
+      denominator: null
+      source_owner: null
+      decision_rule: null
+    execution_fidelity:
+      name: null
+      definition: null
+      denominator: null
+      source_owner: null
+      decision_rule: null
+    guardrails: []
+    latency:
+      eligible_trigger_at: null
+      evidence_ready_at: null
+      commitment_at: null
+      first_action_at: null
+  comparison:
+    design: null
+    comparator: null
+    attribution_limit: null
+  quality_profile:
+    scale: [unknown, weak, adequate, strong]
+    framing_and_authority: { rating: unknown, evidence: null, blocker: null }
+    alternatives: { rating: unknown, evidence: null, blocker: null }
+    evidence_and_uncertainty: { rating: unknown, evidence: null, blocker: null }
+    values_and_tradeoffs: { rating: unknown, evidence: null, blocker: null }
+    reasoning_and_challenge: { rating: unknown, evidence: null, blocker: null }
+    governance_and_commitment: { rating: unknown, evidence: null, blocker: null }
+    expectation_and_learning: { rating: unknown, evidence: null, blocker: null }
+  approvals: []
+outcome_review:
+  status: not-observed
+  reviewed_at: null
+  action_executed: null
+  execution_exceptions: []
+  outcome_observed: null
+  guardrails_observed: []
+  deviation_from_expectation: null
+  concurrent_changes: []
+  alternative_explanations: []
+  attribution_statement: null
+  claim_strength: not-assessed
+  decision_after_review: null
+  next_cycle_change: null
+  next_cycle_owner: null
+audit:
+  created_by: null
+  created_at: null
+  amendments: []
+

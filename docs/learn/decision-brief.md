@@ -2,7 +2,7 @@
 title: Plantilla Decision Brief
 description: Plantilla de una página para integrar decisión, evidencia, experiencia, control, acción y aprendizaje antes de actuar.
 status: candidate
-version: 0.6.0-rc.1
+version: 0.7.0-rc.1
 artifact_type: practice-template
 authority_level: guidance-derived-from-pulse
 normative: false
@@ -126,3 +126,4 @@ Decision Brief — [nombre de la decisión]
 Completa primero el brief sin IA para revelar tu modelo mental. Después usa una conversación para cuestionar supuestos, generar alternativas o detectar campos faltantes. No delegues al sistema la autoridad para definir la prioridad, inventar evidencia o aprobar sus propias acciones.
 
 [Volver a la ruta de aprendizaje](index.md){ .md-button }
+[Crear el Measurement Record](../07-governance-quality/measurement-record.md){ .md-button }

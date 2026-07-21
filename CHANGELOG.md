@@ -2,6 +2,28 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.7.0-rc.1] - 2026-07-21
+
+### Añadido
+
+- Área pública de Decision Quality & Measurement.
+- Perfil ex ante de siete dimensiones con evidencia y bloqueadores.
+- Decision Measurement System de seis lentes para prioridad, calidad, ejecución, tiempo, riesgo y aprendizaje.
+- Contratos y fórmulas con límites de aplicación para latencia, fidelidad, cierre de aprendizaje y Brier score.
+- Criterios de medición humano–IA y anti-métricas para adopción, override, velocidad, ROI y scores sintéticos.
+- Decision Measurement Record versionado con snapshot previo y outcome review posterior.
+- ADR-021, fuentes académicas y profesionales, claims calibrados y validador específico de Sprint 5.
+
+### Decisión crítica
+
+- No se publica un Decision Health Score universal: la evidencia disponible no permite pesos, benchmarks ni comparabilidad transversal defendibles.
+
+### Calibración
+
+- El sistema es una síntesis candidata y no un instrumento validado.
+- Una plantilla completa demuestra trazabilidad, no eficacia ni atribución causal.
+- El núcleo `v0.4.0` y el estado `instrumented-not-executed` del caso B2B no cambian.
+
 ## [0.6.0-rc.1] - 2026-07-21
 
 ### Añadido
@@ -22,6 +44,12 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - La ruta enseña y operacionaliza el método; no constituye evidencia de impacto organizacional.
 - El caso B2B permanece `instrumented-not-executed` en `v0.5.0-rc.1`.
 - El núcleo fundacional estable `v0.4.0` no cambia de autoridad.
+
+### Cierre
+
+- Ratificado por Javier Forero el 21 de julio de 2026.
+- Fusionado mediante PR #7 y commit `958e2ee0c5326b2329e3f0a64259d149362571df` después de gates canónicos exitosos.
+- La ratificación del candidato no equivale a promoción estable ni a verificación de impacto.
 
 ## [0.5.0-rc.1] - 2026-07-21
 

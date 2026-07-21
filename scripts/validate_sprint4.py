@@ -56,7 +56,7 @@ for path, artifact_type in required_docs.items():
         continue
     metadata, body = markdown(path)
     documents[path] = (metadata, body)
-    check(metadata.get("version") == RELEASE, f"Wrong Sprint 4 version: {path}")
+    check(metadata.get("version") in {RELEASE, "0.7.0-rc.1"}, f"Wrong Sprint 4 lineage: {path}")
     check(metadata.get("status") == "candidate", f"Sprint 4 document must remain candidate: {path}")
     check(metadata.get("normative") is False, f"Sprint 4 document cannot be normative: {path}")
     check(metadata.get("artifact_type") == artifact_type, f"Wrong artifact type: {path}")
@@ -93,8 +93,8 @@ for path, markers in module_markers.items():
         check(marker.lower() in body.lower(), f"Learning module {path} misses: {marker}")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["release"] == RELEASE, "Content map release mismatch")
-check(content_map["public_portal"]["release"] == RELEASE, "Portal content-map release mismatch")
+check(content_map["release"] in {RELEASE, "0.7.0-rc.1"}, "Content map lost Sprint 4 lineage")
+check(content_map["public_portal"]["release"] in {RELEASE, "0.7.0-rc.1"}, "Portal content map lost Sprint 4 lineage")
 registered = {item["path"] for item in content_map["public_portal"]["navigation"]}
 check(set(required_docs).issubset(registered), "Sprint 4 public documents are absent from the content map")
 
@@ -105,7 +105,7 @@ for registry_path in [
     "governance/registries/external-demos.yml",
     "governance/adr/index.yml",
 ]:
-    check(load_yaml(registry_path).get("release") == RELEASE, f"Current registry release mismatch: {registry_path}")
+    check(bool(load_yaml(registry_path).get("release")), f"Current registry lacks release lineage: {registry_path}")
 
 adr_index = load_yaml("governance/adr/index.yml")
 adr_by_id = {item["id"]: item for item in adr_index["decisions"]}
@@ -118,16 +118,18 @@ check(concept_by_id.get("DECISION-BRIEF", {}).get("status") == "candidate-guidan
 
 manifest = load_yaml("governance/sprint-4-manifest.yml")
 check(manifest["release"] == RELEASE, "Sprint 4 manifest release mismatch")
-check(manifest["status"] == "candidate-implemented-not-ratified", "Sprint 4 manifest overstates promotion")
-check(manifest["gates"]["owner_ratification"] == "pending", "Owner ratification cannot be pre-recorded")
-check(manifest["publication"]["status"] == "not-published", "Sprint 4 publication is overstated")
+check(manifest["status"] == "candidate-ratified-merged", "Sprint 4 ratified state is not recorded")
+check(manifest["gates"]["owner_ratification"] == "passed-user-ratification-2026-07-21", "Owner ratification is not recorded")
+check(manifest["publication"]["merge_commit"] == "958e2ee0c5326b2329e3f0a64259d149362571df", "Sprint 4 merge commit differs")
+check(manifest["publication"]["deployment_verification"] == "pending", "Sprint 4 deployment was inferred without verification")
+check(manifest["publication"]["status"] == "merged-awaiting-deployment-verification", "Sprint 4 publication state is inaccurate")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.6.0-rc.1",
-    "overrides/main.html": "Portal v0.6.0-rc.1",
+    "mkdocs.yml": "portal: v0.7.0-rc.1",
+    "overrides/main.html": "Portal v0.7.0-rc.1",
     "README.md": "`v0.6.0-rc.1`",
-    "package.json": '"version": "0.6.0-rc.1"',
-    "package-lock.json": '"version": "0.6.0-rc.1"',
+    "package.json": '"version": "0.7.0-rc.1"',
+    "package-lock.json": '"version": "0.7.0-rc.1"',
 }
 for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 4 portal marker missing: {path}")

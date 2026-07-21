@@ -31,6 +31,10 @@ const foundationalPages = [
   { name: "learn-control", path: "/learn/04-human-ai-control/" },
   { name: "learn-action", path: "/learn/05-action-learning/" },
   { name: "decision-brief", path: "/learn/decision-brief/" },
+  { name: "quality-measurement", path: "/07-governance-quality/" },
+  { name: "decision-quality", path: "/07-governance-quality/decision-quality/" },
+  { name: "decision-measurement", path: "/07-governance-quality/decision-measurement-system/" },
+  { name: "measurement-record", path: "/07-governance-quality/measurement-record/" },
 ];
 
 test("home communicates reader outcomes", async ({ page }) => {
@@ -41,6 +45,15 @@ test("home communicates reader outcomes", async ({ page }) => {
   await expect(page.locator("main")).toContainText("Formular");
   await expect(page.locator("main")).toContainText("Aprender");
   await expect(page.getByRole("link", { name: "Comienza la ruta de aprendizaje" })).toBeVisible();
+});
+
+test("measurement system preserves quality and outcome boundaries", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  await page.goto("/07-governance-quality/decision-measurement-system/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main h1")).toContainText("Decision Measurement System");
+  await expect(page.locator("main")).toContainText("Seis lentes");
+  await expect(page.locator("main")).toContainText("No uses Brier score para una decisión única");
+  await expect(page.locator("main")).toContainText("Puntuación sintética universal");
 });
 
 async function stabilizeExternalAssets(page) {
