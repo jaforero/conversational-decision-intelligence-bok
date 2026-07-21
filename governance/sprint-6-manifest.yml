@@ -71,7 +71,7 @@ evidence:
     approved_baseline_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29870521984
     approved_baseline_validation_result: success
     approved_baseline_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29870522215
-    approved_baseline_browser_result: success-54-passed-30-skipped-20-visual-comparisons-10-axe-scans
+    approved_baseline_browser_result: success-61-passed-35-skipped-20-visual-comparisons-35-axe-scans
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-6-conversational-patterns
