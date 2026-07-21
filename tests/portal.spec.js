@@ -11,6 +11,7 @@ const representativePages = [
   },
   { name: "research", path: "/research/" },
   { name: "practice-lab", path: "/practice-lab/" },
+  { name: "learn", path: "/learn/" },
 ];
 
 const foundationalPages = [
@@ -24,7 +25,23 @@ const foundationalPages = [
   { name: "b2b-contract", path: "/practice-lab/b2b-proposal/decision-contract/" },
   { name: "b2b-evidence", path: "/practice-lab/b2b-proposal/evidence-protocol/" },
   { name: "b2b-cycle", path: "/practice-lab/b2b-proposal/cycle-log/" },
+  { name: "learn-decision", path: "/learn/01-decision-first/" },
+  { name: "learn-evidence", path: "/learn/02-evidence-context/" },
+  { name: "learn-experience", path: "/learn/03-decision-experience/" },
+  { name: "learn-control", path: "/learn/04-human-ai-control/" },
+  { name: "learn-action", path: "/learn/05-action-learning/" },
+  { name: "decision-brief", path: "/learn/decision-brief/" },
 ];
+
+test("home communicates reader outcomes", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main h1")).toContainText("mejores decisiones");
+  await expect(page.locator("main")).toContainText("Lo que podrás hacer");
+  await expect(page.locator("main")).toContainText("Formular");
+  await expect(page.locator("main")).toContainText("Aprender");
+  await expect(page.getByRole("link", { name: "Comienza la ruta de aprendizaje" })).toBeVisible();
+});
 
 async function stabilizeExternalAssets(page) {
   await page.route("**/IgraSans.woff2", (route) => route.abort());

@@ -1,5 +1,5 @@
 site_name: Conversational Decision Intelligence Body of Knowledge
-site_description: Una propuesta abierta y versionada para organizar la práctica emergente de Conversational Decision Intelligence.
+site_description: Aprende a convertir datos, analítica e inteligencia artificial en decisiones explícitas, acción responsable y aprendizaje medible.
 site_author: Javier Forero
 site_url: https://decision.javierforero.co
 repo_url: https://github.com/jaforero/conversational-decision-intelligence-bok
@@ -51,6 +51,14 @@ nav:
   - Empieza aquí:
       - Visión general: start-here/index.md
       - Cómo usar el CDI-BoK: start-here/how-to-use.md
+  - Aprende:
+      - Ruta de aprendizaje: learn/index.md
+      - 1. Enfocar la decisión: learn/01-decision-first.md
+      - 2. Evidencia y contexto: learn/02-evidence-context.md
+      - 3. Decision Experience: learn/03-decision-experience.md
+      - 4. Control humano–IA: learn/04-human-ai-control.md
+      - 5. Acción y aprendizaje: learn/05-action-learning.md
+      - Plantilla Decision Brief: learn/decision-brief.md
   - CDI-BoK:
       - Visión general: 00-foundation/index.md
       - Constitución: 00-foundation/constitution.md
@@ -76,6 +84,7 @@ nav:
       - Publicación y dominio: governance/publication-runbook.md
   - Versiones:
       - Estado e historial: versions/index.md
+      - Candidato v0.6.0-rc.1: versions/v0.6.0-rc.1.md
       - Candidato v0.5.0-rc.1: versions/v0.5.0-rc.1.md
       - Release v0.4.0: versions/v0.4.0.md
   - Acerca de: about/index.md
@@ -125,7 +134,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.5.0-rc.1
+    portal: v0.6.0-rc.1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero

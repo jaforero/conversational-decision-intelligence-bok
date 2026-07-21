@@ -2,6 +2,27 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.6.0-rc.1] - 2026-07-21
+
+### Añadido
+
+- Ruta didáctica de cinco módulos: decisión, evidencia y contexto, Decision Experience, control humano–IA y aprendizaje.
+- Plantilla reutilizable de Decision Brief para integrar PDAMR, evidencia, derechos, acción, métricas y revisión.
+- Navegación por problema del lector y salidas explícitas para cada módulo.
+- ADR-020 y manifiesto de Sprint 4 para gobernar la arquitectura de aprendizaje.
+
+### Mejorado
+
+- Portada reescrita desde la transformación del lector: qué podrá formular, evaluar, diseñar, gobernar y aprender.
+- Hero de dos columnas con una ruta visible desde prioridad hasta aprendizaje.
+- Accesibilidad, responsive y componentes editoriales para rutas y resultados.
+
+### Calibración
+
+- La ruta enseña y operacionaliza el método; no constituye evidencia de impacto organizacional.
+- El caso B2B permanece `instrumented-not-executed` en `v0.5.0-rc.1`.
+- El núcleo fundacional estable `v0.4.0` no cambia de autoridad.
+
 ## [0.5.0-rc.1] - 2026-07-21
 
 ### Añadido

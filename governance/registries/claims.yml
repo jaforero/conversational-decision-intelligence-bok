@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CLAIMS
-release: 0.5.0-rc.1
+release: 0.6.0-rc.1
 claims:
   - claim_id: CLAIM-CDI-001
     statement: Conversational Decision Intelligence es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.

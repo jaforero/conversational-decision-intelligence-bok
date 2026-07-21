@@ -1,0 +1,71 @@
+schema_version: 1.0.0
+sprint: 4
+release: 0.6.0-rc.1
+status: candidate-implemented-not-ratified
+started_on: 2026-07-21
+owner: Javier Forero
+objective: Make the CDI-BoK value explicit from the first viewport and convert foundational knowledge into a usable learning path without inventing organizational impact.
+scope:
+  - Outcome-led public home
+  - Problem-led entry routes
+  - Five-module learning path
+  - Reusable Decision Brief
+  - Navigation, versioning, ADR, content map and automated gates
+out_of_scope:
+  - New organizational case study or CRM evidence
+  - Claim that learning materials improve business outcomes
+  - Promotion of the B2B case to executed or validated
+  - Change to the authority of the v0.4.0 foundational core
+  - Conversational copilot, agent or external action
+decisions:
+  - ADR-020
+gates:
+  source_hierarchy_preserved: passed-run-29854919088
+  learning_outcomes_explicit: passed-151-sprint4-checks-run-29854919088
+  historical_case_boundary: passed-sprint3-and-sprint4-validation-run-29854919088
+  strict_build: passed-mkdocs-1.6.1-run-29854919088
+  static_accessibility_audit: passed-axe-and-semantics-run-29854919410
+  visual_regression: passed-20-comparisons-run-29854919410
+  owner_ratification: pending
+evidence:
+  source_scope:
+    - SRC-PULSE-DNA-001
+    - SRC-PULSE-IDENTITY-002
+    - SRC-JF-002
+    - SRC-JF-005
+    - SRC-ARCH-001
+  evidence_posture: Educational synthesis and derived guidance; not evidence of organizational impact.
+  local_validation:
+    sprint4_checks_passed: 151
+    sprint3_checks_passed: 213
+    sprint2_checks_passed: 145
+    sprint0_checks_passed: 171
+    markdown_documents_audited: 33
+    generated_html_audited: 34
+  browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
+  prebaseline_browser_run:
+    run_id: 29854147072
+    result: 40-passed-8-expected-snapshot-differences
+    accessibility_and_semantics: passed
+    reviewed_baselines:
+      - home-light-desktop
+      - home-dark-desktop
+      - home-light-mobile
+      - home-dark-mobile
+      - learn-light-desktop
+      - learn-dark-desktop
+      - learn-light-mobile
+      - learn-dark-mobile
+  canonical_quality_evidence:
+    validation_run_id: 29854919088
+    browser_run_id: 29854919410
+    browser_result: 48-passed-26-intentional-mobile-duplicates-skipped
+    visual_comparisons_passed: 20
+    automated_axe_audits_passed: 10
+    foundational_semantic_checks_passed: 16
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/sprint-4-learning-experience
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/7
+  target_url: https://decision.javierforero.co
+  status: not-published

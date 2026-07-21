@@ -6,15 +6,15 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 
 - Release de gobernanza: `v0.2.0`
 - Release estable del portal y núcleo fundacional: `v0.4.0`
-- Candidato actual: `v0.5.0-rc.1`
-- Fase activa: Sprint 3 — Práctica y evidencia con el caso B2B Propuesta
+- Candidato actual: `v0.6.0-rc.1`
+- Fase activa: Sprint 4 — Profundidad y experiencia de aprendizaje
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal objetivo: `https://decision.javierforero.co`
 - Practice Lab externo: `https://dashboards.javierforero.co`
 - Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
-La release `v0.4.0` ratifica el núcleo fundacional con autoridad diferenciada. El candidato `v0.5.0-rc.1` agrega un caso instrumentado sobre datos simulados; **no** afirma que la intervención haya ocurrido ni que CDI o PULSE hayan producido mejores resultados.
+La release `v0.4.0` ratifica el núcleo fundacional con autoridad diferenciada. `v0.5.0-rc.1` conserva el primer caso instrumentado sobre datos simulados. El candidato `v0.6.0-rc.1` añade una ruta didáctica y una portada orientada a resultados; **no** afirma que CDI o PULSE hayan producido impacto organizacional.
 
 ## Fuentes de autoridad
 

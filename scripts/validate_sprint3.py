@@ -174,7 +174,8 @@ concepts = load_yaml("governance/registries/concepts.yml")
 adr_index = load_yaml("governance/adr/index.yml")
 external_demos = load_yaml("governance/registries/external-demos.yml")
 for registry, label in [(sources, "sources"), (claims, "claims"), (concepts, "concepts"), (adr_index, "ADR"), (external_demos, "external demos")]:
-    check(registry.get("release") == RELEASE, f"Current {label} registry release mismatch")
+    check(registry.get("schema_version") == "1.0.0", f"Current {label} registry schema mismatch")
+    check(bool(registry.get("release")), f"Current {label} registry lacks release lineage")
 source_ids = {item["source_id"] for item in sources["records"]}
 claim_by_id = {item["claim_id"]: item for item in claims["claims"]}
 required_sources = {"SRC-PRACTICE-B2B-001", "SRC-PRACTICE-DASH-ROOT-001", "SRC-PRACTICE-GPT-ROOT-001", "SRC-PRACTICE-DASH-B2B-001"}
@@ -195,8 +196,8 @@ check(demo_by_id["JF-CLAUDE-COMMERCIAL"]["selected_case_id"] == "B2B-PROP-001", 
 check(demo_by_id["JF-GPT-COMMERCIAL"]["related_case_id"] == "B2B-PROP-001", "Related ChatGPT demo is not linked to the case")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["release"] == RELEASE, "Content map release mismatch")
-check(content_map["public_portal"]["release"] == RELEASE, "Portal content-map release mismatch")
+check(bool(content_map.get("release")), "Content map lacks release lineage")
+check(bool(content_map["public_portal"].get("release")), "Portal content-map lacks release lineage")
 registered = {item["path"] for item in content_map["public_portal"]["navigation"]}
 check(set(required_docs).issubset(registered), "Sprint 3 public documents are absent from the content map")
 
@@ -216,15 +217,13 @@ check(manifest["publication"]["pages_deployment_run"].endswith("/29848050972"), 
 check(manifest["publication"]["portal_verified"] == "passed-http-200-2026-07-21", "Public portal verification is not recorded")
 check(manifest["publication"]["status"] == "candidate-deployed", "Publication status differs from the deployed candidate state")
 
-portal_markers = {
-    "mkdocs.yml": "portal: v0.5.0-rc.1",
-    "overrides/main.html": "Portal v0.5.0-rc.1",
+sprint3_artifact_markers = {
     "README.md": "`v0.5.0-rc.1`",
-    "package.json": '"version": "0.5.0-rc.1"',
-    "package-lock.json": '"version": "0.5.0-rc.1"',
+    "docs/versions/v0.5.0-rc.1.md": "# Candidato v0.5.0-rc.1",
+    "governance/cases/B2B-PROP-001.yml": "release: 0.5.0-rc.1",
 }
-for path, marker in portal_markers.items():
-    check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 3 portal marker missing: {path}")
+for path, marker in sprint3_artifact_markers.items():
+    check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 3 historical marker missing: {path}")
 
 stable_docs = [
     "docs/00-foundation/constitution.md",

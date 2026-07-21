@@ -1,8 +1,8 @@
 ---
 title: Conversational Decision Intelligence Body of Knowledge
-description: Portal oficial y versionado del proyecto CDI-BoK para organizar la práctica emergente de Conversational Decision Intelligence.
+description: Aprende a convertir datos, analítica e inteligencia artificial en decisiones explícitas, acción responsable y aprendizaje medible.
 status: candidate
-version: 0.5.0-rc.1
+version: 0.6.0-rc.1
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -11,102 +11,154 @@ domains:
   - Foundations
   - Conversational Decision Intelligence
   - PULSE
+source_ids:
+  - SRC-PULSE-DNA-001
+  - SRC-PULSE-IDENTITY-002
+  - SRC-JF-005
+claim_ids:
+  - CLAIM-CDI-001
+  - CLAIM-PULSE-001
 last_reviewed: 2026-07-21
 ---
 
-<div class="cdi-hero" markdown>
-<span class="cdi-eyebrow">CONVERSATIONAL DECISION INTELLIGENCE</span>
+<div class="cdi-hero cdi-hero--split" markdown>
+<div class="cdi-hero__copy" markdown>
+<span class="cdi-eyebrow">BODY OF KNOWLEDGE · ABIERTO Y VERSIONADO</span>
 
-# Convertir conversaciones en capacidad de decisión
+# Convierte datos, analítica e IA en mejores decisiones
 
-El **CDI-BoK** es una propuesta abierta y versionada para organizar cómo personas e inteligencia artificial pueden comprender evidencia, construir contexto, explorar alternativas, decidir, actuar y aprender bajo incertidumbre.
+Aprende a **enfocar la decisión correcta**, evaluar evidencia y contexto, diseñar experiencias que conduzcan a la acción, gobernar la colaboración humano–IA y aprender de los resultados.
 
 <div class="cdi-actions" markdown>
-[Lee la Constitución](00-foundation/constitution.md){ .md-button .md-button--primary }
-[Empieza aquí](start-here/index.md){ .md-button }
-[Revisa la gobernanza](governance/index.md){ .md-button }
+[Comienza la ruta de aprendizaje](learn/index.md){ .md-button .md-button--primary }
+[Explora PULSE](03-pulse/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Núcleo estable v0.4.0 · Práctica candidata v0.5.0-rc.1</span>
+<span class="cdi-release">Núcleo estable v0.4.0 · Experiencia candidata v0.6.0-rc.1</span>
 </div>
 
-!!! warning "Posicionamiento calibrado"
-    CDI es un **dominio de práctica interdisciplinar propuesto**. Este portal no afirma reconocimiento académico, acuñación del término, adopción internacional ni validación generalizable de PULSE. Distingue definición institucional, evidencia, hipótesis y aspiración.
+<div class="cdi-hero__route" aria-label="Ruta desde una prioridad hasta aprendizaje medible">
+<span class="cdi-hero__route-label">DE LA PRIORIDAD AL APRENDIZAJE</span>
+<ol>
+<li><span class="cdi-hero__route-index">01</span><span class="cdi-hero__route-copy"><strong>Enfoca</strong><small>Prioridad y decisión</small></span></li>
+<li><span class="cdi-hero__route-index">02</span><span class="cdi-hero__route-copy"><strong>Sustenta</strong><small>Evidencia y contexto</small></span></li>
+<li><span class="cdi-hero__route-index">03</span><span class="cdi-hero__route-copy"><strong>Diseña</strong><small>Opciones y experiencia</small></span></li>
+<li><span class="cdi-hero__route-index">04</span><span class="cdi-hero__route-copy"><strong>Actúa</strong><small>Control y responsabilidad</small></span></li>
+<li><span class="cdi-hero__route-index">05</span><span class="cdi-hero__route-copy"><strong>Aprende</strong><small>Resultado y siguiente ciclo</small></span></li>
+</ol>
+</div>
+</div>
 
-## Elige tu ruta
+## Lo que podrás hacer
+
+El CDI-BoK está diseñado para convertir conocimiento interdisciplinar en capacidad práctica. Cada ruta termina en un artefacto o criterio que puedes aplicar a una decisión.
+
+<div class="cdi-outcomes">
+<div class="cdi-outcome"><span>01</span><h3>Formular</h3><p>Definir decisión, owner, alternativas, criterios, restricciones y costo de esperar o equivocarse.</p></div>
+<div class="cdi-outcome"><span>02</span><h3>Evaluar</h3><p>Distinguir hechos, cálculos, inferencias e hipótesis; hacer visibles calidad, contexto e incertidumbre.</p></div>
+<div class="cdi-outcome"><span>03</span><h3>Diseñar</h3><p>Elegir la interfaz y la secuencia de información que mejor ayudan a comprender, decidir y actuar.</p></div>
+<div class="cdi-outcome"><span>04</span><h3>Gobernar</h3><p>Asignar derechos de decisión, permisos, límites, escalamiento y control humano sobre la IA.</p></div>
+<div class="cdi-outcome"><span>05</span><h3>Aprender</h3><p>Comparar expectativa y resultado, separar calidad de decisión de suerte y mejorar el siguiente ciclo.</p></div>
+</div>
+
+## Empieza por tu problema, no por el índice
 
 <div class="cdi-grid cdi-grid--3">
 
-<a class="cdi-card" href="00-foundation/cdi-scope-boundaries/" aria-label="Comprender qué es CDI, su alcance y sus fronteras">
-<span class="cdi-card__index">01</span>
-<h3>Comprender CDI</h3>
-<p>Conoce la definición oficial del proyecto, sus límites, campos adyacentes, prior art y criterio de prueba.</p>
+<a class="cdi-card cdi-card--route" href="learn/01-decision-first/" aria-label="Aprender a formular una decisión">
+<span class="cdi-card__index">DECISIÓN</span>
+<h3>“Tengo datos, pero no una decisión clara”</h3>
+<p>Convierte un tema amplio en una elección explícita y completa la brújula PDAMR.</p>
+<strong>Obtendrás un encuadre decisional →</strong>
 </a>
 
-<a class="cdi-card" href="03-pulse/" aria-label="Conocer PULSE como framework of practice">
-<span class="cdi-card__index">02</span>
-<h3>Aplicar PULSE</h3>
-<p>Explora el framework que conecta evidencia y contexto con decisión, acción y aprendizaje.</p>
+<a class="cdi-card cdi-card--route" href="learn/02-evidence-context/" aria-label="Aprender a evaluar evidencia y contexto">
+<span class="cdi-card__index">EVIDENCIA</span>
+<h3>“Tengo una decisión, pero no confío en la información”</h3>
+<p>Evalúa fitness for purpose, procedencia, contexto, incertidumbre y contraevidencia.</p>
+<strong>Obtendrás un contrato de evidencia →</strong>
 </a>
 
-<a class="cdi-card" href="practice-lab/" aria-label="Explorar el Practice Lab y las demostraciones">
-<span class="cdi-card__index">03</span>
-<h3>Ver la práctica</h3>
-<p>Accede a demostraciones y conoce el estándar necesario para convertirlas en casos.</p>
+<a class="cdi-card cdi-card--route" href="learn/03-decision-experience/" aria-label="Aprender a diseñar una experiencia de decisión">
+<span class="cdi-card__index">EXPERIENCIA</span>
+<h3>“Tengo insights, pero no cambian acciones”</h3>
+<p>Diseña la experiencia desde atención y comprensión hasta decisión, acción y feedback.</p>
+<strong>Obtendrás un blueprint de experiencia →</strong>
 </a>
 
-<a class="cdi-card" href="research/" aria-label="Revisar investigación y vacíos de evidencia">
-<span class="cdi-card__index">04</span>
-<h3>Examinar evidencia</h3>
-<p>Separa el estado del arte verificado de las síntesis, debates y preguntas todavía abiertas.</p>
+<a class="cdi-card cdi-card--route" href="learn/04-human-ai-control/" aria-label="Aprender a gobernar colaboración humano IA">
+<span class="cdi-card__index">CONTROL</span>
+<h3>“Quiero usar IA sin perder responsabilidad”</h3>
+<p>Define qué puede ver, proponer, decidir, ejecutar, detener y auditar cada actor.</p>
+<strong>Obtendrás una matriz de control →</strong>
 </a>
 
-<a class="cdi-card" href="governance/" aria-label="Auditar la autoridad y la gobernanza editorial">
-<span class="cdi-card__index">05</span>
-<h3>Auditar autoridad</h3>
-<p>Entiende quién decide, cómo se clasifican los claims y por qué un texto puede ser normativo.</p>
+<a class="cdi-card cdi-card--route" href="learn/05-action-learning/" aria-label="Aprender a medir resultado y aprendizaje">
+<span class="cdi-card__index">APRENDIZAJE</span>
+<h3>“Quiero saber si la decisión funcionó”</h3>
+<p>Prerregistra expectativas, métricas y guardrails; compara resultados sin confundirlos con causalidad.</p>
+<strong>Obtendrás un contrato de aprendizaje →</strong>
 </a>
 
-<a class="cdi-card" href="versions/" aria-label="Consultar versiones y cambios del CDI-BoK">
-<span class="cdi-card__index">06</span>
-<h3>Seguir la evolución</h3>
-<p>Consulta releases, candidatos, cambios y límites conocidos sin perder trazabilidad histórica.</p>
+<a class="cdi-card cdi-card--route cdi-card--accent" href="learn/decision-brief/" aria-label="Usar la plantilla Decision Brief">
+<span class="cdi-card__index">PLANTILLA</span>
+<h3>“Quiero llevarlo a una decisión concreta”</h3>
+<p>Integra el recorrido completo en una página que puedas revisar, cuestionar y firmar antes de actuar.</p>
+<strong>Crear un Decision Brief →</strong>
 </a>
 
 </div>
 
-## De la doctrina a una decisión falsable
+## Una arquitectura para decidir, no otra escalera tecnológica
 
-<div class="cdi-insight" markdown>
+<div class="cdi-flow" aria-label="Cadena de valor decisional">
+<span>Datos confiables</span><span>Contexto</span><span>Comprensión</span><span>Opciones</span><span>Decisión</span><span>Acción</span><span>Resultado</span><span>Aprendizaje</span>
+</div>
 
-El primer caso instrumentado pregunta dónde intervenir en un funnel comercial B2B cuyo demo muestra una caída de **11,50 pp** en la conversión de Propuesta. El BoK agrega contrato, expectativa previa, contrafactual y ciclo de aprendizaje. El caso aún no tiene acción ni resultado y no se presenta como evidencia de eficacia.
+La tecnología puede intervenir en toda la cadena, pero no reemplaza propósito, criterio, autoridad ni responsabilidad. **PULSE** aporta el framework of practice; **CDI** estudia y diseña la colaboración conversacional; el **CDI-BoK** organiza el conocimiento, sus fuentes y sus límites.
 
-[Examinar el caso B2B Propuesta](practice-lab/b2b-proposal/index.md)
+<div class="cdi-actions" markdown>
+[Entender CDI, CDI-BoK y PULSE](start-here/index.md){ .md-button .md-button--primary }
+[Consultar los 29 dominios](00-foundation/domain-map.md){ .md-button }
+</div>
+
+## Profundidad con trazabilidad
+
+<div class="cdi-grid cdi-grid--3">
+
+<a class="cdi-card" href="00-foundation/" aria-label="Explorar el núcleo fundacional">
+<span class="cdi-card__index">NÚCLEO</span>
+<h3>Definiciones y fronteras</h3>
+<p>Constitución, alcance de CDI, glosario y mapa de ocho áreas y 29 dominios.</p>
+</a>
+
+<a class="cdi-card" href="research/" aria-label="Examinar el estado de la evidencia">
+<span class="cdi-card__index">EVIDENCIA</span>
+<h3>Investigación y preguntas abiertas</h3>
+<p>Qué está establecido, qué es síntesis PULSE, qué sigue en debate y qué debe probarse.</p>
+</a>
+
+<a class="cdi-card" href="governance/" aria-label="Auditar la autoridad y trazabilidad del conocimiento">
+<span class="cdi-card__index">CONFIANZA</span>
+<h3>Gobernanza verificable</h3>
+<p>Owner, autoridad, versión, fuentes, claims, ADR y límites explícitos para cada activo.</p>
+</a>
 
 </div>
 
-## PULSE conecta conocimiento y práctica
+!!! info "Ambición calibrada"
+    CDI es un **dominio de práctica interdisciplinar propuesto** y PULSE es una metodología y filosofía de operación del proyecto. El portal busca construir conocimiento útil y contrastable; no afirma reconocimiento académico, prioridad sobre el término ni eficacia generalizable. Esta frontera indica qué sabemos, qué proponemos y qué falta validar.
 
-<div class="cdi-insight" markdown>
+## La práctica muestra el método, no inventa resultados
 
-**PULSE** es el framework of practice del ecosistema CDI. Su propósito es reducir la distancia entre la realidad organizacional y mejores decisiones mediante datos confiables, contexto, entendimiento compartido, acción responsable y aprendizaje medible.
+El Practice Lab contiene demostraciones e instrumentación. El caso B2B actual usa datos simulados y permanece **instrumentado, no ejecutado**. Sirve para observar cómo se formula una decisión, se bloquea una afirmación débil y se prepara un protocolo; no demuestra impacto organizacional.
 
-[Conocer la identidad oficial de PULSE](03-pulse/index.md)
-
+<div class="cdi-actions" markdown>
+[Explorar el Practice Lab](practice-lab/index.md){ .md-button }
+[Revisar el caso con sus límites](practice-lab/b2b-proposal/index.md){ .md-button }
 </div>
-
-## Un sistema de conocimiento, no una colección de artículos
-
-Cada activo publicable declara:
-
-- su tipo, owner, estado y versión;
-- los conceptos y dominios que fortalece;
-- la clase y madurez de sus claims;
-- las fuentes que lo sustentan;
-- su relación con CDI, el CDI-BoK y PULSE;
-- sus límites, riesgos y condiciones de cambio.
 
 <div class="cdi-transparency" markdown>
-<strong>Transparencia desde el diseño</strong>
-<span>Repositorio público · fuentes registradas · decisiones mediante ADR · builds reproducibles · historial verificable</span>
+<strong>Conocimiento que puede ser cuestionado</strong>
+<span>Repositorio público · fuentes registradas · claims calibrados · decisiones mediante ADR · builds reproducibles · historial verificable</span>
 </div>
