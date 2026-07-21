@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CLAIMS
-release: 0.6.0-rc.1
+release: 0.7.0-rc.1
 claims:
   - claim_id: CLAIM-CDI-001
     statement: Conversational Decision Intelligence es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.
@@ -133,3 +133,44 @@ claims:
     governed_by: ADR-019
     scope: Futuro piloto comercial con datos gobernados, owner confirmado y contrafactual.
     limits: No hay acción ejecutada, outcome observado ni efecto atribuible; no usar como claim de eficacia de PULSE o CDI.
+  - claim_id: CLAIM-DQ-OUTCOME-001
+    statement: Conocer el resultado puede sesgar la evaluación retrospectiva de la calidad del proceso que produjo una decisión.
+    claim_class: empirical-primary-study-finding
+    evidence_status: supported-primary-study
+    maturity: established-risk-with-context-limits
+    owner: Research Editor
+    source_ids:
+      - SRC-ACADEMIC-OUTCOME-BIAS-001
+    limits: La dirección del riesgo está respaldada por experimentos; su magnitud y condiciones deben evaluarse en cada contexto y no prueban que todo review retrospectivo esté sesgado.
+  - claim_id: CLAIM-DQ-PROFILE-001
+    statement: El CDI-BoK recomienda representar la calidad ex ante como un perfil multidimensional con evidencia y bloqueadores, no como una puntuación universal.
+    claim_class: design-recommendation
+    evidence_status: candidate-synthesis
+    maturity: candidate
+    owner: Javier Forero
+    source_ids:
+      - SRC-DQ-SDP-001
+      - SRC-PULSE-DNA-001
+    governed_by: ADR-021
+    limits: No es un instrumento psicométrico validado, no tiene pesos universales y no permite benchmarking entre decisiones heterogéneas.
+  - claim_id: CLAIM-DM-SYSTEM-001
+    statement: El Decision Measurement System candidato organiza la medición alrededor de prioridad y outcome, calidad ex ante, acción y ejecución, tiempo y fricción, riesgo y guardrails, y calibración y aprendizaje.
+    claim_class: institutional-candidate-framework
+    evidence_status: candidate-synthesis
+    maturity: candidate
+    owner: Javier Forero
+    source_ids:
+      - SRC-PULSE-DNA-001
+      - SRC-ARCH-001
+      - SRC-NIST-AIRMF-001
+    governed_by: ADR-021
+    limits: La arquitectura busca integridad y trazabilidad; no se ha validado como predictor de outcomes ni como modelo de madurez.
+  - claim_id: CLAIM-DM-CALIBRATION-001
+    statement: Las reglas de puntuación propias permiten evaluar la calidad de pronósticos probabilísticos y están diseñadas para incentivar probabilidades honestas.
+    claim_class: established-statistical-method
+    evidence_status: peer-reviewed-methodological-foundation
+    maturity: established-with-applicability-conditions
+    owner: Research Editor
+    source_ids:
+      - SRC-ACADEMIC-SCORING-RULES-001
+    limits: Requiere eventos repetidos, comparables y definidos ex ante; una puntuación aislada no establece calibración ni calidad global de una decisión.

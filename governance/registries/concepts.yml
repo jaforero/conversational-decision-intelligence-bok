@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CONCEPTS
-release: 0.6.0-rc.1
+release: 0.7.0-rc.1
 knowledge_areas:
   - Foundations and Identity
   - Decisions and Intelligence
@@ -104,3 +104,20 @@ concepts:
     owner: Javier Forero
     status: candidate-guidance
     canonical_definition_location: docs/learn/decision-brief.md
+  - concept_id: DECISION-QUALITY-PROFILE
+    canonical_term: Decision Quality Profile
+    owner: Javier Forero
+    status: candidate-synthesis
+    canonical_definition_location: docs/07-governance-quality/decision-quality.md
+    definition_claim_id: CLAIM-DQ-PROFILE-001
+  - concept_id: DECISION-MEASUREMENT-SYSTEM
+    canonical_term: Decision Measurement System
+    owner: Javier Forero
+    status: candidate-framework
+    canonical_definition_location: docs/07-governance-quality/decision-measurement-system.md
+    definition_claim_id: CLAIM-DM-SYSTEM-001
+  - concept_id: DECISION-MEASUREMENT-RECORD
+    canonical_term: Decision Measurement Record
+    owner: Javier Forero
+    status: candidate-guidance
+    canonical_definition_location: docs/07-governance-quality/measurement-record.md

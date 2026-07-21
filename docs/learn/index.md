@@ -2,7 +2,7 @@
 title: Ruta de aprendizaje
 description: Cinco módulos y una plantilla para pasar de una prioridad a una decisión gobernada y un ciclo de aprendizaje medible.
 status: candidate
-version: 0.6.0-rc.1
+version: 0.7.0-rc.1
 artifact_type: learning-path
 authority_level: guidance
 normative: false

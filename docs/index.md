@@ -2,7 +2,7 @@
 title: Conversational Decision Intelligence Body of Knowledge
 description: Aprende a convertir datos, analítica e inteligencia artificial en decisiones explícitas, acción responsable y aprendizaje medible.
 status: candidate
-version: 0.6.0-rc.1
+version: 0.7.0-rc.1
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -31,10 +31,10 @@ Aprende a **enfocar la decisión correcta**, evaluar evidencia y contexto, dise�
 
 <div class="cdi-actions" markdown>
 [Comienza la ruta de aprendizaje](learn/index.md){ .md-button .md-button--primary }
-[Explora PULSE](03-pulse/index.md){ .md-button }
+[Diseña la medición](07-governance-quality/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Núcleo estable v0.4.0 · Experiencia candidata v0.6.0-rc.1</span>
+<span class="cdi-release">Núcleo estable v0.4.0 · Medición candidata v0.7.0-rc.1</span>
 </div>
 
 <div class="cdi-hero__route" aria-label="Ruta desde una prioridad hasta aprendizaje medible">
@@ -93,11 +93,11 @@ El CDI-BoK está diseñado para convertir conocimiento interdisciplinar en capac
 <strong>Obtendrás una matriz de control →</strong>
 </a>
 
-<a class="cdi-card cdi-card--route" href="learn/05-action-learning/" aria-label="Aprender a medir resultado y aprendizaje">
+<a class="cdi-card cdi-card--route" href="07-governance-quality/" aria-label="Diseñar la medición de una decisión">
 <span class="cdi-card__index">APRENDIZAJE</span>
 <h3>“Quiero saber si la decisión funcionó”</h3>
-<p>Prerregistra expectativas, métricas y guardrails; compara resultados sin confundirlos con causalidad.</p>
-<strong>Obtendrás un contrato de aprendizaje →</strong>
+<p>Separa calidad, ejecución, tiempo, outcome, guardrails y aprendizaje sin fabricar una nota universal.</p>
+<strong>Obtendrás un sistema de medición →</strong>
 </a>
 
 <a class="cdi-card cdi-card--route cdi-card--accent" href="learn/decision-brief/" aria-label="Usar la plantilla Decision Brief">

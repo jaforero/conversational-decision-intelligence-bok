@@ -1,0 +1,67 @@
+schema_version: 1.0.0
+sprint: 5
+release: 0.7.0-rc.1
+status: candidate-implemented-not-ratified
+started_on: 2026-07-21
+owner: Javier Forero
+objective: Activate Decision Metrics with a rigorous, usable and proportionate measurement system that separates ex-ante quality, execution, outcome, risk and learning without creating a false universal score.
+scope:
+  - Decision Quality guide with explicit established and candidate boundaries
+  - Six-lens Decision Measurement System
+  - Versioned Decision Measurement Record template
+  - Probabilistic calibration and latency formulas with applicability limits
+  - Human-AI measurement cautions and anti-metrics
+  - Navigation, versioning, ADR, registries and automated gates
+out_of_scope:
+  - Universal Decision Health Score or cross-context benchmark
+  - Validated psychometric or organizational maturity instrument
+  - Claim that measurement improves business outcomes
+  - New executed case or change to B2B-PROP-001 evidence state
+  - Stable promotion of v0.7.0
+  - Change to the authority of the v0.4.0 foundational core
+decisions:
+  - ADR-021
+gates:
+  source_hierarchy_preserved: passed-local
+  established_candidate_boundary: passed-local
+  outcome_process_separation: passed-local
+  anti_metric_controls: passed-local
+  template_null_state: passed-local
+  strict_build: passed-github-actions-run-29862720049
+  static_accessibility_audit: passed-github-actions-run-29862719776
+  visual_regression: passed-github-actions-run-29862719776
+  owner_ratification: pending
+evidence:
+  source_scope:
+    - SRC-PULSE-DNA-001
+    - SRC-ARCH-001
+    - SRC-DQ-SDP-001
+    - SRC-ACADEMIC-OUTCOME-BIAS-001
+    - SRC-ACADEMIC-SCORING-RULES-001
+    - SRC-NIST-AIRMF-001
+  evidence_posture: Established foundations, primary studies and candidate CDI synthesis are labeled separately; no organizational effect is claimed.
+  local_validation:
+    sprint5_checks_passed: 150
+    sprint4_checks_passed: 153
+    sprint3_checks_passed: 220
+    sprint2_checks_passed: 152
+    sprint0_checks_passed: 183
+    markdown_documents_audited: 38
+    navigation_targets_audited: 38
+    generated_html_audited: 39
+    strict_build: passed
+  canonical_validation:
+    validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29862720049
+    browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29862719776
+    browser_tests_passed: 54
+    browser_tests_skipped_by_design: 30
+    visual_comparisons: 20
+    axe_scans: 10
+    baseline_review: Initial run 29862383016 isolated four expected /learn/ diffs caused by a redundant content block; the block was removed and the unchanged baselines passed in run 29862719776.
+  browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/sprint-5-decision-measurement
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/8
+  target_url: https://decision.javierforero.co
+  status: not-published
