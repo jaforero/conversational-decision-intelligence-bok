@@ -21,11 +21,11 @@ decisions:
   - ADR-020
 gates:
   source_hierarchy_preserved: passed-local-validation
-  learning_outcomes_explicit: passed-149-sprint4-checks
+  learning_outcomes_explicit: passed-151-sprint4-checks
   historical_case_boundary: passed-sprint3-and-sprint4-validation
   strict_build: passed-local-mkdocs-1.6.1
-  static_accessibility_audit: pending-github-actions
-  visual_regression: pending-github-actions
+  static_accessibility_audit: passed-axe-and-semantics-run-29854147072
+  visual_regression: eight-reviewed-baselines-pending-rerun
   owner_ratification: pending
 evidence:
   source_scope:
@@ -36,15 +36,29 @@ evidence:
     - SRC-ARCH-001
   evidence_posture: Educational synthesis and derived guidance; not evidence of organizational impact.
   local_validation:
-    sprint4_checks_passed: 149
+    sprint4_checks_passed: 151
     sprint3_checks_passed: 213
     sprint2_checks_passed: 145
     sprint0_checks_passed: 171
     markdown_documents_audited: 33
     generated_html_audited: 34
   browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
+  prebaseline_browser_run:
+    run_id: 29854147072
+    result: 40-passed-8-expected-snapshot-differences
+    accessibility_and_semantics: passed
+    reviewed_baselines:
+      - home-light-desktop
+      - home-dark-desktop
+      - home-light-mobile
+      - home-dark-mobile
+      - learn-light-desktop
+      - learn-dark-desktop
+      - learn-light-mobile
+      - learn-dark-mobile
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-4-learning-experience
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/7
   target_url: https://decision.javierforero.co
   status: not-published
