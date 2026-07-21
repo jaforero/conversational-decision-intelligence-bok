@@ -10,6 +10,11 @@
   padding-bottom: 3rem;
 }
 
+.md-nav__link {
+  align-items: center;
+  min-height: 1.5rem;
+}
+
 .md-content__inner > p,
 .md-content__inner > ul,
 .md-content__inner > ol {
@@ -119,10 +124,14 @@
   border-top: 0;
 }
 
-.cdi-hero__route li > span {
+.cdi-hero__route-index {
   color: color-mix(in srgb, var(--jf-white) 72%, transparent);
   font-size: 0.7rem;
   font-weight: 800;
+}
+
+.cdi-hero__route-copy {
+  min-width: 0;
 }
 
 .cdi-hero__route strong,
@@ -397,6 +406,7 @@ a.cdi-card:hover {
 .cdi-learning-step small {
   color: var(--cdi-secondary);
   margin-top: 0.2rem;
+  opacity: 1;
 }
 
 .md-typeset table:not([class]) {

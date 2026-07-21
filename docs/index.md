@@ -40,11 +40,11 @@ Aprende a **enfocar la decisión correcta**, evaluar evidencia y contexto, dise�
 <div class="cdi-hero__route" aria-label="Ruta desde una prioridad hasta aprendizaje medible">
 <span class="cdi-hero__route-label">DE LA PRIORIDAD AL APRENDIZAJE</span>
 <ol>
-<li><span>01</span><div><strong>Enfoca</strong><small>Prioridad y decisión</small></div></li>
-<li><span>02</span><div><strong>Sustenta</strong><small>Evidencia y contexto</small></div></li>
-<li><span>03</span><div><strong>Diseña</strong><small>Opciones y experiencia</small></div></li>
-<li><span>04</span><div><strong>Actúa</strong><small>Control y responsabilidad</small></div></li>
-<li><span>05</span><div><strong>Aprende</strong><small>Resultado y siguiente ciclo</small></div></li>
+<li><span class="cdi-hero__route-index">01</span><span class="cdi-hero__route-copy"><strong>Enfoca</strong><small>Prioridad y decisión</small></span></li>
+<li><span class="cdi-hero__route-index">02</span><span class="cdi-hero__route-copy"><strong>Sustenta</strong><small>Evidencia y contexto</small></span></li>
+<li><span class="cdi-hero__route-index">03</span><span class="cdi-hero__route-copy"><strong>Diseña</strong><small>Opciones y experiencia</small></span></li>
+<li><span class="cdi-hero__route-index">04</span><span class="cdi-hero__route-copy"><strong>Actúa</strong><small>Control y responsabilidad</small></span></li>
+<li><span class="cdi-hero__route-index">05</span><span class="cdi-hero__route-copy"><strong>Aprende</strong><small>Resultado y siguiente ciclo</small></span></li>
 </ol>
 </div>
 </div>

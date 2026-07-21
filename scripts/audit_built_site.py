@@ -23,6 +23,8 @@ class PageAudit(HTMLParser):
         self.skip = 0
         self.images_without_alt = 0
         self.insecure_references = 0
+        self.open_lists = 0
+        self.orphan_list_items = 0
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -38,9 +40,17 @@ class PageAudit(HTMLParser):
             self.skip += 1
         elif tag == "img" and "alt" not in values:
             self.images_without_alt += 1
+        if tag in {"ol", "ul"}:
+            self.open_lists += 1
+        elif tag == "li" and self.open_lists == 0:
+            self.orphan_list_items += 1
         for attribute in ("href", "src", "action"):
             if values.get(attribute, "").startswith("http://"):
                 self.insecure_references += 1
+
+    def handle_endtag(self, tag):
+        if tag in {"ol", "ul"} and self.open_lists:
+            self.open_lists -= 1
 
 
 html_files = sorted(SITE.rglob("*.html"))
@@ -65,6 +75,8 @@ for path in html_files:
         ERRORS.append(f"Image without alt attribute: {relative}")
     if parser.insecure_references:
         ERRORS.append(f"Insecure HTTP reference: {relative}")
+    if parser.orphan_list_items:
+        ERRORS.append(f"List item outside ol/ul: {relative}")
 
 if not (SITE / "CNAME").exists():
     ERRORS.append("CNAME was not copied into the site artifact")
