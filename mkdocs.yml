@@ -60,7 +60,14 @@ nav:
   - PULSE:
       - Identidad y función: 03-pulse/index.md
       - Especificación nuclear: 03-pulse/specification.md
-  - Practice Lab: practice-lab/index.md
+  - Practice Lab:
+      - Visión general: practice-lab/index.md
+      - Catálogo: practice-lab/catalog.md
+      - Caso B2B · Propuesta:
+          - Caso instrumentado: practice-lab/b2b-proposal/index.md
+          - Contrato de decisión: practice-lab/b2b-proposal/decision-contract.md
+          - Protocolo de evidencia: practice-lab/b2b-proposal/evidence-protocol.md
+          - Registro del ciclo: practice-lab/b2b-proposal/cycle-log.md
   - Research: research/index.md
   - Gobernanza:
       - Sistema de autoridad: governance/index.md
@@ -69,6 +76,7 @@ nav:
       - Publicación y dominio: governance/publication-runbook.md
   - Versiones:
       - Estado e historial: versions/index.md
+      - Candidato v0.5.0-rc.1: versions/v0.5.0-rc.1.md
       - Release v0.4.0: versions/v0.4.0.md
   - Acerca de: about/index.md
 
@@ -117,7 +125,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.4.0
+    portal: v0.5.0-rc.1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero

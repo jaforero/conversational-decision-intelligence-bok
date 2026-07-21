@@ -1,0 +1,87 @@
+schema_version: 1.0.0
+case_id: B2B-PROP-001
+title: Intervención sobre la etapa Propuesta en Comercial B2B
+release: 0.5.0-rc.1
+status: instrumented-not-executed
+authority_level: experimental-candidate
+normative: false
+owner: Javier Forero
+decision_owner_role: Director(a) Comercial
+decision_owner_confirmed: false
+primary_demo_id: JF-CLAUDE-COMMERCIAL
+related_demo_ids:
+  - JF-GPT-COMMERCIAL
+source_ids:
+  - SRC-PRACTICE-B2B-001
+  - SRC-PRACTICE-DASH-B2B-001
+  - SRC-ARCH-001
+claim_ids:
+  - CLAIM-PRACTICE-B2B-001
+  - CLAIM-PRACTICE-B2B-002
+  - CLAIM-PRACTICE-B2B-003
+  - CLAIM-PRACTICE-B2B-HYP-001
+decision:
+  question: ¿Dónde intervenir primero para recuperar la conversión sin ampliar innecesariamente el costo de adquisición?
+  provisional_preference: A
+  chosen_option: null
+  alternatives:
+    A: Intervenir calidad y velocidad en Propuesta.
+    B: Reasignar demanda desde digital masivo hacia evento y referido.
+    C: Combinar A y B.
+    D: No actuar todavía y observar otro ciclo.
+pdamr:
+  priority: Recuperar el cumplimiento comercial después del deterioro observado en abril–junio de 2026.
+  decision: Seleccionar la primera intervención sobre el funnel comercial.
+  action: Debe fijarse con responsable, fecha, alcance y stop conditions después de la decisión.
+  metric: Conversión Propuesta y cumplimiento comercial, con expectativa preregistrada.
+  risk: Reversión a la media, confusión causal, muestras pequeñas por canal y burocratización del registro.
+evidence:
+  data_nature: simulated-demo
+  raw_organizational_data_materialized: false
+  snapshot_observed_on: 2026-07-21
+  primary_page: https://dashboards.javierforero.co/claude/desempeno-comercial/
+  primary_page_sha256: f24e707be38b8e900807e66d867501de21fdaac9b49a9e1cec15f24fdf253b1c
+  derived_files:
+    - evidence/b2b-proposal/demo-sales-monthly.csv
+    - evidence/b2b-proposal/demo-funnel-2026.csv
+    - evidence/b2b-proposal/demo-channel-win-rate.csv
+  baseline:
+    june_2026_sales_compliance_pct: 80.11
+    june_2026_sellers_under_90: 8
+    june_2026_sellers_total: 8
+    proposal_conversion_jan_mar_pct: 48.03
+    proposal_conversion_apr_jun_pct: 36.53
+    proposal_change_pp: -11.50
+  channel_read:
+    event_win_rate_pct: 8.93
+    referral_win_rate_pct: 7.94
+    inbound_digital_win_rate_pct: 3.60
+    superiority_established: false
+    reason: Wilson 95% intervals overlap; observed ranking is not enough to establish a robust difference.
+evaluation:
+  process_quality_scored_before_outcome: true
+  expectation_preregistered: false
+  preferred_counterfactual: matched_holdout_difference_in_differences
+  fallback_counterfactual: interrupted_or_forecast_time_series
+  minimum_cycles: 2
+  preferred_cycles: 3
+  action_executed: false
+  outcome_observed: false
+  causal_claim_allowed: false
+cycle_zero:
+  type: evidence-review
+  status: completed
+  input_claim: Evento y referido son significativamente superiores a digital masivo.
+  review: Las tasas observadas son mayores, pero los intervalos de Wilson al 95% se superponen.
+  decision_change: Opciones B y C quedan bloqueadas; A conserva preferencia provisional y D permanece comparador.
+  learning_scope: Evidence that the CDI-BoK claim discipline changed an editorial recommendation; not evidence of commercial impact.
+readiness:
+  instrumentation: ready
+  impact_evaluation: blocked
+  blockers:
+    - Confirm a real decision owner and decision rights.
+    - Replace or complement simulated demo data with governed CRM extracts.
+    - Pre-register the chosen action and quantitative expectation.
+    - Define intervention and comparison groups or document the weaker fallback.
+    - Observe at least two monthly cycles before an effect claim.
+publication_boundary: This candidate proves that the decision and learning loop can be specified and audited; it does not prove improved conversion, better decisions or PULSE efficacy.

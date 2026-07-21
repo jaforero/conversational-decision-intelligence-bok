@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 COMMANDS = [
     [sys.executable, "scripts/validate_sprint2.py"],
+    [sys.executable, "scripts/validate_sprint3.py"],
     [sys.executable, "scripts/preflight_sprint1.py"],
 ]
 
@@ -21,5 +22,4 @@ for command in COMMANDS:
     if completed.returncode:
         raise SystemExit(completed.returncode)
 
-print("\nPASS: stable release preflight completed")
-
+print("\nPASS: current portal preflight completed")

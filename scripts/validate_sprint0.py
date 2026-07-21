@@ -143,7 +143,8 @@ font_binaries = [
 ]
 check(not font_binaries, "Font binary exists before license verification")
 
-demo = load_yaml("governance/registries/external-demos.yml")["demos"][0]
+demo_registry = load_yaml("governance/registries/external-demos.yml")
+demo = demo_registry.get("root") or demo_registry["demos"][0]
 check(demo["url"] == "https://dashboards.javierforero.co", "Practice Lab URL mismatch")
 check(demo["content_authority"] == "practice-evidence-only", "Practice Lab authority is too broad")
 

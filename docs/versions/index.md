@@ -1,8 +1,8 @@
 ---
 title: Versiones
 description: Releases normativas, candidatos del portal y política de historia del CDI-BoK.
-status: approved
-version: 0.4.0
+status: candidate
+version: 0.5.0-rc.1
 artifact_type: version-index
 authority_level: guidance
 normative: false
@@ -21,6 +21,7 @@ last_reviewed: 2026-07-21
 | Gobernanza CDI-BoK | `v0.2.0` | Aprobada y normativa | Arquitectura, autoridad, claims, marca y Sprint 0 |
 | Portal técnico | `v0.3.0-rc.1` | Integrado | MkDocs, navegación, CI/CD, checks y dominio personalizado |
 | Núcleo fundacional | [`v0.4.0`](v0.4.0.md) | Estable | Constitución, fronteras CDI, glosario, dominios y especificación PULSE |
+| Práctica y evidencia | [`v0.5.0-rc.1`](v0.5.0-rc.1.md) | Candidato | Catálogo y primer caso B2B instrumentado, sin outcome observado |
 
 La versión del portal no eleva automáticamente la madurez doctrinal del contenido. Infraestructura, conocimiento y evidencia pueden evolucionar a ritmos distintos, pero siempre deben conservar trazabilidad.
 

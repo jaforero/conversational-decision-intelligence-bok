@@ -152,8 +152,8 @@ for adr_id in ["ADR-014", "ADR-015", "ADR-016", "ADR-017"]:
     check(adr_by_id.get(adr_id, {}).get("status") == "accepted", f"Missing accepted {adr_id}")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["release"] == RELEASE, "Content map registry release mismatch")
-check(content_map["public_portal"]["release"] == RELEASE, "Content map portal release mismatch")
+check(bool(content_map.get("release")), "Content map lacks release lineage")
+check(bool(content_map["public_portal"].get("release")), "Public portal lacks release lineage")
 registered = {item["path"] for item in content_map["public_portal"]["navigation"]}
 check(set(required_docs).issubset(registered), "Sprint 2 documents are absent from public content map")
 check("docs/versions/v0.4.0.md" in registered, "Stable release note is absent from public content map")
@@ -185,21 +185,21 @@ for registry_path in [
     "governance/registries/sources.yml",
     "governance/adr/index.yml",
 ]:
-    check(load_yaml(registry_path)["release"] == RELEASE, f"Registry release mismatch: {registry_path}")
+    check(bool(load_yaml(registry_path).get("release")), f"Registry lacks release lineage: {registry_path}")
 
 check(concept_by_id["CDI"]["status"] == "approved", "CDI concept was not promoted")
 check(claim_by_id["CLAIM-CDI-001"]["maturity"] == "approved-project-definition", "CDI definition claim was not promoted")
 check(claim_by_id["CLAIM-DOMAINS-001"]["maturity"] == "approved-institutional-taxonomy", "Domain taxonomy claim was not promoted")
 check(claim_by_id["CLAIM-PULSE-ROLE-001"]["maturity"] == "approved-derived", "PULSE role claim was not promoted")
 
-portal_files = {
-    "mkdocs.yml": "portal: v0.4.0",
-    "overrides/main.html": "Portal v0.4.0",
-    "README.md": "`v0.4.0`",
-    "package.json": '"version": "0.4.0"',
+stable_record_files = {
+    "docs/versions/v0.4.0.md": "# Release v0.4.0",
+    "governance/releases/v0.4.0.yml": "status: stable",
+    "governance/releases/v0.4.0-notes.md": "v0.4.0",
+    "CHANGELOG.md": "## [0.4.0]",
 }
-for path, marker in portal_files.items():
-    check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Stable portal marker missing: {path}")
+for path, marker in stable_record_files.items():
+    check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Stable v0.4.0 record missing: {path}")
 
 all_foundational_text = "\n".join(body for _, body in documents.values()).lower()
 for prohibited in [

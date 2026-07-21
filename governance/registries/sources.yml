@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-SOURCES
-release: 0.4.0
+release: 0.5.0-rc.1
 records:
   - source_id: SRC-PULSE-DNA-001
     title: PULSE DNA
@@ -114,7 +114,47 @@ records:
     library_file_id: libfile_2ebdf4f38fec8191b4c798fddaf792ff
     authority_level: derived-architecture
     status: candidate
+    sha256: 88a8587c9160a6b6a6d3be14bb656797883bfb3e45efeaa9d3fbdf6cdec28786
     materialized: false
+  - source_id: SRC-PRACTICE-B2B-001
+    title: PULSE MVP - Decisión piloto Propuesta Comercial B2B
+    source_file_name: PULSE_MVP_Decision_Comercial_B2B_Fase3A.md
+    library_file_id: libfile_d5c88649a4c08191bb9bd60f3c8b94b1
+    sha256: 324316aa437bf72006131ac5175fa18ad0992abdca6d16580265c9fe6b9be8c7
+    authority_level: derived-pilot-design
+    status: active-candidate-source
+    provenance: user-provided-project-source
+    limits: Diseña el MVP y formula claims sobre el demo; no contiene datos CRM reales ni un resultado posterior observado.
+    materialized: false
+  - source_id: SRC-PRACTICE-DASH-ROOT-001
+    title: Dashboards con IA - Portafolios
+    url: https://dashboards.javierforero.co/
+    observed_on: 2026-07-21
+    sha256_snapshot: 597f2d968a383bb877ce2e99e34ca4a1bd41d3300bbb21241ccf0f5491b2ab17
+    authority_level: owner-public-practice-property
+    status: active-snapshot
+    purpose: Catálogo de portafolios; las declaraciones específicas de cada demo prevalecen para naturaleza de datos y límites.
+    materialized: false
+  - source_id: SRC-PRACTICE-GPT-ROOT-001
+    title: Dashboards con ChatGPT Work - Colección
+    url: https://javier-dashboards.jforero.chatgpt.site/
+    observed_on: 2026-07-21
+    sha256_snapshot: 80a66af59b70561a8c06659f6219f1b18e42cd61bd87470b61595689a2f66bfb
+    authority_level: owner-public-practice-property
+    status: active-snapshot
+    purpose: Catálogo de cinco casos disponibles y un caso anunciado en el portafolio ChatGPT Work.
+    materialized: false
+  - source_id: SRC-PRACTICE-DASH-B2B-001
+    title: Desempeño Comercial - Dirección B2B
+    url: https://dashboards.javierforero.co/claude/desempeno-comercial/
+    observed_on: 2026-07-21
+    sha256_snapshot: f24e707be38b8e900807e66d867501de21fdaac9b49a9e1cec15f24fdf253b1c
+    authority_level: owner-public-simulated-demo
+    status: active-snapshot
+    data_nature: simulated-demo
+    purpose: Fuente de las matrices embebidas agregadas en evidence/b2b-proposal para reproducir el baseline del caso.
+    limits: Demuestra comportamiento del demo; no representa una organización real ni una intervención ejecutada.
+    materialized: derived-aggregates-only
   - source_id: SRC-PRIOR-CDI-001
     title: Conversational Decision Intelligence (CDI) Strategy Begins in Conversation
     author: Martin Schoeman

@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CLAIMS
-release: 0.4.0
+release: 0.5.0-rc.1
 claims:
   - claim_id: CLAIM-CDI-001
     statement: Conversational Decision Intelligence es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.
@@ -88,3 +88,48 @@ claims:
       - SRC-PULSE-IDENTITY-002
     governed_by: ADR-016
     limits: No amplía ni redefine el alcance constitucional de PULSE.
+  - claim_id: CLAIM-PRACTICE-B2B-001
+    statement: En el dataset simulado del dashboard comercial, junio de 2026 registra 80,11% de cumplimiento ponderado y los ocho vendedores quedan por debajo de 90%.
+    claim_class: empirical-demo-observation
+    evidence_status: reproduced-from-simulated-demo
+    maturity: verified-within-demo
+    owner: Javier Forero
+    source_ids:
+      - SRC-PRACTICE-DASH-B2B-001
+    governed_by: ADR-019
+    scope: Matrices embebidas observadas el 21 de julio de 2026 y agregado versionado del CDI-BoK.
+    limits: No describe una operación comercial real ni permite inferir impacto de una intervención.
+  - claim_id: CLAIM-PRACTICE-B2B-002
+    statement: En el dataset simulado, la conversión media de Propuesta pasa de 48,03% en enero-marzo de 2026 a 36,53% en abril-junio, una variación de -11,50 puntos porcentuales.
+    claim_class: empirical-demo-calculation
+    evidence_status: reproduced-from-simulated-demo
+    maturity: verified-within-demo
+    owner: Javier Forero
+    source_ids:
+      - SRC-PRACTICE-DASH-B2B-001
+    governed_by: ADR-019
+    scope: Ventana trimestral preregistrada como baseline provisional del caso.
+    limits: La ventana requiere sensibilidad y no demuestra que Propuesta cause el deterioro del cumplimiento.
+  - claim_id: CLAIM-PRACTICE-B2B-003
+    statement: Evento y referido tienen mayor win rate observado que inbound digital en el demo, pero la evidencia disponible no establece una superioridad robusta entre canales.
+    claim_class: empirical-demo-interpretation
+    evidence_status: reproduced-with-uncertainty
+    maturity: bounded-demo-inference
+    owner: Javier Forero
+    source_ids:
+      - SRC-PRACTICE-DASH-B2B-001
+    governed_by: ADR-019
+    scope: Oportunidades cerradas del pipeline simulado e intervalos de Wilson al 95%.
+    limits: Los intervalos se superponen; no justifica por sí solo reasignación de presupuesto ni lenguaje de significancia.
+  - claim_id: CLAIM-PRACTICE-B2B-HYP-001
+    statement: Una intervención acotada sobre calidad y velocidad en Propuesta puede mejorar la conversión frente a un grupo comparable sin intervención.
+    claim_class: causal-hypothesis
+    evidence_status: untested
+    maturity: preregistration-required
+    owner: Javier Forero
+    source_ids:
+      - SRC-PRACTICE-B2B-001
+      - SRC-PRACTICE-DASH-B2B-001
+    governed_by: ADR-019
+    scope: Futuro piloto comercial con datos gobernados, owner confirmado y contrafactual.
+    limits: No hay acción ejecutada, outcome observado ni efecto atribuible; no usar como claim de eficacia de PULSE o CDI.
