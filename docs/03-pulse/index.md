@@ -2,7 +2,7 @@
 title: PULSE
 description: Identidad constitucional de PULSE y su función como framework of practice de Conversational Decision Intelligence.
 status: candidate
-version: 0.3.0-rc.1
+version: 0.4.0-rc.1
 artifact_type: framework-orientation
 authority_level: constitutional-summary
 normative: false
@@ -13,7 +13,7 @@ domains:
 source_ids:
   - SRC-PULSE-DNA-001
   - SRC-PULSE-IDENTITY-002
-last_reviewed: 2026-07-20
+last_reviewed: 2026-07-21
 ---
 
 # PULSE
@@ -47,6 +47,9 @@ flowchart TD
 - cierra el ciclo observando resultados y aprendiendo;
 - mide capacidad decisional, no sofisticación tecnológica por sí sola.
 
-!!! info "Alcance de esta página"
-    Esta es una orientación constitucional mínima para Sprint 1. La especificación completa de PULSE pertenece al núcleo fundacional de Sprint 2 y deberá derivarse de sus fuentes canónicas, no de síntesis secundarias.
+## Especificación nuclear
 
+La [Especificación nuclear de PULSE](specification.md) proyecta dentro del CDI-BoK la transformación completa, PDAMR, Decision Circle, cinco verbos, principios, Human-in-Control, selección de interfaces y test de readiness.
+
+!!! info "Contrato de autoridad"
+    La especificación es una proyección derivada. El DNA, Documentation Map e Identity canónicos conservan la autoridad sobre PULSE y prevalecen ante cualquier diferencia.

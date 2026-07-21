@@ -5,8 +5,9 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 ## Estado
 
 - Release de gobernanza: `v0.2.0`
-- Portal candidato: `v0.3.0-rc.1`
-- Fase: Sprint 1 en validación mediante pull request
+- Portal técnico desplegado: `v0.3.0-rc.1`
+- Núcleo fundacional candidato: `v0.4.0-rc.1`
+- Fase: Sprint 2 — Constitución, fronteras, glosario, dominios y PULSE
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal objetivo: `https://decision.javierforero.co`
@@ -43,7 +44,7 @@ python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install --require-hashes -r requirements.lock
 npm ci
-python scripts/preflight_sprint1.py
+python scripts/preflight_sprint2.py
 python -m mkdocs serve
 ```
 

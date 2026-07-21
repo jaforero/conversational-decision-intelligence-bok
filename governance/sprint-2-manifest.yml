@@ -1,0 +1,51 @@
+schema_version: 1.0.0
+sprint: 2
+release_candidate: 0.4.0-rc.1
+started_on: 2026-07-21
+owner: Javier Forero
+objective: Establish the minimum foundational core of CDI-BoK without overstating disciplinary maturity, originality or empirical validation.
+scope:
+  - CDI-BoK candidate constitution
+  - CDI scope and boundaries with prior-art disclosure
+  - Initial controlled glossary
+  - Eight-area and 29-domain knowledge map
+  - PULSE core specification derived from canonical sources
+  - Registries, ADR and automated foundational-integrity gates
+out_of_scope:
+  - Claim that CDI is a recognized scientific discipline or standard
+  - Claim that the project coined Conversational Decision Intelligence
+  - Full systematic literature review
+  - PULSE operational framework documents not yet canonical
+  - Practice Lab case validation
+  - Conversational copilot or agent implementation
+decisions:
+  - ADR-014
+  - ADR-015
+  - ADR-016
+gates:
+  sprint_1_merged: passed
+  pages_live: passed-http-200
+  foundational_documents_present: passed
+  canonical_pulse_projection: passed
+  prior_art_boundary_registered: passed
+  concepts_claims_sources_consistent: passed
+  strict_build: passed
+  static_accessibility_audit: passed-static-scope
+  visual_regression: passed-github-actions-canonical-runner
+  pull_request_checks: passed
+evidence:
+  validated_commit: 6c937910d28e7f3b44241d728a15ee28b6ab5ad9
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/2
+  validation_workflow: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29840301433
+  browser_workflow: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29840301214
+  browser_results:
+    visual_comparisons_passed: 16
+    automated_axe_runs_passed: 9
+    duplicate_mobile_axe_runs_skipped: 9
+  note: The GitHub-hosted Ubuntu runner is the canonical browser-baseline environment; no WCAG conformance claim follows from automated checks alone.
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/sprint-2-foundational-core
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/2
+  target_url: https://decision.javierforero.co
+  status: candidate-pr-ready-for-ratification

@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-SOURCES
-release: 0.2.0
+release: 0.4.0-rc.1
 records:
   - source_id: SRC-PULSE-DNA-001
     title: PULSE DNA
@@ -114,4 +114,42 @@ records:
     library_file_id: libfile_2ebdf4f38fec8191b4c798fddaf792ff
     authority_level: derived-architecture
     status: candidate
+    materialized: false
+  - source_id: SRC-PRIOR-CDI-001
+    title: Conversational Decision Intelligence (CDI) Strategy Begins in Conversation
+    author: Martin Schoeman
+    publication_year: 2025
+    url: https://medium.com/@mschoeman3/conversational-decision-intelligence-cdi-strategy-begins-in-conversation-0f2d1fc50381
+    authority_level: prior-art-example
+    status: active-limited-purpose
+    purpose: Evidence of prior public use of the exact term; not authority for the CDI-BoK definition.
+    materialized: false
+  - source_id: SRC-PRIOR-CDI-002
+    title: Turbo charge your Conversational AI with Conversational Decision Intelligence
+    author: Akeel Attar
+    publication_year: 2022
+    url: https://www.linkedin.com/pulse/turbo-charge-your-conversational-ai-decision-akeel-attar
+    authority_level: prior-art-example
+    status: active-limited-purpose
+    purpose: Evidence of prior product-oriented use of the exact term; not scientific authority.
+    materialized: false
+  - source_id: SRC-ACADEMIC-HAI-001
+    title: Towards Human-AI Deliberation - Design and Evaluation of LLM-Empowered Deliberative AI for AI-Assisted Decision-Making
+    authors: Shuai Ma; Qiaoyi Chen; Xinru Wang; Chengbo Zheng; Zhenhui Peng; Ming Yin; Xiaojuan Ma
+    publication: CHI Conference on Human Factors in Computing Systems
+    publication_year: 2025
+    doi: 10.1145/3706598.3713423
+    url: https://doi.org/10.1145/3706598.3713423
+    authority_level: peer-reviewed-primary-study
+    status: active
+    limits: Exploratory evaluation in a graduate-admissions task; generalizability is limited.
+    materialized: false
+  - source_id: SRC-ACADEMIC-AIEVAL-001
+    title: Does AI help humans make better decisions? A statistical evaluation framework for experimental and observational studies
+    authors: Eli Ben-Michael; D. James Greiner; Melody Huang; Kosuke Imai; Zhichao Jiang; Sooahn Shin
+    publication_year: 2024
+    url: https://arxiv.org/abs/2403.12108
+    authority_level: academic-preprint-and-empirical-evaluation
+    status: active-with-review-status-caveat
+    limits: Evaluation framework and one decision context; not evidence that AI assistance always harms or helps.
     materialized: false

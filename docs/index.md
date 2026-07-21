@@ -2,7 +2,7 @@
 title: Conversational Decision Intelligence Body of Knowledge
 description: Portal oficial y versionado del proyecto CDI-BoK para organizar la práctica emergente de Conversational Decision Intelligence.
 status: candidate
-version: 0.3.0-rc.1
+version: 0.4.0-rc.1
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -11,7 +11,7 @@ domains:
   - Foundations
   - Conversational Decision Intelligence
   - PULSE
-last_reviewed: 2026-07-20
+last_reviewed: 2026-07-21
 ---
 
 <div class="cdi-hero" markdown>
@@ -22,24 +22,25 @@ last_reviewed: 2026-07-20
 El **CDI-BoK** es una propuesta abierta y versionada para organizar cómo personas e inteligencia artificial pueden comprender evidencia, construir contexto, explorar alternativas, decidir, actuar y aprender bajo incertidumbre.
 
 <div class="cdi-actions" markdown>
-[Empieza aquí](start-here/index.md){ .md-button .md-button--primary }
+[Lee la Constitución](00-foundation/constitution.md){ .md-button .md-button--primary }
+[Empieza aquí](start-here/index.md){ .md-button }
 [Revisa la gobernanza](governance/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Release normativa v0.2.0 · Portal v0.3.0-rc.1</span>
+<span class="cdi-release">Gobernanza v0.2.0 · Núcleo candidato v0.4.0-rc.1</span>
 </div>
 
 !!! warning "Posicionamiento calibrado"
-    CDI es una **disciplina integradora propuesta**. Este portal no afirma todavía reconocimiento académico, adopción internacional ni validación generalizable de PULSE. Distingue deliberadamente definición institucional, evidencia, hipótesis y aspiración.
+    CDI es un **dominio de práctica interdisciplinar propuesto**. Este portal no afirma reconocimiento académico, acuñación del término, adopción internacional ni validación generalizable de PULSE. Distingue definición institucional, evidencia, hipótesis y aspiración.
 
 ## Elige tu ruta
 
 <div class="cdi-grid cdi-grid--3">
 
-<a class="cdi-card" href="start-here/" aria-label="Comprender qué es CDI y cómo usar el Body of Knowledge">
+<a class="cdi-card" href="00-foundation/cdi-scope-boundaries/" aria-label="Comprender qué es CDI, su alcance y sus fronteras">
 <span class="cdi-card__index">01</span>
 <h3>Comprender CDI</h3>
-<p>Conoce el propósito, los límites y la forma correcta de leer este sistema de conocimiento.</p>
+<p>Conoce la definición candidata, sus límites, campos adyacentes, prior art y criterio de prueba.</p>
 </a>
 
 <a class="cdi-card" href="03-pulse/" aria-label="Conocer PULSE como framework of practice">
