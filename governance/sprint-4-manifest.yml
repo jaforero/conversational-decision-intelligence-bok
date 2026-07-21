@@ -20,12 +20,12 @@ out_of_scope:
 decisions:
   - ADR-020
 gates:
-  source_hierarchy_preserved: passed-local-validation
-  learning_outcomes_explicit: passed-151-sprint4-checks
-  historical_case_boundary: passed-sprint3-and-sprint4-validation
-  strict_build: passed-local-mkdocs-1.6.1
-  static_accessibility_audit: passed-axe-and-semantics-run-29854147072
-  visual_regression: eight-reviewed-baselines-pending-rerun
+  source_hierarchy_preserved: passed-run-29854919088
+  learning_outcomes_explicit: passed-151-sprint4-checks-run-29854919088
+  historical_case_boundary: passed-sprint3-and-sprint4-validation-run-29854919088
+  strict_build: passed-mkdocs-1.6.1-run-29854919088
+  static_accessibility_audit: passed-axe-and-semantics-run-29854919410
+  visual_regression: passed-20-comparisons-run-29854919410
   owner_ratification: pending
 evidence:
   source_scope:
@@ -56,6 +56,13 @@ evidence:
       - learn-dark-desktop
       - learn-light-mobile
       - learn-dark-mobile
+  canonical_quality_evidence:
+    validation_run_id: 29854919088
+    browser_run_id: 29854919410
+    browser_result: 48-passed-26-intentional-mobile-duplicates-skipped
+    visual_comparisons_passed: 20
+    automated_axe_audits_passed: 10
+    foundational_semantic_checks_passed: 16
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-4-learning-experience
