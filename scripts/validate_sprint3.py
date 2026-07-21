@@ -202,7 +202,7 @@ check(set(required_docs).issubset(registered), "Sprint 3 public documents are ab
 
 manifest = load_yaml("governance/sprint-3-manifest.yml")
 check(manifest["release"] == RELEASE, "Sprint 3 manifest release mismatch")
-check(manifest["status"] == "candidate-content-merged-correction-validated", "Sprint 3 manifest status differs from CI evidence")
+check(manifest["status"] == "candidate-deployed", "Sprint 3 manifest status differs from the deployed candidate state")
 for gate in ["baseline_reproducible", "decision_record_present", "causal_claim_guard", "strict_build", "static_accessibility_audit"]:
     check(str(manifest["gates"][gate]).startswith("passed"), f"Sprint 3 gate not recorded: {gate}")
 check(manifest["gates"]["visual_regression"] == "passed-github-actions-29847383664", "Canonical visual gate is not recorded")
@@ -210,6 +210,11 @@ check(manifest["gates"]["owner_ratification"] == "pending", "Candidate cannot pr
 check(manifest["evidence"]["browser_results"]["visual_comparisons_passed"] == 16, "Visual comparison count differs from CI")
 check(manifest["evidence"]["browser_results"]["axe_and_semantic_runs_passed"] == 18, "Axe and semantic count differs from CI")
 check(manifest["publication"]["corrective_pull_request"].endswith("/pull/5"), "Corrective PR is not recorded")
+check(manifest["publication"]["corrective_merge_commit"] == "340efda43aec909237587a4c5747b664b107721e", "Corrective merge commit differs")
+check(manifest["publication"]["post_merge_validation_run"].endswith("/29848050956"), "Post-merge validation is not recorded")
+check(manifest["publication"]["pages_deployment_run"].endswith("/29848050972"), "Pages deployment is not recorded")
+check(manifest["publication"]["portal_verified"] == "passed-http-200-2026-07-21", "Public portal verification is not recorded")
+check(manifest["publication"]["status"] == "candidate-deployed", "Publication status differs from the deployed candidate state")
 
 portal_markers = {
     "mkdocs.yml": "portal: v0.5.0-rc.1",

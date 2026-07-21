@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 sprint: 3
 release: 0.5.0-rc.1
-status: candidate-content-merged-correction-validated
+status: candidate-deployed
 started_on: 2026-07-21
 owner: Javier Forero
 objective: Convert the B2B Proposal demo into the first instrumented, falsifiable Practice Lab case while keeping simulated evidence separate from observed organizational impact.
@@ -29,7 +29,7 @@ gates:
   baseline_reproducible: passed-local-recalculation
   decision_record_present: passed
   causal_claim_guard: passed
-  strict_build: passed-github-actions-29847383709
+  strict_build: passed-github-actions-29848050956
   static_accessibility_audit: passed-static-and-browser-automated
   visual_regression: passed-github-actions-29847383664
   owner_ratification: pending
@@ -52,5 +52,9 @@ publication:
   initial_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/4
   initial_merge_commit: 258d9aa0d6824c0def7525cda30df840c3d93dbb
   corrective_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/5
+  corrective_merge_commit: 340efda43aec909237587a4c5747b664b107721e
+  post_merge_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29848050956
+  pages_deployment_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29848050972
   target_url: https://decision.javierforero.co
-  status: candidate-content-on-main-correction-awaiting-merge
+  portal_verified: passed-http-200-2026-07-21
+  status: candidate-deployed
