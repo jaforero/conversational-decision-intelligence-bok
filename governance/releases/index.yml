@@ -1,0 +1,60 @@
+schema_version: 1.0.0
+registry_id: CDI-RELEASE-LINEAGE
+governed_by: ADR-022
+observed_on: 2026-07-21
+tag_snapshot:
+  source: git-ls-remote-origin
+  observed:
+    - { tag: v0.2.0, commit: cae723bd8844759af6ed0a2dba52026bd63d4484 }
+    - { tag: v0.4.0, commit: 6d4ae6282218918ff17f4d673a669add56397e86 }
+  candidates_intentionally_untagged:
+    - 0.3.0-rc.1
+    - 0.4.0-rc.1
+    - 0.5.0-rc.1
+    - 0.6.0-rc.1
+    - 0.7.0-rc.1
+releases:
+  - version: 0.2.0
+    release_class: approved-governance-milestone
+    status: approved
+    tag: v0.2.0
+    reference_commit: cae723bd8844759af6ed0a2dba52026bd63d4484
+    manifest: governance/sprint-0-manifest.yml
+  - version: 0.3.0-rc.1
+    release_class: release-candidate
+    status: integrated-deployed
+    tag: null
+    reference_commit: 19cb257093ed475fe63dde1a5ec7d573d3f66da5
+    manifest: governance/sprint-1-manifest.yml
+  - version: 0.4.0-rc.1
+    release_class: release-candidate
+    status: promoted-to-stable
+    tag: null
+    reference_commit: 0d11d16483ed572a508f81dfe7781dfb6b13878c
+    superseded_by: 0.4.0
+    manifest: governance/sprint-2-manifest.yml
+  - version: 0.4.0
+    release_class: stable-release
+    status: stable
+    tag: v0.4.0
+    reference_commit: 6d4ae6282218918ff17f4d673a669add56397e86
+    manifest: governance/releases/v0.4.0.yml
+  - version: 0.5.0-rc.1
+    release_class: release-candidate
+    status: candidate-deployed-not-ratified
+    tag: null
+    reference_commit: 340efda43aec909237587a4c5747b664b107721e
+    closure_commit: a52033466a664000d385d5b7762fc062b5133380
+    manifest: governance/sprint-3-manifest.yml
+  - version: 0.6.0-rc.1
+    release_class: release-candidate
+    status: candidate-ratified-merged-deployed
+    tag: null
+    reference_commit: 958e2ee0c5326b2329e3f0a64259d149362571df
+    manifest: governance/sprint-4-manifest.yml
+  - version: 0.7.0-rc.1
+    release_class: release-candidate
+    status: candidate-ratified-merged-deployed
+    tag: null
+    reference_commit: e84f53a6caaca696a8143a2aab2e7a24e9bdb4e8
+    manifest: governance/sprint-5-manifest.yml

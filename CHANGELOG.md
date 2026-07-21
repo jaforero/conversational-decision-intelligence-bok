@@ -24,6 +24,14 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - Una plantilla completa demuestra trazabilidad, no eficacia ni atribución causal.
 - El núcleo `v0.4.0` y el estado `instrumented-not-executed` del caso B2B no cambian.
 
+### Cierre y gobierno
+
+- Ratificado por Javier Forero el 21 de julio de 2026; fusionado mediante PR #8 y commit `e84f53a6caaca696a8143a2aab2e7a24e9bdb4e8`.
+- Validación post-merge y despliegue de Pages completados mediante runs `29863235105` y `29863234835`.
+- ADR-022 sustituye la regla ambigua de ADR-005: los tags son obligatorios para releases estables y opcionales, con autorización explícita, para candidatos congelados.
+- No se crean tags retrospectivos para `v0.5.0-rc.1`, `v0.6.0-rc.1` o `v0.7.0-rc.1`; su procedencia se conserva mediante manifiestos, PR y SHA.
+- `v0.7.0-rc.1` permanece candidato; no se promueve `v0.7.0` ni se altera la autoridad estable de `v0.4.0`.
+
 ## [0.6.0-rc.1] - 2026-07-21
 
 ### Añadido
@@ -49,6 +57,7 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 - Ratificado por Javier Forero el 21 de julio de 2026.
 - Fusionado mediante PR #7 y commit `958e2ee0c5326b2329e3f0a64259d149362571df` después de gates canónicos exitosos.
+- Validación post-merge y despliegue de Pages completados mediante runs `29858379946` y `29858379825`.
 - La ratificación del candidato no equivale a promoción estable ni a verificación de impacto.
 
 ## [0.5.0-rc.1] - 2026-07-21

@@ -17,6 +17,7 @@ collections:
       - governance/registries/sources.yml
       - governance/registries/brand-assets.yml
       - governance/registries/external-demos.yml
+      - governance/releases/index.yml
   pulse_constitution:
     authority: constitutional-for-pulse
     paths:

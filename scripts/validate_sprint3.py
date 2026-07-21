@@ -212,6 +212,8 @@ check(manifest["evidence"]["browser_results"]["visual_comparisons_passed"] == 16
 check(manifest["evidence"]["browser_results"]["axe_and_semantic_runs_passed"] == 18, "Axe and semantic count differs from CI")
 check(manifest["publication"]["corrective_pull_request"].endswith("/pull/5"), "Corrective PR is not recorded")
 check(manifest["publication"]["corrective_merge_commit"] == "340efda43aec909237587a4c5747b664b107721e", "Corrective merge commit differs")
+check(manifest["publication"]["documentary_closure_pull_request"].endswith("/pull/6"), "Documentary closure PR is not recorded")
+check(manifest["publication"]["documentary_closure_merge_commit"] == "a52033466a664000d385d5b7762fc062b5133380", "Documentary closure merge commit differs")
 check(manifest["publication"]["post_merge_validation_run"].endswith("/29848050956"), "Post-merge validation is not recorded")
 check(manifest["publication"]["pages_deployment_run"].endswith("/29848050972"), "Pages deployment is not recorded")
 check(manifest["publication"]["portal_verified"] == "passed-http-200-2026-07-21", "Public portal verification is not recorded")

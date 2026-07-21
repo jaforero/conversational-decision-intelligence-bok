@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 sprint: 5
 release: 0.7.0-rc.1
-status: candidate-implemented-not-ratified
+status: candidate-ratified-merged-deployed
 started_on: 2026-07-21
 owner: Javier Forero
 objective: Activate Decision Metrics with a rigorous, usable and proportionate measurement system that separates ex-ante quality, execution, outcome, risk and learning without creating a false universal score.
@@ -30,7 +30,11 @@ gates:
   strict_build: passed-github-actions-run-29862720049
   static_accessibility_audit: passed-github-actions-run-29862719776
   visual_regression: passed-github-actions-run-29862719776
-  owner_ratification: pending
+  owner_ratification: passed-user-ratification-2026-07-21
+  final_pull_request_validation: passed-run-29862965428
+  final_pull_request_browser_quality: passed-run-29862965289
+  post_merge_validation: passed-run-29863235105
+  pages_deployment: passed-run-29863234835
 evidence:
   source_scope:
     - SRC-PULSE-DNA-001
@@ -58,10 +62,24 @@ evidence:
     visual_comparisons: 20
     axe_scans: 10
     baseline_review: Initial run 29862383016 isolated four expected /learn/ diffs caused by a redundant content block; the block was removed and the unchanged baselines passed in run 29862719776.
+  final_pull_request_evidence:
+    validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29862965428
+    browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29862965289
+    validation_result: success
+    browser_result: 54-passed-30-skipped-by-design
+    visual_comparisons: 20
+    axe_scans: 10
+  post_merge_evidence:
+    validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29863235105
+    pages_deployment_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29863234835
+    result: success
   browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-5-decision-measurement
   pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/8
+  merge_commit: e84f53a6caaca696a8143a2aab2e7a24e9bdb4e8
+  merged_on: 2026-07-21
   target_url: https://decision.javierforero.co
-  status: not-published
+  portal_verification: passed-http-200-0.7.0-rc.1-2026-07-21
+  status: candidate-ratified-merged-deployed

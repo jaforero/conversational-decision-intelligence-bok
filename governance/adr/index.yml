@@ -6,7 +6,7 @@ decisions:
   - { id: ADR-002, status: accepted, file: ADR-002-canonical-language.md }
   - { id: ADR-003, status: accepted, file: ADR-003-licensing-posture.md }
   - { id: ADR-004, status: accepted, file: ADR-004-publication-status.md }
-  - { id: ADR-005, status: accepted, file: ADR-005-versioning-model.md }
+  - { id: ADR-005, status: superseded, file: ADR-005-versioning-model.md, superseded_by: ADR-022 }
   - { id: ADR-006, status: accepted, file: ADR-006-dashboards-practice-lab.md }
   - { id: ADR-007, status: accepted, file: ADR-007-claim-boundaries.md }
   - { id: ADR-008, status: accepted, file: ADR-008-originality-threshold.md }
@@ -23,3 +23,4 @@ decisions:
   - { id: ADR-019, status: accepted, file: ADR-019-b2b-proposal-pilot-selection.md }
   - { id: ADR-020, status: accepted, file: ADR-020-learning-experience-architecture.md }
   - { id: ADR-021, status: accepted, file: ADR-021-decision-measurement-architecture.md }
+  - { id: ADR-022, status: accepted, file: ADR-022-release-identification-and-tag-policy.md, supersedes: ADR-005 }

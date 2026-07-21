@@ -118,11 +118,16 @@ check(concept_by_id.get("DECISION-BRIEF", {}).get("status") == "candidate-guidan
 
 manifest = load_yaml("governance/sprint-4-manifest.yml")
 check(manifest["release"] == RELEASE, "Sprint 4 manifest release mismatch")
-check(manifest["status"] == "candidate-ratified-merged", "Sprint 4 ratified state is not recorded")
+check(manifest["status"] == "candidate-ratified-merged-deployed", "Sprint 4 closed state is not recorded")
 check(manifest["gates"]["owner_ratification"] == "passed-user-ratification-2026-07-21", "Owner ratification is not recorded")
+check(manifest["gates"]["post_merge_validation"] == "passed-run-29858379946", "Sprint 4 post-merge validation is not recorded")
+check(manifest["gates"]["pages_deployment"] == "passed-run-29858379825", "Sprint 4 Pages deployment is not recorded")
 check(manifest["publication"]["merge_commit"] == "958e2ee0c5326b2329e3f0a64259d149362571df", "Sprint 4 merge commit differs")
-check(manifest["publication"]["deployment_verification"] == "pending", "Sprint 4 deployment was inferred without verification")
-check(manifest["publication"]["status"] == "merged-awaiting-deployment-verification", "Sprint 4 publication state is inaccurate")
+check(manifest["publication"]["validation_run"].endswith("/29858379946"), "Sprint 4 validation URL differs")
+check(manifest["publication"]["pages_deployment_run"].endswith("/29858379825"), "Sprint 4 deployment URL differs")
+check(manifest["publication"]["deployment_verification"].endswith("958e2ee0c5326b2329e3f0a64259d149362571df"), "Sprint 4 deployed commit differs")
+check(manifest["publication"]["portal_position"] == "deployed-then-superseded-by-0.7.0-rc.1", "Sprint 4 current portal position is ambiguous")
+check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 4 publication state is inaccurate")
 
 portal_markers = {
     "mkdocs.yml": "portal: v0.7.0-rc.1",

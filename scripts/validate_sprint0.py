@@ -94,14 +94,21 @@ check(identity["supersedes"] == "SRC-PULSE-IDENTITY-001", "Identity supersession
 adr_index = load_yaml("governance/adr/index.yml")["decisions"]
 check(len(adr_index) >= 11, "Expected at least ADR-001 through ADR-011")
 check({f"ADR-{n:03d}" for n in range(1, 12)}.issubset({item["id"] for item in adr_index}), "Sprint 0 ADR range is incomplete")
+adr_by_id = {item["id"]: item for item in adr_index}
 for decision in adr_index:
-    check(decision["status"] == "accepted", f"ADR not accepted: {decision['id']}")
+    check(decision["status"] in {"accepted", "superseded"}, f"ADR status is not governed: {decision['id']}")
+    if decision["status"] == "superseded":
+        successor = decision.get("superseded_by")
+        check(bool(successor), f"Superseded ADR lacks successor: {decision['id']}")
+        check(adr_by_id.get(successor, {}).get("status") == "accepted", f"ADR successor is absent or not accepted: {decision['id']}")
     adr_path = ROOT / "governance" / "adr" / decision["file"]
     check(adr_path.exists(), f"ADR file missing: {decision['file']}")
     if adr_path.exists():
         adr_frontmatter = yaml.safe_load(adr_path.read_text(encoding="utf-8").split("---", 2)[1])
         check(adr_frontmatter["id"] == decision["id"], f"ADR id mismatch: {decision['file']}")
-        check(adr_frontmatter["status"] == "accepted", f"ADR front matter not accepted: {decision['id']}")
+        check(adr_frontmatter["status"] == decision["status"], f"ADR front matter status differs: {decision['id']}")
+        if decision["status"] == "superseded":
+            check(adr_frontmatter.get("superseded_by") == decision.get("superseded_by"), f"ADR successor differs: {decision['id']}")
 
 brand_source = load_yaml("brand/brand-source.yml")
 check(brand_source["snapshot"]["source_id"] == "SRC-BRAND-001", "Brand source id mismatch")
