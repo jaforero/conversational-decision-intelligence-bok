@@ -31,8 +31,8 @@ gates:
   b2b_evidence_boundary: passed-local
   template_null_state: passed-local
   strict_build: passed-local
-  static_accessibility_audit: pending-github-actions
-  visual_regression: pending-github-actions
+  static_accessibility_audit: passed-github-actions
+  visual_regression: passed-github-actions
   owner_ratification: pending
 evidence:
   source_scope:
@@ -55,7 +55,7 @@ evidence:
     strict_build: passed
     browser_launch: blocked-missing-local-chromium-before-page-evaluation
     browser_tests_attempted: 96
-    snapshots_updated: false
+    snapshots_updated: true-after-canonical-review
   browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
   canonical_validation:
     initial_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29869612647
@@ -68,10 +68,15 @@ evidence:
     corrected_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29869958525
     corrected_browser_result: 59-passed-35-skipped-2-governance-snapshot-differences
     snapshot_review: The two remaining desktop differences were inspected from the canonical Playwright artifact. They are limited to the rebuilt Sprint 6 navigation and the intentional 24px target-height correction; page content, theme behavior and the other 18 visual comparisons remain unchanged.
+    approved_baseline_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29870521984
+    approved_baseline_validation_result: success
+    approved_baseline_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29870522215
+    approved_baseline_browser_result: success-54-passed-30-skipped-20-visual-comparisons-10-axe-scans
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-6-conversational-patterns
-  pull_request: pending
-  implementation_commit: pending-pr-head
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/10
+  implementation_commit: 107c2b68d3c4592633d3863d027cda1534af670b
+  quality_evidence_commit: 44ca2ba2e173e3ed8acd28dd3b36c4c1aa05ef62
   target_url: https://decision.javierforero.co
   status: candidate-implemented-not-ratified

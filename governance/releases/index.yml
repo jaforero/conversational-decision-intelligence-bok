@@ -63,5 +63,5 @@ releases:
     release_class: release-candidate
     status: candidate-implemented-not-ratified
     tag: null
-    reference_commit: pending-pr-head
+    reference_commit: 107c2b68d3c4592633d3863d027cda1534af670b
     manifest: governance/sprint-6-manifest.yml
