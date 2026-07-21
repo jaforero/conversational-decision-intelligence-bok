@@ -9,7 +9,7 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - Constitución candidata del CDI-BoK con autoridad, principios, límites éticos y control de cambios.
 - Definición candidata y fronteras de CDI frente a BI, Conversational AI, Conversational Analytics, DSS, DI y PULSE.
 - Declaración explícita de prior art: el proyecto no reclama haber acuñado “Conversational Decision Intelligence”.
-- Glosario normativo inicial con 27 términos, owner conceptual y límites de uso.
+- Glosario controlado inicial con 27 términos, owner conceptual y límites de uso.
 - Mapa completo de ocho áreas y 29 dominios con preguntas rectoras y madurez inicial.
 - Especificación nuclear de PULSE derivada de DNA, Documentation Map e Identity canónicos.
 - ADR-014 a ADR-016, manifiesto Sprint 2 y registros ampliados de conceptos, claims y fuentes.
