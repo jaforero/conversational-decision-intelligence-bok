@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CLAIMS
-release: 0.7.0-rc.1
+release: 0.8.0-rc.1
 claims:
   - claim_id: CLAIM-CDI-001
     statement: Conversational Decision Intelligence es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.
@@ -174,3 +174,26 @@ claims:
     source_ids:
       - SRC-ACADEMIC-SCORING-RULES-001
     limits: Requiere eventos repetidos, comparables y definidos ex ante; una puntuación aislada no establece calibración ni calidad global de una decisión.
+  - claim_id: CLAIM-CDP-CATALOG-001
+    statement: El CDI-BoK organiza su catálogo inicial en cinco patrones de decisión conversacional y seis anti-patrones para hacer explícitos movimientos, derechos, evidencia, stop conditions y salidas auditables.
+    claim_class: institutional-candidate-taxonomy
+    evidence_status: candidate-synthesis
+    maturity: candidate
+    owner: Javier Forero
+    source_ids:
+      - SRC-PULSE-DNA-001
+      - SRC-PULSE-MAP-001
+      - SRC-ARCH-001
+    governed_by: ADR-023
+    limits: La taxonomía no es exhaustiva, empíricamente validada ni reconocida externamente; organiza el candidato v0.8.0-rc.1 para prueba y revisión.
+  - claim_id: CLAIM-CDP-SELECTION-001
+    statement: El CDI-BoK recomienda seleccionar el patrón mínimo que resuelva el bloqueo decisional actual y ajustar su rigor según stakes, incertidumbre, reversibilidad y daño potencial.
+    claim_class: design-recommendation
+    evidence_status: constitutional-derived-candidate-guidance
+    maturity: candidate
+    owner: Javier Forero
+    source_ids:
+      - SRC-PULSE-DNA-001
+      - SRC-ARCH-001
+    governed_by: ADR-023
+    limits: Es una regla de diseño proporcional, no evidencia de que menos estructura siempre sea superior ni de que el catálogo mejore outcomes.

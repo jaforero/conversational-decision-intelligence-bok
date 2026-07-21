@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 CHECKS = 0
 RELEASE = "0.6.0-rc.1"
+CURRENT_RELEASE = "0.8.0-rc.1"
 
 
 def check(condition: bool, message: str) -> None:
@@ -56,7 +57,7 @@ for path, artifact_type in required_docs.items():
         continue
     metadata, body = markdown(path)
     documents[path] = (metadata, body)
-    check(metadata.get("version") in {RELEASE, "0.7.0-rc.1"}, f"Wrong Sprint 4 lineage: {path}")
+    check(metadata.get("version") in {RELEASE, "0.7.0-rc.1", CURRENT_RELEASE}, f"Wrong Sprint 4 lineage: {path}")
     check(metadata.get("status") == "candidate", f"Sprint 4 document must remain candidate: {path}")
     check(metadata.get("normative") is False, f"Sprint 4 document cannot be normative: {path}")
     check(metadata.get("artifact_type") == artifact_type, f"Wrong artifact type: {path}")
@@ -93,8 +94,8 @@ for path, markers in module_markers.items():
         check(marker.lower() in body.lower(), f"Learning module {path} misses: {marker}")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["release"] in {RELEASE, "0.7.0-rc.1"}, "Content map lost Sprint 4 lineage")
-check(content_map["public_portal"]["release"] in {RELEASE, "0.7.0-rc.1"}, "Portal content map lost Sprint 4 lineage")
+check(content_map["release"] in {RELEASE, "0.7.0-rc.1", CURRENT_RELEASE}, "Content map lost Sprint 4 lineage")
+check(content_map["public_portal"]["release"] in {RELEASE, "0.7.0-rc.1", CURRENT_RELEASE}, "Portal content map lost Sprint 4 lineage")
 registered = {item["path"] for item in content_map["public_portal"]["navigation"]}
 check(set(required_docs).issubset(registered), "Sprint 4 public documents are absent from the content map")
 
@@ -130,11 +131,11 @@ check(manifest["publication"]["portal_position"] == "deployed-then-superseded-by
 check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 4 publication state is inaccurate")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.7.0-rc.1",
-    "overrides/main.html": "Portal v0.7.0-rc.1",
+    "mkdocs.yml": "portal: v0.8.0-rc.1",
+    "overrides/main.html": "Portal v0.8.0-rc.1",
     "README.md": "`v0.6.0-rc.1`",
-    "package.json": '"version": "0.7.0-rc.1"',
-    "package-lock.json": '"version": "0.7.0-rc.1"',
+    "package.json": '"version": "0.8.0-rc.1"',
+    "package-lock.json": '"version": "0.8.0-rc.1"',
 }
 for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 4 portal marker missing: {path}")

@@ -58,6 +58,7 @@ expected_versions = {
     "0.5.0-rc.1",
     "0.6.0-rc.1",
     "0.7.0-rc.1",
+    "0.8.0-rc.1",
 }
 check(expected_versions == set(records), "Release registry versions are incomplete or unexpected")
 for version in expected_versions:
@@ -71,7 +72,7 @@ check(records["0.4.0"]["status"] == "stable", "v0.4.0 lost stable status")
 check(records["0.4.0"]["tag"] == "v0.4.0", "Stable v0.4.0 tag differs")
 check(records["0.4.0"]["reference_commit"] == "6d4ae6282218918ff17f4d673a669add56397e86", "Stable tag commit differs")
 
-candidate_versions = ["0.3.0-rc.1", "0.4.0-rc.1", "0.5.0-rc.1", "0.6.0-rc.1", "0.7.0-rc.1"]
+candidate_versions = ["0.3.0-rc.1", "0.4.0-rc.1", "0.5.0-rc.1", "0.6.0-rc.1", "0.7.0-rc.1", "0.8.0-rc.1"]
 for version in candidate_versions:
     check(records[version]["release_class"] == "release-candidate", f"{version} is not classified as a candidate")
     check(records[version]["tag"] is None, f"{version} invents a retrospective tag")
@@ -83,17 +84,23 @@ check(records["0.5.0-rc.1"]["closure_commit"] == "a52033466a664000d385d5b7762fc0
 check(records["0.6.0-rc.1"]["status"] == "candidate-ratified-merged-deployed", "Sprint 4 closure differs")
 check(records["0.7.0-rc.1"]["status"] == "candidate-ratified-merged-deployed", "Sprint 5 closure differs")
 check(records["0.7.0-rc.1"]["reference_commit"] == "e84f53a6caaca696a8143a2aab2e7a24e9bdb4e8", "Sprint 5 merge lineage differs")
+check(records["0.8.0-rc.1"]["status"] == "candidate-implemented-not-ratified", "Sprint 6 candidate state is overstated")
+check(records["0.8.0-rc.1"]["reference_commit"] == "pending-pr-head" or len(records["0.8.0-rc.1"]["reference_commit"]) == 40, "Sprint 6 implementation reference is invalid")
 
 sprint4 = load_yaml("governance/sprint-4-manifest.yml")
 sprint5 = load_yaml("governance/sprint-5-manifest.yml")
+sprint6 = load_yaml("governance/sprint-6-manifest.yml")
 check(sprint4["status"] == "candidate-ratified-merged-deployed", "Sprint 4 manifest is not closed")
 check(sprint4["publication"]["pages_deployment_run"].endswith("/29858379825"), "Sprint 4 Pages evidence differs")
 check(sprint5["status"] == "candidate-ratified-merged-deployed", "Sprint 5 manifest is not closed")
 check(sprint5["publication"]["merge_commit"] == records["0.7.0-rc.1"]["reference_commit"], "Sprint 5 registry and manifest diverge")
 check(sprint5["publication"]["portal_verification"].startswith("passed-http-200"), "Sprint 5 portal verification is absent")
+check(sprint6["status"] == "candidate-implemented-not-ratified", "Sprint 6 manifest overstates ratification")
+check(sprint6["publication"]["status"] == records["0.8.0-rc.1"]["status"], "Sprint 6 registry and manifest diverge")
 
 version_index = text("docs/versions/index.md")
 release_note = text("docs/versions/v0.7.0-rc.1.md")
+candidate_note = text("docs/versions/v0.8.0-rc.1.md")
 changelog = text("CHANGELOG.md")
 check("Ratificación, despliegue y estabilidad son estados diferentes" in version_index, "Public version policy conflates release states")
 check("tags retrospectivos ambiguos" in version_index, "Public version policy lacks retrospective-tag caution")
@@ -101,7 +108,9 @@ check("candidato ratificado, fusionado y desplegado" in release_note, "v0.7.0-rc
 check("No equivale a `v0.7.0` estable" in release_note, "v0.7.0 stable boundary is absent")
 check("ADR-022 sustituye la regla ambigua de ADR-005" in changelog, "Changelog lacks version-governance decision")
 check(not (ROOT / "governance/releases/v0.7.0.yml").exists(), "A stable v0.7.0 manifest was created prematurely")
-check('"version": "0.7.0-rc.1"' in text("package.json"), "Portal was promoted beyond the candidate")
+check("Candidato implementado, no ratificado" in candidate_note, "v0.8.0-rc.1 candidate boundary is absent")
+check(not (ROOT / "governance/releases/v0.8.0.yml").exists(), "A stable v0.8.0 manifest was created prematurely")
+check('"version": "0.8.0-rc.1"' in text("package.json"), "Portal version differs from the active candidate")
 
 content_map = load_yaml("governance/content-map.yml")
 registry_paths = content_map["collections"]["registries"]["paths"]

@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CONCEPTS
-release: 0.7.0-rc.1
+release: 0.8.0-rc.1
 knowledge_areas:
   - Foundations and Identity
   - Decisions and Intelligence
@@ -121,3 +121,15 @@ concepts:
     owner: Javier Forero
     status: candidate-guidance
     canonical_definition_location: docs/07-governance-quality/measurement-record.md
+  - concept_id: CONVERSATIONAL-DECISION-PATTERN
+    canonical_term: Patrón de decisión conversacional
+    owner: Javier Forero
+    status: candidate-synthesis
+    canonical_definition_location: docs/08-patterns/pattern-language.md
+    definition_claim_id: CLAIM-CDP-CATALOG-001
+  - concept_id: CONVERSATIONAL-DECISION-ANTIPATTERN
+    canonical_term: Anti-patrón de decisión conversacional
+    owner: Javier Forero
+    status: candidate-synthesis
+    canonical_definition_location: docs/08-patterns/pattern-language.md
+    definition_claim_id: CLAIM-CDP-CATALOG-001

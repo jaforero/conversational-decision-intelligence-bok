@@ -13,6 +13,7 @@ tag_snapshot:
     - 0.5.0-rc.1
     - 0.6.0-rc.1
     - 0.7.0-rc.1
+    - 0.8.0-rc.1
 releases:
   - version: 0.2.0
     release_class: approved-governance-milestone
@@ -58,3 +59,9 @@ releases:
     tag: null
     reference_commit: e84f53a6caaca696a8143a2aab2e7a24e9bdb4e8
     manifest: governance/sprint-5-manifest.yml
+  - version: 0.8.0-rc.1
+    release_class: release-candidate
+    status: candidate-implemented-not-ratified
+    tag: null
+    reference_commit: 107c2b68d3c4592633d3863d027cda1534af670b
+    manifest: governance/sprint-6-manifest.yml

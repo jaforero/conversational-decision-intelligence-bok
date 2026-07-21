@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-ADR
-release: 0.7.0-rc.1
+release: 0.8.0-rc.1
 decisions:
   - { id: ADR-001, status: accepted, file: ADR-001-repository-name.md }
   - { id: ADR-002, status: accepted, file: ADR-002-canonical-language.md }
@@ -24,3 +24,4 @@ decisions:
   - { id: ADR-020, status: accepted, file: ADR-020-learning-experience-architecture.md }
   - { id: ADR-021, status: accepted, file: ADR-021-decision-measurement-architecture.md }
   - { id: ADR-022, status: accepted, file: ADR-022-release-identification-and-tag-policy.md, supersedes: ADR-005 }
+  - { id: ADR-023, status: accepted, file: ADR-023-conversational-decision-pattern-architecture.md }

@@ -2,6 +2,28 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.8.0-rc.1] - 2026-07-21
+
+### Añadido
+
+- Área pública de Conversational Decision Patterns & Anti-patterns.
+- Lenguaje candidato con anatomía, movimientos, estados de madurez, stop conditions y selección proporcional.
+- Cinco patrones para enmarcar, fundamentar, deliberar, comprometer y aprender.
+- Seis anti-patrones para conversación decorativa, drift semántico, certeza artificial, autoridad indebida, adopción como impacto y expectativa reconstruida.
+- Registro machine-readable y plantilla YAML con null states, derechos, evidencia, riesgos y medición.
+- Demostración detenida sobre el caso B2B simulado, sin inventar owner, acción, expectativa ni outcome.
+- ADR-023, claims calibrados y validador específico de Sprint 6.
+
+### Decisión crítica
+
+- El catálogo no se presenta como secuencia universal, librería de prompts o sistema validado. Una regla, reporte, checklist o workflow puede ser una alternativa superior a la conversación.
+
+### Calibración
+
+- Las once entradas son una taxonomía institucional candidata, no consenso académico ni evidencia de eficacia.
+- La selección parte del bloqueo decisional y usa el patrón mínimo suficiente según stakes, incertidumbre, reversibilidad y daño potencial.
+- El núcleo `v0.4.0`, la autoridad constitucional de PULSE y el estado `instrumented-not-executed` del caso B2B no cambian.
+
 ## [0.7.0-rc.1] - 2026-07-21
 
 ### Añadido

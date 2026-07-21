@@ -64,6 +64,12 @@ nav:
       - Decision Quality: 07-governance-quality/decision-quality.md
       - Decision Measurement System: 07-governance-quality/decision-measurement-system.md
       - Decision Measurement Record: 07-governance-quality/measurement-record.md
+  - Patrones de decisión:
+      - Visión general: 08-patterns/index.md
+      - Lenguaje y plantilla: 08-patterns/pattern-language.md
+      - Catálogo de patrones: 08-patterns/catalog.md
+      - Anti-patrones: 08-patterns/anti-patterns.md
+      - Aplicación B2B: 08-patterns/b2b-proposal-walkthrough.md
   - CDI-BoK:
       - Visión general: 00-foundation/index.md
       - Constitución: 00-foundation/constitution.md
@@ -89,6 +95,7 @@ nav:
       - Publicación y dominio: governance/publication-runbook.md
   - Versiones:
       - Estado e historial: versions/index.md
+      - Candidato v0.8.0-rc.1: versions/v0.8.0-rc.1.md
       - Candidato v0.7.0-rc.1: versions/v0.7.0-rc.1.md
       - Candidato v0.6.0-rc.1: versions/v0.6.0-rc.1.md
       - Candidato v0.5.0-rc.1: versions/v0.5.0-rc.1.md
@@ -140,7 +147,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.7.0-rc.1
+    portal: v0.8.0-rc.1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero
