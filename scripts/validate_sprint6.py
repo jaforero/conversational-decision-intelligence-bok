@@ -220,6 +220,9 @@ portal_markers = {
 for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 6 portal marker missing: {path}")
 
+portal_css = (ROOT / "docs/assets/stylesheets/cdi-bok.css").read_text(encoding="utf-8")
+check(".md-nav__link {" in portal_css and "min-height: 24px" in portal_css, "Global navigation targets are below the 24px floor")
+
 case = load_yaml("governance/cases/B2B-PROP-001.yml")
 check(case["release"] == "0.5.0-rc.1", "Sprint 6 rewrote the historical case release")
 check(case["status"] == "instrumented-not-executed", "Sprint 6 overstates case execution")

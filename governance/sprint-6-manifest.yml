@@ -47,8 +47,8 @@ evidence:
     - SRC-NIST-AIRMF-001
   evidence_posture: The catalog is candidate CDI-BoK synthesis. Registered foundations support specific controls but do not validate the taxonomy or its effectiveness.
   local_validation:
-    sprint6_checks_passed: 269
-    total_versioned_checks_passed: 1243
+    sprint6_checks_passed: 270
+    total_versioned_checks_passed: 1244
     markdown_documents_audited: 44
     navigation_targets_audited: 44
     generated_html_audited: 45
@@ -57,6 +57,12 @@ evidence:
     browser_tests_attempted: 96
     snapshots_updated: false
   browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
+  canonical_validation:
+    initial_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29869612647
+    initial_validation_result: success
+    initial_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29869612567
+    initial_browser_result: 49-passed-35-skipped-12-failed-target-size
+    correction: Expanded every navigation link to the WCAG 2.2 automated target-size floor after the additional top-level section exposed 18.2px links.
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-6-conversational-patterns
