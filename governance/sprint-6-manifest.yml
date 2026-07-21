@@ -1,8 +1,9 @@
 schema_version: 1.0.0
 sprint: 6
 release: 0.8.0-rc.1
-status: candidate-implemented-not-ratified
+status: candidate-ratified-merged-deployed
 started_on: 2026-07-21
+completed_on: 2026-07-21
 owner: Javier Forero
 objective: Provide a bounded and testable pattern language for recurring decision conversations, including contraindications and anti-patterns, without presenting an institutional taxonomy as universal evidence.
 scope:
@@ -33,7 +34,10 @@ gates:
   strict_build: passed-local
   static_accessibility_audit: passed-github-actions
   visual_regression: passed-github-actions
-  owner_ratification: pending
+  owner_ratification: passed-user-ratification-2026-07-21
+  post_merge_validation: passed-run-29871891960
+  pages_deployment: passed-run-29871892015
+  portal_verification: passed-http-200-0.8.0-rc.1-2026-07-21
 evidence:
   source_scope:
     - SRC-PULSE-DNA-001
@@ -78,5 +82,9 @@ publication:
   pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/10
   implementation_commit: 107c2b68d3c4592633d3863d027cda1534af670b
   quality_evidence_commit: 44ca2ba2e173e3ed8acd28dd3b36c4c1aa05ef62
+  merge_commit: bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347
+  post_merge_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29871891960
+  pages_deployment_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29871892015
+  portal_verification: passed-http-200-0.8.0-rc.1-2026-07-21
   target_url: https://decision.javierforero.co
-  status: candidate-implemented-not-ratified
+  status: candidate-ratified-merged-deployed

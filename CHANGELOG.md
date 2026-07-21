@@ -2,6 +2,28 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.8.0] - 2026-07-21
+
+### Promovido
+
+- Portal integrado a una línea base editorial y técnica estable después de ratificar `v0.8.0-rc.1`.
+- Arquitectura pública de 45 páginas, navegación, trazabilidad, build estricto, regresión visual y análisis Axe automatizados.
+- ADR-024, manifiesto estable, nota pública y referencia inmutable `v0.8.0` creada únicamente después del merge y de los gates finales.
+- Workflow estable generalizado para resolver versión, título, manifiesto y notas sin valores codificados para `v0.4.0`.
+
+### Linaje verificado
+
+- PR #10 fusionado mediante `bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347`.
+- Validación post-merge `29871891960` y despliegue `29871892015` aprobados.
+- Portal público y área de patrones verificados con HTTP 200 antes de la promoción.
+
+### Autoridad y evidencia preservadas
+
+- El núcleo `v0.4.0` conserva su autoridad aprobada; no se reversionan ni amplían sus definiciones.
+- Aprendizaje, medición, patrones y anti-patrones permanecen candidatos aunque estén incluidos en el bundle estable.
+- El caso B2B permanece `instrumented-not-executed`, sin owner real confirmado, acción, outcome o impacto atribuible.
+- La estabilidad del portal no valida científicamente CDI o PULSE, no prueba eficacia y no establece conformidad completa con WCAG 2.2 AA.
+
 ## [0.8.0-rc.1] - 2026-07-21
 
 ### Añadido

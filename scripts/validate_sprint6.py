@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import re
 import sys
 from pathlib import Path
 
@@ -14,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 CHECKS = 0
 RELEASE = "0.8.0-rc.1"
+CURRENT_RELEASE = "0.8.0"
 
 
 def check(condition: bool, message: str) -> None:
@@ -100,7 +100,7 @@ markers = {
     ],
     "docs/versions/v0.8.0-rc.1.md": [
         "no es una secuencia universal ni una librería de prompts",
-        "Candidato implementado, no ratificado",
+        "Candidato ratificado, fusionado y desplegado",
         "No se afirma que seguir los patrones mejore",
     ],
 }
@@ -110,7 +110,7 @@ for path, expected in markers.items():
         check(marker.lower() in body.lower(), f"{path} misses calibrated marker: {marker}")
 
 registry = load_yaml("governance/registries/patterns.yml")
-check(registry["release"] == RELEASE, "Pattern registry release mismatch")
+check(registry["release"] == CURRENT_RELEASE, "Pattern registry release mismatch")
 check(registry["governed_by"] == "ADR-023", "Pattern registry is not governed by ADR-023")
 check(registry["catalog_maturity"] == "candidate-synthesis", "Pattern registry overstates maturity")
 patterns = registry["patterns"]
@@ -179,7 +179,7 @@ registries = [
     "governance/adr/index.yml",
 ]
 for path in registries:
-    check(load_yaml(path).get("release") == RELEASE, f"Registry release mismatch: {path}")
+    check(load_yaml(path).get("release") == CURRENT_RELEASE, f"Registry release mismatch: {path}")
 
 adr_index = load_yaml("governance/adr/index.yml")
 adr_by_id = {item["id"]: item for item in adr_index["decisions"]}
@@ -187,35 +187,40 @@ check(adr_by_id.get("ADR-023", {}).get("status") == "accepted", "ADR-023 is not 
 check((ROOT / "governance/adr/ADR-023-conversational-decision-pattern-architecture.md").exists(), "ADR-023 file is missing")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["release"] == RELEASE, "Content map release mismatch")
-check(content_map["public_portal"]["release"] == RELEASE, "Portal content-map release mismatch")
+check(content_map["release"] == CURRENT_RELEASE, "Content map release mismatch")
+check(content_map["public_portal"]["release"] == CURRENT_RELEASE, "Portal content-map release mismatch")
 registered = {item["path"] for item in content_map["public_portal"]["navigation"]}
 check(set(required_docs).issubset(registered), "Sprint 6 documents are absent from the content map")
 check("governance/registries/patterns.yml" in content_map["collections"]["registries"]["paths"], "Pattern registry is absent from the content map")
 
 manifest = load_yaml("governance/sprint-6-manifest.yml")
 check(manifest["release"] == RELEASE, "Sprint 6 manifest release mismatch")
-check(manifest["status"] == "candidate-implemented-not-ratified", "Sprint 6 manifest overstates status")
-check(manifest["gates"]["owner_ratification"] == "pending", "Sprint 6 invents owner ratification")
-check(manifest["publication"]["status"] == "candidate-implemented-not-ratified", "Sprint 6 publication status differs")
+check(manifest["status"] == "candidate-ratified-merged-deployed", "Sprint 6 closure state differs")
+check(manifest["gates"]["owner_ratification"] == "passed-user-ratification-2026-07-21", "Sprint 6 owner ratification is absent")
+check(manifest["gates"]["post_merge_validation"] == "passed-run-29871891960", "Sprint 6 post-merge validation differs")
+check(manifest["gates"]["pages_deployment"] == "passed-run-29871892015", "Sprint 6 Pages deployment differs")
+check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 6 publication status differs")
 check(manifest["publication"]["branch"] == "agent/sprint-6-conversational-patterns", "Sprint 6 branch differs")
+check(manifest["publication"]["merge_commit"] == "bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347", "Sprint 6 merge commit differs")
+check(manifest["publication"]["portal_verification"] == "passed-http-200-0.8.0-rc.1-2026-07-21", "Sprint 6 portal verification differs")
 
 release_registry = load_yaml("governance/releases/index.yml")
 release_by_version = {item["version"]: item for item in release_registry["releases"]}
 release_record = release_by_version.get(RELEASE, {})
 check(release_record.get("release_class") == "release-candidate", "Sprint 6 release class differs")
-check(release_record.get("status") == "candidate-implemented-not-ratified", "Sprint 6 release status differs")
+check(release_record.get("status") == "candidate-ratified-merged-deployed-promoted", "Sprint 6 release status differs")
 check(release_record.get("tag") is None, "Sprint 6 creates an unauthorized tag")
 reference = release_record.get("reference_commit", "")
-check(reference == "pending-pr-head" or bool(re.fullmatch(r"[0-9a-f]{40}", reference)), "Sprint 6 reference commit is invalid")
+check(reference == "bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347", "Sprint 6 reference commit is invalid")
+check(release_record.get("superseded_by") == "0.8.0", "Sprint 6 stable promotion lineage is absent")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.8.0-rc.1",
-    "overrides/main.html": "Portal v0.8.0-rc.1",
-    "README.md": "`v0.8.0-rc.1`",
-    "package.json": '"version": "0.8.0-rc.1"',
-    "package-lock.json": '"version": "0.8.0-rc.1"',
-    "docs/index.md": "Patrones candidatos v0.8.0-rc.1",
+    "mkdocs.yml": "portal: v0.8.0",
+    "overrides/main.html": "Portal estable v0.8.0",
+    "README.md": "Release estable del portal integrado: `v0.8.0`",
+    "package.json": '"version": "0.8.0"',
+    "package-lock.json": '"version": "0.8.0"',
+    "docs/index.md": "Portal estable v0.8.0",
 }
 for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 6 portal marker missing: {path}")

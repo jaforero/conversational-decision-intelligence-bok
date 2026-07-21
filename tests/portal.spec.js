@@ -40,6 +40,7 @@ const foundationalPages = [
   { name: "pattern-catalog", path: "/08-patterns/catalog/" },
   { name: "anti-patterns", path: "/08-patterns/anti-patterns/" },
   { name: "pattern-b2b", path: "/08-patterns/b2b-proposal-walkthrough/" },
+  { name: "release-v080", path: "/versions/v0.8.0/" },
 ];
 
 test("home communicates reader outcomes", async ({ page }) => {
@@ -70,6 +71,15 @@ test("pattern catalog preserves authority and evidence boundaries", async ({ pag
   await page.goto("/08-patterns/b2b-proposal-walkthrough/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("main")).toContainText("instrumented-not-executed");
   await expect(page.locator("main")).toContainText("no autorizado para ejecutar");
+});
+
+test("stable release preserves component authority boundaries", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  await page.goto("/versions/v0.8.0/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main h1")).toContainText("Release v0.8.0");
+  await expect(page.locator("main")).toContainText("Autoridad preservada por componente");
+  await expect(page.locator("main")).toContainText("no a una elevación uniforme");
+  await expect(page.locator("main")).toContainText("no aporta impacto observado");
 });
 
 async function stabilizeExternalAssets(page) {
