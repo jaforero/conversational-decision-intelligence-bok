@@ -3,7 +3,7 @@ registry_id: CDI-RELEASE-LINEAGE
 governed_by: ADR-022
 observed_on: 2026-07-21
 tag_snapshot:
-  source: git-ls-remote-origin
+  source: git-ls-remote-origin-before-v0.8.0-promotion
   observed:
     - { tag: v0.2.0, commit: cae723bd8844759af6ed0a2dba52026bd63d4484 }
     - { tag: v0.4.0, commit: 6d4ae6282218918ff17f4d673a669add56397e86 }
@@ -14,6 +14,8 @@ tag_snapshot:
     - 0.6.0-rc.1
     - 0.7.0-rc.1
     - 0.8.0-rc.1
+  authorized_for_post_merge_creation:
+    - { tag: v0.8.0, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-024 }
 releases:
   - version: 0.2.0
     release_class: approved-governance-milestone
@@ -61,7 +63,17 @@ releases:
     manifest: governance/sprint-5-manifest.yml
   - version: 0.8.0-rc.1
     release_class: release-candidate
-    status: candidate-implemented-not-ratified
+    status: candidate-ratified-merged-deployed-promoted
     tag: null
-    reference_commit: 107c2b68d3c4592633d3863d027cda1534af670b
+    reference_commit: bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347
+    implementation_commit: 107c2b68d3c4592633d3863d027cda1534af670b
+    superseded_by: 0.8.0
     manifest: governance/sprint-6-manifest.yml
+  - version: 0.8.0
+    release_class: stable-release
+    status: stable
+    tag: v0.8.0
+    reference_commit: refs/tags/v0.8.0
+    source_candidate: 0.8.0-rc.1
+    source_candidate_commit: bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347
+    manifest: governance/releases/v0.8.0.yml
