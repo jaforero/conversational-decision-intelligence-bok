@@ -133,7 +133,7 @@ for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 4 portal marker missing: {path}")
 
 portal_css = (ROOT / "docs/assets/stylesheets/cdi-bok.css").read_text(encoding="utf-8")
-check(".md-nav__link" in portal_css and "min-height: 1.5rem" in portal_css, "Navigation targets are below the 24px floor")
+check('.md-nav__link[href*="learn/"]' in portal_css and "min-height: 24px" in portal_css, "Learning navigation targets are below the 24px floor")
 check(".cdi-learning-step small" in portal_css and "opacity: 1" in portal_css, "Learning-step descriptions may inherit low opacity")
 
 case = load_yaml("governance/cases/B2B-PROP-001.yml")

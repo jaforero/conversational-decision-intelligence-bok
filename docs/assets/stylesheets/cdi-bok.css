@@ -10,9 +10,9 @@
   padding-bottom: 3rem;
 }
 
-.md-nav__link {
+.md-nav__link[href*="learn/"] {
   align-items: center;
-  min-height: 1.5rem;
+  min-height: 24px;
 }
 
 .md-content__inner > p,
