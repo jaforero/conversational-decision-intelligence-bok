@@ -27,9 +27,9 @@ gates:
   outcome_process_separation: passed-local
   anti_metric_controls: passed-local
   template_null_state: passed-local
-  strict_build: passed-local-mkdocs-1.6.1
-  static_accessibility_audit: passed-local-semantic
-  visual_regression: pending-ci
+  strict_build: passed-github-actions-run-29862720049
+  static_accessibility_audit: passed-github-actions-run-29862719776
+  visual_regression: passed-github-actions-run-29862719776
   owner_ratification: pending
 evidence:
   source_scope:
@@ -50,10 +50,18 @@ evidence:
     navigation_targets_audited: 38
     generated_html_audited: 39
     strict_build: passed
+  canonical_validation:
+    validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29862720049
+    browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29862719776
+    browser_tests_passed: 54
+    browser_tests_skipped_by_design: 30
+    visual_comparisons: 20
+    axe_scans: 10
+    baseline_review: Initial run 29862383016 isolated four expected /learn/ diffs caused by a redundant content block; the block was removed and the unchanged baselines passed in run 29862719776.
   browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-5-decision-measurement
-  pull_request: null
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/8
   target_url: https://decision.javierforero.co
   status: not-published
