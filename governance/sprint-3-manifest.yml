@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 sprint: 3
 release: 0.5.0-rc.1
-status: implementation-complete-awaiting-ci
+status: candidate-content-merged-correction-validated
 started_on: 2026-07-21
 owner: Javier Forero
 objective: Convert the B2B Proposal demo into the first instrumented, falsifiable Practice Lab case while keeping simulated evidence separate from observed organizational impact.
@@ -29,9 +29,9 @@ gates:
   baseline_reproducible: passed-local-recalculation
   decision_record_present: passed
   causal_claim_guard: passed
-  strict_build: passed-local
-  static_accessibility_audit: passed-static-scope
-  visual_regression: pending-github-actions
+  strict_build: passed-github-actions-29847383709
+  static_accessibility_audit: passed-static-and-browser-automated
+  visual_regression: passed-github-actions-29847383664
   owner_ratification: pending
 evidence:
   primary_case: B2B-PROP-001
@@ -40,8 +40,17 @@ evidence:
   source_disclosure: Datos de demostración simulados; los hallazgos requieren validación operativa.
   local_browser_attempt: blocked-before-page-load-missing-chromium-download-truncated
   browser_authority: GitHub Actions Ubuntu runner remains canonical for visual regression and automated Axe.
+  canonical_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29847383709
+  canonical_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29847383664
+  browser_results:
+    visual_comparisons_passed: 16
+    axe_and_semantic_runs_passed: 18
+    duplicate_mobile_runs_skipped: 18
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-3-b2b-proposal
+  initial_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/4
+  initial_merge_commit: 258d9aa0d6824c0def7525cda30df840c3d93dbb
+  corrective_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/5
   target_url: https://decision.javierforero.co
-  status: not-published
+  status: candidate-content-on-main-correction-awaiting-merge
