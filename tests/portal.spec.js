@@ -44,17 +44,19 @@ for (const theme of ["light", "dark"]) {
   }
 }
 
-for (const pageCase of representativePages) {
-  test(`${pageCase.name} · WCAG 2.2 AA automated rules`, async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name !== "desktop-chromium", "One viewport is sufficient for the automated rule set.");
-    await stabilizeExternalAssets(page);
-    await page.emulateMedia({ colorScheme: "light", reducedMotion: "reduce" });
-    await page.goto(pageCase.accessibilityPath || pageCase.path, { waitUntil: "domcontentloaded" });
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
-      .analyze();
-    expect(results.violations).toEqual([]);
-  });
+for (const theme of ["light", "dark"]) {
+  for (const pageCase of representativePages) {
+    test(`${pageCase.name} · ${theme} · WCAG 2.2 AA automated rules`, async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name !== "desktop-chromium", "One viewport is sufficient for the automated rule set.");
+      await stabilizeExternalAssets(page);
+      await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
+      await page.goto(pageCase.accessibilityPath || pageCase.path, { waitUntil: "domcontentloaded" });
+      const results = await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+        .analyze();
+      expect(results.violations).toEqual([]);
+    });
+  }
 }
 
 for (const pageCase of foundationalPages) {

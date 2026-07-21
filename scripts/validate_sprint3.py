@@ -202,11 +202,14 @@ check(set(required_docs).issubset(registered), "Sprint 3 public documents are ab
 
 manifest = load_yaml("governance/sprint-3-manifest.yml")
 check(manifest["release"] == RELEASE, "Sprint 3 manifest release mismatch")
-check(manifest["status"] == "implementation-complete-awaiting-ci", "Sprint 3 manifest status is not ready for CI")
+check(manifest["status"] == "candidate-content-merged-correction-validated", "Sprint 3 manifest status differs from CI evidence")
 for gate in ["baseline_reproducible", "decision_record_present", "causal_claim_guard", "strict_build", "static_accessibility_audit"]:
-    check(str(manifest["gates"][gate]).startswith("passed"), f"Sprint 3 local gate not recorded: {gate}")
-check(manifest["gates"]["visual_regression"] == "pending-github-actions", "Visual gate must remain pending until canonical CI")
+    check(str(manifest["gates"][gate]).startswith("passed"), f"Sprint 3 gate not recorded: {gate}")
+check(manifest["gates"]["visual_regression"] == "passed-github-actions-29847383664", "Canonical visual gate is not recorded")
 check(manifest["gates"]["owner_ratification"] == "pending", "Candidate cannot pre-record owner ratification")
+check(manifest["evidence"]["browser_results"]["visual_comparisons_passed"] == 16, "Visual comparison count differs from CI")
+check(manifest["evidence"]["browser_results"]["axe_and_semantic_runs_passed"] == 18, "Axe and semantic count differs from CI")
+check(manifest["publication"]["corrective_pull_request"].endswith("/pull/5"), "Corrective PR is not recorded")
 
 portal_markers = {
     "mkdocs.yml": "portal: v0.5.0-rc.1",
