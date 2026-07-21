@@ -59,12 +59,6 @@ Cada módulo combina cinco elementos:
 | **Prueba de estrés** | Expone supuestos, incertidumbre y contraargumentos. |
 | **Entregable** | Deja una salida reutilizable para el Decision Brief. |
 
-## Profundiza en calidad y medición
-
-La ruta enseña a fijar expectativas y aprender. El candidato `v0.7.0-rc.1` añade un sistema para instrumentar decisiones repetidas o materiales sin reducirlas a velocidad, adopción o ROI aislados.
-
-[Explorar Decision Quality & Measurement →](../07-governance-quality/index.md){ .md-button }
-
 ## Tres formas de entrar
 
 - **Lectura secuencial:** si estás construyendo criterio desde cero, recorre los módulos del 1 al 5.
