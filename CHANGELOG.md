@@ -2,6 +2,30 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.4.0-rc.1] - 2026-07-21
+
+### Añadido
+
+- Constitución candidata del CDI-BoK con autoridad, principios, límites éticos y control de cambios.
+- Definición candidata y fronteras de CDI frente a BI, Conversational AI, Conversational Analytics, DSS, DI y PULSE.
+- Declaración explícita de prior art: el proyecto no reclama haber acuñado “Conversational Decision Intelligence”.
+- Glosario normativo inicial con 27 términos, owner conceptual y límites de uso.
+- Mapa completo de ocho áreas y 29 dominios con preguntas rectoras y madurez inicial.
+- Especificación nuclear de PULSE derivada de DNA, Documentation Map e Identity canónicos.
+- ADR-014 a ADR-016, manifiesto Sprint 2 y registros ampliados de conceptos, claims y fuentes.
+
+### Calibración
+
+- CDI se posiciona como dominio de práctica interdisciplinar propuesto, no como disciplina científica consolidada.
+- La evidencia sobre colaboración humano–IA se presenta como heterogénea y dependiente del contexto.
+- La especificación pública de PULSE no adquiere autoridad independiente ni redefine sus fuentes.
+
+### Pendiente antes de promover
+
+- Ratificación explícita del núcleo fundacional candidato.
+- Preflight completo, regresión visual/accesibilidad y checks del pull request.
+- Merge a `main`, despliegue y verificación de la release publicada.
+
 ## [0.3.0-rc.1] - 2026-07-20
 
 ### Añadido

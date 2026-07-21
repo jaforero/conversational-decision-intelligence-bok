@@ -2,7 +2,7 @@
 title: Empieza aquí
 description: Qué es Conversational Decision Intelligence, qué no es y cómo se relacionan CDI, CDI-BoK y PULSE.
 status: candidate
-version: 0.3.0-rc.1
+version: 0.4.0-rc.1
 artifact_type: orientation-guide
 authority_level: guidance
 normative: false
@@ -11,14 +11,14 @@ domains:
   - Foundations
   - Conversational Decision Intelligence
   - PULSE
-last_reviewed: 2026-07-20
+last_reviewed: 2026-07-21
 ---
 
 # Empieza aquí
 
 ## La idea central
 
-**Conversational Decision Intelligence (CDI)** es una disciplina integradora propuesta que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante interfaces conversacionales para comprender evidencia, construir contexto, explorar alternativas, decidir, actuar y aprender bajo incertidumbre.
+**Conversational Decision Intelligence (CDI)** es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.
 
 La expresión **propuesta** es esencial: define el campo que este proyecto busca construir, pero no sustituye la revisión comparativa, la validación externa ni la evidencia práctica.
 
@@ -26,7 +26,7 @@ La expresión **propuesta** es esencial: define el campo que este proyecto busca
 
 | Nivel | Función | Pregunta que responde |
 |---|---|---|
-| **CDI** | Disciplina propuesta | ¿Qué debemos comprender sobre la colaboración conversacional para decidir? |
+| **CDI** | Dominio de práctica propuesto | ¿Qué debemos comprender sobre la colaboración conversacional para decidir? |
 | **CDI-BoK** | Sistema oficial y versionado de conocimiento | ¿Cómo organizamos definiciones, evidencia, modelos, patrones y prácticas? |
 | **PULSE** | Framework of practice | ¿Cómo llevamos evidencia y contexto hacia decisión, acción y aprendizaje? |
 
@@ -54,7 +54,8 @@ Esta trayectoria es una hipótesis organizadora, no una ley inevitable. Las inte
 ## Cómo continuar
 
 - [Aprende a usar el CDI-BoK](how-to-use.md).
-- [Explora la arquitectura de conocimiento](../00-foundation/index.md).
+- [Lee la Constitución candidata](../00-foundation/constitution.md).
+- [Revisa el alcance y las fronteras de CDI](../00-foundation/cdi-scope-boundaries.md).
+- [Explora la arquitectura de conocimiento](../00-foundation/domain-map.md).
 - [Conoce PULSE](../03-pulse/index.md).
 - [Revisa el sistema de autoridad](../governance/index.md).
-

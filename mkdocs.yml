@@ -51,8 +51,15 @@ nav:
   - Empieza aquí:
       - Visión general: start-here/index.md
       - Cómo usar el CDI-BoK: start-here/how-to-use.md
-  - CDI-BoK: 00-foundation/index.md
-  - PULSE: 03-pulse/index.md
+  - CDI-BoK:
+      - Visión general: 00-foundation/index.md
+      - Constitución: 00-foundation/constitution.md
+      - Alcance y fronteras de CDI: 00-foundation/cdi-scope-boundaries.md
+      - Glosario: 00-foundation/glossary.md
+      - Mapa de dominios: 00-foundation/domain-map.md
+  - PULSE:
+      - Identidad y función: 03-pulse/index.md
+      - Especificación nuclear: 03-pulse/specification.md
   - Practice Lab: practice-lab/index.md
   - Research: research/index.md
   - Gobernanza:
@@ -108,7 +115,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.3.0-rc.1
+    portal: v0.4.0-rc.1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero
@@ -129,4 +136,3 @@ validation:
     absolute_links: info
     unrecognized_links: warn
     anchors: warn
-

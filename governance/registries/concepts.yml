@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CONCEPTS
-release: 0.2.0
+release: 0.4.0-rc.1
 knowledge_areas:
   - Foundations and Identity
   - Decisions and Intelligence
@@ -45,7 +45,7 @@ concepts:
     canonical_term: Conversational Decision Intelligence
     owner: Javier Forero
     status: foundational-candidate
-    canonical_definition_location: pending-constitution
+    canonical_definition_location: docs/00-foundation/cdi-scope-boundaries.md
     definition_claim_id: CLAIM-CDI-001
   - concept_id: CDI-BOK
     canonical_term: Conversational Decision Intelligence Body of Knowledge
@@ -57,23 +57,38 @@ concepts:
     canonical_term: PULSE
     owner: Javier Forero
     status: constitutional
-    canonical_definition_location: sources/constitutional/00_PULSE_Identity.md
+    canonical_definition_location: sources/constitutional/00_PULSE_DNA.md
     definition_claim_id: CLAIM-PULSE-001
   - concept_id: PDAMR
     canonical_term: Priority-Decision-Action-Metric-Risk
     owner: Javier Forero
-    status: candidate
-    canonical_definition_location: pending-pulse-specification
+    status: constitutional
+    canonical_definition_location: sources/constitutional/00_PULSE_DNA.md
   - concept_id: PULSE-DECISION-CIRCLE
     canonical_term: PULSE Decision Circle
     owner: Javier Forero
-    status: candidate
-    canonical_definition_location: pending-pulse-specification
+    status: constitutional
+    canonical_definition_location: sources/constitutional/00_PULSE_DNA.md
   - concept_id: DECISION-EXPERIENCE
     canonical_term: Decision Experience
     owner: Javier Forero
-    status: candidate
-    canonical_definition_location: pending-comparative-review
+    status: constitutional-in-pulse
+    canonical_definition_location: sources/constitutional/00_PULSE_DNA.md
+  - concept_id: CDI-CONVERSATION
+    canonical_term: Conversación decisional
+    owner: Javier Forero
+    status: foundational-candidate
+    canonical_definition_location: docs/00-foundation/glossary.md
+  - concept_id: DECISION-SYSTEM
+    canonical_term: Sistema de decisión
+    owner: Javier Forero
+    status: foundational-candidate
+    canonical_definition_location: docs/00-foundation/glossary.md
+  - concept_id: HUMAN-IN-CONTROL
+    canonical_term: Human-in-Control
+    owner: PULSE DNA
+    status: constitutional
+    canonical_definition_location: sources/constitutional/00_PULSE_DNA.md
   - concept_id: ORIGINAL-CONTRIBUTION
     canonical_term: Original Contribution
     owner: Editor-in-Chief
@@ -84,4 +99,3 @@ concepts:
     owner: Javier Forero
     status: approved
     canonical_definition_location: governance/adr/ADR-009-brand-architecture.md
-
