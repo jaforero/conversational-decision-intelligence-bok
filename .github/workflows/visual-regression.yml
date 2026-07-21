@@ -35,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: Build and audit the portal
-        run: python scripts/preflight_sprint2.py
+        run: python scripts/preflight_release.py
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium

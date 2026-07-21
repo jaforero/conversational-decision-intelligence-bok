@@ -1,10 +1,10 @@
 ---
 title: Especificación nuclear de PULSE
 description: Proyección controlada de los elementos vigentes de PULSE a partir de su DNA, Documentation Map e Identity canónicos.
-status: candidate
-version: 0.4.0-rc.1
+status: approved
+version: 0.4.0
 artifact_type: framework-specification
-authority_level: constitutional-derived-candidate
+authority_level: constitutional-derived-approved
 normative: false
 owner: Javier Forero
 domains:
@@ -23,8 +23,8 @@ last_reviewed: 2026-07-21
 
 # Especificación nuclear de PULSE
 
-!!! warning "Autoridad derivada"
-    Esta especificación proyecta el núcleo vigente de PULSE dentro del CDI-BoK. **No redefine PULSE.** Ante cualquier diferencia, prevalecen `00_PULSE_DNA.md`, `00A_PULSE_Documentation_Map.md` y `00_PULSE_Identity.md`, en ese orden para significado constitucional, gobierno documental e identidad pública.
+!!! warning "Autoridad aprobada y derivada"
+    Esta especificación fue aprobada en `v0.4.0` como proyección del núcleo vigente de PULSE dentro del CDI-BoK. **No redefine PULSE.** Ante cualquier diferencia, prevalecen `00_PULSE_DNA.md`, `00A_PULSE_Documentation_Map.md` y `00_PULSE_Identity.md`, en ese orden para significado constitucional, gobierno documental e identidad pública.
 
 ## Definición oficial
 
@@ -192,4 +192,3 @@ CDI aporta el foco específico sobre colaboración conversacional humano–IA. P
 - puede existir Conversational Analytics sin PULSE;
 - una aplicación CDI dentro de este ecosistema debe conservar decisión, evidencia, acción, gobierno y aprendizaje;
 - PULSE solo debe extenderse cuando la extensión respete su DNA y exista una necesidad no poseída por otro documento.
-

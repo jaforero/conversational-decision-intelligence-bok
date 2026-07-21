@@ -1,8 +1,8 @@
 ---
 title: Conversational Decision Intelligence Body of Knowledge
 description: Portal oficial y versionado del proyecto CDI-BoK para organizar la práctica emergente de Conversational Decision Intelligence.
-status: candidate
-version: 0.4.0-rc.1
+status: approved
+version: 0.4.0
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -27,7 +27,7 @@ El **CDI-BoK** es una propuesta abierta y versionada para organizar cómo person
 [Revisa la gobernanza](governance/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Gobernanza v0.2.0 · Núcleo candidato v0.4.0-rc.1</span>
+<span class="cdi-release">Núcleo fundacional estable · v0.4.0</span>
 </div>
 
 !!! warning "Posicionamiento calibrado"
@@ -40,7 +40,7 @@ El **CDI-BoK** es una propuesta abierta y versionada para organizar cómo person
 <a class="cdi-card" href="00-foundation/cdi-scope-boundaries/" aria-label="Comprender qué es CDI, su alcance y sus fronteras">
 <span class="cdi-card__index">01</span>
 <h3>Comprender CDI</h3>
-<p>Conoce la definición candidata, sus límites, campos adyacentes, prior art y criterio de prueba.</p>
+<p>Conoce la definición oficial del proyecto, sus límites, campos adyacentes, prior art y criterio de prueba.</p>
 </a>
 
 <a class="cdi-card" href="03-pulse/" aria-label="Conocer PULSE como framework of practice">

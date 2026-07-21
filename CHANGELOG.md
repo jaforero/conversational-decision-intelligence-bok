@@ -2,6 +2,27 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.4.0] - 2026-07-21
+
+### Ratificado
+
+- Constitución y fronteras de CDI como lenguaje institucional aprobado del proyecto.
+- Glosario y mapa de ocho áreas y 29 dominios como activos controlados.
+- Especificación nuclear de PULSE como proyección aprobada y derivada de sus fuentes constitucionales.
+
+### Añadido
+
+- ADR-017 para registrar la decisión de ratificación, autoridad diferenciada y límites de la promoción.
+- Manifiesto reproducible y nota pública de la release estable.
+- Gate automatizado que crea el tag y GitHub Release solo después de preflight, build, regresión visual y Axe sobre `main`.
+
+### Calibración
+
+- Una definición oficial del proyecto no equivale a consenso académico externo.
+- La estabilidad de la release no demuestra eficacia generalizable ni estandarización externa.
+- Research, Practice Lab y los activos no ratificados conservan su estado candidato.
+- La especificación pública de PULSE no sustituye sus fuentes constitucionales.
+
 ## [0.4.0-rc.1] - 2026-07-21
 
 ### Añadido
@@ -26,10 +47,10 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - Dieciséis comparaciones visuales y nueve ejecuciones automatizadas de Axe aprobadas en el runner canónico Ubuntu; nueve duplicados móviles de Axe se omiten deliberadamente.
 - Las pruebas automatizadas no constituyen por sí solas una declaración de conformidad WCAG 2.2 AA.
 
-### Pendiente antes de promover
+### Cierre
 
-- Ratificación explícita del núcleo fundacional candidato.
-- Merge a `main`, despliegue y verificación de la release publicada.
+- Ratificado por Javier Forero el 21 de julio de 2026.
+- Promovido a la release estable `v0.4.0` mediante ADR-017.
 
 ## [0.3.0-rc.1] - 2026-07-20
 

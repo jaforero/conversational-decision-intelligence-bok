@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CONCEPTS
-release: 0.4.0-rc.1
+release: 0.4.0
 knowledge_areas:
   - Foundations and Identity
   - Decisions and Intelligence
@@ -44,7 +44,7 @@ concepts:
   - concept_id: CDI
     canonical_term: Conversational Decision Intelligence
     owner: Javier Forero
-    status: foundational-candidate
+    status: approved
     canonical_definition_location: docs/00-foundation/cdi-scope-boundaries.md
     definition_claim_id: CLAIM-CDI-001
   - concept_id: CDI-BOK
@@ -77,12 +77,12 @@ concepts:
   - concept_id: CDI-CONVERSATION
     canonical_term: Conversación decisional
     owner: Javier Forero
-    status: foundational-candidate
+    status: approved-controlled
     canonical_definition_location: docs/00-foundation/glossary.md
   - concept_id: DECISION-SYSTEM
     canonical_term: Sistema de decisión
     owner: Javier Forero
-    status: foundational-candidate
+    status: approved-controlled
     canonical_definition_location: docs/00-foundation/glossary.md
   - concept_id: HUMAN-IN-CONTROL
     canonical_term: Human-in-Control

@@ -1,18 +1,18 @@
 schema_version: 1.0.0
 registry_id: CDI-CLAIMS
-release: 0.4.0-rc.1
+release: 0.4.0
 claims:
   - claim_id: CLAIM-CDI-001
     statement: Conversational Decision Intelligence es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.
     claim_class: project-definition
     evidence_status: normative-project-language
-    maturity: foundational-candidate
+    maturity: approved-project-definition
     owner: Javier Forero
     source_ids:
       - SRC-DR-002
       - SRC-ACADEMIC-HAI-001
     governed_by: ADR-015
-    limits: Definición institucional candidata; no afirma reconocimiento académico, acuñación del término ni eficacia generalizable.
+    limits: Definición institucional aprobada para el proyecto; no afirma reconocimiento académico, acuñación del término ni eficacia generalizable.
   - claim_id: CLAIM-CDIBOK-001
     statement: El CDI-BoK es el sistema de conocimiento versionado que organiza el conocimiento oficial del proyecto CDI.
     claim_class: institutional-definition
@@ -72,7 +72,7 @@ claims:
     statement: El CDI-BoK organiza 29 dominios en ocho áreas como arquitectura editorial inicial.
     claim_class: institutional-taxonomy
     evidence_status: approved-governance-derived
-    maturity: foundational-candidate
+    maturity: approved-institutional-taxonomy
     owner: Javier Forero
     source_ids:
       - SRC-DR-002
@@ -81,7 +81,7 @@ claims:
     statement: PULSE funciona como framework of practice del ecosistema CDI-BoK sin ser sinónimo de CDI ni depender de una interfaz conversacional.
     claim_class: ecosystem-definition
     evidence_status: constitutional-derived
-    maturity: foundational-candidate
+    maturity: approved-derived
     owner: Javier Forero
     source_ids:
       - SRC-PULSE-DNA-001

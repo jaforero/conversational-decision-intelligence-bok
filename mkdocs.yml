@@ -67,7 +67,9 @@ nav:
       - Arquitectura editorial: governance/architecture.md
       - Claims y evidencia: governance/claims-evidence.md
       - Publicación y dominio: governance/publication-runbook.md
-  - Versiones: versions/index.md
+  - Versiones:
+      - Estado e historial: versions/index.md
+      - Release v0.4.0: versions/v0.4.0.md
   - Acerca de: about/index.md
 
 plugins:
@@ -115,7 +117,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.4.0-rc.1
+    portal: v0.4.0
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero

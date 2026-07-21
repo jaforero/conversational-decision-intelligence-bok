@@ -1,8 +1,8 @@
 ---
 title: Arquitectura del CDI-BoK
 description: Ocho áreas de conocimiento y 29 dominios organizados como una arquitectura progresiva, no como navegación plana.
-status: candidate
-version: 0.4.0-rc.1
+status: approved
+version: 0.4.0
 artifact_type: knowledge-map
 authority_level: guidance
 normative: false
@@ -15,7 +15,7 @@ last_reviewed: 2026-07-21
 
 # CDI-BoK
 
-El núcleo fundacional define qué es el CDI-BoK, dónde comienza y termina CDI, qué lenguaje controla y cómo organiza su conocimiento. Sus documentos son candidatos hasta que Javier Forero los ratifique explícitamente.
+El núcleo fundacional define qué es el CDI-BoK, dónde comienza y termina CDI, qué lenguaje controla y cómo organiza su conocimiento. Javier Forero ratificó sus cinco activos centrales el 21 de julio de 2026 para la release estable `v0.4.0`.
 
 ## Documentos fundacionales
 
@@ -28,7 +28,7 @@ Propósito, autoridad, principios, límites éticos y reglas de evolución.
 
 <a class="cdi-card" href="cdi-scope-boundaries/">
 ### Alcance y fronteras de CDI
-Definición candidata, campos adyacentes, prior art y criterios de prueba.
+Definición oficial del proyecto, campos adyacentes, prior art y criterios de prueba.
 </a>
 
 <a class="cdi-card" href="glossary/">
@@ -96,4 +96,4 @@ Decision Maturity · Enterprise Implementation · Case Studies · Research
 La taxonomía no obliga a redactar capítulos para llenar casillas. Primero se identifica una necesidad decisional; después se determina qué dominio posee el concepto, qué evidencia existe y qué activo mínimo agrega valor sin duplicar conocimiento.
 
 !!! warning "Autoridad calibrada"
-    La publicación de este núcleo no demuestra que CDI sea una disciplina académica consolidada. La Constitución y las definiciones son autoridad institucional candidata; los claims empíricos conservan una evaluación independiente de evidencia.
+    La publicación de este núcleo no demuestra que CDI sea una disciplina académica consolidada. La Constitución y las definiciones tienen autoridad institucional dentro del proyecto; los claims empíricos conservan una evaluación independiente de evidencia.

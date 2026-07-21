@@ -27,5 +27,5 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --require-hashes -r requirements.lock
 
-      - name: Run Sprint 2 preflight
-        run: python scripts/preflight_sprint2.py
+      - name: Run stable release preflight
+        run: python scripts/preflight_release.py

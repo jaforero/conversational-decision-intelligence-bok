@@ -1,10 +1,10 @@
 ---
 title: PULSE
 description: Identidad constitucional de PULSE y su función como framework of practice de Conversational Decision Intelligence.
-status: candidate
-version: 0.4.0-rc.1
+status: approved
+version: 0.4.0
 artifact_type: framework-orientation
-authority_level: constitutional-summary
+authority_level: constitutional-derived-approved
 normative: false
 owner: Javier Forero
 domains:

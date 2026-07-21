@@ -1,0 +1,45 @@
+schema_version: 1.0.0
+release: 0.4.0
+tag: v0.4.0
+status: stable
+source_candidate: 0.4.0-rc.1
+released_on: 2026-07-21
+owner: Javier Forero
+ratification:
+  ratified_by: Javier Forero
+  ratified_on: 2026-07-21
+  decision: Portal v0.4.0-rc.1 and its foundational core ratified for stable promotion.
+  governed_by: ADR-017
+promotions:
+  - path: docs/00-foundation/constitution.md
+    status: approved
+    authority_level: foundational-approved
+    normative: true
+  - path: docs/00-foundation/cdi-scope-boundaries.md
+    status: approved
+    authority_level: institutional-approved
+    normative: true
+  - path: docs/00-foundation/glossary.md
+    status: approved
+    authority_level: approved-controlled
+    normative: true
+  - path: docs/00-foundation/domain-map.md
+    status: approved
+    authority_level: approved-controlled
+    normative: true
+  - path: docs/03-pulse/specification.md
+    status: approved
+    authority_level: constitutional-derived-approved
+    normative: false
+quality_evidence:
+  candidate_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/2
+  candidate_validation: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29840861300
+  candidate_browser_quality: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29840857902
+  stable_gate: .github/workflows/release.yml
+limitations:
+  - CDI remains a proposed interdisciplinary practice domain, not a recognized scientific discipline.
+  - The project does not claim to have coined Conversational Decision Intelligence.
+  - PULSE is not presented as universally or scientifically validated.
+  - Automated accessibility checks do not establish WCAG 2.2 AA conformance.
+  - Stable project authority does not imply external standardization or empirical generalizability.
+
