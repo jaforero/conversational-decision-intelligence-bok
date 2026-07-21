@@ -1,0 +1,5 @@
+cycle_id,decision_id,checkpoint_date,group,period,proposal_conversion_pct,sales_compliance_pct,expected_low_pct,expected_central_pct,expected_high_pct,attributable_effect_pp,process_quality_score,confounders,learning,status
+CYCLE-01,DEC-2026-07-COMM-PROPUESTA-01,,intervention,pre,,,,,,,,,,not-started
+CYCLE-01,DEC-2026-07-COMM-PROPUESTA-01,,comparison,pre,,,,,,,,,,not-started
+CYCLE-01,DEC-2026-07-COMM-PROPUESTA-01,,intervention,post,,,,,,,,,,not-started
+CYCLE-01,DEC-2026-07-COMM-PROPUESTA-01,,comparison,post,,,,,,,,,,not-started

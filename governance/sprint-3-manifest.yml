@@ -1,0 +1,47 @@
+schema_version: 1.0.0
+sprint: 3
+release: 0.5.0-rc.1
+status: implementation-complete-awaiting-ci
+started_on: 2026-07-21
+owner: Javier Forero
+objective: Convert the B2B Proposal demo into the first instrumented, falsifiable Practice Lab case while keeping simulated evidence separate from observed organizational impact.
+scope:
+  - Verified catalog of the two public dashboard portfolios
+  - Documented selection of the B2B Proposal case
+  - PDAMR decision contract and machine-readable decision record
+  - Reproducible simulated-data baseline
+  - Counterfactual protocol, process-quality rubric and cycle log
+  - Claims, sources, ADR, navigation and automated Sprint 3 gates
+out_of_scope:
+  - Claim that the intervention has been executed
+  - Claim that PULSE or CDI improved conversion or decision quality
+  - Claim that event or referral channels are statistically superior
+  - Production CRM ingestion or storage
+  - Conversational copilot, agent or automated action
+  - Stable v0.5.0 promotion before owner ratification and release gates
+decisions:
+  - ADR-018
+  - ADR-019
+gates:
+  stable_v040_present: passed
+  public_catalog_verified: passed-2026-07-21
+  simulated_data_boundary: passed
+  baseline_reproducible: passed-local-recalculation
+  decision_record_present: passed
+  causal_claim_guard: passed
+  strict_build: passed-local
+  static_accessibility_audit: passed-static-scope
+  visual_regression: pending-github-actions
+  owner_ratification: pending
+evidence:
+  primary_case: B2B-PROP-001
+  primary_demo_url: https://dashboards.javierforero.co/claude/desempeno-comercial/
+  source_page_sha256: f24e707be38b8e900807e66d867501de21fdaac9b49a9e1cec15f24fdf253b1c
+  source_disclosure: Datos de demostración simulados; los hallazgos requieren validación operativa.
+  local_browser_attempt: blocked-before-page-load-missing-chromium-download-truncated
+  browser_authority: GitHub Actions Ubuntu runner remains canonical for visual regression and automated Axe.
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/sprint-3-b2b-proposal
+  target_url: https://decision.javierforero.co
+  status: not-published

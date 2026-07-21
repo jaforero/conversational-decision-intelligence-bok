@@ -19,6 +19,11 @@ const foundationalPages = [
   { name: "glossary", path: "/00-foundation/glossary/" },
   { name: "domain-map", path: "/00-foundation/domain-map/" },
   { name: "pulse-spec", path: "/03-pulse/specification/" },
+  { name: "practice-catalog", path: "/practice-lab/catalog/" },
+  { name: "b2b-case", path: "/practice-lab/b2b-proposal/" },
+  { name: "b2b-contract", path: "/practice-lab/b2b-proposal/decision-contract/" },
+  { name: "b2b-evidence", path: "/practice-lab/b2b-proposal/evidence-protocol/" },
+  { name: "b2b-cycle", path: "/practice-lab/b2b-proposal/cycle-log/" },
 ];
 
 async function stabilizeExternalAssets(page) {

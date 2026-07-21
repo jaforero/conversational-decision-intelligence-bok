@@ -2,6 +2,30 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.5.0-rc.1] - 2026-07-21
+
+### Añadido
+
+- Catálogo verificado de los portafolios Claude y ChatGPT Work.
+- Primer caso instrumentado: intervención sobre Propuesta en Comercial B2B.
+- Contrato PDAMR, alternativas, decision rights, prerregistro y rúbrica de calidad de proceso.
+- Baseline reproducible de cumplimiento, funnel y win rate por canal sobre datos simulados.
+- Protocolo de hold-out + diferencia-en-diferencias, registro YAML y log mensual CSV.
+- ADR-018 para el ciclo de evidencia y ADR-019 para selección y frontera del piloto.
+- Validador específico contra outcomes o causalidad inventados.
+
+### Hallazgo crítico
+
+- Junio de 2026 es el peor mes del demo: 80,11% de cumplimiento y 8/8 vendedores bajo 90%.
+- La conversión de Propuesta cae 11,50 pp entre ene–mar y abr–jun de 2026.
+- Evento y referido superan a inbound digital en la tasa observada, pero los intervalos se superponen; no se conserva lenguaje de superioridad significativa ni se recomienda reasignar presupuesto con esta evidencia.
+
+### Frontera
+
+- El caso permanece `instrumented-not-executed`: sin owner confirmado, expectativa bloqueada, acción, outcome o efecto atribuible.
+- Los datos son de demostración simulados. Sirven para probar instrumentación, no impacto organizacional.
+- El núcleo fundacional `v0.4.0` no cambia de autoridad.
+
 ## [0.4.0] - 2026-07-21
 
 ### Ratificado

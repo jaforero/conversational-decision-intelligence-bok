@@ -6,15 +6,15 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 
 - Release de gobernanza: `v0.2.0`
 - Release estable del portal y núcleo fundacional: `v0.4.0`
-- Candidato promovido: `v0.4.0-rc.1`
-- Fase cerrada: Sprint 2 — Constitución, fronteras, glosario, dominios y PULSE
+- Candidato actual: `v0.5.0-rc.1`
+- Fase activa: Sprint 3 — Práctica y evidencia con el caso B2B Propuesta
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal objetivo: `https://decision.javierforero.co`
 - Practice Lab externo: `https://dashboards.javierforero.co`
 - Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
-La release `v0.4.0` ratifica el núcleo fundacional con autoridad diferenciada. **No** afirma que CDI sea un estándar internacional reconocido ni que PULSE cuente con validación científica generalizable.
+La release `v0.4.0` ratifica el núcleo fundacional con autoridad diferenciada. El candidato `v0.5.0-rc.1` agrega un caso instrumentado sobre datos simulados; **no** afirma que la intervención haya ocurrido ni que CDI o PULSE hayan producido mejores resultados.
 
 ## Fuentes de autoridad
 
@@ -33,6 +33,7 @@ La release `v0.4.0` ratifica el núcleo fundacional con autoridad diferenciada. 
 - `sources/constitutional/`: copias controladas de las fuentes constitucionales de PULSE.
 - `scripts/`: sincronizadores y validadores de integridad.
 - `tests/`: regresión visual y reglas de accesibilidad automatizables.
+- `evidence/`: agregados reproducibles y no sensibles para auditar casos.
 - `.github/workflows/`: validación, pruebas de navegador y despliegue a Pages.
 
 ## Uso local

@@ -1,8 +1,8 @@
 ---
 title: Conversational Decision Intelligence Body of Knowledge
 description: Portal oficial y versionado del proyecto CDI-BoK para organizar la práctica emergente de Conversational Decision Intelligence.
-status: approved
-version: 0.4.0
+status: candidate
+version: 0.5.0-rc.1
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -27,7 +27,7 @@ El **CDI-BoK** es una propuesta abierta y versionada para organizar cómo person
 [Revisa la gobernanza](governance/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Núcleo fundacional estable · v0.4.0</span>
+<span class="cdi-release">Núcleo estable v0.4.0 · Práctica candidata v0.5.0-rc.1</span>
 </div>
 
 !!! warning "Posicionamiento calibrado"
@@ -72,6 +72,16 @@ El **CDI-BoK** es una propuesta abierta y versionada para organizar cómo person
 <h3>Seguir la evolución</h3>
 <p>Consulta releases, candidatos, cambios y límites conocidos sin perder trazabilidad histórica.</p>
 </a>
+
+</div>
+
+## De la doctrina a una decisión falsable
+
+<div class="cdi-insight" markdown>
+
+El primer caso instrumentado pregunta dónde intervenir en un funnel comercial B2B cuyo demo muestra una caída de **11,50 pp** en la conversión de Propuesta. El BoK agrega contrato, expectativa previa, contrafactual y ciclo de aprendizaje. El caso aún no tiene acción ni resultado y no se presenta como evidencia de eficacia.
+
+[Examinar el caso B2B Propuesta](practice-lab/b2b-proposal/index.md)
 
 </div>
 

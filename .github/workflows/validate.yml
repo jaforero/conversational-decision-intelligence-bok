@@ -27,5 +27,5 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --require-hashes -r requirements.lock
 
-      - name: Run stable release preflight
+      - name: Run current portal preflight
         run: python scripts/preflight_release.py

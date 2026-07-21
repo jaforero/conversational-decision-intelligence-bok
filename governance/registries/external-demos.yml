@@ -1,14 +1,81 @@
 schema_version: 1.0.0
 registry_id: CDI-EXTERNAL-DEMOS
+release: 0.5.0-rc.1
+observed_on: 2026-07-21
+root:
+  demo_id: JF-DASHBOARDS
+  name: AI Dashboards by Javier Forero
+  url: https://dashboards.javierforero.co
+  ecosystem_role: practice-lab
+  owner: Javier Forero
+  integration: linked-external-property
+  embedding: prohibited-by-default
+  content_authority: practice-evidence-only
+  evidence_policy: A demo becomes a CDI-BoK case only after documenting decision, baseline, data, intervention, result and limitations.
+  governed_by: ADR-006
 demos:
-  - demo_id: JF-DASHBOARDS
-    name: AI Dashboards by Javier Forero
-    url: https://dashboards.javierforero.co
-    ecosystem_role: practice-lab
-    owner: Javier Forero
-    integration: linked-external-property
-    embedding: prohibited-by-default
-    content_authority: practice-evidence-only
-    evidence_policy: A demo becomes a CDI-BoK case only after documenting decision, baseline, data, intervention, result and limitations.
-    governed_by: ADR-006
-
+  - demo_id: JF-CLAUDE-SLA
+    name: Cumplimiento de SLA - Operaciones B2B
+    portfolio: Claude
+    url: https://dashboards.javierforero.co/claude/sla-operaciones/
+    public_status: available
+    data_nature: synthetic-demo-with-local-upload
+    case_readiness: medium
+  - demo_id: JF-CLAUDE-FINANCE
+    name: Pulso Financiero - Finanzas Corporativas
+    portfolio: Claude
+    url: https://dashboards.javierforero.co/claude/pulso-financiero/
+    public_status: available
+    data_nature: simulated-demo-with-local-upload
+    case_readiness: medium
+  - demo_id: JF-CLAUDE-COMMERCIAL
+    name: Desempeño Comercial - Dirección B2B
+    portfolio: Claude
+    url: https://dashboards.javierforero.co/claude/desempeno-comercial/
+    public_status: available
+    data_nature: simulated-demo
+    case_readiness: high-for-instrumentation
+    selected_case_id: B2B-PROP-001
+  - demo_id: JF-GPT-FINANCE
+    name: Predicción financiera 2025
+    portfolio: ChatGPT Work
+    url: https://javier-dashboards.jforero.chatgpt.site/dashboards/finanzas
+    public_status: available
+    data_nature: simulated-demo
+    case_readiness: medium
+  - demo_id: JF-GPT-SLA
+    name: Cumplimiento SLA B2B
+    portfolio: ChatGPT Work
+    url: https://javier-dashboards.jforero.chatgpt.site/dashboards/sla
+    public_status: available
+    data_nature: simulated-demo
+    case_readiness: medium-high
+  - demo_id: JF-GPT-COMMERCIAL
+    name: Desempeño comercial y ventas
+    portfolio: ChatGPT Work
+    url: https://javier-dashboards.jforero.chatgpt.site/dashboards/comercial
+    public_status: available
+    data_nature: simulated-demo
+    case_readiness: high-for-instrumentation
+    related_case_id: B2B-PROP-001
+  - demo_id: JF-GPT-WORLDCUP
+    name: Predicción Mundial 2026
+    portfolio: ChatGPT Work
+    url: https://mundial.javierforero.co/
+    public_status: available-external
+    data_nature: not-assessed-in-this-sprint
+    case_readiness: high-for-predictive-calibration
+  - demo_id: JF-GPT-TABLEAU
+    name: Inflación en América Latina
+    portfolio: ChatGPT Work
+    url: https://public.tableau.com/app/profile/javier.forero/viz/TasasdeInflacinenAmricaLatina2017/Dashboard
+    public_status: available-external
+    data_nature: not-assessed-in-this-sprint
+    case_readiness: low-for-decision-cycle
+  - demo_id: JF-GPT-PULSE
+    name: PULSE Decision Intelligence
+    portfolio: ChatGPT Work
+    url: null
+    public_status: forthcoming
+    data_nature: not-observable
+    case_readiness: not-evaluable
