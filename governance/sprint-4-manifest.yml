@@ -1,0 +1,50 @@
+schema_version: 1.0.0
+sprint: 4
+release: 0.6.0-rc.1
+status: candidate-implemented-not-ratified
+started_on: 2026-07-21
+owner: Javier Forero
+objective: Make the CDI-BoK value explicit from the first viewport and convert foundational knowledge into a usable learning path without inventing organizational impact.
+scope:
+  - Outcome-led public home
+  - Problem-led entry routes
+  - Five-module learning path
+  - Reusable Decision Brief
+  - Navigation, versioning, ADR, content map and automated gates
+out_of_scope:
+  - New organizational case study or CRM evidence
+  - Claim that learning materials improve business outcomes
+  - Promotion of the B2B case to executed or validated
+  - Change to the authority of the v0.4.0 foundational core
+  - Conversational copilot, agent or external action
+decisions:
+  - ADR-020
+gates:
+  source_hierarchy_preserved: passed-local-validation
+  learning_outcomes_explicit: passed-149-sprint4-checks
+  historical_case_boundary: passed-sprint3-and-sprint4-validation
+  strict_build: passed-local-mkdocs-1.6.1
+  static_accessibility_audit: pending-github-actions
+  visual_regression: pending-github-actions
+  owner_ratification: pending
+evidence:
+  source_scope:
+    - SRC-PULSE-DNA-001
+    - SRC-PULSE-IDENTITY-002
+    - SRC-JF-002
+    - SRC-JF-005
+    - SRC-ARCH-001
+  evidence_posture: Educational synthesis and derived guidance; not evidence of organizational impact.
+  local_validation:
+    sprint4_checks_passed: 149
+    sprint3_checks_passed: 213
+    sprint2_checks_passed: 145
+    sprint0_checks_passed: 171
+    markdown_documents_audited: 33
+    generated_html_audited: 34
+  browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/sprint-4-learning-experience
+  target_url: https://decision.javierforero.co
+  status: not-published

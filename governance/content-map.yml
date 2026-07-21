@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 map_id: CDI-CONTENT-MAP
-release: 0.5.0-rc.1
+release: 0.6.0-rc.1
 canonical_language: es
 root_governance: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
 collections:
@@ -38,6 +38,10 @@ collections:
       - docs/00-foundation/glossary.md
       - docs/00-foundation/domain-map.md
       - docs/03-pulse/specification.md
+  learning_experience:
+    authority: experimental-candidate-guidance
+    paths:
+      - docs/learn/
   practice_cases:
     authority: experimental-candidate
     paths:
@@ -57,11 +61,18 @@ publication_rules:
   unresolved_pointer: prohibited
   duplicate_canonical_definition: prohibited
 public_portal:
-  release: 0.5.0-rc.1
+  release: 0.6.0-rc.1
   navigation:
     - { id: PORTAL-HOME, path: docs/index.md, status: candidate }
     - { id: PORTAL-START, path: docs/start-here/index.md, status: approved }
     - { id: PORTAL-HOWTO, path: docs/start-here/how-to-use.md, status: candidate }
+    - { id: PORTAL-LEARN, path: docs/learn/index.md, status: candidate }
+    - { id: PORTAL-LEARN-DECISION, path: docs/learn/01-decision-first.md, status: candidate }
+    - { id: PORTAL-LEARN-EVIDENCE, path: docs/learn/02-evidence-context.md, status: candidate }
+    - { id: PORTAL-LEARN-EXPERIENCE, path: docs/learn/03-decision-experience.md, status: candidate }
+    - { id: PORTAL-LEARN-CONTROL, path: docs/learn/04-human-ai-control.md, status: candidate }
+    - { id: PORTAL-LEARN-ACTION, path: docs/learn/05-action-learning.md, status: candidate }
+    - { id: PORTAL-DECISION-BRIEF, path: docs/learn/decision-brief.md, status: candidate }
     - { id: PORTAL-BOK, path: docs/00-foundation/index.md, status: approved }
     - { id: PORTAL-CONSTITUTION, path: docs/00-foundation/constitution.md, status: approved }
     - { id: PORTAL-CDI-SCOPE, path: docs/00-foundation/cdi-scope-boundaries.md, status: approved }
@@ -83,4 +94,5 @@ public_portal:
     - { id: PORTAL-VERSIONS, path: docs/versions/index.md, status: candidate }
     - { id: PORTAL-RELEASE-040, path: docs/versions/v0.4.0.md, status: approved }
     - { id: PORTAL-RELEASE-050RC1, path: docs/versions/v0.5.0-rc.1.md, status: candidate }
+    - { id: PORTAL-RELEASE-060RC1, path: docs/versions/v0.6.0-rc.1.md, status: candidate }
     - { id: PORTAL-ABOUT, path: docs/about/index.md, status: candidate }

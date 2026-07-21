@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CONCEPTS
-release: 0.5.0-rc.1
+release: 0.6.0-rc.1
 knowledge_areas:
   - Foundations and Identity
   - Decisions and Intelligence
@@ -99,3 +99,8 @@ concepts:
     owner: Javier Forero
     status: approved
     canonical_definition_location: governance/adr/ADR-009-brand-architecture.md
+  - concept_id: DECISION-BRIEF
+    canonical_term: Decision Brief
+    owner: Javier Forero
+    status: candidate-guidance
+    canonical_definition_location: docs/learn/decision-brief.md

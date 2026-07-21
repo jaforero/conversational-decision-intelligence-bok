@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-ADR
-release: 0.5.0-rc.1
+release: 0.6.0-rc.1
 decisions:
   - { id: ADR-001, status: accepted, file: ADR-001-repository-name.md }
   - { id: ADR-002, status: accepted, file: ADR-002-canonical-language.md }
@@ -21,3 +21,4 @@ decisions:
   - { id: ADR-017, status: accepted, file: ADR-017-v040-stable-promotion.md }
   - { id: ADR-018, status: accepted, file: ADR-018-practice-evidence-lifecycle.md }
   - { id: ADR-019, status: accepted, file: ADR-019-b2b-proposal-pilot-selection.md }
+  - { id: ADR-020, status: accepted, file: ADR-020-learning-experience-architecture.md }
