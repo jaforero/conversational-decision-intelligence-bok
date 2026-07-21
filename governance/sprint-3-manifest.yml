@@ -53,6 +53,8 @@ publication:
   initial_merge_commit: 258d9aa0d6824c0def7525cda30df840c3d93dbb
   corrective_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/5
   corrective_merge_commit: 340efda43aec909237587a4c5747b664b107721e
+  documentary_closure_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/6
+  documentary_closure_merge_commit: a52033466a664000d385d5b7762fc062b5133380
   post_merge_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29848050956
   pages_deployment_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29848050972
   target_url: https://decision.javierforero.co

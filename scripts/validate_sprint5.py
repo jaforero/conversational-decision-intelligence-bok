@@ -161,9 +161,15 @@ check(set(required_docs).issubset(registered), "Sprint 5 documents are absent fr
 
 manifest = load_yaml("governance/sprint-5-manifest.yml")
 check(manifest["release"] == RELEASE, "Sprint 5 manifest release mismatch")
-check(manifest["status"] == "candidate-implemented-not-ratified", "Sprint 5 manifest overstates promotion")
-check(manifest["gates"]["owner_ratification"] == "pending", "Owner ratification cannot be pre-recorded")
-check(manifest["publication"]["status"] == "not-published", "Sprint 5 publication is overstated")
+check(manifest["status"] == "candidate-ratified-merged-deployed", "Sprint 5 closure state is not recorded")
+check(manifest["gates"]["owner_ratification"] == "passed-user-ratification-2026-07-21", "Owner ratification is not recorded")
+check(manifest["gates"]["final_pull_request_validation"] == "passed-run-29862965428", "Final PR validation is not recorded")
+check(manifest["gates"]["final_pull_request_browser_quality"] == "passed-run-29862965289", "Final PR browser quality is not recorded")
+check(manifest["gates"]["post_merge_validation"] == "passed-run-29863235105", "Post-merge validation is not recorded")
+check(manifest["gates"]["pages_deployment"] == "passed-run-29863234835", "Pages deployment is not recorded")
+check(manifest["publication"]["merge_commit"] == "e84f53a6caaca696a8143a2aab2e7a24e9bdb4e8", "Sprint 5 merge commit differs")
+check(manifest["publication"]["portal_verification"] == "passed-http-200-0.7.0-rc.1-2026-07-21", "Portal verification is not recorded")
+check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 5 publication state is inaccurate")
 
 portal_markers = {
     "mkdocs.yml": "portal: v0.7.0-rc.1",
@@ -178,7 +184,7 @@ for path, marker in portal_markers.items():
 sprint4 = load_yaml("governance/sprint-4-manifest.yml")
 check(sprint4["gates"]["owner_ratification"] == "passed-user-ratification-2026-07-21", "Sprint 4 owner ratification is not closed")
 check(sprint4["publication"]["merge_commit"] == "958e2ee0c5326b2329e3f0a64259d149362571df", "Sprint 4 merge commit is not recorded")
-check(sprint4["publication"]["status"] == "merged-awaiting-deployment-verification", "Sprint 4 deployment verification is overstated")
+check(sprint4["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 4 deployment closure is absent")
 
 case = load_yaml("governance/cases/B2B-PROP-001.yml")
 check(case["release"] == "0.5.0-rc.1", "Sprint 5 rewrote the historical case release")

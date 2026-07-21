@@ -19,20 +19,24 @@ last_reviewed: 2026-07-21
 | Componente | Versión | Estado | Alcance |
 |---|---|---|---|
 | Gobernanza CDI-BoK | `v0.2.0` | Aprobada y normativa | Arquitectura, autoridad, claims, marca y Sprint 0 |
-| Portal técnico | `v0.3.0-rc.1` | Integrado | MkDocs, navegación, CI/CD, checks y dominio personalizado |
+| Portal técnico | `v0.3.0-rc.1` | Integrado y desplegado | MkDocs, navegación, CI/CD, checks y dominio personalizado |
 | Núcleo fundacional | [`v0.4.0`](v0.4.0.md) | Estable | Constitución, fronteras CDI, glosario, dominios y especificación PULSE |
-| Práctica y evidencia | [`v0.5.0-rc.1`](v0.5.0-rc.1.md) | Candidato | Catálogo y primer caso B2B instrumentado, sin outcome observado |
-| Aprendizaje y experiencia | [`v0.6.0-rc.1`](v0.6.0-rc.1.md) | Candidato ratificado | Portada orientada a resultados, cinco módulos y Decision Brief |
-| Calidad y medición | [`v0.7.0-rc.1`](v0.7.0-rc.1.md) | Candidato actual | Decision Quality, seis lentes, anti-métricas y Measurement Record |
+| Práctica y evidencia | [`v0.5.0-rc.1`](v0.5.0-rc.1.md) | Candidato desplegado, no ratificado | Catálogo y primer caso B2B instrumentado, sin outcome observado |
+| Aprendizaje y experiencia | [`v0.6.0-rc.1`](v0.6.0-rc.1.md) | Candidato ratificado y desplegado | Portada orientada a resultados, cinco módulos y Decision Brief |
+| Calidad y medición | [`v0.7.0-rc.1`](v0.7.0-rc.1.md) | Candidato actual ratificado y desplegado | Decision Quality, seis lentes, anti-métricas y Measurement Record |
 
 La versión del portal no eleva automáticamente la madurez doctrinal del contenido. Infraestructura, conocimiento y evidencia pueden evolucionar a ritmos distintos, pero siempre deben conservar trazabilidad.
 
-## Política inicial
+## Política vigente
 
-- Git tags y GitHub Releases preservan versiones fuente.
-- `decision.javierforero.co` muestra la última release pública aprobada.
+- Las releases estables requieren tag inmutable y GitHub Release.
+- Los candidatos se trazan mediante nota, changelog, manifiesto, PR, SHA de merge, validación y despliegue. Solo reciben tag cuando el owner autoriza explícitamente congelarlos como pre-release inmutable.
+- Ratificación, despliegue y estabilidad son estados diferentes: un candidato ratificado y desplegado no se vuelve estable automáticamente.
+- `decision.javierforero.co` muestra el último build público fusionado; la versión del portal no eleva la autoridad ni la fuerza de evidencia de todos sus contenidos.
 - Borradores no aparecen en navegación estable.
 - El selector de versiones web se incorporará cuando existan al menos dos releases históricas útiles para el lector.
+
+ADR-022 sustituye la regla inicial de ADR-005 y evita crear tags retrospectivos ambiguos. El registro controlado `governance/releases/index.yml` conserva la línea completa. Actualmente existen los tags `v0.2.0` y `v0.4.0`; los RC históricos permanecen intencionalmente sin tag.
 
 !!! note "Por qué no existe un v0.1.0 posterior"
     La hoja de ruta inicial nombró la salida de Sprint 2 como `v0.1.0`, pero la secuencia ya había publicado `v0.2.0` y `v0.3.0-rc.1`. ADR-014 asignó `v0.4.0-rc.1` al candidato; ADR-017 registra su ratificación y promoción estable a `v0.4.0`.
