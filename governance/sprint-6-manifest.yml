@@ -1,0 +1,66 @@
+schema_version: 1.0.0
+sprint: 6
+release: 0.8.0-rc.1
+status: candidate-implemented-not-ratified
+started_on: 2026-07-21
+owner: Javier Forero
+objective: Provide a bounded and testable pattern language for recurring decision conversations, including contraindications and anti-patterns, without presenting an institutional taxonomy as universal evidence.
+scope:
+  - Candidate pattern language, anatomy, maturity and selection rules
+  - Five conversational decision patterns spanning framing through learning
+  - Six observable anti-patterns with second-order risks and repairs
+  - Machine-readable registry and reusable null-state template
+  - Stopped B2B demonstration that preserves the simulated evidence boundary
+  - Navigation, release note, ADR, registries and automated gates
+out_of_scope:
+  - Universal or exhaustive decision-pattern taxonomy
+  - Prompt library, UI component library or conversational product
+  - Normative PULSE Decision Patterns or Pattern Library documents
+  - Claim that following a pattern improves outcomes
+  - Executed B2B intervention, confirmed owner or observed outcome
+  - Stable promotion of v0.8.0
+  - Change to the authority of the v0.4.0 foundational core
+decisions:
+  - ADR-023
+gates:
+  source_hierarchy_preserved: passed-local
+  pattern_component_prompt_boundary: passed-local
+  maturity_and_provenance: passed-local
+  stop_and_escalation_conditions: passed-local
+  human_control: passed-local
+  b2b_evidence_boundary: passed-local
+  template_null_state: passed-local
+  strict_build: passed-local
+  static_accessibility_audit: pending-github-actions
+  visual_regression: pending-github-actions
+  owner_ratification: pending
+evidence:
+  source_scope:
+    - SRC-PULSE-DNA-001
+    - SRC-PULSE-MAP-001
+    - SRC-ARCH-001
+    - SRC-PRACTICE-B2B-001
+    - SRC-PRACTICE-DASH-B2B-001
+    - SRC-ACADEMIC-HAI-001
+    - SRC-ACADEMIC-OUTCOME-BIAS-001
+    - SRC-ACADEMIC-AIEVAL-001
+    - SRC-NIST-AIRMF-001
+  evidence_posture: The catalog is candidate CDI-BoK synthesis. Registered foundations support specific controls but do not validate the taxonomy or its effectiveness.
+  local_validation:
+    sprint6_checks_passed: 269
+    total_versioned_checks_passed: 1243
+    markdown_documents_audited: 44
+    navigation_targets_audited: 44
+    generated_html_audited: 45
+    strict_build: passed
+    browser_launch: blocked-missing-local-chromium-before-page-evaluation
+    browser_tests_attempted: 96
+    snapshots_updated: false
+  browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/sprint-6-conversational-patterns
+  pull_request: pending
+  implementation_commit: pending-pr-head
+  target_url: https://decision.javierforero.co
+  status: candidate-implemented-not-ratified

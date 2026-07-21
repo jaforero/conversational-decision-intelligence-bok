@@ -35,6 +35,11 @@ const foundationalPages = [
   { name: "decision-quality", path: "/07-governance-quality/decision-quality/" },
   { name: "decision-measurement", path: "/07-governance-quality/decision-measurement-system/" },
   { name: "measurement-record", path: "/07-governance-quality/measurement-record/" },
+  { name: "patterns", path: "/08-patterns/" },
+  { name: "pattern-language", path: "/08-patterns/pattern-language/" },
+  { name: "pattern-catalog", path: "/08-patterns/catalog/" },
+  { name: "anti-patterns", path: "/08-patterns/anti-patterns/" },
+  { name: "pattern-b2b", path: "/08-patterns/b2b-proposal-walkthrough/" },
 ];
 
 test("home communicates reader outcomes", async ({ page }) => {
@@ -54,6 +59,17 @@ test("measurement system preserves quality and outcome boundaries", async ({ pag
   await expect(page.locator("main")).toContainText("Seis lentes");
   await expect(page.locator("main")).toContainText("No uses Brier score para una decisión única");
   await expect(page.locator("main")).toContainText("Puntuación sintética universal");
+});
+
+test("pattern catalog preserves authority and evidence boundaries", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  await page.goto("/08-patterns/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main h1")).toContainText("Patrones de decisión conversacional");
+  await expect(page.locator("main")).toContainText("Un patrón no decide por ti");
+  await expect(page.locator("main")).toContainText("Empieza por el bloqueo");
+  await page.goto("/08-patterns/b2b-proposal-walkthrough/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main")).toContainText("instrumented-not-executed");
+  await expect(page.locator("main")).toContainText("no autorizado para ejecutar");
 });
 
 async function stabilizeExternalAssets(page) {

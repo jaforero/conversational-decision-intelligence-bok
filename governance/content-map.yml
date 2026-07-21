@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 map_id: CDI-CONTENT-MAP
-release: 0.7.0-rc.1
+release: 0.8.0-rc.1
 canonical_language: es
 root_governance: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
 collections:
@@ -17,6 +17,7 @@ collections:
       - governance/registries/sources.yml
       - governance/registries/brand-assets.yml
       - governance/registries/external-demos.yml
+      - governance/registries/patterns.yml
       - governance/releases/index.yml
   pulse_constitution:
     authority: constitutional-for-pulse
@@ -47,6 +48,11 @@ collections:
     authority: candidate-synthesis-and-guidance
     paths:
       - docs/07-governance-quality/
+  conversational_decision_patterns:
+    authority: candidate-synthesis-and-guidance
+    paths:
+      - docs/08-patterns/
+      - governance/registries/patterns.yml
   practice_cases:
     authority: experimental-candidate
     paths:
@@ -66,7 +72,7 @@ publication_rules:
   unresolved_pointer: prohibited
   duplicate_canonical_definition: prohibited
 public_portal:
-  release: 0.7.0-rc.1
+  release: 0.8.0-rc.1
   navigation:
     - { id: PORTAL-HOME, path: docs/index.md, status: candidate }
     - { id: PORTAL-START, path: docs/start-here/index.md, status: approved }
@@ -82,6 +88,11 @@ public_portal:
     - { id: PORTAL-DECISION-QUALITY, path: docs/07-governance-quality/decision-quality.md, status: candidate }
     - { id: PORTAL-DECISION-MEASUREMENT, path: docs/07-governance-quality/decision-measurement-system.md, status: candidate }
     - { id: PORTAL-MEASUREMENT-RECORD, path: docs/07-governance-quality/measurement-record.md, status: candidate }
+    - { id: PORTAL-PATTERNS, path: docs/08-patterns/index.md, status: candidate }
+    - { id: PORTAL-PATTERN-LANGUAGE, path: docs/08-patterns/pattern-language.md, status: candidate }
+    - { id: PORTAL-PATTERN-CATALOG, path: docs/08-patterns/catalog.md, status: candidate }
+    - { id: PORTAL-ANTI-PATTERNS, path: docs/08-patterns/anti-patterns.md, status: candidate }
+    - { id: PORTAL-PATTERN-B2B, path: docs/08-patterns/b2b-proposal-walkthrough.md, status: candidate }
     - { id: PORTAL-BOK, path: docs/00-foundation/index.md, status: approved }
     - { id: PORTAL-CONSTITUTION, path: docs/00-foundation/constitution.md, status: approved }
     - { id: PORTAL-CDI-SCOPE, path: docs/00-foundation/cdi-scope-boundaries.md, status: approved }
@@ -105,4 +116,5 @@ public_portal:
     - { id: PORTAL-RELEASE-050RC1, path: docs/versions/v0.5.0-rc.1.md, status: candidate }
     - { id: PORTAL-RELEASE-060RC1, path: docs/versions/v0.6.0-rc.1.md, status: candidate }
     - { id: PORTAL-RELEASE-070RC1, path: docs/versions/v0.7.0-rc.1.md, status: candidate }
+    - { id: PORTAL-RELEASE-080RC1, path: docs/versions/v0.8.0-rc.1.md, status: candidate }
     - { id: PORTAL-ABOUT, path: docs/about/index.md, status: candidate }

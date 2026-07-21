@@ -1,0 +1,111 @@
+schema_version: 1.0.0
+registry_id: CDI-CONVERSATIONAL-DECISION-PATTERNS
+release: 0.8.0-rc.1
+governed_by: ADR-023
+catalog_maturity: candidate-synthesis
+selection_rule: Use the smallest pattern that resolves the current decision blockage while preserving evidence, rights, proportional control and traceability.
+patterns:
+  - pattern_id: CDP-001
+    name: Contrato de decisión
+    kind: pattern
+    status: candidate-synthesis
+    decision_moment: frame
+    problem: A topic or analytical request lacks an explicit choice, owner, alternatives, deadline or intended action.
+    output: Reviewable decision contract or explicit informational reclassification.
+    stop_condition: No real choice or accountable owner can be established.
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+    related_antipatterns: [ANTI-CDI-001]
+  - pattern_id: CDP-002
+    name: Frontera de evidencia
+    kind: pattern
+    status: candidate-synthesis
+    decision_moment: ground
+    problem: Evidence, definitions, filters, provenance, permissions or claim classes are ambiguous or conflicting.
+    output: Bounded evidence package with a calibrated answer, abstention or escalation.
+    stop_condition: Material definitions, permissions or fitness for purpose cannot be resolved.
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+    related_antipatterns: [ANTI-CDI-002, ANTI-CDI-003]
+  - pattern_id: CDP-003
+    name: Desafío de opciones
+    kind: pattern
+    status: candidate-synthesis
+    decision_moment: deliberate
+    problem: A preferred recommendation, false binary or unstructured option list prevents material comparison.
+    output: Comparable options with assumptions, trade-offs, reversibility and change conditions.
+    stop_condition: An approved emergency rule must be applied or additional deliberation increases immediate harm.
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001, SRC-ACADEMIC-HAI-001]
+    related_antipatterns: [ANTI-CDI-003]
+  - pattern_id: CDP-004
+    name: Handoff decisión–acción
+    kind: pattern
+    status: candidate-synthesis
+    decision_moment: commit
+    problem: Recommendation, decision, approval and execution are conflated or left unassigned.
+    output: Authorized commitment and governed action plan, or explicit abstention or escalation.
+    stop_condition: Required rights, approval, guardrails or proportionate reversibility are absent.
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-NIST-AIRMF-001]
+    related_antipatterns: [ANTI-CDI-004]
+  - pattern_id: CDP-005
+    name: Revisión expectativa–resultado
+    kind: pattern
+    status: candidate-synthesis
+    decision_moment: learn
+    problem: Outcome knowledge risks rewriting expectations, alternatives or causal attribution.
+    output: Preserved deviation record, calibrated attribution and explicit next-cycle adjustment.
+    stop_condition: Without a prior snapshot, the review must remain exploratory and cannot claim forecast calibration or decision effect.
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ACADEMIC-OUTCOME-BIAS-001]
+    related_antipatterns: [ANTI-CDI-005, ANTI-CDI-006]
+anti_patterns:
+  - pattern_id: ANTI-CDI-001
+    name: Dashboard disfrazado de conversación
+    kind: anti-pattern
+    status: candidate-synthesis
+    observable_behavior: Chat access is added without an explicit decision, owner, action or learning horizon.
+    repair_pattern_ids: [CDP-001]
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+  - pattern_id: ANTI-CDI-002
+    name: Conversación sin semántica ni procedencia
+    kind: anti-pattern
+    status: candidate-synthesis
+    observable_behavior: Answers omit material definitions, population, filters, cut-off, source, lineage or permissions.
+    repair_pattern_ids: [CDP-002]
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+  - pattern_id: ANTI-CDI-003
+    name: Certeza fluida
+    kind: anti-pattern
+    status: candidate-synthesis
+    observable_behavior: Inference, prediction or recommendation is presented as fact without material uncertainty or counterevidence.
+    repair_pattern_ids: [CDP-002, CDP-003]
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+  - pattern_id: ANTI-CDI-004
+    name: Autoridad sin derechos
+    kind: anti-pattern
+    status: candidate-synthesis
+    observable_behavior: An AI recommendation is treated as a decision or executed without explicit rights, approval and escalation.
+    repair_pattern_ids: [CDP-004]
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-NIST-AIRMF-001]
+  - pattern_id: ANTI-CDI-005
+    name: Adopción como impacto
+    kind: anti-pattern
+    status: candidate-synthesis
+    observable_behavior: Usage, acceptance or speed is reported as proof of better decisions or outcomes.
+    repair_pattern_ids: [CDP-005]
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ACADEMIC-AIEVAL-001]
+  - pattern_id: ANTI-CDI-006
+    name: Expectativa reconstruida
+    kind: anti-pattern
+    status: candidate-synthesis
+    observable_behavior: Expectations, alternatives or objectives are rewritten after the outcome becomes known.
+    repair_pattern_ids: [CDP-005]
+    owner: Javier Forero
+    source_ids: [SRC-PULSE-DNA-001, SRC-ACADEMIC-OUTCOME-BIAS-001]

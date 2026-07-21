@@ -1,0 +1,58 @@
+schema_version: 1.0.0
+template_version: 0.8.0-rc.1
+record_status: draft
+pattern:
+  id: null
+  name: null
+  kind: null
+  maturity: candidate-synthesis
+  decision_moment: null
+  decision_class: null
+  context: null
+  problem: null
+  forces: []
+  preconditions: []
+  use_when: []
+  do_not_use_when: []
+  roles:
+    facilitator: null
+    decision_owner: null
+    evidence_owner: null
+    approver: null
+    executor: null
+    escalation_owner: null
+  conversation_contract:
+    entry_state: null
+    moves: []
+    challenge_questions: []
+    stop_or_escalate_conditions: []
+    output: null
+  evidence:
+    required_sources: []
+    definitions: []
+    known_unknowns: []
+    uncertainty: null
+    provenance: []
+  governance:
+    allowed_ai_role: null
+    prohibited_ai_actions: []
+    trace_required: true
+    human_commit_required: true
+  consequences:
+    expected_benefits: []
+    first_order_risks: []
+    second_order_risks: []
+  measurement:
+    process_metrics: []
+    outcome_metrics: []
+    guardrails: []
+    review_horizon: null
+  alternatives: []
+  related_patterns: []
+  related_antipatterns: []
+  source_ids: []
+  claim_ids: []
+  tested_contexts: []
+  owner: null
+  created_on: null
+  last_reviewed: null

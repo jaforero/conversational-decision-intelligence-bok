@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 CHECKS = 0
 RELEASE = "0.7.0-rc.1"
+CURRENT_RELEASE = "0.8.0-rc.1"
 
 
 def check(condition: bool, message: str) -> None:
@@ -115,7 +116,7 @@ registries = [
     "governance/adr/index.yml",
 ]
 for path in registries:
-    check(load_yaml(path).get("release") == RELEASE, f"Registry release mismatch: {path}")
+    check(load_yaml(path).get("release") == CURRENT_RELEASE, f"Registry release mismatch: {path}")
 
 sources = load_yaml("governance/registries/sources.yml")
 source_ids = {item["source_id"] for item in sources["records"]}
@@ -154,8 +155,8 @@ check(adr_by_id.get("ADR-021", {}).get("status") == "accepted", "ADR-021 is not 
 check((ROOT / "governance/adr/ADR-021-decision-measurement-architecture.md").exists(), "ADR-021 file is missing")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["release"] == RELEASE, "Content map release mismatch")
-check(content_map["public_portal"]["release"] == RELEASE, "Portal content-map release mismatch")
+check(content_map["release"] == CURRENT_RELEASE, "Content map release mismatch")
+check(content_map["public_portal"]["release"] == CURRENT_RELEASE, "Portal content-map release mismatch")
 registered = {item["path"] for item in content_map["public_portal"]["navigation"]}
 check(set(required_docs).issubset(registered), "Sprint 5 documents are absent from the content map")
 
@@ -172,11 +173,11 @@ check(manifest["publication"]["portal_verification"] == "passed-http-200-0.7.0-r
 check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 5 publication state is inaccurate")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.7.0-rc.1",
-    "overrides/main.html": "Portal v0.7.0-rc.1",
+    "mkdocs.yml": "portal: v0.8.0-rc.1",
+    "overrides/main.html": "Portal v0.8.0-rc.1",
     "README.md": "`v0.7.0-rc.1`",
-    "package.json": '"version": "0.7.0-rc.1"',
-    "package-lock.json": '"version": "0.7.0-rc.1"',
+    "package.json": '"version": "0.8.0-rc.1"',
+    "package-lock.json": '"version": "0.8.0-rc.1"',
 }
 for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 5 portal marker missing: {path}")

@@ -2,7 +2,7 @@
 title: Versiones
 description: Releases normativas, candidatos del portal y política de historia del CDI-BoK.
 status: candidate
-version: 0.7.0-rc.1
+version: 0.8.0-rc.1
 artifact_type: version-index
 authority_level: guidance
 normative: false
@@ -23,7 +23,8 @@ last_reviewed: 2026-07-21
 | Núcleo fundacional | [`v0.4.0`](v0.4.0.md) | Estable | Constitución, fronteras CDI, glosario, dominios y especificación PULSE |
 | Práctica y evidencia | [`v0.5.0-rc.1`](v0.5.0-rc.1.md) | Candidato desplegado, no ratificado | Catálogo y primer caso B2B instrumentado, sin outcome observado |
 | Aprendizaje y experiencia | [`v0.6.0-rc.1`](v0.6.0-rc.1.md) | Candidato ratificado y desplegado | Portada orientada a resultados, cinco módulos y Decision Brief |
-| Calidad y medición | [`v0.7.0-rc.1`](v0.7.0-rc.1.md) | Candidato actual ratificado y desplegado | Decision Quality, seis lentes, anti-métricas y Measurement Record |
+| Calidad y medición | [`v0.7.0-rc.1`](v0.7.0-rc.1.md) | Candidato ratificado y desplegado | Decision Quality, seis lentes, anti-métricas y Measurement Record |
+| Patrones conversacionales | [`v0.8.0-rc.1`](v0.8.0-rc.1.md) | Candidato implementado, no ratificado | Cinco patrones, seis anti-patrones, lenguaje, plantilla y demostración B2B detenida |
 
 La versión del portal no eleva automáticamente la madurez doctrinal del contenido. Infraestructura, conocimiento y evidencia pueden evolucionar a ritmos distintos, pero siempre deben conservar trazabilidad.
 
