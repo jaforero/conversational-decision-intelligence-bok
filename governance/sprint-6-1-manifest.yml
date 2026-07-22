@@ -25,14 +25,17 @@ gates:
   version_and_status_parity: passed
   localized_navigation_and_search: passed-static-build
   seo_alternates: passed-92-localized-pages
-  contextual_switcher: passed-static-build-browser-pending
+  contextual_switcher: passed-desktop-and-mobile
   strict_build: passed-93-html
-  visual_regression: pending-github-actions
-  accessibility: pending-github-actions
+  visual_regression: passed-20-comparisons-run-29880720530
+  accessibility: passed-46-axe-analyses-run-29880720530
+  browser_suite: passed-78-skipped-46-run-29880720530
+  structural_validation: passed-run-29880720498
   owner_ratification: pending
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/bilingual-es-en
   pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/12
+  implementation_commit: d047b354f32149f8158fb11cfeb7834f8f57335f
   target_url: https://decision.javierforero.co
   status: candidate-implemented-not-ratified
