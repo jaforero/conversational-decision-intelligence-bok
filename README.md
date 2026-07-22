@@ -5,7 +5,7 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 ## Estado
 
 - Release de gobernanza: `v0.2.0`
-- Release estable del portal bilingüe: `v0.8.1`
+- Release estable del portal bilingüe: `v0.8.2`
 - Núcleo fundacional aprobado: `v0.4.0`
 - Fase activa: portal bilingüe ES/EN estable; Sprint 7 pendiente de definición
 - Idioma canónico durante `0.x`: español
@@ -14,7 +14,7 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 - Practice Lab externo: `https://dashboards.javierforero.co`
 - Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
-La release `v0.8.1` fija el portal bilingüe ES/EN como línea base editorial y técnica reproducible. No homogeneiza la autoridad del contenido: el núcleo `v0.4.0` permanece aprobado; el caso B2B `v0.5.0-rc.1` sigue instrumentado, no ejecutado; y aprendizaje `v0.6.0-rc.1`, medición `v0.7.0-rc.1` y patrones `v0.8.0-rc.1` conservan sus estados candidatos. La estabilidad del build **no** afirma que CDI o PULSE estén validados científicamente ni que seguir el catálogo produzca impacto organizacional.
+La release `v0.8.2` fija el portal bilingüe ES/EN como línea base editorial y técnica reproducible, con localización española y búsqueda independiente por idioma. No homogeneiza la autoridad del contenido: el núcleo `v0.4.0` permanece aprobado; el caso B2B `v0.5.0-rc.1` sigue instrumentado, no ejecutado; y aprendizaje `v0.6.0-rc.1`, medición `v0.7.0-rc.1` y patrones `v0.8.0-rc.1` conservan sus estados candidatos. La estabilidad del build **no** afirma que CDI o PULSE estén validados científicamente ni que seguir el catálogo produzca impacto organizacional.
 
 ## Fuentes de autoridad
 

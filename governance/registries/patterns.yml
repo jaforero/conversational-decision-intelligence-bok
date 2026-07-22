@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CONVERSATIONAL-DECISION-PATTERNS
-release: 0.8.1
+release: 0.8.2
 governed_by: ADR-023
 catalog_maturity: candidate-synthesis
 selection_rule: Use the smallest pattern that resolves the current decision blockage while preserving evidence, rights, proportional control and traceability.

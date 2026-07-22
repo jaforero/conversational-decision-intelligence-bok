@@ -34,6 +34,7 @@ adr5 = text("governance/adr/ADR-005-versioning-model.md")
 adr22 = text("governance/adr/ADR-022-release-identification-and-tag-policy.md")
 adr24 = text("governance/adr/ADR-024-v080-stable-promotion.md")
 adr26 = text("governance/adr/ADR-026-v081-stable-bilingual-promotion.md")
+adr27 = text("governance/adr/ADR-027-v082-localization-search-stable-patch.md")
 adr_index = load_yaml("governance/adr/index.yml")
 adr_by_id = {item["id"]: item for item in adr_index["decisions"]}
 check("status: superseded" in adr5, "ADR-005 is not marked superseded")
@@ -52,6 +53,8 @@ check(adr_by_id.get("ADR-024", {}).get("status") == "accepted", "ADR-024 is abse
 check("status: accepted" in adr26, "ADR-026 is not accepted")
 check("línea base editorial y técnica estable del portal bilingüe" in adr26, "ADR-026 does not bound bilingual stability")
 check(adr_by_id.get("ADR-026", {}).get("status") == "accepted", "ADR-026 is absent from the registry")
+check("status: accepted" in adr27, "ADR-027 is not accepted")
+check(adr_by_id.get("ADR-027", {}).get("status") == "accepted", "ADR-027 is absent from the registry")
 
 registry = load_yaml("governance/releases/index.yml")
 check(registry["schema_version"] == "1.0.0", "Release registry schema differs")
@@ -70,6 +73,7 @@ expected_versions = {
     "0.8.0",
     "0.8.1-rc.1",
     "0.8.1",
+    "0.8.2",
 }
 check(expected_versions == set(records), "Release registry versions are incomplete or unexpected")
 for version in expected_versions:
@@ -92,6 +96,10 @@ check(records["0.8.1"]["status"] == "stable", "v0.8.1 stable status differs")
 check(records["0.8.1"]["tag"] == "v0.8.1", "v0.8.1 tag differs")
 check(records["0.8.1"]["reference_commit"] == "refs/tags/v0.8.1", "v0.8.1 reference is not tag-resolvable")
 check(records["0.8.1"]["source_candidate"] == "0.8.1-rc.1", "v0.8.1 source candidate differs")
+check(records["0.8.2"]["release_class"] == "stable-release", "v0.8.2 is not stable")
+check(records["0.8.2"]["tag"] == "v0.8.2", "v0.8.2 tag differs")
+check(records["0.8.2"]["reference_commit"] == "refs/tags/v0.8.2", "v0.8.2 reference differs")
+check(records["0.8.2"]["source_release"] == "0.8.1", "v0.8.2 source release differs")
 
 candidate_versions = ["0.3.0-rc.1", "0.4.0-rc.1", "0.5.0-rc.1", "0.6.0-rc.1", "0.7.0-rc.1", "0.8.0-rc.1", "0.8.1-rc.1"]
 for version in candidate_versions:
@@ -150,7 +158,7 @@ check((ROOT / "governance/releases/v0.8.0-notes.md").exists(), "Stable v0.8.0 re
 check("portal bilingüe ES/EN como línea base editorial y técnica estable" in stable_bilingual_note, "v0.8.1 stable boundary is absent")
 check((ROOT / "governance/releases/v0.8.1.yml").exists(), "Stable v0.8.1 manifest is absent")
 check((ROOT / "governance/releases/v0.8.1-notes.md").exists(), "Stable v0.8.1 release notes are absent")
-check('"version": "0.8.1"' in text("package.json"), "Active portal version differs from stable bilingual release")
+check('"version": "0.8.2"' in text("package.json"), "Active portal version differs from stable patch")
 
 content_map = load_yaml("governance/content-map.yml")
 registry_paths = content_map["collections"]["registries"]["paths"]

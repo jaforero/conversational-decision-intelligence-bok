@@ -112,7 +112,7 @@ for path in html_files:
             "Cambiar a tema oscuro",
             "Cambiar a tema claro",
             "En esta página",
-            "Portal bilingüe estable v0.8.1",
+            "Portal bilingüe estable v0.8.2",
             "El español sigue siendo canónico",
             "Identidad y estado editorial",
             "Fuente y versiones",
@@ -157,9 +157,9 @@ else:
         ERRORS.append("English search index contains no documents or leaks Spanish routes")
     spanish_pages = [doc for doc in spanish_documents if "#" not in str(doc.get("location", ""))]
     english_pages = [doc for doc in english_documents if "#" not in str(doc.get("location", ""))]
-    if len(spanish_pages) != 47 or len(english_pages) != 47:
+    if len(spanish_pages) != 48 or len(english_pages) != 48:
         ERRORS.append(
-            f"Expected 47 page roots in each search index; got ES={len(spanish_pages)}, EN={len(english_pages)}"
+            f"Expected 48 page roots in each search index; got ES={len(spanish_pages)}, EN={len(english_pages)}"
         )
 
 if not (SITE / "CNAME").exists():

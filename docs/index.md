@@ -2,7 +2,7 @@
 title: Cuerpo de Conocimiento de Inteligencia de Decisiones Conversacional
 description: Aprende a convertir datos, analítica e inteligencia artificial en mejores decisiones de negocio, acción responsable y aprendizaje medible.
 status: candidate
-version: 0.8.1
+version: 0.8.2
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -34,7 +34,7 @@ Aprende a **definir qué decisión importa**, usar evidencia y contexto, compara
 [Elige un patrón](08-patterns/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Portal bilingüe estable v0.8.1 · Núcleo aprobado v0.4.0 · Patrones candidatos</span>
+<span class="cdi-release">Portal bilingüe estable v0.8.2 · Núcleo aprobado v0.4.0 · Patrones candidatos</span>
 </div>
 
 <div class="cdi-hero__route" aria-label="Ruta desde una prioridad hasta aprendizaje medible">

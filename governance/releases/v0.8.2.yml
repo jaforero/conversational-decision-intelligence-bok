@@ -1,0 +1,35 @@
+schema_version: 1.0.0
+release: 0.8.2
+tag: v0.8.2
+status: stable
+title: CDI-BoK v0.8.2 — Localización y búsqueda bilingüe precisas
+notes_path: governance/releases/v0.8.2-notes.md
+source_release: 0.8.1
+localization_fix_commit: 1f81e2ad26b42da4959744733ad8261dfd188f81
+reference: refs/tags/v0.8.2
+released_on: 2026-07-22
+owner: Javier Forero
+ratification:
+  ratified_by: Javier Forero
+  ratified_on: 2026-07-22
+  decision: Promote the localized business-facing portal and language-scoped search fix as stable v0.8.2 without changing doctrinal authority or evidence maturity.
+  governed_by: ADR-027
+stable_scope:
+  - { component: localized-spanish-interface, status: stable, authority_effect: editorial-baseline }
+  - { component: language-scoped-search, status: stable, authority_effect: technical-baseline }
+  - { component: business-facing-home-copy, status: stable, authority_effect: editorial-baseline }
+  - { component: foundational-core-v0.4.0, status: approved, authority_effect: preserved }
+  - { component: candidate-learning-measurement-patterns, status: candidate, authority_effect: preserved }
+quality_evidence:
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/15
+  merge_commit: 1f81e2ad26b42da4959744733ad8261dfd188f81
+  pr_validation: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29889038580
+  visual_accessibility: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29889039090
+  search_partition: passed-47-es-47-en-zero-cross-language-routes
+  stable_gate: .github/workflows/release.yml
+limitations:
+  - Spanish remains canonical during 0.x; English is governed translation.
+  - Localization and clearer copy do not validate CDI, PULSE or the candidate patterns.
+  - Search isolation does not guarantee perfect ranking relevance.
+  - The B2B case remains simulated, instrumented and not executed.
+  - Automated accessibility checks do not establish WCAG 2.2 AA conformance.

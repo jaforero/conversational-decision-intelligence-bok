@@ -4,12 +4,20 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ## [Unreleased]
 
+## [0.8.2] - 2026-07-22
+
 ### Corregido
 
 - Localización de la interfaz española para el nombre visible del portal, el módulo de calidad y medición y los tooltips de enlaces permanentes.
 - Hero ES/EN reescrito para explicar el valor del CDI-BoK a usuarios de negocio con menos jerga técnica.
 - Búsqueda separada por edición: cada selector ES/EN utiliza exclusivamente el índice y las rutas de su idioma.
 - Gates estructurales y de navegador para impedir que una búsqueda vuelva a mezclar ambos corpus.
+
+### Linaje y límites
+
+- PR #15 fusionado mediante `1f81e2ad26b42da4959744733ad8261dfd188f81` después de aprobar validación estructural, regresión visual, Playwright y Axe.
+- ADR-027 autoriza el tag estable únicamente sobre el SHA validado de `main`.
+- El parche no modifica autoridad doctrinal, madurez de evidencia ni el estado instrumentado-no-ejecutado del caso B2B.
 
 ## [0.8.1] - 2026-07-21
 
