@@ -1,6 +1,6 @@
 ---
-title: Conversational Decision Intelligence Body of Knowledge
-description: Aprende a convertir datos, analítica e inteligencia artificial en decisiones explícitas, acción responsable y aprendizaje medible.
+title: Cuerpo de Conocimiento de Inteligencia de Decisiones Conversacional
+description: Aprende a convertir datos, analítica e inteligencia artificial en mejores decisiones de negocio, acción responsable y aprendizaje medible.
 status: candidate
 version: 0.8.1
 artifact_type: portal-home
@@ -23,11 +23,11 @@ last_reviewed: 2026-07-21
 
 <div class="cdi-hero cdi-hero--split" markdown>
 <div class="cdi-hero__copy" markdown>
-<span class="cdi-eyebrow">BODY OF KNOWLEDGE · ABIERTO Y VERSIONADO</span>
+<span class="cdi-eyebrow">CUERPO DE CONOCIMIENTO · ABIERTO Y VERSIONADO</span>
 
-# Convierte datos, analítica e IA en mejores decisiones
+# Convierte datos, analítica e IA en mejores decisiones de negocio
 
-Aprende a **enfocar la decisión correcta**, evaluar evidencia y contexto, diseñar experiencias que conduzcan a la acción, gobernar la colaboración humano–IA y aprender de los resultados.
+Aprende a **definir qué decisión importa**, usar evidencia y contexto, comparar opciones, actuar con responsabilidad y aprender de los resultados.
 
 <div class="cdi-actions" markdown>
 [Comienza la ruta de aprendizaje](learn/index.md){ .md-button .md-button--primary }

@@ -1,5 +1,5 @@
-site_name: Conversational Decision Intelligence Body of Knowledge
-site_description: Aprende a convertir datos, analítica e inteligencia artificial en decisiones explícitas, acción responsable y aprendizaje medible.
+site_name: CDI-BoK · Inteligencia de Decisiones Conversacional
+site_description: Aprende a convertir datos, analítica e inteligencia artificial en mejores decisiones de negocio, acción responsable y aprendizaje medible.
 site_author: Javier Forero
 site_url: https://decision.javierforero.co
 repo_url: https://github.com/jaforero/conversational-decision-intelligence-bok
@@ -10,6 +10,9 @@ site_dir: site
 use_directory_urls: true
 strict: true
 copyright: "Javier Forero · javierforero.co"
+
+hooks:
+  - scripts/localize_portal.py
 
 theme:
   name: material
@@ -61,9 +64,9 @@ nav:
       - Plantilla Decision Brief: learn/decision-brief.md
   - Calidad y medición:
       - Visión general: 07-governance-quality/index.md
-      - Decision Quality: 07-governance-quality/decision-quality.md
-      - Decision Measurement System: 07-governance-quality/decision-measurement-system.md
-      - Decision Measurement Record: 07-governance-quality/measurement-record.md
+      - Calidad de la decisión: 07-governance-quality/decision-quality.md
+      - Sistema de medición de decisiones: 07-governance-quality/decision-measurement-system.md
+      - Registro de medición de decisiones: 07-governance-quality/measurement-record.md
   - Patrones de decisión:
       - Visión general: 08-patterns/index.md
       - Lenguaje y plantilla: 08-patterns/pattern-language.md
@@ -110,6 +113,8 @@ plugins:
       docs_structure: suffix
       fallback_to_default: false
       reconfigure_material: true
+      # Preserve every locale entry; the post-build hook creates separate ES/EN indexes.
+      reconfigure_search: false
       languages:
         - locale: es
           default: true
@@ -118,7 +123,8 @@ plugins:
         - locale: en
           name: English
           build: true
-          site_description: Learn to turn data, analytics and artificial intelligence into explicit decisions, responsible action and measurable learning.
+          site_name: CDI-BoK · Conversational Decision Intelligence
+          site_description: Learn to turn data, analytics and artificial intelligence into better business decisions, responsible action and measurable learning.
           theme:
             palette:
               - toggle:
@@ -138,6 +144,9 @@ plugins:
             5. Acción y aprendizaje: 5. Action and learning
             Plantilla Decision Brief: Decision Brief template
             Calidad y medición: Quality and measurement
+            Calidad de la decisión: Decision Quality
+            Sistema de medición de decisiones: Decision Measurement System
+            Registro de medición de decisiones: Decision Measurement Record
             Patrones de decisión: Decision patterns
             Lenguaje y plantilla: Language and template
             Catálogo de patrones: Pattern catalog

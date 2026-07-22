@@ -80,7 +80,18 @@ for source_path in spanish:
 config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
 override = (ROOT / "overrides/main.html").read_text(encoding="utf-8")
 requirements = (ROOT / "requirements.in").read_text(encoding="utf-8")
-for marker in ["mkdocs-static-i18n==1.3.0", "fallback_to_default: false", "locale: es", "locale: en", "name: Español", "name: English"]:
+for marker in [
+    "mkdocs-static-i18n==1.3.0",
+    "fallback_to_default: false",
+    "reconfigure_search: false",
+    "scripts/localize_portal.py",
+    "locale: es",
+    "locale: en",
+    "name: Español",
+    "name: English",
+    "site_name: CDI-BoK · Inteligencia de Decisiones Conversacional",
+    "site_name: CDI-BoK · Conversational Decision Intelligence",
+]:
     check(marker in requirements + config, f"Bilingual configuration marker missing: {marker}")
 for marker in ['hreflang="x-default"', "og:locale", "i18n_page_locale"]:
     check(marker in override, f"Localized metadata marker missing: {marker}")
@@ -95,6 +106,9 @@ for spanish_label, english_label in {
     "4. Control humano–IA": "4. Human–AI control",
     "5. Acción y aprendizaje": "5. Action and learning",
     "Caso B2B · Propuesta": "B2B case · Proposal",
+    "Calidad de la decisión": "Decision Quality",
+    "Sistema de medición de decisiones": "Decision Measurement System",
+    "Registro de medición de decisiones": "Decision Measurement Record",
 }.items():
     check(
         f"{spanish_label}: {english_label}" in config,
@@ -102,6 +116,16 @@ for spanish_label, english_label in {
     )
 for marker in ["Switch to dark mode", "Switch to light mode"]:
     check(marker in config, f"English theme control label missing: {marker}")
+
+hook = (ROOT / "scripts/localize_portal.py").read_text(encoding="utf-8")
+site_script = (ROOT / "docs/assets/javascripts/site.js").read_text(encoding="utf-8")
+template = (ROOT / "overrides/main.html").read_text(encoding="utf-8")
+for marker in ["Enlace permanente", "search_index.json", 'startswith("en/")']:
+    check(marker in hook, f"Localized portal hook marker missing: {marker}")
+for marker in ["Buscar en español", "Search in English"]:
+    check(marker in site_script, f"Language-specific search label missing: {marker}")
+for marker in ["XMLHttpRequest.prototype.open", "localizeSearchIndex", "/en/search/search_index.json"]:
+    check(marker in template, f"English search request routing marker missing: {marker}")
 
 if ERRORS:
     for error in ERRORS:

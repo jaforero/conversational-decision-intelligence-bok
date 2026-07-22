@@ -1,6 +1,6 @@
 ---
 title: Conversational Decision Intelligence Body of Knowledge
-description: Learn to turn data, analytics and artificial intelligence into explicit decisions, responsible action and measurable learning.
+description: Learn to turn data, analytics and artificial intelligence into better business decisions, responsible action and measurable learning.
 status: candidate
 version: 0.8.1
 artifact_type: portal-home
@@ -17,9 +17,9 @@ last_reviewed: 2026-07-21
 <div class="cdi-hero__copy" markdown>
 <span class="cdi-eyebrow">BODY OF KNOWLEDGE · OPEN AND VERSIONED</span>
 
-# Turn data, analytics and AI into better decisions
+# Turn data, analytics and AI into better business decisions
 
-Learn to **frame the right decision**, evaluate evidence and context, design experiences that lead to action, govern Human–AI collaboration and learn from outcomes.
+Learn to **define the decision that matters**, use evidence and context, compare options, act responsibly and learn from outcomes.
 
 <div class="cdi-actions" markdown>
 [Start the learning path](learn/index.md){ .md-button .md-button--primary }

@@ -16,5 +16,12 @@
     attributes: true,
     attributeFilter: ["data-md-color-scheme"]
   });
-})();
 
+  const searchInput = document.querySelector(".md-search__input");
+  if (searchInput) {
+    const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
+    const label = isEnglish ? "Search in English" : "Buscar en español";
+    searchInput.setAttribute("aria-label", label);
+    searchInput.setAttribute("placeholder", label);
+  }
+})();

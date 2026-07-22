@@ -1,5 +1,5 @@
 ---
-title: Decision Measurement Record
+title: Registro de medición de decisiones
 description: Plantilla versionada para congelar el plan de medición antes de actuar y añadir el resultado después sin reescribir la decisión original.
 status: candidate
 version: 0.7.0-rc.1
@@ -21,9 +21,9 @@ claim_ids:
 last_reviewed: 2026-07-21
 ---
 
-# Decision Measurement Record
+# Registro de medición de decisiones
 
-Este registro complementa el [Decision Brief](../learn/decision-brief.md). El brief estructura la elección; el Measurement Record conserva el plan de observación y la revisión posterior.
+Este registro complementa el [Decision Brief](../learn/decision-brief.md). El brief estructura la elección; el **Registro de medición de decisiones (Decision Measurement Record)** conserva el plan de observación y la revisión posterior.
 
 ## Dos snapshots, una historia
 
