@@ -11,12 +11,31 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CDI-BoK">
-  <meta property="og:title" content="Conversational Decision Intelligence Body of Knowledge">
-  <meta property="og:description" content="{% if is_english %}Learn to turn data, analytics and AI into explicit decisions, responsible action and measurable learning.{% else %}Aprende a convertir datos, analítica e IA en decisiones explícitas, acción responsable y aprendizaje medible.{% endif %}">
+  <meta property="og:title" content="{% if is_english %}CDI-BoK · Conversational Decision Intelligence{% else %}CDI-BoK · Inteligencia de Decisiones Conversacional{% endif %}">
+  <meta property="og:description" content="{% if is_english %}Learn to turn data, analytics and AI into better business decisions, responsible action and measurable learning.{% else %}Aprende a convertir datos, analítica e IA en mejores decisiones de negocio, acción responsable y aprendizaje medible.{% endif %}">
   <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:locale" content="{{ 'en_US' if is_english else 'es_CO' }}">
   <meta property="og:locale:alternate" content="{{ 'es_CO' if is_english else 'en_US' }}">
   <meta name="twitter:card" content="summary">
+  {% if is_english %}
+    <script>
+      (function () {
+        const nativeFetch = window.fetch.bind(window);
+        window.fetch = function (resource, options) {
+          const source = resource instanceof Request ? resource.url : resource;
+          const url = new URL(source, document.baseURI);
+          if (/\/search\/search_index\.json$/.test(url.pathname) && !/\/en\/search\/search_index\.json$/.test(url.pathname)) {
+            const localized = new URL("/en/search/search_index.json", url.origin);
+            if (resource instanceof Request) {
+              return nativeFetch(new Request(localized, resource), options);
+            }
+            return nativeFetch(localized, options);
+          }
+          return nativeFetch(resource, options);
+        };
+      })();
+    </script>
+  {% endif %}
 {% endblock %}
 
 {% block announce %}

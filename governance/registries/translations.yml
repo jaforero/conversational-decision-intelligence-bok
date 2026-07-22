@@ -70,7 +70,7 @@ pairs:
     translation: docs/07-governance-quality/decision-measurement-system.en.md
     version: 0.7.0-rc.1
     status: complete
-    source_sha256: 1d5c5a29e4a70123219a45f81bcce4bde3fde1d8c9fd0d31d3b67bac5160a835
+    source_sha256: 1c37800a47ed1dd6d4d5f403e86b4a4399ea72cba399419aadd0a25906e9da69
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-07-GOVERNANCE-QUALITY-DECISION-QUALITY
@@ -78,7 +78,7 @@ pairs:
     translation: docs/07-governance-quality/decision-quality.en.md
     version: 0.7.0-rc.1
     status: complete
-    source_sha256: eaeb1ba4fd7f20f67404fe373543d3cc2599993d3133fbb15796648ba096de80
+    source_sha256: 3fe0fdd6f2312dfe2fd5f30b032eb2e324e5bc627860a549859446b616594bc7
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-07-GOVERNANCE-QUALITY-INDEX
@@ -86,7 +86,7 @@ pairs:
     translation: docs/07-governance-quality/index.en.md
     version: 0.7.0-rc.1
     status: complete
-    source_sha256: 0da4180f40012751ced017774fef2d0e80d6316e4d2aace36270871d5c678760
+    source_sha256: 9975c3210fd462f3d128b0ca9b60be29f12ef99f41cffefa46409fd358a0ae2c
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-07-GOVERNANCE-QUALITY-MEASUREMENT-RECORD
@@ -94,7 +94,7 @@ pairs:
     translation: docs/07-governance-quality/measurement-record.en.md
     version: 0.7.0-rc.1
     status: complete
-    source_sha256: b879190e855f8dd76a136ef981e6c24ecce94380f05f5e6fb21e44c190f0d66c
+    source_sha256: fea43f690ee15198117623a0b7f2c466b2ec0b2fce6bc8977d33eb7d49d6188e
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-08-PATTERNS-ANTI-PATTERNS
@@ -182,7 +182,7 @@ pairs:
     translation: docs/index.en.md
     version: 0.8.1
     status: complete
-    source_sha256: 4a25464bab37de71fbc4d22d7bff0f735b1bd624ab98b571010c1035320273a8
+    source_sha256: 4f709da175b65630fc01395c8915102344e0cbd39f92db39c6a60415078151b5
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-LEARN-01-DECISION-FIRST

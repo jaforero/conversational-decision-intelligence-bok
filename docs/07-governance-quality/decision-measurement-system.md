@@ -1,5 +1,5 @@
 ---
-title: Decision Measurement System
+title: Sistema de medición de decisiones
 description: Arquitectura candidata de seis lentes para medir prioridad, calidad, ejecución, tiempo, riesgo y aprendizaje alrededor de una decisión explícita.
 status: candidate
 version: 0.7.0-rc.1
@@ -23,9 +23,9 @@ claim_ids:
 last_reviewed: 2026-07-21
 ---
 
-# Decision Measurement System
+# Sistema de medición de decisiones
 
-El **Decision Measurement System** es una síntesis candidata del CDI-BoK para instrumentar una decisión desde su baseline hasta la revisión. Su propósito es hacer observable el ciclo sin reducirlo a adopción, velocidad o ROI aislados.
+El **Sistema de medición de decisiones (Decision Measurement System)** es una síntesis candidata del CDI-BoK para instrumentar una decisión desde su baseline hasta la revisión. Su propósito es hacer observable el ciclo sin reducirlo a adopción, velocidad o ROI aislados.
 
 ## Seis lentes
 
@@ -146,4 +146,3 @@ Instrumentar seis lentes puede costar más que el valor de la decisión. El ries
 **Alternativa potencialmente superior:** cuando exista una muestra longitudinal de decisiones reales, estimar fiabilidad entre revisores, sensibilidad al contexto, comportamiento adversarial de las métricas y relación con outcomes. Ese trabajo podría simplificar o reemplazar este candidato.
 
 [Crear un Measurement Record →](measurement-record.md){ .md-button .md-button--primary }
-

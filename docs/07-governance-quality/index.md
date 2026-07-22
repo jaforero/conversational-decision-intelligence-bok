@@ -37,19 +37,19 @@ El sistema candidato de Sprint 5 conecta esos momentos sin colapsarlos en una no
 
 <a class="cdi-card" href="decision-quality/" aria-label="Examinar la calidad de una decisión antes de conocer el resultado">
 <span class="cdi-card__index">ANTES</span>
-<h3>Decision Quality</h3>
+<h3>Calidad de la decisión</h3>
 <p>Revisa si la decisión es defendible antes de que el resultado introduzca sesgo retrospectivo.</p>
 </a>
 
 <a class="cdi-card" href="decision-measurement-system/" aria-label="Diseñar métricas para un ciclo de decisión">
 <span class="cdi-card__index">CICLO</span>
-<h3>Decision Measurement System</h3>
+<h3>Sistema de medición de decisiones</h3>
 <p>Selecciona una cartera mínima de métricas para prioridad, calidad, acción, tiempo, riesgo y aprendizaje.</p>
 </a>
 
 <a class="cdi-card" href="measurement-record/" aria-label="Crear un registro de medición para una decisión">
 <span class="cdi-card__index">ARTEFACTO</span>
-<h3>Measurement Record</h3>
+<h3>Registro de medición de decisiones</h3>
 <p>Prerregistra expectativa y medición; después agrega el outcome sin reescribir lo que se sabía al decidir.</p>
 </a>
 
@@ -81,4 +81,3 @@ PULSE exige que el valor sea observable y que el aprendizaje compare expectativa
 
 [Diseñar la medición de una decisión →](decision-measurement-system.md){ .md-button .md-button--primary }
 [Volver al módulo de acción y aprendizaje](../learn/05-action-learning.md){ .md-button }
-
