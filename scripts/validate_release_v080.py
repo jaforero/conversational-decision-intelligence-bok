@@ -14,7 +14,7 @@ ERRORS: list[str] = []
 CHECKS = 0
 RELEASE = "0.8.0"
 SOURCE_CANDIDATE = "0.8.0-rc.1"
-ACTIVE_PORTAL = "0.8.1-rc.1"
+ACTIVE_PORTAL = "0.8.1"
 
 
 def check(condition: bool, message: str) -> None:
@@ -201,12 +201,12 @@ check(case["evaluation"]["action_executed"] is False, "Stable bundle invents a B
 check(case["evaluation"]["outcome_observed"] is False, "Stable bundle invents a B2B outcome")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.8.1-rc.1",
-    "overrides/main.html": "Candidato bilingüe v0.8.1-rc.1",
-    "README.md": "Candidato bilingüe del portal: `v0.8.1-rc.1`",
-    "package.json": '"version": "0.8.1-rc.1"',
-    "package-lock.json": '"version": "0.8.1-rc.1"',
-    "docs/index.md": "Candidato bilingüe v0.8.1-rc.1",
+    "mkdocs.yml": "portal: v0.8.1",
+    "overrides/main.html": "Portal bilingüe estable v0.8.1",
+    "README.md": "Release estable del portal bilingüe: `v0.8.1`",
+    "package.json": '"version": "0.8.1"',
+    "package-lock.json": '"version": "0.8.1"',
+    "docs/index.md": "Portal bilingüe estable v0.8.1",
     "CHANGELOG.md": "## [0.8.0] - 2026-07-21",
 }
 for path, marker in portal_markers.items():

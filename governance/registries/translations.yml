@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-TRANSLATION-PAIRS
-release: 0.8.1-rc.1
+release: 0.8.1
 canonical_language: es
 translation_language: en
 governed_by: ADR-025
@@ -180,9 +180,9 @@ pairs:
   - id: TR-INDEX
     source: docs/index.md
     translation: docs/index.en.md
-    version: 0.8.1-rc.1
+    version: 0.8.1
     status: complete
-    source_sha256: 27a4d04981c515c05ddf81903989e66eebdbce0ff2f27b0e862e83bb4f2b55db
+    source_sha256: 4a25464bab37de71fbc4d22d7bff0f735b1bd624ab98b571010c1035320273a8
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-LEARN-01-DECISION-FIRST
@@ -316,9 +316,9 @@ pairs:
   - id: TR-VERSIONS-INDEX
     source: docs/versions/index.md
     translation: docs/versions/index.en.md
-    version: 0.8.1-rc.1
+    version: 0.8.1
     status: complete
-    source_sha256: 8a6ed63e4ff773a2a65cfb223f830285c83bd4c44cbc0b1ebea333b5356f98b6
+    source_sha256: d30276cbcf4796d17e13686525fe869976058bea73480f5ec507d44028e43fe2
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-VERSIONS-V0-4-0
@@ -374,7 +374,14 @@ pairs:
     translation: docs/versions/v0.8.1-rc.1.en.md
     version: 0.8.1-rc.1
     status: complete
-    source_sha256: 5b1c70549a95a5d7b24fa0e4b8ef42294de01ff4f87d1deef71d4225d697b6d7
+    source_sha256: fbf43cdd18255bfb1b398b6bbebff56ccaef1920e4e026f606fc5ea9aefcfbb3
     last_reviewed: 2026-07-21
     owner: Javier Forero
-
+  - id: TR-VERSIONS-V0-8-1
+    source: docs/versions/v0.8.1.md
+    translation: docs/versions/v0.8.1.en.md
+    version: 0.8.1
+    status: complete
+    source_sha256: 81b8104755916df58b21ad192cf4b46ed050e3a6049fe824dc3af0828d46b320
+    last_reviewed: 2026-07-21
+    owner: Javier Forero

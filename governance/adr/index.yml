@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-ADR
-release: 0.8.1-rc.1
+release: 0.8.1
 decisions:
   - { id: ADR-001, status: accepted, file: ADR-001-repository-name.md }
   - { id: ADR-002, status: accepted, file: ADR-002-canonical-language.md }
@@ -27,3 +27,4 @@ decisions:
   - { id: ADR-023, status: accepted, file: ADR-023-conversational-decision-pattern-architecture.md }
   - { id: ADR-024, status: accepted, file: ADR-024-v080-stable-promotion.md }
   - { id: ADR-025, status: accepted, file: ADR-025-bilingual-portal-architecture.md }
+  - { id: ADR-026, status: accepted, file: ADR-026-v081-stable-bilingual-promotion.md }
