@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 CHECKS = 0
 RELEASE = "0.6.0-rc.1"
-CURRENT_RELEASE = "0.8.0"
+CURRENT_RELEASE = "0.8.1-rc.1"
 
 
 def check(condition: bool, message: str) -> None:
@@ -131,11 +131,11 @@ check(manifest["publication"]["portal_position"] == "deployed-then-superseded-by
 check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 4 publication state is inaccurate")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.8.0",
-    "overrides/main.html": "Portal estable v0.8.0",
+    "mkdocs.yml": "portal: v0.8.1-rc.1",
+    "overrides/main.html": "Candidato bilingüe v0.8.1-rc.1",
     "README.md": "`v0.6.0-rc.1`",
-    "package.json": '"version": "0.8.0"',
-    "package-lock.json": '"version": "0.8.0"',
+    "package.json": '"version": "0.8.1-rc.1"',
+    "package-lock.json": '"version": "0.8.1-rc.1"',
 }
 for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 4 portal marker missing: {path}")

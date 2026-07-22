@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 CHECKS = 0
 RELEASE = "0.8.0-rc.1"
-CURRENT_RELEASE = "0.8.0"
+CURRENT_RELEASE = "0.8.1-rc.1"
 
 
 def check(condition: bool, message: str) -> None:
@@ -215,12 +215,12 @@ check(reference == "bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347", "Sprint 6 referen
 check(release_record.get("superseded_by") == "0.8.0", "Sprint 6 stable promotion lineage is absent")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.8.0",
-    "overrides/main.html": "Portal estable v0.8.0",
-    "README.md": "Release estable del portal integrado: `v0.8.0`",
-    "package.json": '"version": "0.8.0"',
-    "package-lock.json": '"version": "0.8.0"',
-    "docs/index.md": "Portal estable v0.8.0",
+    "mkdocs.yml": "portal: v0.8.1-rc.1",
+    "overrides/main.html": "Candidato bilingüe v0.8.1-rc.1",
+    "README.md": "Candidato bilingüe del portal: `v0.8.1-rc.1`",
+    "package.json": '"version": "0.8.1-rc.1"',
+    "package-lock.json": '"version": "0.8.1-rc.1"',
+    "docs/index.md": "Candidato bilingüe v0.8.1-rc.1",
 }
 for path, marker in portal_markers.items():
     check(marker in (ROOT / path).read_text(encoding="utf-8"), f"Sprint 6 portal marker missing: {path}")

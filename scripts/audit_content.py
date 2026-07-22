@@ -92,7 +92,7 @@ for path in markdown_files:
         clean = unquote(parsed.path)
         if not clean:
             continue
-        candidate = (path.parent / clean).resolve()
+        candidate = ((DOCS / clean.lstrip("/")) if clean.startswith("/") else (path.parent / clean)).resolve()
         options = [candidate]
         if candidate.suffix == "":
             options.extend([candidate / "index.md", candidate.with_suffix(".md")])
@@ -116,4 +116,3 @@ if ERRORS:
     sys.exit(1)
 
 print(f"PASS: content audit ({len(markdown_files)} Markdown files, {len(nav_paths)} navigation targets)")
-

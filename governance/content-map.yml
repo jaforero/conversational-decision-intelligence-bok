@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 map_id: CDI-CONTENT-MAP
-release: 0.8.0
+release: 0.8.1-rc.1
 canonical_language: es
 root_governance: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
 collections:
@@ -18,6 +18,7 @@ collections:
       - governance/registries/brand-assets.yml
       - governance/registries/external-demos.yml
       - governance/registries/patterns.yml
+      - governance/registries/translations.yml
       - governance/releases/index.yml
   pulse_constitution:
     authority: constitutional-for-pulse
@@ -72,7 +73,7 @@ publication_rules:
   unresolved_pointer: prohibited
   duplicate_canonical_definition: prohibited
 public_portal:
-  release: 0.8.0
+  release: 0.8.1-rc.1
   navigation:
     - { id: PORTAL-HOME, path: docs/index.md, status: candidate }
     - { id: PORTAL-START, path: docs/start-here/index.md, status: approved }
@@ -118,4 +119,5 @@ public_portal:
     - { id: PORTAL-RELEASE-070RC1, path: docs/versions/v0.7.0-rc.1.md, status: candidate }
     - { id: PORTAL-RELEASE-080RC1, path: docs/versions/v0.8.0-rc.1.md, status: candidate }
     - { id: PORTAL-RELEASE-080, path: docs/versions/v0.8.0.md, status: approved }
+    - { id: PORTAL-RELEASE-081RC1, path: docs/versions/v0.8.1-rc.1.md, status: candidate }
     - { id: PORTAL-ABOUT, path: docs/about/index.md, status: candidate }

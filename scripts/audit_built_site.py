@@ -25,6 +25,9 @@ class PageAudit(HTMLParser):
         self.insecure_references = 0
         self.open_lists = 0
         self.orphan_list_items = 0
+        self.canonical = 0
+        self.alternate_languages: set[str] = set()
+        self.language_switch_links: set[str] = set()
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -40,6 +43,16 @@ class PageAudit(HTMLParser):
             self.skip += 1
         elif tag == "img" and "alt" not in values:
             self.images_without_alt += 1
+        elif tag == "link" and values.get("rel") == "canonical":
+            self.canonical += 1
+        elif tag == "link" and values.get("rel") == "alternate":
+            hreflang = values.get("hreflang", "")
+            if hreflang:
+                self.alternate_languages.add(hreflang)
+        if tag == "a" and "md-select__link" in values.get("class", "").split():
+            hreflang = values.get("hreflang", "")
+            if hreflang:
+                self.language_switch_links.add(hreflang)
         if tag in {"ol", "ul"}:
             self.open_lists += 1
         elif tag == "li" and self.open_lists == 0:
@@ -61,8 +74,10 @@ for path in html_files:
     text = path.read_text(encoding="utf-8")
     parser.feed(text)
     relative = path.relative_to(ROOT)
-    if not parser.html_lang.startswith("es"):
-        ERRORS.append(f"Missing Spanish lang attribute: {relative}")
+    is_error_page = path == SITE / "404.html"
+    expected_language = "en" if path.is_relative_to(SITE / "en") else "es"
+    if not is_error_page and not parser.html_lang.startswith(expected_language):
+        ERRORS.append(f"Expected lang={expected_language}: {relative}")
     if parser.title != 1:
         ERRORS.append(f"Expected one title element: {relative}")
     if parser.h1 != 1:
@@ -77,6 +92,12 @@ for path in html_files:
         ERRORS.append(f"Insecure HTTP reference: {relative}")
     if parser.orphan_list_items:
         ERRORS.append(f"List item outside ol/ul: {relative}")
+    if not is_error_page and parser.canonical != 1:
+        ERRORS.append(f"Expected one canonical link: {relative}")
+    if not is_error_page and parser.alternate_languages != {"es", "en", "x-default"}:
+        ERRORS.append(f"Incomplete hreflang set: {relative}")
+    if not is_error_page and parser.language_switch_links != {"es", "en"}:
+        ERRORS.append(f"Incomplete contextual language selector: {relative}")
 
 if not (SITE / "CNAME").exists():
     ERRORS.append("CNAME was not copied into the site artifact")

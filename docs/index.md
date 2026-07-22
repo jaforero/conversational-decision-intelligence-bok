@@ -2,7 +2,7 @@
 title: Conversational Decision Intelligence Body of Knowledge
 description: Aprende a convertir datos, analítica e inteligencia artificial en decisiones explícitas, acción responsable y aprendizaje medible.
 status: candidate
-version: 0.8.0
+version: 0.8.1-rc.1
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -34,7 +34,7 @@ Aprende a **enfocar la decisión correcta**, evaluar evidencia y contexto, dise�
 [Elige un patrón](08-patterns/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Portal estable v0.8.0 · Núcleo aprobado v0.4.0 · Patrones candidatos</span>
+<span class="cdi-release">Candidato bilingüe v0.8.1-rc.1 · Núcleo aprobado v0.4.0 · Patrones candidatos</span>
 </div>
 
 <div class="cdi-hero__route" aria-label="Ruta desde una prioridad hasta aprendizaje medible">
