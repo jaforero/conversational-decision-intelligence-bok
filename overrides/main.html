@@ -20,12 +20,26 @@
   {% if is_english %}
     <script>
       (function () {
+        const localizeSearchIndex = function (source) {
+          const url = new URL(source, document.baseURI);
+          if (/\/search\/search_index\.json$/.test(url.pathname) && !/\/en\/search\/search_index\.json$/.test(url.pathname)) {
+            return new URL("/en/search/search_index.json", url.origin).href;
+          }
+          return source;
+        };
+
+        const nativeOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function () {
+          const args = Array.from(arguments);
+          args[1] = localizeSearchIndex(args[1]);
+          return nativeOpen.apply(this, args);
+        };
+
         const nativeFetch = window.fetch.bind(window);
         window.fetch = function (resource, options) {
           const source = resource instanceof Request ? resource.url : resource;
-          const url = new URL(source, document.baseURI);
-          if (/\/search\/search_index\.json$/.test(url.pathname) && !/\/en\/search\/search_index\.json$/.test(url.pathname)) {
-            const localized = new URL("/en/search/search_index.json", url.origin);
+          const localized = localizeSearchIndex(source);
+          if (localized !== source) {
             if (resource instanceof Request) {
               return nativeFetch(new Request(localized, resource), options);
             }
