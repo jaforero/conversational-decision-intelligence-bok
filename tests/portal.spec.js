@@ -93,6 +93,24 @@ test("language selector preserves the equivalent page with keyboard navigation",
   await expect(page.locator("html")).toHaveAttribute("lang", /^en/);
   await expect(page.locator("main h1")).toContainText("Conversational pattern catalog");
   await expect(page.locator(".md-search__input")).toHaveAttribute("placeholder", "Search");
+  const englishNav = await page.locator(".md-nav--primary").first().innerText();
+  expect(englishNav).toContain("1. Frame the decision");
+  expect(englishNav).toContain("2. Evidence and context");
+  expect(englishNav).toContain("4. Human–AI control");
+  expect(englishNav).toContain("5. Action and learning");
+  expect(englishNav).toContain("B2B case · Proposal");
+  expect(englishNav).not.toMatch(/Enfocar la decisión|Evidencia y contexto|Control humano–IA|Acción y aprendizaje/);
+  await expect(page.locator(".md-banner")).toContainText("Bilingual candidate v0.8.1-rc.1");
+  await expect(page.locator(".cdi-brand-footer")).toContainText("Source and versions");
+  await expect(page.locator('[data-md-component="palette"] .md-option').nth(0)).toHaveAttribute(
+    "aria-label",
+    "Switch to dark mode",
+  );
+  await expect(page.locator('[data-md-component="palette"] .md-option').nth(1)).toHaveAttribute(
+    "aria-label",
+    "Switch to light mode",
+  );
+  await expect(page.locator('meta[property="og:locale"]')).toHaveAttribute("content", "en_US");
 
   await page.getByRole("button", { name: "Select language" }).focus();
   await page.locator('a.md-select__link[hreflang="es"]').focus();

@@ -2,7 +2,7 @@
 
 {% block extrahead %}
   {{ super() }}
-  {% set is_english = i18n_current_language == "en" %}
+  {% set is_english = i18n_page_locale == "en" %}
   {% set canonical_url = page.canonical_url if page and page.canonical_url else config.site_url %}
   {% set default_url = canonical_url | replace(config.site_url ~ "en/", config.site_url) %}
   <link rel="alternate" hreflang="x-default" href="{{ default_url }}">
@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block announce %}
-  {% if i18n_current_language == "en" %}
+  {% if i18n_page_locale == "en" %}
     <strong>Bilingual candidate v0.8.1-rc.1</strong> · Spanish remains canonical; evidence boundaries are unchanged.
   {% else %}
     <strong>Candidato bilingüe v0.8.1-rc.1</strong> · El español sigue siendo canónico; los límites de evidencia no cambian.
@@ -29,7 +29,7 @@
 
 {% block footer %}
   {{ super() }}
-  <footer class="cdi-brand-footer" aria-label="{{ 'Identity and editorial status' if i18n_current_language == 'en' else 'Identidad y estado editorial' }}">
+  <footer class="cdi-brand-footer" aria-label="{{ 'Identity and editorial status' if i18n_page_locale == 'en' else 'Identidad y estado editorial' }}">
     <div class="cdi-brand-footer__inner">
       <strong>Javier Forero</strong>
       <span class="cdi-brand-footer__dot" aria-hidden="true">·</span>
@@ -37,7 +37,7 @@
       <span aria-hidden="true">|</span>
       <span>CDI-BoK · v0.8.1-rc.1</span>
       <span aria-hidden="true">|</span>
-      <a href="{{ config.repo_url }}">{{ 'Source and versions' if i18n_current_language == 'en' else 'Fuente y versiones' }}</a>
+      <a href="{{ config.repo_url }}">{{ 'Source and versions' if i18n_page_locale == 'en' else 'Fuente y versiones' }}</a>
     </div>
   </footer>
 {% endblock %}

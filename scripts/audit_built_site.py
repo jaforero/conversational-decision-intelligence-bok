@@ -28,9 +28,13 @@ class PageAudit(HTMLParser):
         self.canonical = 0
         self.alternate_languages: set[str] = set()
         self.language_switch_links: set[str] = set()
+        self.labels: list[str] = []
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
+        for attribute in ("aria-label", "title"):
+            if values.get(attribute):
+                self.labels.append(values[attribute])
         if tag == "html":
             self.html_lang = values.get("lang", "")
         elif tag == "title":
@@ -98,6 +102,37 @@ for path in html_files:
         ERRORS.append(f"Incomplete hreflang set: {relative}")
     if not is_error_page and parser.language_switch_links != {"es", "en"}:
         ERRORS.append(f"Incomplete contextual language selector: {relative}")
+    if expected_language == "en" and not is_error_page:
+        forbidden_ui_fragments = {
+            "1. Enfocar la decisión",
+            "2. Evidencia y contexto",
+            "4. Control humano–IA",
+            "5. Acción y aprendizaje",
+            "Cambiar a tema oscuro",
+            "Cambiar a tema claro",
+            "En esta página",
+            "Candidato bilingüe v0.8.1-rc.1",
+            "El español sigue siendo canónico",
+            "Identidad y estado editorial",
+            "Fuente y versiones",
+            "Caso B2B · Propuesta",
+        }
+        normalized = " ".join(text.split())
+        leaked = sorted(fragment for fragment in forbidden_ui_fragments if fragment in normalized)
+        leaked.extend(
+            label
+            for label in parser.labels
+            if label.startswith("Cambiar a tema") or label == "En esta página"
+        )
+        if leaked:
+            ERRORS.append(
+                f"Spanish interface text leaked into English page {relative}: "
+                + ", ".join(sorted(set(leaked)))
+            )
+        if 'property="og:locale" content="en_US"' not in text:
+            ERRORS.append(f"English Open Graph locale is not en_US: {relative}")
+        if "Learn to turn data, analytics and AI" not in text:
+            ERRORS.append(f"English Open Graph description is missing: {relative}")
 
 if not (SITE / "CNAME").exists():
     ERRORS.append("CNAME was not copied into the site artifact")
