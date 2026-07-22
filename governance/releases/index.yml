@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 registry_id: CDI-RELEASE-LINEAGE
 governed_by: ADR-022
-observed_on: 2026-07-21
+observed_on: 2026-07-22
 tag_snapshot:
   source: git-ls-remote-origin-before-v0.8.0-promotion
   observed:
@@ -18,6 +18,7 @@ tag_snapshot:
   authorized_for_post_merge_creation:
     - { tag: v0.8.0, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-024 }
     - { tag: v0.8.1, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-026 }
+    - { tag: v0.8.2, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-027 }
 releases:
   - version: 0.2.0
     release_class: approved-governance-milestone
@@ -97,3 +98,11 @@ releases:
     source_candidate_commit: 655e3b80ad1cbd8b443b6339358996f9fe656083
     interface_hotfix_commit: 5837657f6bfe0627f5bd0c8ada13640dba9a0a4b
     manifest: governance/releases/v0.8.1.yml
+  - version: 0.8.2
+    release_class: stable-release
+    status: stable
+    tag: v0.8.2
+    reference_commit: refs/tags/v0.8.2
+    source_release: 0.8.1
+    localization_fix_commit: 1f81e2ad26b42da4959744733ad8261dfd188f81
+    manifest: governance/releases/v0.8.2.yml

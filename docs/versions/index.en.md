@@ -2,7 +2,7 @@
 title: Versions
 description: Normative releases, portal candidates and CDI-BoK history policy.
 status: candidate
-version: 0.8.1
+version: 0.8.2
 artifact_type: version-index
 authority_level: guidance
 normative: false
@@ -17,7 +17,8 @@ last_reviewed: 2026-07-21
 
 | Component | Version | Status | Scope |
 |---|---|---|---|
-| Bilingual portal | [`v0.8.1`](v0.8.1.md) | Editorially and technically stable | Complete ES/EN routes, localized interface and translation-drift gates |
+| Bilingual portal | [`v0.8.2`](v0.8.2.md) | Editorially and technically stable | Spanish localization, business clarity and independent ES/EN search |
+| Previous bilingual baseline | [`v0.8.1`](v0.8.1.md) | Stable and historical | Complete ES/EN routes, localized interface and translation-drift gates |
 | Source bilingual candidate | [`v0.8.1-rc.1`](v0.8.1-rc.1.md) | Ratified, merged, deployed and promoted | Traceable source of stable `v0.8.1` |
 | CDI-BoK governance | `v0.2.0` | Approved and normative | Architecture, authority, claims, brand and Sprint 0 |
 | Technical portal | `v0.3.0-rc.1` | Integrated and deployed | MkDocs, navigation, CI/CD, checks and custom domain |
@@ -39,7 +40,7 @@ The portal version does not automatically raise the doctrinal maturity of its co
 - Drafts do not appear in stable navigation.
 - Spanish is canonical during `0.x`; English translations are versioned and linked through a controlled parity registry.
 
-ADR-022 replaces ADR-005's initial rule and avoids ambiguous retrospective tags. `governance/releases/index.yml` preserves the complete lineage. Historical RCs remain intentionally untagged.
+ADR-022 replaces ADR-005's initial rule and avoids ambiguous retrospective tags. `governance/releases/index.yml` preserves the complete lineage. Historical RCs remain intentionally untagged; stable tags are created only by their governed post-merge workflows.
 
 !!! note "Why there is no later v0.1.0"
     The initial roadmap named Sprint 2 as `v0.1.0`, but the sequence had already published `v0.2.0` and `v0.3.0-rc.1`. ADR-014 assigned `v0.4.0-rc.1`; ADR-017 records its ratification and stable promotion to `v0.4.0`.

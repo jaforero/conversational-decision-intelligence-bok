@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-ADR
-release: 0.8.1
+release: 0.8.2
 decisions:
   - { id: ADR-001, status: accepted, file: ADR-001-repository-name.md }
   - { id: ADR-002, status: accepted, file: ADR-002-canonical-language.md }
@@ -28,3 +28,4 @@ decisions:
   - { id: ADR-024, status: accepted, file: ADR-024-v080-stable-promotion.md }
   - { id: ADR-025, status: accepted, file: ADR-025-bilingual-portal-architecture.md }
   - { id: ADR-026, status: accepted, file: ADR-026-v081-stable-bilingual-promotion.md }
+  - { id: ADR-027, status: accepted, file: ADR-027-v082-localization-search-stable-patch.md }

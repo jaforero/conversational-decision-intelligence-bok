@@ -42,6 +42,7 @@ const foundationalPages = [
   { name: "pattern-b2b", path: "/08-patterns/b2b-proposal-walkthrough/" },
   { name: "release-v080", path: "/versions/v0.8.0/" },
   { name: "release-v081", path: "/versions/v0.8.1/" },
+  { name: "release-v082", path: "/versions/v0.8.2/" },
 ];
 
 test("home communicates reader outcomes", async ({ page }) => {
@@ -82,11 +83,11 @@ test("pattern catalog preserves authority and evidence boundaries", async ({ pag
 
 test("stable release preserves component authority boundaries", async ({ page }) => {
   await stabilizeExternalAssets(page);
-  await page.goto("/versions/v0.8.1/", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("main h1")).toContainText("Release v0.8.1");
-  await expect(page.locator("main")).toContainText("El inglés es traducción gobernada");
-  await expect(page.locator("main")).toContainText("Aprendizaje, medición y patrones conservan madurez candidata");
-  await expect(page.locator("main")).toContainText("no valida científicamente CDI o PULSE");
+  await page.goto("/versions/v0.8.2/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main h1")).toContainText("Release v0.8.2");
+  await expect(page.locator("main")).toContainText("autoridad aprobada sigue limitada");
+  await expect(page.locator("main")).toContainText("Aprendizaje, medición y patrones siguen siendo candidatos");
+  await expect(page.locator("main")).toContainText("no se presenta como científicamente validado");
 });
 
 test("language selector preserves the equivalent page with keyboard navigation", async ({ page }) => {
@@ -108,7 +109,7 @@ test("language selector preserves the equivalent page with keyboard navigation",
   expect(englishNav).toContain("5. Action and learning");
   expect(englishNav).toContain("B2B case · Proposal");
   expect(englishNav).not.toMatch(/Enfocar la decisión|Evidencia y contexto|Control humano–IA|Acción y aprendizaje/);
-  await expect(page.locator(".md-banner")).toContainText("Stable bilingual portal v0.8.1");
+  await expect(page.locator(".md-banner")).toContainText("Stable bilingual portal v0.8.2");
   await expect(page.locator(".cdi-brand-footer")).toContainText("Source and versions");
   await expect(page.locator('[data-md-component="palette"] .md-option').nth(0)).toHaveAttribute(
     "aria-label",

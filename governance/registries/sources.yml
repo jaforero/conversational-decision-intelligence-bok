@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-SOURCES
-release: 0.8.1
+release: 0.8.2
 records:
   - source_id: SRC-PULSE-DNA-001
     title: PULSE DNA
