@@ -119,10 +119,13 @@ for marker in ["Switch to dark mode", "Switch to light mode"]:
 
 hook = (ROOT / "scripts/localize_portal.py").read_text(encoding="utf-8")
 site_script = (ROOT / "docs/assets/javascripts/site.js").read_text(encoding="utf-8")
+template = (ROOT / "overrides/main.html").read_text(encoding="utf-8")
 for marker in ["Enlace permanente", "search_index.json", 'startswith("en/")']:
     check(marker in hook, f"Localized portal hook marker missing: {marker}")
 for marker in ["Buscar en español", "Search in English"]:
     check(marker in site_script, f"Language-specific search label missing: {marker}")
+for marker in ["XMLHttpRequest.prototype.open", "localizeSearchIndex", "/en/search/search_index.json"]:
+    check(marker in template, f"English search request routing marker missing: {marker}")
 
 if ERRORS:
     for error in ERRORS:
