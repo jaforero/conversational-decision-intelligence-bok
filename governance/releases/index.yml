@@ -17,6 +17,7 @@ tag_snapshot:
     - 0.8.1-rc.1
   authorized_for_post_merge_creation:
     - { tag: v0.8.0, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-024 }
+    - { tag: v0.8.1, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-026 }
 releases:
   - version: 0.2.0
     release_class: approved-governance-milestone
@@ -80,8 +81,19 @@ releases:
     manifest: governance/releases/v0.8.0.yml
   - version: 0.8.1-rc.1
     release_class: release-candidate
-    status: candidate-implemented-not-ratified
+    status: candidate-ratified-merged-deployed-promoted
     tag: null
-    reference_commit: pending-pr-12
+    reference_commit: 655e3b80ad1cbd8b443b6339358996f9fe656083
+    interface_hotfix_commit: 5837657f6bfe0627f5bd0c8ada13640dba9a0a4b
     source_release: 0.8.0
+    superseded_by: 0.8.1
     manifest: governance/sprint-6-1-manifest.yml
+  - version: 0.8.1
+    release_class: stable-release
+    status: stable
+    tag: v0.8.1
+    reference_commit: refs/tags/v0.8.1
+    source_candidate: 0.8.1-rc.1
+    source_candidate_commit: 655e3b80ad1cbd8b443b6339358996f9fe656083
+    interface_hotfix_commit: 5837657f6bfe0627f5bd0c8ada13640dba9a0a4b
+    manifest: governance/releases/v0.8.1.yml

@@ -18,6 +18,7 @@ COMMANDS = [
     [sys.executable, "scripts/validate_sprint6.py"],
     [sys.executable, "scripts/validate_version_governance.py"],
     [sys.executable, "scripts/validate_release_v080.py"],
+    [sys.executable, "scripts/validate_release_v081.py"],
     [sys.executable, "scripts/preflight_sprint1.py"],
 ]
 

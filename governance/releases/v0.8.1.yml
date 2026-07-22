@@ -1,0 +1,40 @@
+schema_version: 1.0.0
+release: 0.8.1
+tag: v0.8.1
+status: stable
+title: CDI-BoK v0.8.1 — Portal bilingüe ES/EN estable
+notes_path: governance/releases/v0.8.1-notes.md
+source_candidate: 0.8.1-rc.1
+source_candidate_commit: 655e3b80ad1cbd8b443b6339358996f9fe656083
+interface_hotfix_commit: 5837657f6bfe0627f5bd0c8ada13640dba9a0a4b
+reference: refs/tags/v0.8.1
+released_on: 2026-07-21
+owner: Javier Forero
+ratification:
+  ratified_by: Javier Forero
+  ratified_on: 2026-07-21
+  decision: Ratify v0.8.1-rc.1 and promote the governed ES/EN portal as an editorially and technically stable bilingual baseline without changing doctrinal authority or evidence maturity.
+  governed_by: ADR-026
+stable_scope:
+  - { component: bilingual-integrated-portal, status: stable, authority_effect: technical-and-editorial-baseline }
+  - { component: foundational-core-v0.4.0, status: approved, authority_effect: preserved }
+  - { component: practice-v0.5.0-rc.1, status: candidate-instrumented-not-executed, authority_effect: preserved }
+  - { component: learning-v0.6.0-rc.1, status: candidate-ratified, authority_effect: preserved }
+  - { component: measurement-v0.7.0-rc.1, status: candidate-synthesis-ratified, authority_effect: preserved }
+  - { component: patterns-v0.8.0-rc.1, status: candidate-synthesis-ratified, authority_effect: preserved }
+quality_evidence:
+  candidate_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/12
+  candidate_merge_commit: 655e3b80ad1cbd8b443b6339358996f9fe656083
+  hotfix_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/13
+  hotfix_merge_commit: 5837657f6bfe0627f5bd0c8ada13640dba9a0a4b
+  post_hotfix_validation: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29882684997
+  pages_deployment: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29882684960
+  portal_verification: passed-http-200-en-interface-localized-2026-07-21
+  stable_gate: .github/workflows/release.yml
+limitations:
+  - Spanish remains canonical during 0.x; English is governed translation.
+  - CDI remains a proposed interdisciplinary practice domain, not a recognized scientific discipline.
+  - PULSE is not presented as universally or scientifically validated.
+  - Candidate learning, measurement and pattern artifacts do not become empirically validated through portal stability.
+  - The B2B case remains simulated, instrumented and not executed.
+  - Automated accessibility checks do not establish WCAG 2.2 AA conformance.

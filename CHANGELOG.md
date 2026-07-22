@@ -2,6 +2,27 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.8.1] - 2026-07-21
+
+### Promovido
+
+- Portal bilingüe ES/EN a línea base editorial y técnica estable, después de ratificar `v0.8.1-rc.1`.
+- 46 rutas españolas canónicas y 46 ediciones inglesas equivalentes, con selector contextual, búsqueda localizada, canonical y `hreflang`.
+- Interfaz inglesa completa después del hotfix del PR #13, incluidos Learn, Practice Lab, controles de tema, footer y metadata social.
+- ADR-026, manifiesto estable, notas ES/EN y autorización del tag `v0.8.1` únicamente después del merge y de los gates finales.
+
+### Linaje verificado
+
+- PR #12 fusionado mediante `655e3b80ad1cbd8b443b6339358996f9fe656083`.
+- PR #13 fusionado mediante `5837657f6bfe0627f5bd0c8ada13640dba9a0a4b`.
+- Validación post-hotfix `29882684997`, despliegue Pages `29882684960` y portal inglés verificado con HTTP 200.
+
+### Límites preservados
+
+- El español continúa como fuente canónica durante `0.x`; el inglés es traducción gobernada, no doctrina independiente.
+- La promoción no eleva la autoridad de aprendizaje, medición o patrones ni cambia el caso B2B `instrumented-not-executed`.
+- La estabilidad bilingüe no valida científicamente CDI o PULSE ni demuestra eficacia, adopción o impacto.
+
 ## [0.8.1-rc.1] - 2026-07-21
 
 ### Añadido
@@ -17,6 +38,12 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - `v0.8.0` permanece como release estable e inmutable.
 - El inglés es una traducción gobernada, no doctrina co-canónica.
 - La traducción no eleva autoridad o evidencia ni modifica el estado del caso B2B.
+
+### Cierre
+
+- Candidato ratificado, fusionado, desplegado y promovido a `v0.8.1`.
+- Implementación bilingüe: PR #12, merge `655e3b80ad1cbd8b443b6339358996f9fe656083`.
+- Corrección integral de interfaz inglesa: PR #13, merge `5837657f6bfe0627f5bd0c8ada13640dba9a0a4b`.
 
 ## [0.8.0] - 2026-07-21
 

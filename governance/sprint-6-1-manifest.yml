@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 sprint: 6.1
 release: 0.8.1-rc.1
-status: candidate-implemented-not-ratified
+status: candidate-ratified-merged-deployed-promoted
 started_on: 2026-07-21
 owner: Javier Forero
 objective: Publish a complete maintainable ES/EN portal without changing doctrinal authority, evidence maturity or the immutable v0.8.0 release.
@@ -31,11 +31,17 @@ gates:
   accessibility: passed-46-axe-analyses-run-29880720530
   browser_suite: passed-78-skipped-46-run-29880720530
   structural_validation: passed-run-29880720498
-  owner_ratification: pending
+  owner_ratification: passed-2026-07-21
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/bilingual-es-en
   pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/12
-  implementation_commit: d047b354f32149f8158fb11cfeb7834f8f57335f
+  implementation_commit: 655e3b80ad1cbd8b443b6339358996f9fe656083
+  interface_hotfix_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/13
+  interface_hotfix_commit: 5837657f6bfe0627f5bd0c8ada13640dba9a0a4b
+  post_hotfix_validation: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29882684997
+  pages_deployment: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/29882684960
+  portal_verification: passed-http-200-en-interface-localized-2026-07-21
   target_url: https://decision.javierforero.co
-  status: candidate-implemented-not-ratified
+  status: candidate-ratified-merged-deployed-promoted
+  promoted_to: 0.8.1

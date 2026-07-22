@@ -111,7 +111,7 @@ for path in html_files:
             "Cambiar a tema oscuro",
             "Cambiar a tema claro",
             "En esta página",
-            "Candidato bilingüe v0.8.1-rc.1",
+            "Portal bilingüe estable v0.8.1",
             "El español sigue siendo canónico",
             "Identidad y estado editorial",
             "Fuente y versiones",

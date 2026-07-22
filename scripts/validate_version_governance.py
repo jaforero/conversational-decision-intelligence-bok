@@ -33,6 +33,7 @@ def text(relative: str) -> str:
 adr5 = text("governance/adr/ADR-005-versioning-model.md")
 adr22 = text("governance/adr/ADR-022-release-identification-and-tag-policy.md")
 adr24 = text("governance/adr/ADR-024-v080-stable-promotion.md")
+adr26 = text("governance/adr/ADR-026-v081-stable-bilingual-promotion.md")
 adr_index = load_yaml("governance/adr/index.yml")
 adr_by_id = {item["id"]: item for item in adr_index["decisions"]}
 check("status: superseded" in adr5, "ADR-005 is not marked superseded")
@@ -48,6 +49,9 @@ check(adr_by_id.get("ADR-022", {}).get("supersedes") == "ADR-005", "ADR-022 regi
 check("status: accepted" in adr24, "ADR-024 is not accepted")
 check("línea base editorial y técnica estable" in adr24, "ADR-024 does not bound stable promotion")
 check(adr_by_id.get("ADR-024", {}).get("status") == "accepted", "ADR-024 is absent from the registry")
+check("status: accepted" in adr26, "ADR-026 is not accepted")
+check("línea base editorial y técnica estable del portal bilingüe" in adr26, "ADR-026 does not bound bilingual stability")
+check(adr_by_id.get("ADR-026", {}).get("status") == "accepted", "ADR-026 is absent from the registry")
 
 registry = load_yaml("governance/releases/index.yml")
 check(registry["schema_version"] == "1.0.0", "Release registry schema differs")
@@ -65,6 +69,7 @@ expected_versions = {
     "0.8.0-rc.1",
     "0.8.0",
     "0.8.1-rc.1",
+    "0.8.1",
 }
 check(expected_versions == set(records), "Release registry versions are incomplete or unexpected")
 for version in expected_versions:
@@ -82,6 +87,11 @@ check(records["0.8.0"]["status"] == "stable", "v0.8.0 lost stable status")
 check(records["0.8.0"]["tag"] == "v0.8.0", "Stable v0.8.0 tag differs")
 check(records["0.8.0"]["reference_commit"] == "refs/tags/v0.8.0", "Stable v0.8.0 reference is not tag-resolvable")
 check(records["0.8.0"]["source_candidate"] == "0.8.0-rc.1", "Stable v0.8.0 source candidate differs")
+check(records["0.8.1"]["release_class"] == "stable-release", "v0.8.1 is not stable")
+check(records["0.8.1"]["status"] == "stable", "v0.8.1 stable status differs")
+check(records["0.8.1"]["tag"] == "v0.8.1", "v0.8.1 tag differs")
+check(records["0.8.1"]["reference_commit"] == "refs/tags/v0.8.1", "v0.8.1 reference is not tag-resolvable")
+check(records["0.8.1"]["source_candidate"] == "0.8.1-rc.1", "v0.8.1 source candidate differs")
 
 candidate_versions = ["0.3.0-rc.1", "0.4.0-rc.1", "0.5.0-rc.1", "0.6.0-rc.1", "0.7.0-rc.1", "0.8.0-rc.1", "0.8.1-rc.1"]
 for version in candidate_versions:
@@ -98,12 +108,16 @@ check(records["0.7.0-rc.1"]["reference_commit"] == "e84f53a6caaca696a8143a2aab2e
 check(records["0.8.0-rc.1"]["status"] == "candidate-ratified-merged-deployed-promoted", "Sprint 6 candidate closure differs")
 check(records["0.8.0-rc.1"]["reference_commit"] == "bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347", "Sprint 6 merge lineage differs")
 check(records["0.8.0-rc.1"]["superseded_by"] == "0.8.0", "Sprint 6 promotion lineage is absent")
-check(records["0.8.1-rc.1"]["status"] == "candidate-implemented-not-ratified", "Bilingual candidate state is overstated")
+check(records["0.8.1-rc.1"]["status"] == "candidate-ratified-merged-deployed-promoted", "Bilingual candidate closure differs")
 check(records["0.8.1-rc.1"]["source_release"] == "0.8.0", "Bilingual candidate does not preserve stable source")
+check(records["0.8.1-rc.1"]["reference_commit"] == "655e3b80ad1cbd8b443b6339358996f9fe656083", "Bilingual candidate merge differs")
+check(records["0.8.1-rc.1"]["interface_hotfix_commit"] == "5837657f6bfe0627f5bd0c8ada13640dba9a0a4b", "English interface hotfix lineage differs")
+check(records["0.8.1-rc.1"]["superseded_by"] == "0.8.1", "Bilingual promotion lineage is absent")
 
 sprint4 = load_yaml("governance/sprint-4-manifest.yml")
 sprint5 = load_yaml("governance/sprint-5-manifest.yml")
 sprint6 = load_yaml("governance/sprint-6-manifest.yml")
+sprint61 = load_yaml("governance/sprint-6-1-manifest.yml")
 check(sprint4["status"] == "candidate-ratified-merged-deployed", "Sprint 4 manifest is not closed")
 check(sprint4["publication"]["pages_deployment_run"].endswith("/29858379825"), "Sprint 4 Pages evidence differs")
 check(sprint5["status"] == "candidate-ratified-merged-deployed", "Sprint 5 manifest is not closed")
@@ -112,11 +126,16 @@ check(sprint5["publication"]["portal_verification"].startswith("passed-http-200"
 check(sprint6["status"] == "candidate-ratified-merged-deployed", "Sprint 6 manifest closure differs")
 check(sprint6["publication"]["status"] == "candidate-ratified-merged-deployed", "Sprint 6 publication closure differs")
 check(sprint6["publication"]["merge_commit"] == records["0.8.0-rc.1"]["reference_commit"], "Sprint 6 registry and manifest diverge")
+check(sprint61["status"] == "candidate-ratified-merged-deployed-promoted", "Bilingual candidate manifest is not closed")
+check(sprint61["publication"]["implementation_commit"] == records["0.8.1-rc.1"]["reference_commit"], "Bilingual registry and manifest diverge")
+check(sprint61["publication"]["interface_hotfix_commit"] == records["0.8.1-rc.1"]["interface_hotfix_commit"], "Hotfix registry and manifest diverge")
+check(sprint61["publication"]["promoted_to"] == "0.8.1", "Bilingual candidate promotion is absent")
 
 version_index = text("docs/versions/index.md")
 release_note = text("docs/versions/v0.7.0-rc.1.md")
 candidate_note = text("docs/versions/v0.8.0-rc.1.md")
 stable_note = text("docs/versions/v0.8.0.md")
+stable_bilingual_note = text("docs/versions/v0.8.1.md")
 changelog = text("CHANGELOG.md")
 check("Ratificación, despliegue y estabilidad son estados diferentes" in version_index, "Public version policy conflates release states")
 check("tags retrospectivos ambiguos" in version_index, "Public version policy lacks retrospective-tag caution")
@@ -128,7 +147,10 @@ check("Candidato ratificado, fusionado y desplegado" in candidate_note, "v0.8.0-
 check("línea base editorial y técnica estable" in stable_note, "v0.8.0 stable boundary is absent")
 check((ROOT / "governance/releases/v0.8.0.yml").exists(), "Stable v0.8.0 manifest is absent")
 check((ROOT / "governance/releases/v0.8.0-notes.md").exists(), "Stable v0.8.0 release notes are absent")
-check('"version": "0.8.1-rc.1"' in text("package.json"), "Active portal version differs from bilingual candidate")
+check("portal bilingüe ES/EN como línea base editorial y técnica estable" in stable_bilingual_note, "v0.8.1 stable boundary is absent")
+check((ROOT / "governance/releases/v0.8.1.yml").exists(), "Stable v0.8.1 manifest is absent")
+check((ROOT / "governance/releases/v0.8.1-notes.md").exists(), "Stable v0.8.1 release notes are absent")
+check('"version": "0.8.1"' in text("package.json"), "Active portal version differs from stable bilingual release")
 
 content_map = load_yaml("governance/content-map.yml")
 registry_paths = content_map["collections"]["registries"]["paths"]

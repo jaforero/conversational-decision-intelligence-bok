@@ -2,7 +2,7 @@
 title: Versions
 description: Normative releases, portal candidates and CDI-BoK history policy.
 status: candidate
-version: 0.8.1-rc.1
+version: 0.8.1
 artifact_type: version-index
 authority_level: guidance
 normative: false
@@ -17,7 +17,8 @@ last_reviewed: 2026-07-21
 
 | Component | Version | Status | Scope |
 |---|---|---|---|
-| Integrated portal | `v0.8.1-rc.1` | Bilingual candidate | Complete ES/EN routes, localized interface and translation-drift gates |
+| Bilingual portal | [`v0.8.1`](v0.8.1.md) | Editorially and technically stable | Complete ES/EN routes, localized interface and translation-drift gates |
+| Source bilingual candidate | [`v0.8.1-rc.1`](v0.8.1-rc.1.md) | Ratified, merged, deployed and promoted | Traceable source of stable `v0.8.1` |
 | CDI-BoK governance | `v0.2.0` | Approved and normative | Architecture, authority, claims, brand and Sprint 0 |
 | Technical portal | `v0.3.0-rc.1` | Integrated and deployed | MkDocs, navigation, CI/CD, checks and custom domain |
 | Foundational core | [`v0.4.0`](v0.4.0.md) | Stable | Constitution, CDI boundaries, glossary, domains and PULSE specification |
