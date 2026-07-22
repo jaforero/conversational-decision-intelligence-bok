@@ -91,7 +91,7 @@ test("language selector preserves the equivalent page with keyboard navigation",
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/en\/08-patterns\/catalog\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", /^en/);
-  await expect(page.locator("main h1")).toContainText("Conversational decision pattern catalog");
+  await expect(page.locator("main h1")).toContainText("Conversational pattern catalog");
   await expect(page.locator(".md-search__input")).toHaveAttribute("placeholder", "Search");
 
   await page.getByRole("button", { name: "Select language" }).focus();
