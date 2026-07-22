@@ -82,8 +82,26 @@ override = (ROOT / "overrides/main.html").read_text(encoding="utf-8")
 requirements = (ROOT / "requirements.in").read_text(encoding="utf-8")
 for marker in ["mkdocs-static-i18n==1.3.0", "fallback_to_default: false", "locale: es", "locale: en", "name: Español", "name: English"]:
     check(marker in requirements + config, f"Bilingual configuration marker missing: {marker}")
-for marker in ['hreflang="x-default"', "og:locale", "i18n_current_language"]:
+for marker in ['hreflang="x-default"', "og:locale", "i18n_page_locale"]:
     check(marker in override, f"Localized metadata marker missing: {marker}")
+check(
+    "i18n_current_language" not in override,
+    "Page template uses the template-only locale variable instead of i18n_page_locale",
+)
+
+for spanish_label, english_label in {
+    "1. Enfocar la decisión": "1. Frame the decision",
+    "2. Evidencia y contexto": "2. Evidence and context",
+    "4. Control humano–IA": "4. Human–AI control",
+    "5. Acción y aprendizaje": "5. Action and learning",
+    "Caso B2B · Propuesta": "B2B case · Proposal",
+}.items():
+    check(
+        f"{spanish_label}: {english_label}" in config,
+        f"Exact English navigation translation missing: {spanish_label}",
+    )
+for marker in ["Switch to dark mode", "Switch to light mode"]:
+    check(marker in config, f"English theme control label missing: {marker}")
 
 if ERRORS:
     for error in ERRORS:

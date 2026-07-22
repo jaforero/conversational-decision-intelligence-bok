@@ -117,6 +117,13 @@ plugins:
         - locale: en
           name: English
           build: true
+          site_description: Learn to turn data, analytics and artificial intelligence into explicit decisions, responsible action and measurable learning.
+          theme:
+            palette:
+              - toggle:
+                  name: Switch to dark mode
+              - toggle:
+                  name: Switch to light mode
           nav_translations:
             Inicio: Home
             Empieza aquí: Start here
@@ -124,10 +131,10 @@ plugins:
             Cómo usar el CDI-BoK: How to use the CDI-BoK
             Aprende: Learn
             Ruta de aprendizaje: Learning path
-            Enfocar la decisión: Frame the decision
-            Evidencia y contexto: Evidence and context
-            Control humano–IA: Human–AI control
-            Acción y aprendizaje: Action and learning
+            1. Enfocar la decisión: 1. Frame the decision
+            2. Evidencia y contexto: 2. Evidence and context
+            4. Control humano–IA: 4. Human–AI control
+            5. Acción y aprendizaje: 5. Action and learning
             Plantilla Decision Brief: Decision Brief template
             Calidad y medición: Quality and measurement
             Patrones de decisión: Decision patterns
@@ -135,6 +142,8 @@ plugins:
             Catálogo de patrones: Pattern catalog
             Anti-patrones: Anti-patterns
             Aplicación B2B: B2B application
+            Catálogo: Catalog
+            Caso B2B · Propuesta: B2B case · Proposal
             Constitución: Constitution
             Alcance y fronteras de CDI: CDI scope and boundaries
             Glosario: Glossary
@@ -171,7 +180,6 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-      title: En esta página
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.highlight:
