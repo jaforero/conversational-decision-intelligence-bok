@@ -64,6 +64,7 @@ expected_versions = {
     "0.7.0-rc.1",
     "0.8.0-rc.1",
     "0.8.0",
+    "0.8.1-rc.1",
 }
 check(expected_versions == set(records), "Release registry versions are incomplete or unexpected")
 for version in expected_versions:
@@ -82,7 +83,7 @@ check(records["0.8.0"]["tag"] == "v0.8.0", "Stable v0.8.0 tag differs")
 check(records["0.8.0"]["reference_commit"] == "refs/tags/v0.8.0", "Stable v0.8.0 reference is not tag-resolvable")
 check(records["0.8.0"]["source_candidate"] == "0.8.0-rc.1", "Stable v0.8.0 source candidate differs")
 
-candidate_versions = ["0.3.0-rc.1", "0.4.0-rc.1", "0.5.0-rc.1", "0.6.0-rc.1", "0.7.0-rc.1", "0.8.0-rc.1"]
+candidate_versions = ["0.3.0-rc.1", "0.4.0-rc.1", "0.5.0-rc.1", "0.6.0-rc.1", "0.7.0-rc.1", "0.8.0-rc.1", "0.8.1-rc.1"]
 for version in candidate_versions:
     check(records[version]["release_class"] == "release-candidate", f"{version} is not classified as a candidate")
     check(records[version]["tag"] is None, f"{version} invents a retrospective tag")
@@ -97,6 +98,8 @@ check(records["0.7.0-rc.1"]["reference_commit"] == "e84f53a6caaca696a8143a2aab2e
 check(records["0.8.0-rc.1"]["status"] == "candidate-ratified-merged-deployed-promoted", "Sprint 6 candidate closure differs")
 check(records["0.8.0-rc.1"]["reference_commit"] == "bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347", "Sprint 6 merge lineage differs")
 check(records["0.8.0-rc.1"]["superseded_by"] == "0.8.0", "Sprint 6 promotion lineage is absent")
+check(records["0.8.1-rc.1"]["status"] == "candidate-implemented-not-ratified", "Bilingual candidate state is overstated")
+check(records["0.8.1-rc.1"]["source_release"] == "0.8.0", "Bilingual candidate does not preserve stable source")
 
 sprint4 = load_yaml("governance/sprint-4-manifest.yml")
 sprint5 = load_yaml("governance/sprint-5-manifest.yml")
@@ -125,7 +128,7 @@ check("Candidato ratificado, fusionado y desplegado" in candidate_note, "v0.8.0-
 check("línea base editorial y técnica estable" in stable_note, "v0.8.0 stable boundary is absent")
 check((ROOT / "governance/releases/v0.8.0.yml").exists(), "Stable v0.8.0 manifest is absent")
 check((ROOT / "governance/releases/v0.8.0-notes.md").exists(), "Stable v0.8.0 release notes are absent")
-check('"version": "0.8.0"' in text("package.json"), "Portal version differs from stable v0.8.0")
+check('"version": "0.8.1-rc.1"' in text("package.json"), "Active portal version differs from bilingual candidate")
 
 content_map = load_yaml("governance/content-map.yml")
 registry_paths = content_map["collections"]["registries"]["paths"]

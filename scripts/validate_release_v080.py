@@ -14,6 +14,7 @@ ERRORS: list[str] = []
 CHECKS = 0
 RELEASE = "0.8.0"
 SOURCE_CANDIDATE = "0.8.0-rc.1"
+ACTIVE_PORTAL = "0.8.1-rc.1"
 
 
 def check(condition: bool, message: str) -> None:
@@ -66,7 +67,7 @@ for marker in [
 
 adr_index = load_yaml("governance/adr/index.yml")
 adr_by_id = {item["id"]: item for item in adr_index["decisions"]}
-check(adr_index["release"] == RELEASE, "ADR registry release differs")
+check(adr_index["release"] in {RELEASE, ACTIVE_PORTAL}, "ADR registry lost stable release lineage")
 check(adr_by_id.get("ADR-024", {}).get("status") == "accepted", "ADR-024 is not accepted in the registry")
 
 manifest = load_yaml("governance/releases/v0.8.0.yml")
@@ -137,13 +138,14 @@ for path in [
     "governance/registries/concepts.yml",
     "governance/registries/external-demos.yml",
     "governance/registries/patterns.yml",
-    "governance/adr/index.yml",
-    "governance/content-map.yml",
 ]:
-    check(load_yaml(path).get("release") == RELEASE, f"Current registry release differs: {path}")
+    check(load_yaml(path).get("release") == ACTIVE_PORTAL, f"Current registry release differs: {path}")
+
+check(load_yaml("governance/adr/index.yml").get("release") == ACTIVE_PORTAL, "ADR registry active release differs")
+check(load_yaml("governance/content-map.yml").get("release") == ACTIVE_PORTAL, "Content map active release differs")
 
 content_map = load_yaml("governance/content-map.yml")
-check(content_map["public_portal"]["release"] == RELEASE, "Public portal content-map release differs")
+check(content_map["public_portal"]["release"] == ACTIVE_PORTAL, "Public portal content-map release differs")
 navigation = {item["path"]: item for item in content_map["public_portal"]["navigation"]}
 check(navigation.get("docs/versions/v0.8.0.md", {}).get("status") == "approved", "Stable public release note is not registered")
 check(navigation.get("docs/versions/v0.8.0-rc.1.md", {}).get("status") == "candidate", "Source candidate note lost candidate status")
@@ -199,12 +201,12 @@ check(case["evaluation"]["action_executed"] is False, "Stable bundle invents a B
 check(case["evaluation"]["outcome_observed"] is False, "Stable bundle invents a B2B outcome")
 
 portal_markers = {
-    "mkdocs.yml": "portal: v0.8.0",
-    "overrides/main.html": "Portal estable v0.8.0",
-    "README.md": "Release estable del portal integrado: `v0.8.0`",
-    "package.json": '"version": "0.8.0"',
-    "package-lock.json": '"version": "0.8.0"',
-    "docs/index.md": "Portal estable v0.8.0",
+    "mkdocs.yml": "portal: v0.8.1-rc.1",
+    "overrides/main.html": "Candidato bilingüe v0.8.1-rc.1",
+    "README.md": "Candidato bilingüe del portal: `v0.8.1-rc.1`",
+    "package.json": '"version": "0.8.1-rc.1"',
+    "package-lock.json": '"version": "0.8.1-rc.1"',
+    "docs/index.md": "Candidato bilingüe v0.8.1-rc.1",
     "CHANGELOG.md": "## [0.8.0] - 2026-07-21",
 }
 for path, marker in portal_markers.items():

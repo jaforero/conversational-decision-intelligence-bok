@@ -14,6 +14,7 @@ tag_snapshot:
     - 0.6.0-rc.1
     - 0.7.0-rc.1
     - 0.8.0-rc.1
+    - 0.8.1-rc.1
   authorized_for_post_merge_creation:
     - { tag: v0.8.0, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-024 }
 releases:
@@ -77,3 +78,10 @@ releases:
     source_candidate: 0.8.0-rc.1
     source_candidate_commit: bbc5c0583b28bbc3d4d2b6a2aedf28f8df336347
     manifest: governance/releases/v0.8.0.yml
+  - version: 0.8.1-rc.1
+    release_class: release-candidate
+    status: candidate-implemented-not-ratified
+    tag: null
+    reference_commit: pending-pr-12
+    source_release: 0.8.0
+    manifest: governance/sprint-6-1-manifest.yml

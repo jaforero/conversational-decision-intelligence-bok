@@ -2,6 +2,22 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [0.8.1-rc.1] - 2026-07-21
+
+### Añadido
+
+- Portal bilingüe estático con español canónico en las rutas existentes e inglés completo bajo `/en/`.
+- Selector contextual de idioma, navegación, búsqueda, interfaz y metadatos sociales localizados.
+- Canonical, `hreflang` para español e inglés y `x-default` por página equivalente.
+- Registro controlado de 46 pares con versión, estado, owner, fecha y hash SHA-256 de la fuente española.
+- ADR-025 y gates contra páginas ausentes, traducciones obsoletas, fallbacks y deriva de versión.
+
+### Límites preservados
+
+- `v0.8.0` permanece como release estable e inmutable.
+- El inglés es una traducción gobernada, no doctrina co-canónica.
+- La traducción no eleva autoridad o evidencia ni modifica el estado del caso B2B.
+
 ## [0.8.0] - 2026-07-21
 
 ### Promovido

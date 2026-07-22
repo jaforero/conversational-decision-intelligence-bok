@@ -95,6 +95,7 @@ nav:
       - Publicación y dominio: governance/publication-runbook.md
   - Versiones:
       - Estado e historial: versions/index.md
+      - Candidato v0.8.1-rc.1: versions/v0.8.1-rc.1.md
       - Release v0.8.0: versions/v0.8.0.md
       - Candidato v0.8.0-rc.1: versions/v0.8.0-rc.1.md
       - Candidato v0.7.0-rc.1: versions/v0.7.0-rc.1.md
@@ -104,8 +105,60 @@ nav:
   - Acerca de: about/index.md
 
 plugins:
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: false
+      reconfigure_material: true
+      languages:
+        - locale: es
+          default: true
+          name: Español
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            Inicio: Home
+            Empieza aquí: Start here
+            Visión general: Overview
+            Cómo usar el CDI-BoK: How to use the CDI-BoK
+            Aprende: Learn
+            Ruta de aprendizaje: Learning path
+            Enfocar la decisión: Frame the decision
+            Evidencia y contexto: Evidence and context
+            Control humano–IA: Human–AI control
+            Acción y aprendizaje: Action and learning
+            Plantilla Decision Brief: Decision Brief template
+            Calidad y medición: Quality and measurement
+            Patrones de decisión: Decision patterns
+            Lenguaje y plantilla: Language and template
+            Catálogo de patrones: Pattern catalog
+            Anti-patrones: Anti-patterns
+            Aplicación B2B: B2B application
+            Constitución: Constitution
+            Alcance y fronteras de CDI: CDI scope and boundaries
+            Glosario: Glossary
+            Mapa de dominios: Domain map
+            Identidad y función: Identity and role
+            Especificación nuclear: Core specification
+            Caso instrumentado: Instrumented case
+            Contrato de decisión: Decision contract
+            Protocolo de evidencia: Evidence protocol
+            Registro del ciclo: Cycle record
+            Gobernanza: Governance
+            Sistema de autoridad: Authority system
+            Arquitectura editorial: Editorial architecture
+            Claims y evidencia: Claims and evidence
+            Publicación y dominio: Publishing and domain
+            Versiones: Versions
+            Estado e historial: Status and history
+            Candidato v0.8.0-rc.1: Candidate v0.8.0-rc.1
+            Candidato v0.8.1-rc.1: Candidate v0.8.1-rc.1
+            Candidato v0.7.0-rc.1: Candidate v0.7.0-rc.1
+            Candidato v0.6.0-rc.1: Candidate v0.6.0-rc.1
+            Candidato v0.5.0-rc.1: Candidate v0.5.0-rc.1
+            Acerca de: About
   - search:
-      lang: es
       separator: '[\\s\\-\\.\\_]+'
 
 markdown_extensions:
@@ -148,7 +201,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.8.0
+    portal: v0.8.1-rc.1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero

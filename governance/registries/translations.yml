@@ -1,0 +1,380 @@
+schema_version: 1.0.0
+registry_id: CDI-TRANSLATION-PAIRS
+release: 0.8.1-rc.1
+canonical_language: es
+translation_language: en
+governed_by: ADR-025
+policy:
+  fallback_to_default: false
+  stale_translation: blocking
+  exception_requires: [owner, justification, expires_on]
+pairs:
+  - id: TR-00-FOUNDATION-CDI-SCOPE-BOUNDARIES
+    source: docs/00-foundation/cdi-scope-boundaries.md
+    translation: docs/00-foundation/cdi-scope-boundaries.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: 55c75f23d7ff86a57ae72afdb8a01359ff3e6d505f620914aed940fdf76d46f4
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-00-FOUNDATION-CONSTITUTION
+    source: docs/00-foundation/constitution.md
+    translation: docs/00-foundation/constitution.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: 72b66404c84d640495a00e353c73d9a3c9df3b3faf87ea50fc682aa9787959c3
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-00-FOUNDATION-DOMAIN-MAP
+    source: docs/00-foundation/domain-map.md
+    translation: docs/00-foundation/domain-map.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: fe0046197d9fa2a1b892d5c79a480d3e34a1c21a3d9963413d0660f84b78797e
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-00-FOUNDATION-GLOSSARY
+    source: docs/00-foundation/glossary.md
+    translation: docs/00-foundation/glossary.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: e116b8bc4207f19da9b0196d2dc9a984922fde60f9e55382fed865227672785f
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-00-FOUNDATION-INDEX
+    source: docs/00-foundation/index.md
+    translation: docs/00-foundation/index.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: 3110b8b52735a7d3053b9934d201aa66bca5ff1a9de12e7e543eb95fcdc94029
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-03-PULSE-INDEX
+    source: docs/03-pulse/index.md
+    translation: docs/03-pulse/index.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: d6cf6dcc7d0046d588e9ac57b4bd2b113fddeeb6c283cc23d18ac09a462445d1
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-03-PULSE-SPECIFICATION
+    source: docs/03-pulse/specification.md
+    translation: docs/03-pulse/specification.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: a68ffc7cefa5ac70cc9dc2e15bc47d389f2df8ba763983266ca3467b6f85eb5d
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-07-GOVERNANCE-QUALITY-DECISION-MEASUREMENT-SYSTEM
+    source: docs/07-governance-quality/decision-measurement-system.md
+    translation: docs/07-governance-quality/decision-measurement-system.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: 1d5c5a29e4a70123219a45f81bcce4bde3fde1d8c9fd0d31d3b67bac5160a835
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-07-GOVERNANCE-QUALITY-DECISION-QUALITY
+    source: docs/07-governance-quality/decision-quality.md
+    translation: docs/07-governance-quality/decision-quality.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: eaeb1ba4fd7f20f67404fe373543d3cc2599993d3133fbb15796648ba096de80
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-07-GOVERNANCE-QUALITY-INDEX
+    source: docs/07-governance-quality/index.md
+    translation: docs/07-governance-quality/index.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: 0da4180f40012751ced017774fef2d0e80d6316e4d2aace36270871d5c678760
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-07-GOVERNANCE-QUALITY-MEASUREMENT-RECORD
+    source: docs/07-governance-quality/measurement-record.md
+    translation: docs/07-governance-quality/measurement-record.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: b879190e855f8dd76a136ef981e6c24ecce94380f05f5e6fb21e44c190f0d66c
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-08-PATTERNS-ANTI-PATTERNS
+    source: docs/08-patterns/anti-patterns.md
+    translation: docs/08-patterns/anti-patterns.en.md
+    version: 0.8.0-rc.1
+    status: complete
+    source_sha256: f37bcb8bf32c7d17bb086120f6f36813e041ebe9a66ff246b9915caacd6ee2b0
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-08-PATTERNS-B2B-PROPOSAL-WALKTHROUGH
+    source: docs/08-patterns/b2b-proposal-walkthrough.md
+    translation: docs/08-patterns/b2b-proposal-walkthrough.en.md
+    version: 0.8.0-rc.1
+    status: complete
+    source_sha256: c88725fdd338efc66bb4fcaa40918e4ff35d1f42137a7b168f91349e7e645ab4
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-08-PATTERNS-CATALOG
+    source: docs/08-patterns/catalog.md
+    translation: docs/08-patterns/catalog.en.md
+    version: 0.8.0-rc.1
+    status: complete
+    source_sha256: a54b067d143e14bafae36cccd862f9622ff2b845561867637fff2ed8c3c9e81b
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-08-PATTERNS-INDEX
+    source: docs/08-patterns/index.md
+    translation: docs/08-patterns/index.en.md
+    version: 0.8.0-rc.1
+    status: complete
+    source_sha256: a8389396d1db17840f9cc11855897e9ab9f6703101900693ec306a748024901e
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-08-PATTERNS-PATTERN-LANGUAGE
+    source: docs/08-patterns/pattern-language.md
+    translation: docs/08-patterns/pattern-language.en.md
+    version: 0.8.0-rc.1
+    status: complete
+    source_sha256: 936bb2d0363a1a7c244bb1ff27220a132d23054eb804e12af57655e104286343
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-ABOUT-INDEX
+    source: docs/about/index.md
+    translation: docs/about/index.en.md
+    version: 0.3.0-rc.1
+    status: complete
+    source_sha256: f8ebaefa5f8066fe4e7d75b95df3eeb6e1d3302694bea7c4a90715d6df4ebc2d
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-GOVERNANCE-ARCHITECTURE
+    source: docs/governance/architecture.md
+    translation: docs/governance/architecture.en.md
+    version: 0.2.0
+    status: complete
+    source_sha256: 1521fbb801640be97cb291f20373705e87dbac4594722a8ed6e5caf1db6278fe
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-GOVERNANCE-CLAIMS-EVIDENCE
+    source: docs/governance/claims-evidence.md
+    translation: docs/governance/claims-evidence.en.md
+    version: 0.3.0-rc.1
+    status: complete
+    source_sha256: a6a1c82e6a17befaba0f516d13b2ea8037521e0ebf9b8428476171bb20ca1d37
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-GOVERNANCE-INDEX
+    source: docs/governance/index.md
+    translation: docs/governance/index.en.md
+    version: 0.3.0-rc.1
+    status: complete
+    source_sha256: 7455f1a55a4fea4a086fa6d12e6883db8e198ccf3f10b89c42efd5138affb0c9
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-GOVERNANCE-PUBLICATION-RUNBOOK
+    source: docs/governance/publication-runbook.md
+    translation: docs/governance/publication-runbook.en.md
+    version: 0.3.0-rc.1
+    status: complete
+    source_sha256: 0580b744bd17ef905f063b7dad6516d2eddfeef8101cb23bb621f75a3efbd7ba
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-INDEX
+    source: docs/index.md
+    translation: docs/index.en.md
+    version: 0.8.1-rc.1
+    status: complete
+    source_sha256: 27a4d04981c515c05ddf81903989e66eebdbce0ff2f27b0e862e83bb4f2b55db
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-LEARN-01-DECISION-FIRST
+    source: docs/learn/01-decision-first.md
+    translation: docs/learn/01-decision-first.en.md
+    version: 0.6.0-rc.1
+    status: complete
+    source_sha256: 989b94116a3aae3974c276af15feb44d07b2e4554461c915a9d429807544beb3
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-LEARN-02-EVIDENCE-CONTEXT
+    source: docs/learn/02-evidence-context.md
+    translation: docs/learn/02-evidence-context.en.md
+    version: 0.6.0-rc.1
+    status: complete
+    source_sha256: eeaccdb82d52bc65125562cd7ff74e14422aed52a56d52b66755fe1ff62fd973
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-LEARN-03-DECISION-EXPERIENCE
+    source: docs/learn/03-decision-experience.md
+    translation: docs/learn/03-decision-experience.en.md
+    version: 0.6.0-rc.1
+    status: complete
+    source_sha256: 078c78fd58d95e71489da415dd296e03e569ea330dd8cee0ae293c1961ea1a0a
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-LEARN-04-HUMAN-AI-CONTROL
+    source: docs/learn/04-human-ai-control.md
+    translation: docs/learn/04-human-ai-control.en.md
+    version: 0.6.0-rc.1
+    status: complete
+    source_sha256: e38a6e7f3d3c27a4c0c5f33a73e71a2b382d60f8bfb1f9c9925ba372a47846f0
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-LEARN-05-ACTION-LEARNING
+    source: docs/learn/05-action-learning.md
+    translation: docs/learn/05-action-learning.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: 7bdf1aa5c24068a942d94007ae130d10dbdfa23a006d46efa95fdee7e3f90bc2
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-LEARN-DECISION-BRIEF
+    source: docs/learn/decision-brief.md
+    translation: docs/learn/decision-brief.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: 6d00c4778cc763fed3812a002d3c732f1dfe1e74d9a7a66a350177b33e5218e0
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-LEARN-INDEX
+    source: docs/learn/index.md
+    translation: docs/learn/index.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: a7a4a6d6d260caad6aae96b842a9e827947a6e23efa893b9ee37b8fcb1bb53f3
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-B2B-PROPOSAL-CYCLE-LOG
+    source: docs/practice-lab/b2b-proposal/cycle-log.md
+    translation: docs/practice-lab/b2b-proposal/cycle-log.en.md
+    version: 0.5.0-rc.1
+    status: complete
+    source_sha256: 142998a81ad0beddd57cd7b687af8537779cbe49d7d9ec0a1ff2888b210d83e6
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-B2B-PROPOSAL-DECISION-CONTRACT
+    source: docs/practice-lab/b2b-proposal/decision-contract.md
+    translation: docs/practice-lab/b2b-proposal/decision-contract.en.md
+    version: 0.5.0-rc.1
+    status: complete
+    source_sha256: 9f486c789dc8da485056f8f0ca14bfa6846f8adac8acc5f2636f8b8a9b071b7e
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-B2B-PROPOSAL-EVIDENCE-PROTOCOL
+    source: docs/practice-lab/b2b-proposal/evidence-protocol.md
+    translation: docs/practice-lab/b2b-proposal/evidence-protocol.en.md
+    version: 0.5.0-rc.1
+    status: complete
+    source_sha256: f8f6c459fe78962ae833eb1f3ad5cb612abb665e6b66ddced9552c10893f2cbe
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-B2B-PROPOSAL-INDEX
+    source: docs/practice-lab/b2b-proposal/index.md
+    translation: docs/practice-lab/b2b-proposal/index.en.md
+    version: 0.5.0-rc.1
+    status: complete
+    source_sha256: f07f2dacb801256c2507692190720330658d5b3c812ba6c14ec9755faf05670a
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-CATALOG
+    source: docs/practice-lab/catalog.md
+    translation: docs/practice-lab/catalog.en.md
+    version: 0.5.0-rc.1
+    status: complete
+    source_sha256: 2cca36313f9599adb64df403a5f00f5164bbcd6026f27ae80ab9e4180c71e02a
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-INDEX
+    source: docs/practice-lab/index.md
+    translation: docs/practice-lab/index.en.md
+    version: 0.5.0-rc.1
+    status: complete
+    source_sha256: f4afaae02564b7af0ef1e9f1576150dc69f873a03b9dd7624328ecf522ab358f
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-RESEARCH-INDEX
+    source: docs/research/index.md
+    translation: docs/research/index.en.md
+    version: 0.3.0-rc.1
+    status: complete
+    source_sha256: 3e0fa11bfa98447b574fee04f67fb23548fd581fcfd563b438513993781cca80
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-START-HERE-HOW-TO-USE
+    source: docs/start-here/how-to-use.md
+    translation: docs/start-here/how-to-use.en.md
+    version: 0.3.0-rc.1
+    status: complete
+    source_sha256: 7120cf507d2874bcf7c24898e5ed0e375b36e66815fd7c81208386c078b6ede7
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-START-HERE-INDEX
+    source: docs/start-here/index.md
+    translation: docs/start-here/index.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: 89546ca18c8af6a0db81dfb4a9b9ae7a476ab4092567f0befe9841b7941a6e5d
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-INDEX
+    source: docs/versions/index.md
+    translation: docs/versions/index.en.md
+    version: 0.8.1-rc.1
+    status: complete
+    source_sha256: 8a6ed63e4ff773a2a65cfb223f830285c83bd4c44cbc0b1ebea333b5356f98b6
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-4-0
+    source: docs/versions/v0.4.0.md
+    translation: docs/versions/v0.4.0.en.md
+    version: 0.4.0
+    status: complete
+    source_sha256: c9ef9f148f1f91e2a63b75142c12f656bd6af8764ea3127c4f85e0ebc6f04730
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-5-0-RC-1
+    source: docs/versions/v0.5.0-rc.1.md
+    translation: docs/versions/v0.5.0-rc.1.en.md
+    version: 0.5.0-rc.1
+    status: complete
+    source_sha256: a129f7b49685a05a60ba540ab9fb1bee3c1e13b98fed96c8ca7c3d25b2261983
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-6-0-RC-1
+    source: docs/versions/v0.6.0-rc.1.md
+    translation: docs/versions/v0.6.0-rc.1.en.md
+    version: 0.6.0-rc.1
+    status: complete
+    source_sha256: aca5c58764e4fcf2249abc9bf64e6aa7903cec0a79d21b0a166f708797a08830
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-7-0-RC-1
+    source: docs/versions/v0.7.0-rc.1.md
+    translation: docs/versions/v0.7.0-rc.1.en.md
+    version: 0.7.0-rc.1
+    status: complete
+    source_sha256: fa51592a3e8bb0b5e50d017e4d94646e8bf385d44a3717daf5862bbaede77cc8
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-8-0-RC-1
+    source: docs/versions/v0.8.0-rc.1.md
+    translation: docs/versions/v0.8.0-rc.1.en.md
+    version: 0.8.0-rc.1
+    status: complete
+    source_sha256: c12fcce0442379fcbb18e49e39321ddbb4767e0315810e596ce887ae5c9184d1
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-8-0
+    source: docs/versions/v0.8.0.md
+    translation: docs/versions/v0.8.0.en.md
+    version: 0.8.0
+    status: complete
+    source_sha256: 998a56f6fc41476be997d6bd0ae0e8e123fafb981b611753b453cec6b0080fb8
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-8-1-RC-1
+    source: docs/versions/v0.8.1-rc.1.md
+    translation: docs/versions/v0.8.1-rc.1.en.md
+    version: 0.8.1-rc.1
+    status: complete
+    source_sha256: 5b1c70549a95a5d7b24fa0e4b8ef42294de01ff4f87d1deef71d4225d697b6d7
+    last_reviewed: 2026-07-21
+    owner: Javier Forero
+

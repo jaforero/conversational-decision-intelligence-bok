@@ -5,7 +5,7 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 ## Estado
 
 - Release de gobernanza: `v0.2.0`
-- Release estable del portal integrado: `v0.8.0`
+- Release estable: `v0.8.0` · Candidato bilingüe del portal: `v0.8.1-rc.1`
 - Núcleo fundacional aprobado: `v0.4.0`
 - Fase activa: cierre estable de Sprint 6 — Conversational Decision Patterns & Anti-patterns
 - Idioma canónico durante `0.x`: español

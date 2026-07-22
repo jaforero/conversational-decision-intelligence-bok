@@ -1,0 +1,41 @@
+schema_version: 1.0.0
+sprint: 6.1
+release: 0.8.1-rc.1
+status: candidate-implemented-not-ratified
+started_on: 2026-07-21
+owner: Javier Forero
+objective: Publish a complete maintainable ES/EN portal without changing doctrinal authority, evidence maturity or the immutable v0.8.0 release.
+scope:
+  - Complete static English edition for every public Spanish page
+  - Context-preserving language selector and language-specific search
+  - Localized navigation, interface strings, announcement, footer and social metadata
+  - Canonical, hreflang and x-default metadata
+  - Controlled translation-pair registry with Spanish source hashes
+  - Blocking parity, staleness, fallback, build, browser and accessibility gates
+out_of_scope:
+  - Co-canonical bilingual doctrine
+  - Dynamic machine translation at request time
+  - Change to v0.8.0 tag or GitHub Release
+  - Promotion of candidate knowledge to approved
+  - New evidence of CDI or PULSE effectiveness
+decisions: [ADR-025]
+gates:
+  pair_inventory: passed-46-of-46
+  source_hash_parity: passed
+  version_and_status_parity: passed
+  localized_navigation_and_search: passed-static-build
+  seo_alternates: passed-92-localized-pages
+  contextual_switcher: passed-desktop-and-mobile
+  strict_build: passed-93-html
+  visual_regression: passed-20-comparisons-run-29880720530
+  accessibility: passed-46-axe-analyses-run-29880720530
+  browser_suite: passed-78-skipped-46-run-29880720530
+  structural_validation: passed-run-29880720498
+  owner_ratification: pending
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/bilingual-es-en
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/12
+  implementation_commit: d047b354f32149f8158fb11cfeb7834f8f57335f
+  target_url: https://decision.javierforero.co
+  status: candidate-implemented-not-ratified
