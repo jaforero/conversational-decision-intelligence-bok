@@ -1,5 +1,5 @@
 ---
-title: Decision Quality
+title: Calidad de la decisión
 description: Cómo evaluar una decisión ex ante, separar proceso de outcome y usar un perfil multidimensional sin fabricar una puntuación universal.
 status: candidate
 version: 0.7.0-rc.1
@@ -21,9 +21,9 @@ claim_ids:
 last_reviewed: 2026-07-21
 ---
 
-# Decision Quality
+# Calidad de la decisión
 
-La calidad de una decisión se evalúa con la información disponible **al momento de decidir**, no con el beneficio de conocer el desenlace. El outcome importa, pero responde otra pregunta: qué ocurrió después de actuar.
+La **calidad de la decisión (Decision Quality)** se evalúa con la información disponible **al momento de decidir**, no con el beneficio de conocer el desenlace. El outcome importa, pero responde otra pregunta: qué ocurrió después de actuar.
 
 ## Fundamento establecido y síntesis candidata
 
@@ -92,4 +92,3 @@ Una rúbrica cualitativa puede volverse burocrática y sus categorías siguen de
 **Qué cambiaría esta arquitectura:** evidencia de campo que muestre que ciertas dimensiones son redundantes, que la escala no logra acuerdo entre revisores o que una métrica alternativa predice mejor fallas de proceso sin aumentar gaming.
 
 [Construir el sistema de medición →](decision-measurement-system.md){ .md-button .md-button--primary }
-

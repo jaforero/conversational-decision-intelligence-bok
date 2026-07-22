@@ -47,7 +47,13 @@ const foundationalPages = [
 test("home communicates reader outcomes", async ({ page }) => {
   await stabilizeExternalAssets(page);
   await page.goto("/", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("main h1")).toContainText("mejores decisiones");
+  await expect(page.locator("main h1")).toContainText("mejores decisiones de negocio");
+  await expect(page.locator(".md-header__topic").first()).toContainText(
+    "CDI-BoK · Inteligencia de Decisiones Conversacional",
+  );
+  await expect(page.locator(".cdi-eyebrow")).toContainText("CUERPO DE CONOCIMIENTO");
+  await expect(page.locator("main .headerlink").first()).toHaveAttribute("title", "Enlace permanente");
+  await expect(page.locator(".md-search__input")).toHaveAttribute("placeholder", "Buscar en español");
   await expect(page.locator("main")).toContainText("Lo que podrás hacer");
   await expect(page.locator("main")).toContainText("Formular");
   await expect(page.locator("main")).toContainText("Aprender");
@@ -57,7 +63,7 @@ test("home communicates reader outcomes", async ({ page }) => {
 test("measurement system preserves quality and outcome boundaries", async ({ page }) => {
   await stabilizeExternalAssets(page);
   await page.goto("/07-governance-quality/decision-measurement-system/", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("main h1")).toContainText("Decision Measurement System");
+  await expect(page.locator("main h1")).toContainText("Sistema de medición de decisiones");
   await expect(page.locator("main")).toContainText("Seis lentes");
   await expect(page.locator("main")).toContainText("No uses Brier score para una decisión única");
   await expect(page.locator("main")).toContainText("Puntuación sintética universal");
@@ -93,7 +99,8 @@ test("language selector preserves the equivalent page with keyboard navigation",
   await expect(page).toHaveURL(/\/en\/08-patterns\/catalog\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", /^en/);
   await expect(page.locator("main h1")).toContainText("Conversational pattern catalog");
-  await expect(page.locator(".md-search__input")).toHaveAttribute("placeholder", "Search");
+  await expect(page.locator(".md-search__input")).toHaveAttribute("placeholder", "Search in English");
+  await expect(page.locator("main .headerlink").first()).toHaveAttribute("title", "Permanent link");
   const englishNav = await page.locator(".md-nav--primary").first().innerText();
   expect(englishNav).toContain("1. Frame the decision");
   expect(englishNav).toContain("2. Evidence and context");
@@ -117,6 +124,35 @@ test("language selector preserves the equivalent page with keyboard navigation",
   await page.locator('a.md-select__link[hreflang="es"]').focus();
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/08-patterns\/catalog\/$/);
+});
+
+test("search follows the active ES/EN edition without cross-language results", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+
+  const spanishIndex = page.waitForResponse((response) =>
+    response.url().endsWith("/search/search_index.json") && !response.url().includes("/en/search/"),
+  );
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  const spanishResponse = await spanishIndex;
+  const spanishDocuments = (await spanishResponse.json()).docs;
+  expect(spanishDocuments.length).toBeGreaterThan(0);
+  expect(spanishDocuments.every((doc) => !doc.location.startsWith("en/"))).toBe(true);
+
+  const englishIndex = page.waitForResponse((response) =>
+    response.url().endsWith("/en/search/search_index.json"),
+  );
+  await page.goto("/en/", { waitUntil: "domcontentloaded" });
+  const englishResponse = await englishIndex;
+  const englishDocuments = (await englishResponse.json()).docs;
+  expect(englishDocuments.length).toBeGreaterThan(0);
+  expect(englishDocuments.every((doc) => doc.location.startsWith("en/"))).toBe(true);
+
+  await page.locator(".md-search__input").fill("decision");
+  const englishLinks = page.locator(".md-search-result__link");
+  await expect(englishLinks.first()).toBeVisible();
+  for (const href of await englishLinks.evaluateAll((links) => links.map((link) => link.getAttribute("href")))) {
+    expect(new URL(href, "https://decision.javierforero.co").pathname).toMatch(/^\/en\//);
+  }
 });
 
 test("localized pages expose canonical and complete hreflang metadata", async ({ page }) => {

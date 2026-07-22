@@ -2,6 +2,15 @@
 
 Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
+## [Unreleased]
+
+### Corregido
+
+- Localización de la interfaz española para el nombre visible del portal, el módulo de calidad y medición y los tooltips de enlaces permanentes.
+- Hero ES/EN reescrito para explicar el valor del CDI-BoK a usuarios de negocio con menos jerga técnica.
+- Búsqueda separada por edición: cada selector ES/EN utiliza exclusivamente el índice y las rutas de su idioma.
+- Gates estructurales y de navegador para impedir que una búsqueda vuelva a mezclar ambos corpus.
+
 ## [0.8.1] - 2026-07-21
 
 ### Promovido

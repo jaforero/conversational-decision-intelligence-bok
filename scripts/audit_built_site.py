@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -131,8 +132,35 @@ for path in html_files:
             )
         if 'property="og:locale" content="en_US"' not in text:
             ERRORS.append(f"English Open Graph locale is not en_US: {relative}")
-        if "Learn to turn data, analytics and AI" not in text:
+        if "Learn to turn data, analytics and AI into better business decisions" not in text:
             ERRORS.append(f"English Open Graph description is missing: {relative}")
+        if 'title="Enlace permanente"' in text:
+            ERRORS.append(f"Spanish permanent-link label leaked into English page: {relative}")
+    if expected_language == "es" and not is_error_page:
+        if 'title="Permanent link"' in text:
+            ERRORS.append(f"English permanent-link label leaked into Spanish page: {relative}")
+        if "CDI-BoK · Inteligencia de Decisiones Conversacional" not in text:
+            ERRORS.append(f"Localized Spanish site name is missing: {relative}")
+
+spanish_search_path = SITE / "search" / "search_index.json"
+english_search_path = SITE / "en" / "search" / "search_index.json"
+if not spanish_search_path.exists() or not english_search_path.exists():
+    ERRORS.append("Language-specific search indexes were not generated")
+else:
+    spanish_search = json.loads(spanish_search_path.read_text(encoding="utf-8"))
+    english_search = json.loads(english_search_path.read_text(encoding="utf-8"))
+    spanish_documents = spanish_search.get("docs", [])
+    english_documents = english_search.get("docs", [])
+    if not spanish_documents or any(str(doc.get("location", "")).startswith("en/") for doc in spanish_documents):
+        ERRORS.append("Spanish search index contains no documents or leaks English routes")
+    if not english_documents or any(not str(doc.get("location", "")).startswith("en/") for doc in english_documents):
+        ERRORS.append("English search index contains no documents or leaks Spanish routes")
+    spanish_pages = [doc for doc in spanish_documents if "#" not in str(doc.get("location", ""))]
+    english_pages = [doc for doc in english_documents if "#" not in str(doc.get("location", ""))]
+    if len(spanish_pages) != 47 or len(english_pages) != 47:
+        ERRORS.append(
+            f"Expected 47 page roots in each search index; got ES={len(spanish_pages)}, EN={len(english_pages)}"
+        )
 
 if not (SITE / "CNAME").exists():
     ERRORS.append("CNAME was not copied into the site artifact")
