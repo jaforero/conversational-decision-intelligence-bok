@@ -2,7 +2,7 @@
 title: Versiones
 description: Releases normativas, candidatos del portal y política de historia del CDI-BoK.
 status: candidate
-version: 0.9.0-rc.1
+version: 0.9.0
 artifact_type: version-index
 authority_level: guidance
 normative: false
@@ -18,8 +18,9 @@ last_reviewed: 2026-07-24
 
 | Componente | Versión | Estado | Alcance |
 |---|---|---|---|
-| Evidence Backbone y Research | [`v0.9.0-rc.1`](v0.9.0-rc.1.md) | Candidato ratificado, fusionado y desplegado | Fuentes, compatibilidad de claims, estado del arte DI, PULSE y agenda |
-| Portal bilingüe | [`v0.8.2`](v0.8.2.md) | Estable editorial y técnicamente | Localización española, claridad para negocio y búsqueda independiente ES/EN |
+| Evidence Backbone y Research | [`v0.9.0`](v0.9.0.md) | Línea base estable de publicación | Fuentes, compatibilidad de claims, estado del arte DI, PULSE y agenda con madurez preservada |
+| Candidato fuente | [`v0.9.0-rc.1`](v0.9.0-rc.1.md) | Ratificado, fusionado, desplegado y promovido | Fuente trazable de la release estable `v0.9.0` |
+| Portal bilingüe anterior | [`v0.8.2`](v0.8.2.md) | Estable e histórico | Localización española, claridad para negocio y búsqueda independiente ES/EN |
 | Línea base bilingüe anterior | [`v0.8.1`](v0.8.1.md) | Estable e histórica | Rutas ES/EN completas, interfaz localizada y gates contra deriva de traducción |
 | Candidato bilingüe fuente | [`v0.8.1-rc.1`](v0.8.1-rc.1.md) | Ratificado, fusionado, desplegado y promovido | Fuente trazable de la release estable `v0.8.1` |
 | Portal integrado | [`v0.8.0`](v0.8.0.md) | Estable editorial y técnicamente | Build reproducible, navegación, trazabilidad, gates y límites de autoridad |
@@ -46,10 +47,11 @@ La versión del portal no eleva automáticamente la madurez doctrinal del conten
 ADR-022 sustituye la regla inicial de ADR-005 y evita crear tags retrospectivos ambiguos.
 El registro controlado `governance/releases/index.yml` conserva la
 línea completa. Los RC históricos permanecen intencionalmente sin tag;
-`v0.8.0`, `v0.8.1` y `v0.8.2` reciben sus referencias inmutables únicamente
-desde gates posteriores al merge gobernados por ADR-024, ADR-026 y ADR-027.
-`v0.9.0-rc.1` permanece sin tag: está ratificado, fusionado y desplegado, pero
-no es una release estable ni eleva automáticamente la autoridad de su contenido.
+`v0.8.0`, `v0.8.1`, `v0.8.2` y `v0.9.0` reciben sus referencias inmutables
+únicamente desde gates posteriores al merge gobernados por ADR-024, ADR-026,
+ADR-027 y ADR-029. `v0.9.0-rc.1` permanece sin tag como candidato fuente
+promovido; la release estable no eleva automáticamente la autoridad ni la fuerza
+de evidencia de su contenido.
 
 !!! note "Por qué no existe un v0.1.0 posterior"
     La hoja de ruta inicial nombró la salida de Sprint 2 como `v0.1.0`, pero la secuencia ya había publicado `v0.2.0` y `v0.3.0-rc.1`. ADR-014 asignó `v0.4.0-rc.1` al candidato; ADR-017 registra su ratificación y promoción estable a `v0.4.0`.

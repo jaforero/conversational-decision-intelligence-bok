@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 sprint: 7
 release: 0.9.0-rc.1
-status: candidate-ratified-merged-deployed
+status: candidate-ratified-merged-deployed-promoted
 started_on: 2026-07-24
 completed_on: 2026-07-24
 owner: Javier Forero
@@ -98,4 +98,5 @@ publication:
   pages_deployment_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30113235422
   portal_verification: passed-http-200-es-en-research-2026-07-24
   target_url: https://decision.javierforero.co
-  status: candidate-ratified-merged-deployed
+  status: candidate-ratified-merged-deployed-promoted
+  promoted_to: 0.9.0

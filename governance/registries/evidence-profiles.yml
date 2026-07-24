@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-EVIDENCE-PROFILES
-release: 0.9.0-rc.1
+release: 0.9.0
 governed_by: ADR-028
 reviewed_on: 2026-07-24
 dimensions:

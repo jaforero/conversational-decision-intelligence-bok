@@ -4,6 +4,27 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-07-24
+
+### Promovido
+
+- Evidence Backbone, perfiles de fuentes, compatibilidad claim–evidencia y
+  estado del arte bilingüe a una línea base estable de publicación.
+- Agenda de investigación y señales futuras conservando incertidumbre,
+  procedencia, derechos y límites de uso.
+- ADR-029, manifiesto estable, notas ES/EN y autorización del tag `v0.9.0`
+  únicamente sobre el SHA de `main` que supere todos los gates posteriores al merge.
+
+### Linaje y límites
+
+- Fuente: candidato `v0.9.0-rc.1`, PR #18, merge
+  `3e9ad9937f35d85d737a23813e6ac55a0d74ee64`.
+- Cierre ratificado: PR #19, merge
+  `a2965f352664bbfa05b94b91f358e261aaa2bc54`.
+- La estabilidad identifica un bundle reproducible; no convierte hipótesis en
+  fundamentos, no valida científicamente CDI o PULSE y no demuestra impacto.
+- La tesis de DI como campo integrador emergente continúa siendo provisional.
+
 ## [0.9.0-rc.1] - 2026-07-24
 
 ### Añadido

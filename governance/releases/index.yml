@@ -20,6 +20,7 @@ tag_snapshot:
     - { tag: v0.8.0, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-024 }
     - { tag: v0.8.1, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-026 }
     - { tag: v0.8.2, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-027 }
+    - { tag: v0.9.0, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-029 }
 releases:
   - version: 0.2.0
     release_class: approved-governance-milestone
@@ -109,10 +110,20 @@ releases:
     manifest: governance/releases/v0.8.2.yml
   - version: 0.9.0-rc.1
     release_class: release-candidate
-    status: candidate-ratified-merged-deployed
+    status: candidate-ratified-merged-deployed-promoted
     tag: null
     reference_commit: 3e9ad9937f35d85d737a23813e6ac55a0d74ee64
     implementation_commit: e6a6185dd9ad9eb1aefac5f4501e375fb80ab65c
     quality_evidence_commit: f76f7f82404cb9122460783a511f41deeedab1e8
     source_release: 0.8.2
+    superseded_by: 0.9.0
     manifest: governance/sprint-7-manifest.yml
+  - version: 0.9.0
+    release_class: stable-release
+    status: stable
+    tag: v0.9.0
+    reference_commit: refs/tags/v0.9.0
+    source_candidate: 0.9.0-rc.1
+    source_candidate_commit: 3e9ad9937f35d85d737a23813e6ac55a0d74ee64
+    closure_commit: a2965f352664bbfa05b94b91f358e261aaa2bc54
+    manifest: governance/releases/v0.9.0.yml
