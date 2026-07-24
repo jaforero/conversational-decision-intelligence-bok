@@ -110,8 +110,8 @@ test("Sprint 7 state of the art preserves evidence and maturity boundaries", asy
   await expect(page.locator("main")).toContainText("no se redistribuyen");
 
   await page.goto("/versions/v0.9.0-rc.1/", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("main")).toContainText("candidato sin tag");
-  await expect(page.locator("main")).toContainText("no una revisión sistemática");
+  await expect(page.locator("main")).toContainText("release candidate sin tag");
+  await expect(page.locator("main")).toContainText("Una revisión sistemática");
 });
 
 test("language selector preserves the equivalent page with keyboard navigation", async ({ page }) => {
