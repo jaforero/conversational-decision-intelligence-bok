@@ -11,7 +11,6 @@ domains:
   - Foundations
   - Decision Governance
 source_ids:
-  - SRC-DR-002
   - SRC-PULSE-MAP-001
 claim_ids:
   - CLAIM-DOMAINS-001

@@ -8,7 +8,7 @@ authority_level: institutional-approved
 normative: true
 owner: Javier Forero
 domains: [Conversational Decision Intelligence, Decision Intelligence, Conversational Analytics, Responsible AI]
-source_ids: [SRC-DR-002, SRC-PRIOR-CDI-001, SRC-PRIOR-CDI-002, SRC-ACADEMIC-HAI-001, SRC-ACADEMIC-AIEVAL-001]
+source_ids: [SRC-PRIOR-CDI-001, SRC-PRIOR-CDI-002, SRC-ACADEMIC-HAI-001, SRC-ACADEMIC-AIEVAL-001]
 claim_ids: [CLAIM-CDI-001, CLAIM-CDI-PRIOR-001, CLAIM-CDI-EFFECT-001]
 last_reviewed: 2026-07-21
 ---

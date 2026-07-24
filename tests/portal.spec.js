@@ -43,6 +43,11 @@ const foundationalPages = [
   { name: "release-v080", path: "/versions/v0.8.0/" },
   { name: "release-v081", path: "/versions/v0.8.1/" },
   { name: "release-v082", path: "/versions/v0.8.2/" },
+  { name: "research-di-sota", path: "/research/decision-intelligence-state-of-the-art/" },
+  { name: "research-pulse-evidence", path: "/research/pulse-evidence-map/" },
+  { name: "research-future-signals", path: "/research/future-signals/" },
+  { name: "research-agenda", path: "/research/research-agenda/" },
+  { name: "release-v090rc1", path: "/versions/v0.9.0-rc.1/" },
 ];
 
 test("home communicates reader outcomes", async ({ page }) => {
@@ -90,6 +95,25 @@ test("stable release preserves component authority boundaries", async ({ page })
   await expect(page.locator("main")).toContainText("no se presenta como científicamente validado");
 });
 
+test("Sprint 7 state of the art preserves evidence and maturity boundaries", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  await page.goto("/research/decision-intelligence-state-of-the-art/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main h1")).toContainText("Estado del arte de Decision Intelligence");
+  await expect(page.locator("main")).toContainText("campo de práctica integrador y emergente");
+  await expect(page.locator("main")).toContainText("no revisión sistemática");
+  await expect(page.locator("main")).toContainText("¿Qué no está validado?");
+  await expect(page.locator("main")).toContainText("¿Qué evidencia cambiaría esta conclusión?");
+
+  await page.goto("/research/future-signals/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main")).toContainText("No predice con certeza");
+  await expect(page.locator("main")).toContainText("DMN 1.7 Beta 1");
+  await expect(page.locator("main")).toContainText("no se redistribuyen");
+
+  await page.goto("/versions/v0.9.0-rc.1/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main")).toContainText("release candidate sin tag");
+  await expect(page.locator("main")).toContainText("Una revisión sistemática");
+});
+
 test("language selector preserves the equivalent page with keyboard navigation", async ({ page }) => {
   await stabilizeExternalAssets(page);
   await page.goto("/08-patterns/catalog/", { waitUntil: "domcontentloaded" });
@@ -109,7 +133,7 @@ test("language selector preserves the equivalent page with keyboard navigation",
   expect(englishNav).toContain("5. Action and learning");
   expect(englishNav).toContain("B2B case · Proposal");
   expect(englishNav).not.toMatch(/Enfocar la decisión|Evidencia y contexto|Control humano–IA|Acción y aprendizaje/);
-  await expect(page.locator(".md-banner")).toContainText("Stable bilingual portal v0.8.2");
+  await expect(page.locator(".md-banner")).toContainText("Evidence candidate v0.9.0-rc.1");
   await expect(page.locator(".cdi-brand-footer")).toContainText("Source and versions");
   await expect(page.locator('[data-md-component="palette"] .md-option').nth(0)).toHaveAttribute(
     "aria-label",

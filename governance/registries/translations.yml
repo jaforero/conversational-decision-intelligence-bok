@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-TRANSLATION-PAIRS
-release: 0.8.2
+release: 0.9.0-rc.1
 canonical_language: es
 translation_language: en
 governed_by: ADR-025
@@ -14,32 +14,32 @@ pairs:
     translation: docs/00-foundation/cdi-scope-boundaries.en.md
     version: 0.4.0
     status: complete
-    source_sha256: 55c75f23d7ff86a57ae72afdb8a01359ff3e6d505f620914aed940fdf76d46f4
-    last_reviewed: 2026-07-21
+    source_sha256: c0e8e4ff989a01edb16268afdf1863ec0746d7fad2413dc3f934abc0736ab06e
+    last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-00-FOUNDATION-CONSTITUTION
     source: docs/00-foundation/constitution.md
     translation: docs/00-foundation/constitution.en.md
     version: 0.4.0
     status: complete
-    source_sha256: 72b66404c84d640495a00e353c73d9a3c9df3b3faf87ea50fc682aa9787959c3
-    last_reviewed: 2026-07-21
+    source_sha256: 79df76c626da95027474e78c80b33fd2f6ec65dbd28deb580096d7494e6e8c65
+    last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-00-FOUNDATION-DOMAIN-MAP
     source: docs/00-foundation/domain-map.md
     translation: docs/00-foundation/domain-map.en.md
     version: 0.4.0
     status: complete
-    source_sha256: fe0046197d9fa2a1b892d5c79a480d3e34a1c21a3d9963413d0660f84b78797e
-    last_reviewed: 2026-07-21
+    source_sha256: d2f96568225666ca377f22f8548699062c03d4da28331e3c2ef21cb7333fd1a6
+    last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-00-FOUNDATION-GLOSSARY
     source: docs/00-foundation/glossary.md
     translation: docs/00-foundation/glossary.en.md
     version: 0.4.0
     status: complete
-    source_sha256: e116b8bc4207f19da9b0196d2dc9a984922fde60f9e55382fed865227672785f
-    last_reviewed: 2026-07-21
+    source_sha256: 0bdc47cb4dd3382966fa814c203bf97647008df6178dc27937cb2b3d89d6c4d6
+    last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-00-FOUNDATION-INDEX
     source: docs/00-foundation/index.md
@@ -180,10 +180,10 @@ pairs:
   - id: TR-INDEX
     source: docs/index.md
     translation: docs/index.en.md
-    version: 0.8.2
+    version: 0.9.0-rc.1
     status: complete
-    source_sha256: 4051150a3c739c1cb509fae4eaa8c3bfc530792f827c325b6d02dc5ee3253e0f
-    last_reviewed: 2026-07-22
+    source_sha256: e11877bc91b793d627d8f245c9707d00f2c0272e8ea2290f62f1e2730f0af694
+    last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-LEARN-01-DECISION-FIRST
     source: docs/learn/01-decision-first.md
@@ -292,10 +292,42 @@ pairs:
   - id: TR-RESEARCH-INDEX
     source: docs/research/index.md
     translation: docs/research/index.en.md
-    version: 0.3.0-rc.1
+    version: 0.9.0-rc.1
     status: complete
-    source_sha256: 3e0fa11bfa98447b574fee04f67fb23548fd581fcfd563b438513993781cca80
-    last_reviewed: 2026-07-21
+    source_sha256: 129ec905ac831e4872d3db51c4e9a002d613cc09838101b67372b9f32a1c9a5c
+    last_reviewed: 2026-07-24
+    owner: Javier Forero
+  - id: TR-RESEARCH-DECISION-INTELLIGENCE-STATE-OF-THE-ART
+    source: docs/research/decision-intelligence-state-of-the-art.md
+    translation: docs/research/decision-intelligence-state-of-the-art.en.md
+    version: 0.9.0-rc.1
+    status: complete
+    source_sha256: 5ddea5c1bda416db5fa37154d1ca9fe0eb6b8b611cf50bd65cc3c054f01c9e7e
+    last_reviewed: 2026-07-24
+    owner: Javier Forero
+  - id: TR-RESEARCH-PULSE-EVIDENCE-MAP
+    source: docs/research/pulse-evidence-map.md
+    translation: docs/research/pulse-evidence-map.en.md
+    version: 0.9.0-rc.1
+    status: complete
+    source_sha256: b9d0dc43643701922c6acab8c0f626adcd909a3011a07e9d7084045965d756f0
+    last_reviewed: 2026-07-24
+    owner: Javier Forero
+  - id: TR-RESEARCH-FUTURE-SIGNALS
+    source: docs/research/future-signals.md
+    translation: docs/research/future-signals.en.md
+    version: 0.9.0-rc.1
+    status: complete
+    source_sha256: 5effed9d80b9363941c448d2f1b38a0192a8b9884c0b3e7f9d05b247e194a10c
+    last_reviewed: 2026-07-24
+    owner: Javier Forero
+  - id: TR-RESEARCH-RESEARCH-AGENDA
+    source: docs/research/research-agenda.md
+    translation: docs/research/research-agenda.en.md
+    version: 0.9.0-rc.1
+    status: complete
+    source_sha256: 2db54a387740c32a3c9033b97d67f101f0e2a4822a17aa3ccf848002dfb60f29
+    last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-START-HERE-HOW-TO-USE
     source: docs/start-here/how-to-use.md
@@ -316,10 +348,18 @@ pairs:
   - id: TR-VERSIONS-INDEX
     source: docs/versions/index.md
     translation: docs/versions/index.en.md
-    version: 0.8.2
+    version: 0.9.0-rc.1
     status: complete
-    source_sha256: 1b5847bcea369f7f7bf396b650c0b6e830cd0983aae59f283b3e86453bcd18de
-    last_reviewed: 2026-07-22
+    source_sha256: 5f23ef1a9da4dd661b3616b3611c17cc1340411b813792b432a96ca362c559b7
+    last_reviewed: 2026-07-24
+    owner: Javier Forero
+  - id: TR-VERSIONS-V0-9-0-RC-1
+    source: docs/versions/v0.9.0-rc.1.md
+    translation: docs/versions/v0.9.0-rc.1.en.md
+    version: 0.9.0-rc.1
+    status: complete
+    source_sha256: f6a3d9e12f7877f897cd09dd422c57b0168e4d2febd11592c79659e11d98d71a
+    last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-VERSIONS-V0-4-0
     source: docs/versions/v0.4.0.md

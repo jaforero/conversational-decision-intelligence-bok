@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 registry_id: CDI-RELEASE-LINEAGE
 governed_by: ADR-022
-observed_on: 2026-07-22
+observed_on: 2026-07-24
 tag_snapshot:
   source: git-ls-remote-origin-before-v0.8.0-promotion
   observed:
@@ -15,6 +15,7 @@ tag_snapshot:
     - 0.7.0-rc.1
     - 0.8.0-rc.1
     - 0.8.1-rc.1
+    - 0.9.0-rc.1
   authorized_for_post_merge_creation:
     - { tag: v0.8.0, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-024 }
     - { tag: v0.8.1, target: validated-main-sha, workflow: .github/workflows/release.yml, governed_by: ADR-026 }
@@ -106,3 +107,10 @@ releases:
     source_release: 0.8.1
     localization_fix_commit: 1f81e2ad26b42da4959744733ad8261dfd188f81
     manifest: governance/releases/v0.8.2.yml
+  - version: 0.9.0-rc.1
+    release_class: release-candidate
+    status: implementation-authorized
+    tag: null
+    reference_commit: pending-merge
+    source_release: 0.8.2
+    manifest: governance/sprint-7-manifest.yml

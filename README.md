@@ -6,15 +6,23 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 
 - Release de gobernanza: `v0.2.0`
 - Release estable del portal bilingüe: `v0.8.2`
+- Candidato activo: `v0.9.0-rc.1` — Evidence Backbone y estado del arte de Decision Intelligence
 - Núcleo fundacional aprobado: `v0.4.0`
-- Fase activa: portal bilingüe ES/EN estable; Sprint 7 pendiente de definición
+- Aprendizaje candidato: `v0.6.0-rc.1`
+- Calidad y medición candidata: `v0.7.0-rc.1`
+- Fase activa: Sprint 7 autorizado e implementado para revisión; no ratificado ni estable
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal objetivo: `https://decision.javierforero.co`
 - Practice Lab externo: `https://dashboards.javierforero.co`
 - Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
-La release `v0.8.2` fija el portal bilingüe ES/EN como línea base editorial y técnica reproducible, con localización española y búsqueda independiente por idioma. No homogeneiza la autoridad del contenido: el núcleo `v0.4.0` permanece aprobado; el caso B2B `v0.5.0-rc.1` sigue instrumentado, no ejecutado; y aprendizaje `v0.6.0-rc.1`, medición `v0.7.0-rc.1` y patrones `v0.8.0-rc.1` conservan sus estados candidatos. La estabilidad del build **no** afirma que CDI o PULSE estén validados científicamente ni que seguir el catálogo produzca impacto organizacional.
+La release `v0.8.2` permanece como línea base bilingüe estable. El candidato
+`v0.9.0-rc.1` añade gobierno de evidencia y un estado del arte trazable sin
+homogeneizar autoridad: el núcleo `v0.4.0` permanece aprobado; el caso B2B sigue
+instrumentado, no ejecutado bajo `v0.5.0-rc.1`; y aprendizaje, medición, patrones y Research
+conservan estados candidatos. Un backbone más riguroso **no** demuestra que CDI
+o PULSE estén validados científicamente ni que produzcan impacto organizacional.
 
 ## Fuentes de autoridad
 
@@ -34,6 +42,7 @@ La release `v0.8.2` fija el portal bilingüe ES/EN como línea base editorial y 
 - `scripts/`: sincronizadores y validadores de integridad.
 - `tests/`: regresión visual y reglas de accesibilidad automatizables.
 - `evidence/`: agregados reproducibles y no sensibles para auditar casos.
+- `governance/registries/evidence-profiles.yml`: perfiles, derechos y usos permitidos de las fuentes auditadas.
 - `.github/workflows/`: validación, pruebas de navegador y despliegue a Pages.
 
 ## Uso local

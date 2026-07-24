@@ -90,7 +90,12 @@ nav:
           - Contrato de decisión: practice-lab/b2b-proposal/decision-contract.md
           - Protocolo de evidencia: practice-lab/b2b-proposal/evidence-protocol.md
           - Registro del ciclo: practice-lab/b2b-proposal/cycle-log.md
-  - Research: research/index.md
+  - Research:
+      - Visión general: research/index.md
+      - Estado del arte de DI: research/decision-intelligence-state-of-the-art.md
+      - Mapa de evidencia de PULSE: research/pulse-evidence-map.md
+      - Señales futuras: research/future-signals.md
+      - Agenda de investigación: research/research-agenda.md
   - Gobernanza:
       - Sistema de autoridad: governance/index.md
       - Arquitectura editorial: governance/architecture.md
@@ -98,6 +103,7 @@ nav:
       - Publicación y dominio: governance/publication-runbook.md
   - Versiones:
       - Estado e historial: versions/index.md
+      - Candidato v0.9.0-rc.1: versions/v0.9.0-rc.1.md
       - Release v0.8.2: versions/v0.8.2.md
       - Release v0.8.1: versions/v0.8.1.md
       - Candidato v0.8.1-rc.1: versions/v0.8.1-rc.1.md
@@ -165,6 +171,10 @@ plugins:
             Contrato de decisión: Decision contract
             Protocolo de evidencia: Evidence protocol
             Registro del ciclo: Cycle record
+            Estado del arte de DI: DI state of the art
+            Mapa de evidencia de PULSE: PULSE evidence map
+            Señales futuras: Future signals
+            Agenda de investigación: Research agenda
             Gobernanza: Governance
             Sistema de autoridad: Authority system
             Arquitectura editorial: Editorial architecture
@@ -172,6 +182,7 @@ plugins:
             Publicación y dominio: Publishing and domain
             Versiones: Versions
             Estado e historial: Status and history
+            Candidato v0.9.0-rc.1: Candidate v0.9.0-rc.1
             Candidato v0.8.0-rc.1: Candidate v0.8.0-rc.1
             Candidato v0.8.1-rc.1: Candidate v0.8.1-rc.1
             Release v0.8.2: Release v0.8.2
@@ -222,7 +233,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.8.2
+    portal: v0.9.0-rc.1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero

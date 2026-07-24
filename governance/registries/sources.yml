@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-SOURCES
-release: 0.8.2
+release: 0.9.0-rc.1
 records:
   - source_id: SRC-PULSE-DNA-001
     title: PULSE DNA
@@ -58,6 +58,7 @@ records:
     library_file_id: libfile_f7b16a0373f081918ed1e347a734b572
     authority_level: author-pov
     status: source-copy-incomplete
+    sha256: e4a2584e8bdc844e1502b78cc9f106adad05713b6c321220676caca5944e1c31
     materialized: false
   - source_id: SRC-JF-002
     title: La IA Conversacional Revoluciona Dashboards y Analítica
@@ -65,6 +66,7 @@ records:
     library_file_id: libfile_af67f7a86a0081919316cb47fe50d4e5
     authority_level: author-pov
     status: active-background
+    sha256: c87ccc68dfd86ce7f1c52d78227a8f809ef4870dbb64cf64ebe3ef52c4e59524
     materialized: false
   - source_id: SRC-JF-003
     title: PULSE, tómale el pulso a tus decisiones
@@ -72,6 +74,7 @@ records:
     library_file_id: libfile_e94740b4162081918d1d331275446aba
     authority_level: author-pov
     status: source-copy-incomplete
+    sha256: 2dc0506a645024c25159eb5e3d07ab44bcd45c2a5b287d59ab1210dbd047aa68
     materialized: false
   - source_id: SRC-JF-004
     title: Arquitectura de datos moderna, fábula
@@ -79,6 +82,7 @@ records:
     library_file_id: libfile_1558b9c2aab48191ab29e6d72cbbbf6f
     authority_level: pedagogical-example
     status: active-background
+    sha256: f13723ea97815418efe4e5a38a729c8e7603b0d44467d2e6863afa0576b1cc22
     materialized: false
   - source_id: SRC-JF-005
     title: IA, datos, analítica, valor y decisiones
@@ -86,6 +90,7 @@ records:
     library_file_id: libfile_8229f9b51ff08191942325ca3610bca5
     authority_level: author-pov
     status: active-background
+    sha256: 5161163a76eab41940c75f1dced840ce4a99e53f7d659c905342fcd4a85e1bac
     materialized: false
   - source_id: SRC-JF-006
     title: Analítica de datos en cinco niveles
@@ -93,6 +98,7 @@ records:
     library_file_id: libfile_13da0bcce7f081919a26111483bf9cee
     authority_level: author-framework
     status: active-background
+    sha256: 37edef8658ccaa2aca6ade8ed24a16608b55bae9e887a0de28735aedf3c9572b
     materialized: false
   - source_id: SRC-DR-001
     title: Building the Future of Decision Intelligence
@@ -100,6 +106,7 @@ records:
     library_file_id: libfile_0e698c1e8c248191b8e13a1fb9f31801
     authority_level: ai-assisted-research-map
     status: evidence-unverified
+    sha256: 61134d45a5b8bd5f96c0b45941f9a394ce789d7e8404d647945dcedc98de243e
     materialized: false
   - source_id: SRC-DR-002
     title: Claude Deep Research PULSE
@@ -107,6 +114,7 @@ records:
     library_file_id: libfile_57bc29bc6a388191b06963b6c9316339
     authority_level: ai-assisted-research-map
     status: evidence-unverified
+    sha256: b3965d23c4980418355eada4fd49e17b4c5e7815d14fde6a48d8cf81a860ebf0
     materialized: false
   - source_id: SRC-ARCH-001
     title: PULSE Arquitectura Conceptual Fase 2
@@ -126,6 +134,34 @@ records:
     provenance: user-provided-project-source
     limits: Diseña el MVP y formula claims sobre el demo; no contiene datos CRM reales ni un resultado posterior observado.
     materialized: false
+  - source_id: SRC-GARTNER-VALUE-001
+    title: Turn Data, Analytics and AI Into Strategic Growth Drivers
+    author: Gartner
+    publication_year: 2024
+    source_file_name: turn-data-analytics-and-ai-into-strategic-growth-drivers.pdf
+    library_file_id: libfile_df6124dd3bfc8191bd4efa9bf996794e
+    sha256: b3173c1f6b54600dd001f1ac8b0d9f2ae51d110977c4c640751756a363ad4275
+    authority_level: industry-analyst-practice-guide
+    status: active-limited-purpose
+    provenance: user-provided-licensed-copy
+    rights: Gartner-all-rights-reserved-no-redistribution
+    purpose: Contexto atribuido de práctica industrial sobre estrategia, buy-in, value case y escalamiento.
+    limits: No reporta un método empírico suficiente para inferencia causal y no valida PULSE ni CDI.
+    materialized: metadata-only
+  - source_id: SRC-GARTNER-PREDICTIONS-001
+    title: Over 100 Data, Analytics and AI Predictions Through 2031
+    author: Gartner
+    publication_year: 2025
+    source_file_name: over-100-data-analytics-ia-predictions-through-2031.pdf
+    library_file_id: libfile_9ba44ceb57cc81918b73cf0d09926f94
+    sha256: 10d0ccfc501fdb74bc12d46dcc03c666456e842a88fe16f41c548f61fd7cffda
+    authority_level: industry-analyst-forecast
+    status: active-future-signals-only
+    provenance: user-provided-licensed-copy
+    rights: Gartner-all-rights-reserved-no-redistribution
+    purpose: Señales futuras atribuidas para tensionar estrategia y formular escenarios.
+    limits: Las predicciones no son hechos, causalidad, readiness ni compromisos; horizontes más largos tienen mayor incertidumbre.
+    materialized: metadata-only
   - source_id: SRC-PRACTICE-DASH-ROOT-001
     title: Dashboards con IA - Portafolios
     url: https://dashboards.javierforero.co/
@@ -193,6 +229,72 @@ records:
     status: active-with-review-status-caveat
     limits: Evaluation framework and one decision context; not evidence that AI assistance always harms or helps.
     materialized: false
+  - source_id: SRC-ACADEMIC-DECISION-ANALYSIS-001
+    title: Decision Analysis - Practice and Promise
+    author: Ronald A. Howard
+    publication: Management Science
+    publication_year: 1988
+    doi: 10.1287/mnsc.34.6.679
+    url: https://doi.org/10.1287/mnsc.34.6.679
+    authority_level: peer-reviewed-foundational-practice-paper
+    status: active
+    limits: Sustenta el linaje de Decision Analysis; no define por sí solo Decision Intelligence ni valida CDI o PULSE.
+    materialized: false
+  - source_id: SRC-ACADEMIC-INFOQUALITY-001
+    title: Beyond Accuracy - What Data Quality Means to Data Consumers
+    authors: Richard Y. Wang; Diane M. Strong
+    publication: Journal of Management Information Systems
+    publication_year: 1996
+    doi: 10.1080/07421222.1996.11518099
+    url: https://doi.org/10.1080/07421222.1996.11518099
+    authority_level: peer-reviewed-primary-study
+    status: active
+    limits: Taxonomía empírica de calidad de datos percibida por consumidores; no es una medida universal de calidad de decisión.
+    materialized: false
+  - source_id: SRC-ACADEMIC-ORGLEARNING-001
+    title: Exploration and Exploitation in Organizational Learning
+    author: James G. March
+    publication: Organization Science
+    publication_year: 1991
+    doi: 10.1287/orsc.2.1.71
+    url: https://doi.org/10.1287/orsc.2.1.71
+    authority_level: peer-reviewed-foundational-theory
+    status: active
+    limits: Modelo teórico de aprendizaje organizacional; no demuestra que un registro PULSE produzca aprendizaje.
+    materialized: false
+  - source_id: SRC-ACADEMIC-RUDIN-001
+    title: Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead
+    author: Cynthia Rudin
+    publication: Nature Machine Intelligence
+    publication_year: 2019
+    doi: 10.1038/s42256-019-0048-x
+    url: https://doi.org/10.1038/s42256-019-0048-x
+    authority_level: peer-reviewed-position-and-methodological-paper
+    status: active
+    limits: Argumenta por modelos interpretables en decisiones de alto riesgo; no implica que todo contexto requiera el mismo diseño.
+    materialized: false
+  - source_id: SRC-OMG-DMN-001
+    title: Decision Model and Notation 1.5
+    author: Object Management Group
+    publication_year: 2024
+    url: https://www.omg.org/spec/DMN/1.5/About-DMN
+    declared_version: "1.5"
+    as_of: 2026-07-24
+    authority_level: official-formal-standard
+    status: active-formal-version
+    limits: Estándar de modelado y automatización de decisiones; no cubre por sí solo calidad, aprendizaje o colaboración conversacional.
+    materialized: false
+  - source_id: SRC-OMG-DMN-BETA-001
+    title: Decision Model and Notation 1.7 Beta 1
+    author: Object Management Group
+    publication_year: 2024
+    url: https://www.omg.org/spec/DMN/1.7/Beta1/About-DMN
+    declared_version: 1.7-beta-1
+    as_of: 2026-07-24
+    authority_level: official-beta-specification
+    status: beta-informational
+    limits: Documento beta e informativo; no debe citarse como especificación formal para conformidad.
+    materialized: false
   - source_id: SRC-DQ-SDP-001
     title: Decision Quality
     author: Society of Decision Professionals
@@ -231,6 +333,7 @@ records:
     doi: 10.6028/NIST.AI.100-1
     url: https://doi.org/10.6028/NIST.AI.100-1
     authority_level: public-risk-management-framework
-    status: active
+    status: active-under-revision
+    as_of: 2026-07-24
     limits: Marco voluntario para riesgo y confiabilidad de sistemas de IA; no define Decision Quality ni valida la síntesis CDI.
     materialized: false

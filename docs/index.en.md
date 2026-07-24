@@ -2,7 +2,7 @@
 title: Conversational Decision Intelligence Body of Knowledge
 description: Learn to turn data, analytics and artificial intelligence into better business decisions, responsible action and measurable learning.
 status: candidate
-version: 0.8.2
+version: 0.9.0-rc.1
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -10,7 +10,7 @@ owner: Javier Forero
 domains: [Foundations, Conversational Decision Intelligence, PULSE]
 source_ids: [SRC-PULSE-DNA-001, SRC-PULSE-IDENTITY-002, SRC-JF-005]
 claim_ids: [CLAIM-CDI-001, CLAIM-PULSE-001]
-last_reviewed: 2026-07-21
+last_reviewed: 2026-07-24
 ---
 
 <div class="cdi-hero cdi-hero--split" markdown>
@@ -26,7 +26,7 @@ Learn to **define the decision that matters**, use evidence and context, compare
 [Choose a pattern](08-patterns/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Stable bilingual portal v0.8.2 · Approved core v0.4.0 · Candidate patterns</span>
+<span class="cdi-release">Candidate portal v0.9.0-rc.1 · Stable baseline v0.8.2 · Approved core v0.4.0</span>
 </div>
 
 <div class="cdi-hero__route" aria-label="Path from priority to measurable learning">

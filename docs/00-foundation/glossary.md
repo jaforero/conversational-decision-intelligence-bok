@@ -15,7 +15,6 @@ domains:
 source_ids:
   - SRC-PULSE-DNA-001
   - SRC-PULSE-IDENTITY-002
-  - SRC-DR-002
 last_reviewed: 2026-07-21
 ---
 

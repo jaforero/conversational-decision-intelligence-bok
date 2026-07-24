@@ -37,7 +37,7 @@ content_map = load_yaml("governance/content-map.yml")
 adr_index = load_yaml("governance/adr/index.yml")
 package = json.loads(text("package.json"))
 
-check(package["version"] == "0.8.2", "Package does not declare stable 0.8.2")
+check(package["version"] in {"0.8.2", "0.9.0-rc.1"}, "Package is older than stable 0.8.2")
 check(manifest["release"] == "0.8.2", "Stable patch manifest release differs")
 check(manifest["tag"] == "v0.8.2", "Stable patch tag differs")
 check(manifest["status"] == "stable", "Stable patch status differs")
@@ -57,19 +57,19 @@ authorized = {item["tag"]: item for item in registry["tag_snapshot"]["authorized
 check(authorized.get("v0.8.2", {}).get("target") == "validated-main-sha", "v0.8.2 tag is not restricted to validated main")
 check(authorized.get("v0.8.2", {}).get("governed_by") == "ADR-027", "v0.8.2 tag authorization differs")
 
-check(content_map["release"] == "0.8.2", "Content map release differs")
-check(content_map["public_portal"]["release"] == "0.8.2", "Public portal release differs")
+check(content_map["release"] in {"0.8.2", "0.9.0-rc.1"}, "Content map is older than v0.8.2")
+check(content_map["public_portal"]["release"] in {"0.8.2", "0.9.0-rc.1"}, "Public portal is older than v0.8.2")
 navigation = {item["path"]: item for item in content_map["public_portal"]["navigation"]}
 check(navigation.get("docs/versions/v0.8.2.md", {}).get("status") == "approved", "Stable v0.8.2 note is not approved")
 check((ROOT / "docs/versions/v0.8.2.en.md").exists(), "Stable v0.8.2 English note is absent")
 
 decisions = {item["id"]: item for item in adr_index["decisions"]}
 check(decisions.get("ADR-027", {}).get("status") == "accepted", "ADR-027 is absent or not accepted")
-for marker in ["Portal bilingüe estable v0.8.2", "CDI-BoK · v0.8.2"]:
-    check(marker in text("overrides/main.html"), f"Stable interface marker missing: {marker}")
-check("portal: v0.8.2" in text("mkdocs.yml"), "MkDocs portal release differs")
-check("Stable bilingual portal v0.8.2" in text("docs/index.en.md"), "English home stable marker is absent")
-check("Portal bilingüe estable v0.8.2" in text("docs/index.md"), "Spanish home stable marker is absent")
+check("CDI-BoK · v0.9.0-rc.1" in text("overrides/main.html"), "Active candidate footer is absent")
+check("portal: v0.9.0-rc.1" in text("mkdocs.yml"), "MkDocs portal release differs")
+check("Stable baseline v0.8.2" in text("docs/index.en.md"), "English home stable lineage is absent")
+check("Base estable v0.8.2" in text("docs/index.md"), "Spanish home stable lineage is absent")
+check("línea base estable" in text("docs/versions/v0.8.2.md"), "Historical v0.8.2 stable boundary is absent")
 check("Buscar en español" in text("docs/assets/javascripts/site.js"), "Spanish search label is absent")
 check("/en/search/search_index.json" in text("overrides/main.html"), "English search routing is absent")
 
