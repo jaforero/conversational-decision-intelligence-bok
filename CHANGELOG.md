@@ -27,6 +27,13 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - Los PDF con derechos reservados se registran por metadatos y hash, pero no se
   redistribuyen.
 
+### Cierre
+
+- Candidato ratificado, fusionado y desplegado; no promovido a `v0.9.0` estable.
+- PR #18 fusionado mediante `3e9ad9937f35d85d737a23813e6ac55a0d74ee64`.
+- Validación post-merge `30113235439`, despliegue Pages `30113235422` y portal
+  ES/EN con rutas Research verificado mediante HTTP 200.
+
 ## [0.8.2] - 2026-07-22
 
 ### Corregido

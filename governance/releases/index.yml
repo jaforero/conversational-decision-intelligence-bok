@@ -109,8 +109,10 @@ releases:
     manifest: governance/releases/v0.8.2.yml
   - version: 0.9.0-rc.1
     release_class: release-candidate
-    status: implementation-authorized
+    status: candidate-ratified-merged-deployed
     tag: null
-    reference_commit: pending-merge
+    reference_commit: 3e9ad9937f35d85d737a23813e6ac55a0d74ee64
+    implementation_commit: e6a6185dd9ad9eb1aefac5f4501e375fb80ab65c
+    quality_evidence_commit: f76f7f82404cb9122460783a511f41deeedab1e8
     source_release: 0.8.2
     manifest: governance/sprint-7-manifest.yml

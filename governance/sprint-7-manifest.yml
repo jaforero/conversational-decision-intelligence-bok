@@ -1,8 +1,9 @@
 schema_version: 1.0.0
 sprint: 7
 release: 0.9.0-rc.1
-status: implementation-authorized
+status: candidate-ratified-merged-deployed
 started_on: 2026-07-24
+completed_on: 2026-07-24
 owner: Javier Forero
 objective: Convert the additional Decision Intelligence and PULSE corpus into a traceable evidence backbone and a bounded bilingual state-of-the-art assessment without overstating disciplinary maturity or project effectiveness.
 scope:
@@ -32,10 +33,13 @@ gates:
   bilingual_claim_source_parity: passed-local-53-of-53
   strict_build: passed-local-107-html
   static_accessibility_audit: passed-local
-  visual_regression: pending-github-actions
-  browser_accessibility: pending-github-actions
+  visual_regression: passed-github-actions-run-30112880356
+  browser_accessibility: passed-github-actions-run-30112880356
   browser_launch: blocked-local-playwright-cdn-returned-empty-archives
-  owner_ratification: pending-post-review
+  owner_ratification: passed-user-ratification-2026-07-24
+  post_merge_validation: passed-run-30113235439
+  pages_deployment: passed-run-30113235422
+  portal_verification: passed-http-200-es-en-research-2026-07-24
 evidence:
   additional_source_ids:
     - SRC-JF-001
@@ -69,11 +73,29 @@ evidence:
     navigation_targets_audited: 53
     generated_html_audited: 107
     strict_build: passed
+  canonical_validation:
+    pull_request_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30112880299
+    pull_request_validation_result: success
+    pull_request_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30112880356
+    pull_request_browser_result: success-89-passed-53-skipped-by-design
+    post_merge_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30113235439
+    post_merge_validation_result: success
+    pages_deployment_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30113235422
+    pages_deployment_result: success
+    portal_verification: passed-http-200-es-en-research-2026-07-24
+  browser_authority: GitHub Actions Ubuntu runner is canonical for visual regression and automated Axe.
 publication:
   repository: https://github.com/jaforero/conversational-decision-intelligence-bok
   branch: agent/sprint-7-evidence-backbone
-  pull_request: pending
-  implementation_commit: pending
-  merge_commit: pending
+  pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/18
+  implementation_commit: e6a6185dd9ad9eb1aefac5f4501e375fb80ab65c
+  quality_evidence_commit: f76f7f82404cb9122460783a511f41deeedab1e8
+  merge_commit: 3e9ad9937f35d85d737a23813e6ac55a0d74ee64
+  merged_on: 2026-07-24
+  pull_request_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30112880299
+  pull_request_browser_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30112880356
+  post_merge_validation_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30113235439
+  pages_deployment_run: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30113235422
+  portal_verification: passed-http-200-es-en-research-2026-07-24
   target_url: https://decision.javierforero.co
-  status: not-published
+  status: candidate-ratified-merged-deployed

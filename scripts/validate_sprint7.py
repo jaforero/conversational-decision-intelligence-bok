@@ -93,7 +93,7 @@ content_map = load_yaml("governance/content-map.yml")
 release_registry = load_yaml("governance/releases/index.yml")
 
 check(manifest["release"] == RELEASE, "Sprint 7 manifest release differs")
-check(manifest["status"] == "implementation-authorized", "Sprint 7 overstates its pre-review status")
+check(manifest["status"] == "candidate-ratified-merged-deployed", "Sprint 7 closure status differs")
 check(manifest["decisions"] == ["ADR-028"], "Sprint 7 is not governed only by ADR-028")
 check("Scientific validation" in " ".join(manifest["out_of_scope"]), "Scientific validation is not explicitly out of scope")
 check("Redistribution" in " ".join(manifest["out_of_scope"]), "Analyst-report redistribution is not explicitly out of scope")
@@ -115,7 +115,48 @@ check(MATERIAL_CLAIMS <= set(claims), "One or more Sprint 7 material claims are 
 candidate = release_records.get(RELEASE, {})
 check(candidate.get("release_class") == "release-candidate", "Sprint 7 is not registered as a release candidate")
 check(candidate.get("tag") is None, "Sprint 7 invents a candidate tag")
-check(candidate.get("reference_commit") == "pending-merge", "Sprint 7 pre-merge lineage differs")
+check(
+    candidate.get("status") == "candidate-ratified-merged-deployed",
+    "Sprint 7 release-registry closure differs",
+)
+check(
+    candidate.get("reference_commit") == "3e9ad9937f35d85d737a23813e6ac55a0d74ee64",
+    "Sprint 7 merge lineage differs",
+)
+check(manifest["gates"]["owner_ratification"] == "passed-user-ratification-2026-07-24", "Owner ratification is absent")
+check(manifest["gates"]["post_merge_validation"] == "passed-run-30113235439", "Post-merge validation is absent")
+check(manifest["gates"]["pages_deployment"] == "passed-run-30113235422", "Pages deployment is absent")
+check(manifest["publication"]["pull_request"].endswith("/18"), "Sprint 7 pull request differs")
+check(
+    manifest["publication"]["implementation_commit"] == "e6a6185dd9ad9eb1aefac5f4501e375fb80ab65c",
+    "Sprint 7 implementation commit differs",
+)
+check(
+    manifest["publication"]["quality_evidence_commit"] == "f76f7f82404cb9122460783a511f41deeedab1e8",
+    "Sprint 7 quality-evidence commit differs",
+)
+check(
+    manifest["publication"]["merge_commit"] == candidate.get("reference_commit"),
+    "Sprint 7 manifest and release registry diverge",
+)
+check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Publication closure differs")
+check(manifest["publication"]["portal_verification"].startswith("passed-http-200"), "Portal verification is absent")
+check(
+    manifest["publication"]["post_merge_validation_run"].endswith("/30113235439"),
+    "Sprint 7 post-merge run differs",
+)
+check(
+    manifest["publication"]["pages_deployment_run"].endswith("/30113235422"),
+    "Sprint 7 Pages run differs",
+)
+release_note = text("docs/versions/v0.9.0-rc.1.md")
+version_index = text("docs/versions/index.md")
+check("ratificado, fusionado y desplegado" in release_note, "Public Sprint 7 ratification is absent")
+check("no lo convierte en `v0.9.0` estable" in release_note, "Stable-release boundary is absent")
+check(
+    "Candidato ratificado, fusionado y desplegado" in version_index,
+    "Version index does not expose the Sprint 7 closure",
+)
 
 for source_id, profile in profiles.items():
     check(bool(re.fullmatch(r"[0-9a-f]{64}", profile.get("sha256", ""))), f"Invalid source hash: {source_id}")

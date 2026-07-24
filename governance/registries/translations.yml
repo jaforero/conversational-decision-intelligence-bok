@@ -350,7 +350,7 @@ pairs:
     translation: docs/versions/index.en.md
     version: 0.9.0-rc.1
     status: complete
-    source_sha256: 5f23ef1a9da4dd661b3616b3611c17cc1340411b813792b432a96ca362c559b7
+    source_sha256: dbfb9760debdfd3842edce7ed86b1ab3c31b659c4dfdc897a2d1f03d9fcfec86
     last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-VERSIONS-V0-9-0-RC-1
@@ -358,7 +358,7 @@ pairs:
     translation: docs/versions/v0.9.0-rc.1.en.md
     version: 0.9.0-rc.1
     status: complete
-    source_sha256: f6a3d9e12f7877f897cd09dd422c57b0168e4d2febd11592c79659e11d98d71a
+    source_sha256: d64c2a9782cae771a675d67de91f89cf5dbb1ebb03faf9b3b711edfd6a9e03fa
     last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-VERSIONS-V0-4-0
