@@ -20,7 +20,7 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 `v0.9.0` fija una línea base estable de publicación para el Evidence Backbone,
 el estado del arte trazable y la agenda de investigación. La estabilidad congela
 un bundle reproducible; no homogeneiza autoridad ni fuerza de evidencia: el núcleo
-`v0.4.0` permanece aprobado, el caso B2B sigue instrumentado y no ejecutado, y
+`v0.4.0` permanece aprobado, el caso B2B `v0.5.0-rc.1` sigue instrumentado y no ejecutado, y
 aprendizaje, medición, patrones, hipótesis PULSE y conclusiones de Research conservan
 sus estados declarados. **No** demuestra que CDI o PULSE estén científicamente
 validados ni que produzcan impacto organizacional.
