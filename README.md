@@ -10,7 +10,7 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 - Núcleo fundacional aprobado: `v0.4.0`
 - Aprendizaje candidato: `v0.6.0-rc.1`
 - Calidad y medición candidata: `v0.7.0-rc.1`
-- Fase activa: Sprint 7 autorizado e implementado para revisión; no ratificado ni estable
+- Fase activa: Sprint 7 ratificado, fusionado y desplegado como candidato; no estable
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal objetivo: `https://decision.javierforero.co`
