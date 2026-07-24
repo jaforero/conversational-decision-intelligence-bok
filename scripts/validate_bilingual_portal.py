@@ -37,7 +37,7 @@ registry = yaml.safe_load(REGISTRY.read_text(encoding="utf-8"))
 check(registry["schema_version"] == "1.0.0", "Translation registry schema differs")
 check(registry["canonical_language"] == "es", "Spanish is not canonical")
 check(registry["translation_language"] == "en", "English translation language differs")
-check(registry["release"] == "0.8.2", "Translation registry release differs")
+check(registry["release"] == "0.9.0-rc.1", "Translation registry release differs")
 check(registry["policy"]["fallback_to_default"] is False, "Fallback must be disabled")
 
 spanish = sorted(p for p in DOCS.rglob("*.md") if not p.name.endswith(".en.md"))

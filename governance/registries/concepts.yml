@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CONCEPTS
-release: 0.8.2
+release: 0.9.0-rc.1
 knowledge_areas:
   - Foundations and Identity
   - Decisions and Intelligence

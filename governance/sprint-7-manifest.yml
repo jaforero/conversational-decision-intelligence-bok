@@ -1,0 +1,79 @@
+schema_version: 1.0.0
+sprint: 7
+release: 0.9.0-rc.1
+status: implementation-authorized
+started_on: 2026-07-24
+owner: Javier Forero
+objective: Convert the additional Decision Intelligence and PULSE corpus into a traceable evidence backbone and a bounded bilingual state-of-the-art assessment without overstating disciplinary maturity or project effectiveness.
+scope:
+  - Intake and rights-aware profiles for 12 additional project sources
+  - Source-class to claim-class compatibility policy
+  - Verified primary and official anchors for material claims
+  - Bilingual DI state of the art, PULSE evidence map, future signals and research agenda
+  - Time-aware records for changing standards and frameworks
+  - Automated evidence, source, claim and bilingual parity gates
+out_of_scope:
+  - Systematic review or exhaustive bibliometric analysis
+  - Scientific validation, effectiveness or superiority claim for CDI or PULSE
+  - Promotion of the approved v0.4.0 core
+  - Approval of the candidate L0-L7 PULSE architecture
+  - Execution of the B2B pilot or attribution of an organizational outcome
+  - Redistribution of rights-reserved analyst reports
+  - Stable v0.9.0 release or tag creation
+decisions: [ADR-028]
+gates:
+  additional_source_intake: passed-local-12-of-12
+  incomplete_source_block: passed-local
+  ai_synthesis_direct_support_block: passed-local
+  forecast_fact_and_causality_block: passed-local
+  claim_contracts: passed-local
+  source_claim_compatibility: passed-local
+  primary_anchor_verification: passed-manual-2026-07-24
+  bilingual_claim_source_parity: passed-local-53-of-53
+  strict_build: passed-local-107-html
+  static_accessibility_audit: passed-local
+  visual_regression: pending-github-actions
+  browser_accessibility: pending-github-actions
+  browser_launch: blocked-local-playwright-cdn-returned-empty-archives
+  owner_ratification: pending-post-review
+evidence:
+  additional_source_ids:
+    - SRC-JF-001
+    - SRC-JF-002
+    - SRC-JF-003
+    - SRC-JF-004
+    - SRC-JF-005
+    - SRC-JF-006
+    - SRC-DR-001
+    - SRC-DR-002
+    - SRC-ARCH-001
+    - SRC-GARTNER-VALUE-001
+    - SRC-GARTNER-PREDICTIONS-001
+    - SRC-PRACTICE-B2B-001
+  primary_anchor_ids:
+    - SRC-ACADEMIC-DECISION-ANALYSIS-001
+    - SRC-ACADEMIC-INFOQUALITY-001
+    - SRC-ACADEMIC-ORGLEARNING-001
+    - SRC-ACADEMIC-RUDIN-001
+    - SRC-ACADEMIC-HAI-001
+    - SRC-ACADEMIC-AIEVAL-001
+    - SRC-OMG-DMN-001
+    - SRC-OMG-DMN-BETA-001
+    - SRC-NIST-AIRMF-001
+  evidence_posture: The release candidate distinguishes official, primary, owner, derived, discovery and forecast sources. It publishes a bounded landscape assessment and not a scientific validation of CDI or PULSE.
+  local_validation:
+    sprint7_checks_passed: 558
+    bilingual_checks_passed: 993
+    total_versioned_checks_passed: 2952
+    markdown_documents_audited: 106
+    navigation_targets_audited: 53
+    generated_html_audited: 107
+    strict_build: passed
+publication:
+  repository: https://github.com/jaforero/conversational-decision-intelligence-bok
+  branch: agent/sprint-7-evidence-backbone
+  pull_request: pending
+  implementation_commit: pending
+  merge_commit: pending
+  target_url: https://decision.javierforero.co
+  status: not-published

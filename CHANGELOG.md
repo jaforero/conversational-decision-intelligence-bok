@@ -4,6 +4,29 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ## [Unreleased]
 
+## [0.9.0-rc.1] - 2026-07-24
+
+### Añadido
+
+- Evidence Backbone con perfiles de autoridad, independencia, método,
+  directitud, actualidad, aplicabilidad, conflictos y verificación.
+- Auditoría reproducible de 12 fuentes adicionales con hash, procedencia,
+  completitud, derechos, uso permitido y límites.
+- Reglas de compatibilidad fuente–claim y gates contra copias incompletas,
+  síntesis asistidas usadas como evidencia y pronósticos tratados como hechos.
+- Estado del arte de Decision Intelligence, mapa de evidencia PULSE, señales
+  futuras y agenda de investigación en español e inglés.
+- Anclas oficiales y primarias para Decision Analysis, DMN, NIST AI RMF,
+  calidad de información, aprendizaje organizacional, interpretabilidad y
+  colaboración humano–IA.
+
+### Límites
+
+- Es un candidato sin tag y no una revisión sistemática completa.
+- No promueve el núcleo `v0.4.0` ni valida científicamente CDI o PULSE.
+- Los PDF con derechos reservados se registran por metadatos y hash, pero no se
+  redistribuyen.
+
 ## [0.8.2] - 2026-07-22
 
 ### Corregido

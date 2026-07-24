@@ -15,7 +15,6 @@ source_ids:
   - SRC-PULSE-DNA-001
   - SRC-PULSE-MAP-001
   - SRC-PULSE-IDENTITY-002
-  - SRC-DR-002
 claim_ids:
   - CLAIM-CDI-001
   - CLAIM-CDIBOK-001

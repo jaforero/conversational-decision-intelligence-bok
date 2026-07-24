@@ -8,7 +8,7 @@ authority_level: approved-controlled
 normative: true
 owner: Javier Forero
 domains: [Foundations, Decision Governance]
-source_ids: [SRC-DR-002, SRC-PULSE-MAP-001]
+source_ids: [SRC-PULSE-MAP-001]
 claim_ids: [CLAIM-DOMAINS-001]
 last_reviewed: 2026-07-21
 ---

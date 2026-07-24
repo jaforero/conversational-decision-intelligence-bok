@@ -1,0 +1,180 @@
+schema_version: 1.0.0
+registry_id: CDI-EVIDENCE-PROFILES
+release: 0.9.0-rc.1
+governed_by: ADR-028
+reviewed_on: 2026-07-24
+dimensions:
+  authority: Autoridad legítima de la fuente para el tipo de afirmación.
+  independence: Independencia respecto de PULSE, CDI-BoK y el claim evaluado.
+  method: Transparencia y rigor del método que produjo la fuente.
+  directness: Relación directa entre el contenido observado y el claim.
+  currency: Vigencia temporal para el uso declarado.
+  applicability: Transferibilidad al contexto de decisión considerado.
+  conflicts_of_interest: Intereses de autoría, comerciales o editoriales relevantes.
+  verification: Grado de contraste contra el original o snapshot recibido.
+compatibility_policy:
+  established_foundation:
+    allowed_source_classes:
+      - official-standard
+      - public-framework
+      - peer-reviewed-primary
+      - peer-reviewed-methodological
+    disallowed_as_sole_support:
+      - author-pov
+      - author-framework
+      - pedagogical-example
+      - ai-assisted-research-map
+      - analyst-forecast
+      - derived-architecture
+      - derived-pilot-design
+  project_definition:
+    allowed_source_classes:
+      - constitutional
+      - author-pov
+      - approved-governance
+    condition: La fuente gobierna lenguaje institucional; no prueba reconocimiento ni eficacia.
+  candidate_synthesis:
+    allowed_source_classes:
+      - constitutional
+      - author-pov
+      - author-framework
+      - derived-architecture
+      - peer-reviewed-primary
+      - official-standard
+      - public-framework
+    condition: Debe declarar límites y no presentarse como consenso externo.
+  bounded_empirical_finding:
+    allowed_source_classes:
+      - peer-reviewed-primary
+      - empirical-evaluation
+    condition: Debe conservar población, tarea, comparación y límites del estudio.
+  future_signal:
+    allowed_source_classes:
+      - analyst-forecast
+    condition: Debe declarar horizonte e incertidumbre; no implica hecho, causalidad ni readiness.
+global_blocks:
+  - incomplete snapshots cannot support any claim
+  - AI-assisted research maps cannot directly support a material claim
+  - analyst forecasts cannot support established, causal or readiness claims
+  - no source class can establish general PULSE or CDI effectiveness without a direct evaluation
+profiles:
+  - source_id: SRC-JF-001
+    snapshot_file_name: Los fundamentos técnicos de PULSE.md
+    sha256: e4a2584e8bdc844e1502b78cc9f106adad05713b6c321220676caca5944e1c31
+    source_class: author-pov
+    provenance: user-provided-project-source
+    completeness: incomplete-truncated-mid-sentence
+    rights: author-controlled-copy-rights-not-independently-verified
+    allowed_use: provenance-and-discovery-only
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: essay-not-reported, directness: potentially-direct-but-incomplete, currency: undated, applicability: project-context, conflicts_of_interest: author-and-framework-owner, verification: snapshot-hashed-incomplete }
+  - source_id: SRC-JF-002
+    snapshot_file_name: La IA Conversacional Revoluciona Dashboards y Analítica.md
+    sha256: c87ccc68dfd86ce7f1c52d78227a8f809ef4870dbb64cf64ebe3ef52c4e59524
+    source_class: author-pov
+    provenance: user-provided-project-source
+    completeness: complete-as-received
+    rights: author-controlled-copy-rights-not-independently-verified
+    allowed_use: historical-context-and-author-pov
+    prohibited_use: empirical-or-causal-support
+    profile: { authority: owner-pov, independence: low, method: essay, directness: contextual, currency: undated, applicability: analytics-narrative, conflicts_of_interest: author-and-framework-owner, verification: snapshot-hashed-content-reviewed }
+  - source_id: SRC-JF-003
+    snapshot_file_name: PULSE tómale el pulso a tus decisiones.md
+    sha256: 2dc0506a645024c25159eb5e3d07ab44bcd45c2a5b287d59ab1210dbd047aa68
+    source_class: author-pov
+    provenance: user-provided-project-source
+    completeness: incomplete-truncated-at-end
+    rights: author-controlled-copy-rights-not-independently-verified
+    allowed_use: provenance-and-discovery-only
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: essay-not-reported, directness: potentially-direct-but-incomplete, currency: undated, applicability: project-context, conflicts_of_interest: author-and-framework-owner, verification: snapshot-hashed-incomplete }
+  - source_id: SRC-JF-004
+    snapshot_file_name: arquitectura-de-datos-moderna-fabula_.md
+    sha256: f13723ea97815418efe4e5a38a729c8e7603b0d44467d2e6863afa0576b1cc22
+    source_class: pedagogical-example
+    provenance: user-provided-project-source
+    completeness: complete-as-received
+    rights: author-controlled-copy-rights-not-independently-verified
+    allowed_use: pedagogy-and-author-pov
+    prohibited_use: technical-causal-or-empirical-support
+    profile: { authority: pedagogical, independence: low, method: fable, directness: indirect, currency: undated, applicability: conceptual-communication, conflicts_of_interest: author-and-framework-owner, verification: snapshot-hashed-content-reviewed }
+  - source_id: SRC-JF-005
+    snapshot_file_name: ia-datos-analitica-valor-decisiones.md
+    sha256: 5161163a76eab41940c75f1dced840ce4a99e53f7d659c905342fcd4a85e1bac
+    source_class: author-pov
+    provenance: user-provided-project-source
+    completeness: complete-as-received
+    rights: author-controlled-copy-rights-not-independently-verified
+    allowed_use: project-lineage-pdamr-and-design-rationale
+    prohibited_use: independent-effectiveness-validation
+    profile: { authority: owner-pov, independence: low, method: practitioner-essay, directness: direct-to-project-design, currency: undated, applicability: business-decision-context, conflicts_of_interest: author-and-framework-owner, verification: snapshot-hashed-content-reviewed }
+  - source_id: SRC-JF-006
+    snapshot_file_name: analitica-datos-5-niveles_.md
+    sha256: 37edef8658ccaa2aca6ade8ed24a16608b55bae9e887a0de28735aedf3c9572b
+    source_class: author-framework
+    provenance: user-provided-project-source
+    completeness: complete-as-received
+    rights: author-controlled-copy-rights-not-independently-verified
+    allowed_use: named-pedagogical-taxonomy
+    prohibited_use: universal-maturity-scale-or-effectiveness-support
+    profile: { authority: author-framework, independence: low, method: practitioner-taxonomy, directness: direct-to-analytics-framing, currency: undated, applicability: pedagogical, conflicts_of_interest: author-and-framework-owner, verification: snapshot-hashed-content-reviewed }
+  - source_id: SRC-DR-001
+    snapshot_file_name: Gemini_Building the Future of Decision Intelligence.md
+    sha256: 61134d45a5b8bd5f96c0b45941f9a394ce789d7e8404d647945dcedc98de243e
+    source_class: ai-assisted-research-map
+    provenance: user-provided-ai-assisted-synthesis
+    completeness: complete-as-received
+    rights: mixed-citations-rights-not-cleared
+    allowed_use: discovery-of-candidate-sources-and-tensions
+    prohibited_use: direct-or-sole-claim-support
+    profile: { authority: discovery-only, independence: medium, method: non-reproducible-synthesis, directness: mixed, currency: undated, applicability: hypothesis-generation, conflicts_of_interest: generated-synthesis-and-mixed-vendor-sources, verification: snapshot-hashed-references-not-exhaustively-verified }
+  - source_id: SRC-DR-002
+    snapshot_file_name: claude-deep-research-pulse
+    sha256: b3965d23c4980418355eada4fd49e17b4c5e7815d14fde6a48d8cf81a860ebf0
+    source_class: ai-assisted-research-map
+    provenance: user-provided-ai-assisted-synthesis
+    completeness: complete-as-received-without-reproducible-bibliography
+    rights: mixed-citations-rights-not-cleared
+    allowed_use: discovery-of-candidate-sources-and-tensions
+    prohibited_use: direct-or-sole-claim-support
+    profile: { authority: discovery-only, independence: medium, method: non-reproducible-synthesis, directness: mixed, currency: undated, applicability: hypothesis-generation, conflicts_of_interest: generated-synthesis, verification: snapshot-hashed-selected-originals-verified }
+  - source_id: SRC-ARCH-001
+    snapshot_file_name: PULSE_Arquitectura_Conceptual_Fase2.md
+    sha256: 88a8587c9160a6b6a6d3be14bb656797883bfb3e45efeaa9d3fbdf6cdec28786
+    source_class: derived-architecture
+    provenance: user-provided-project-source
+    completeness: complete-as-received
+    rights: project-controlled-copy-rights-not-independently-verified
+    allowed_use: candidate-architecture-and-design-rationale
+    prohibited_use: approved-doctrine-or-empirical-validation
+    profile: { authority: candidate-project-design, independence: low, method: conceptual-architecture, directness: direct-to-candidate-design, currency: current-project-phase, applicability: pulse-architecture, conflicts_of_interest: project-derived, verification: snapshot-hashed-content-reviewed }
+  - source_id: SRC-GARTNER-VALUE-001
+    snapshot_file_name: turn-data-analytics-and-ai-into-strategic-growth-drivers.pdf
+    sha256: b3173c1f6b54600dd001f1ac8b0d9f2ae51d110977c4c640751756a363ad4275
+    source_class: industry-practice-guide
+    provenance: user-provided-licensed-copy
+    completeness: complete-13-pages-as-received
+    rights: Gartner-all-rights-reserved-no-redistribution
+    allowed_use: attributed-industry-practice-context
+    prohibited_use: redistribution-causal-support-or-pulse-validation
+    profile: { authority: industry-analyst-guidance, independence: medium, method: advisory-synthesis-not-fully-reported, directness: direct-to-data-ai-strategy-not-pulse, currency: 2024-2025, applicability: enterprise-practice, conflicts_of_interest: commercial-analyst, verification: full-pdf-text-and-pages-reviewed }
+  - source_id: SRC-GARTNER-PREDICTIONS-001
+    snapshot_file_name: over-100-data-analytics-ia-predictions-through-2031.pdf
+    sha256: 10d0ccfc501fdb74bc12d46dcc03c666456e842a88fe16f41c548f61fd7cffda
+    source_class: analyst-forecast
+    provenance: user-provided-licensed-copy
+    completeness: complete-38-pages-as-received
+    rights: Gartner-all-rights-reserved-no-redistribution
+    allowed_use: attributed-future-signals-and-strategy-stress-testing
+    prohibited_use: redistribution-fact-causal-readiness-or-effectiveness-support
+    profile: { authority: industry-analyst-forecast, independence: medium, method: strategic-planning-assumptions, directness: prospective, currency: 2025-through-2031, applicability: scenario-planning, conflicts_of_interest: commercial-analyst, verification: full-pdf-text-and-pages-reviewed }
+  - source_id: SRC-PRACTICE-B2B-001
+    snapshot_file_name: PULSE_MVP_Decision_Comercial_B2B_Fase3A.md
+    sha256: 324316aa437bf72006131ac5175fa18ad0992abdca6d16580265c9fe6b9be8c7
+    source_class: derived-pilot-design
+    provenance: user-provided-project-source
+    completeness: complete-as-received
+    rights: project-controlled-copy-rights-not-independently-verified
+    allowed_use: candidate-pilot-design-and-preregistration-input
+    prohibited_use: executed-intervention-outcome-or-effectiveness-support
+    profile: { authority: candidate-project-design, independence: low, method: unexecuted-pilot-design, directness: direct-to-b2b-case, currency: current-project-phase, applicability: simulated-b2b-case, conflicts_of_interest: project-derived, verification: snapshot-hashed-content-reviewed }

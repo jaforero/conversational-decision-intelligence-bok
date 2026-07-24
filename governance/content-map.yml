@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 map_id: CDI-CONTENT-MAP
-release: 0.8.2
+release: 0.9.0-rc.1
 canonical_language: es
 root_governance: governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md
 collections:
@@ -17,6 +17,7 @@ collections:
       - governance/registries/sources.yml
       - governance/registries/brand-assets.yml
       - governance/registries/external-demos.yml
+      - governance/registries/evidence-profiles.yml
       - governance/registries/patterns.yml
       - governance/registries/translations.yml
       - governance/releases/index.yml
@@ -60,6 +61,11 @@ collections:
       - governance/cases/
       - evidence/b2b-proposal/
       - docs/practice-lab/
+  research:
+    authority: candidate-bounded-evidence-synthesis
+    paths:
+      - docs/research/
+      - governance/registries/evidence-profiles.yml
 publication_rules:
   navigable_statuses:
     - candidate
@@ -73,7 +79,7 @@ publication_rules:
   unresolved_pointer: prohibited
   duplicate_canonical_definition: prohibited
 public_portal:
-  release: 0.8.2
+  release: 0.9.0-rc.1
   navigation:
     - { id: PORTAL-HOME, path: docs/index.md, status: candidate }
     - { id: PORTAL-START, path: docs/start-here/index.md, status: approved }
@@ -108,6 +114,10 @@ public_portal:
     - { id: PORTAL-CASE-B2B-EVIDENCE, path: docs/practice-lab/b2b-proposal/evidence-protocol.md, status: candidate }
     - { id: PORTAL-CASE-B2B-LOG, path: docs/practice-lab/b2b-proposal/cycle-log.md, status: candidate }
     - { id: PORTAL-RESEARCH, path: docs/research/index.md, status: candidate }
+    - { id: PORTAL-RESEARCH-DI-SOTA, path: docs/research/decision-intelligence-state-of-the-art.md, status: candidate }
+    - { id: PORTAL-RESEARCH-PULSE-EVIDENCE, path: docs/research/pulse-evidence-map.md, status: candidate }
+    - { id: PORTAL-RESEARCH-FUTURE-SIGNALS, path: docs/research/future-signals.md, status: candidate }
+    - { id: PORTAL-RESEARCH-AGENDA, path: docs/research/research-agenda.md, status: candidate }
     - { id: PORTAL-GOV, path: docs/governance/index.md, status: candidate }
     - { id: PORTAL-GOV-ARCH, path: docs/governance/architecture.md, status: approved }
     - { id: PORTAL-CLAIMS, path: docs/governance/claims-evidence.md, status: candidate }
@@ -122,4 +132,5 @@ public_portal:
     - { id: PORTAL-RELEASE-081RC1, path: docs/versions/v0.8.1-rc.1.md, status: candidate }
     - { id: PORTAL-RELEASE-081, path: docs/versions/v0.8.1.md, status: approved }
     - { id: PORTAL-RELEASE-082, path: docs/versions/v0.8.2.md, status: approved }
+    - { id: PORTAL-RELEASE-090RC1, path: docs/versions/v0.9.0-rc.1.md, status: candidate }
     - { id: PORTAL-ABOUT, path: docs/about/index.md, status: candidate }

@@ -8,7 +8,7 @@ authority_level: foundational-approved
 normative: true
 owner: Javier Forero
 domains: [Foundations, Conversational Decision Intelligence, Decision Governance]
-source_ids: [SRC-PULSE-DNA-001, SRC-PULSE-MAP-001, SRC-PULSE-IDENTITY-002, SRC-DR-002]
+source_ids: [SRC-PULSE-DNA-001, SRC-PULSE-MAP-001, SRC-PULSE-IDENTITY-002]
 claim_ids: [CLAIM-CDI-001, CLAIM-CDIBOK-001, CLAIM-STD-001]
 last_reviewed: 2026-07-21
 ---

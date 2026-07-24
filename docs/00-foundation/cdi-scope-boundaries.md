@@ -13,7 +13,6 @@ domains:
   - Conversational Analytics
   - Responsible AI
 source_ids:
-  - SRC-DR-002
   - SRC-PRIOR-CDI-001
   - SRC-PRIOR-CDI-002
   - SRC-ACADEMIC-HAI-001

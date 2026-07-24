@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-CLAIMS
-release: 0.8.2
+release: 0.9.0-rc.1
 claims:
   - claim_id: CLAIM-CDI-001
     statement: Conversational Decision Intelligence es el dominio de práctica interdisciplinar propuesto que estudia y diseña cómo personas y sistemas de inteligencia artificial colaboran mediante conversaciones para convertir evidencia confiable y contexto en decisiones explícitas, acción responsable y aprendizaje medible.
@@ -9,7 +9,6 @@ claims:
     maturity: approved-project-definition
     owner: Javier Forero
     source_ids:
-      - SRC-DR-002
       - SRC-ACADEMIC-HAI-001
     governed_by: ADR-015
     limits: Definición institucional aprobada para el proyecto; no afirma reconocimiento académico, acuñación del término ni eficacia generalizable.
@@ -75,7 +74,7 @@ claims:
     maturity: approved-institutional-taxonomy
     owner: Javier Forero
     source_ids:
-      - SRC-DR-002
+      - SRC-PULSE-MAP-001
     limits: La taxonomía organiza el proyecto; no afirma consenso universal ni igual madurez entre dominios.
   - claim_id: CLAIM-PULSE-ROLE-001
     statement: PULSE funciona como framework of practice del ecosistema CDI-BoK sin ser sinónimo de CDI ni depender de una interfaz conversacional.
@@ -197,3 +196,118 @@ claims:
       - SRC-ARCH-001
     governed_by: ADR-023
     limits: Es una regla de diseño proporcional, no evidencia de que menos estructura siempre sea superior ni de que el catálogo mejore outcomes.
+  - claim_id: CLAIM-DI-MATURITY-001
+    statement: Decision Intelligence puede describirse provisionalmente como un campo de práctica integrador y emergente apoyado en fundamentos y prácticas maduras, pero el alcance revisado no permite declararlo una disciplina científica consolidada con fronteras y corpus propios universalmente aceptados.
+    claim_class: bounded-landscape-assessment
+    evidence_status: candidate-synthesis-from-verified-primary-anchors
+    maturity: candidate-as-of-2026-07-24
+    owner: Research Editor
+    source_ids:
+      - SRC-ACADEMIC-DECISION-ANALYSIS-001
+      - SRC-OMG-DMN-001
+      - SRC-ACADEMIC-HAI-001
+      - SRC-ACADEMIC-AIEVAL-001
+    governed_by: ADR-028
+    scope: Revisión focalizada y no sistemática de fundamentos, estándares y colaboración humano-IA observados hasta 2026-07-24.
+    limits: No es una revisión sistemática ni bibliométrica, y no demuestra ausencia de un corpus adicional.
+    counterevidence: Una revisión sistemática reproducible que identifique fronteras, comunidad, métodos y evidencia acumulativa propios obligaría a revisar la evaluación.
+    review_status: candidate-owner-and-external-review-required
+  - claim_id: CLAIM-DI-LAYERS-001
+    statement: El mapa candidato separa fundamentos establecidos, prácticas maduras en evolución, campos emergentes, síntesis PULSE, hipótesis y pronósticos para impedir que su autoridad se homogeneice.
+    claim_class: institutional-candidate-taxonomy
+    evidence_status: candidate-editorial-synthesis
+    maturity: candidate
+    owner: Javier Forero
+    source_ids:
+      - SRC-ACADEMIC-DECISION-ANALYSIS-001
+      - SRC-OMG-DMN-001
+      - SRC-NIST-AIRMF-001
+      - SRC-ACADEMIC-HAI-001
+    governed_by: ADR-028
+    scope: Arquitectura editorial de Research para `v0.9.0-rc.1`.
+    limits: Las capas no son una escala de madurez universal ni establecen consenso disciplinar.
+    counterevidence: Una taxonomía externa más útil o evidencia de límites distintos justificaría sustituirla.
+    review_status: candidate
+  - claim_id: CLAIM-PULSE-SYNTHESIS-001
+    statement: PULSE integra en una propuesta de práctica propia la decisión, la acción, el resultado y el aprendizaje mediante PDAMR, Decision Circle, cinco verbos y Human-in-Control.
+    claim_class: project-synthesis-description
+    evidence_status: constitutional-and-author-derived
+    maturity: candidate-derived-description
+    owner: Javier Forero
+    source_ids:
+      - SRC-PULSE-DNA-001
+      - SRC-PULSE-IDENTITY-002
+      - SRC-JF-005
+    governed_by: ADR-028
+    scope: Descripción del linaje y ensamblaje declarado por el proyecto.
+    limits: Describe la síntesis; no prueba originalidad absoluta, superioridad ni eficacia generalizable.
+    counterevidence: Prior art equivalente o evaluación independiente negativa cambiaría claims de diferenciación o eficacia, no la definición institucional.
+    review_status: candidate
+  - claim_id: CLAIM-PULSE-BIOLOGICAL-LENSES-001
+    statement: La interocepción, la alostasis y la noción de organismo decisional se usan como lentes y metáforas de diseño candidatas para PULSE.
+    claim_class: hypothesis-and-metaphor-boundary
+    evidence_status: project-derived-hypothesis
+    maturity: hypothesis
+    owner: Javier Forero
+    source_ids:
+      - SRC-ARCH-001
+    governed_by: ADR-028
+    scope: Lenguaje conceptual para generar hipótesis de arquitectura y aprendizaje.
+    limits: No implica equivalencia literal entre organizaciones y organismos, mecanismo causal demostrado ni validación neurocientífica de PULSE.
+    counterevidence: Si la metáfora induce diseños erróneos, antropomorfismo o predicciones no comprobables, debe retirarse o reducirse.
+    review_status: test-required
+  - claim_id: CLAIM-DMN-VERSION-001
+    statement: DMN 1.5 es una especificación formal oficial observada y DMN 1.7 Beta 1 es informativa; la beta no debe usarse como base de conformidad formal.
+    claim_class: official-standard-status-observation
+    evidence_status: verified-official-source
+    maturity: current-as-of-2026-07-24
+    owner: Research Editor
+    source_ids:
+      - SRC-OMG-DMN-001
+      - SRC-OMG-DMN-BETA-001
+    governed_by: ADR-028
+    scope: Inventario oficial de OMG consultado el 2026-07-24.
+    limits: El estado puede cambiar; verificar OMG antes de una decisión de implementación o conformidad.
+    counterevidence: La publicación de una versión formal posterior sustituiría esta observación.
+    review_status: verified-time-sensitive
+  - claim_id: CLAIM-NIST-REVISION-001
+    statement: NIST AI RMF 1.0 permanece disponible como marco voluntario y NIST informa que está en proceso de revisión.
+    claim_class: official-framework-status-observation
+    evidence_status: verified-official-source
+    maturity: current-as-of-2026-07-24
+    owner: Research Editor
+    source_ids:
+      - SRC-NIST-AIRMF-001
+    governed_by: ADR-028
+    scope: Página oficial de NIST consultada el 2026-07-24.
+    limits: No anticipa el contenido ni la fecha de una versión futura y no convierte el marco en requisito regulatorio.
+    counterevidence: Una publicación o actualización oficial de NIST sustituiría esta observación.
+    review_status: verified-time-sensitive
+  - claim_id: CLAIM-HUMAN-AI-EVIDENCE-001
+    statement: La evidencia revisada sobre apoyo humano-IA es dependiente de la tarea y del diseño; no permite afirmar que añadir IA mejore siempre la calidad de decisión.
+    claim_class: bounded-empirical-synthesis
+    evidence_status: supported-by-bounded-primary-studies
+    maturity: emerging-context-dependent
+    owner: Research Editor
+    source_ids:
+      - SRC-ACADEMIC-HAI-001
+      - SRC-ACADEMIC-AIEVAL-001
+      - SRC-ACADEMIC-RUDIN-001
+    governed_by: ADR-028
+    scope: Deliberación en admisiones, evaluación de decisiones en un contexto judicial y argumento de interpretabilidad en alto riesgo.
+    limits: Los estudios y argumentos no representan todos los dominios, interfaces, usuarios o modelos.
+    counterevidence: Replicaciones multicontexto con efectos consistentes permitirían formular condiciones más generales.
+    review_status: candidate-synthesis
+  - claim_id: CLAIM-FUTURE-SIGNALS-001
+    statement: Los pronósticos de analistas registrados son señales para explorar escenarios y tensionar la estrategia, no hechos futuros ni evidencia de readiness o causalidad.
+    claim_class: forecast-governance-rule
+    evidence_status: source-explicit-and-governance-derived
+    maturity: candidate-governance
+    owner: Research Editor
+    source_ids:
+      - SRC-GARTNER-PREDICTIONS-001
+    governed_by: ADR-028
+    scope: Señales de datos, analítica e IA con horizontes hasta 2031 contenidas en el snapshot registrado.
+    limits: No se publican probabilidades propias ni se reproducen los PDF; cada señal requiere horizonte, incertidumbre y condición de revisión.
+    counterevidence: Resultados observados, nuevas predicciones o cambios de contexto pueden confirmar, refutar o volver irrelevante una señal.
+    review_status: candidate-future-signal
