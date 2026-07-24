@@ -103,6 +103,7 @@ nav:
       - Publicación y dominio: governance/publication-runbook.md
   - Versiones:
       - Estado e historial: versions/index.md
+      - Release v0.9.0: versions/v0.9.0.md
       - Candidato v0.9.0-rc.1: versions/v0.9.0-rc.1.md
       - Release v0.8.2: versions/v0.8.2.md
       - Release v0.8.1: versions/v0.8.1.md
@@ -182,6 +183,7 @@ plugins:
             Publicación y dominio: Publishing and domain
             Versiones: Versions
             Estado e historial: Status and history
+            Release v0.9.0: Release v0.9.0
             Candidato v0.9.0-rc.1: Candidate v0.9.0-rc.1
             Candidato v0.8.0-rc.1: Candidate v0.8.0-rc.1
             Candidato v0.8.1-rc.1: Candidate v0.8.1-rc.1
@@ -233,7 +235,7 @@ extra_javascript:
 extra:
   release:
     normative: v0.2.0
-    portal: v0.9.0-rc.1
+    portal: v0.9.0
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaforero

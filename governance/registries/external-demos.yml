@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 registry_id: CDI-EXTERNAL-DEMOS
-release: 0.9.0-rc.1
+release: 0.9.0
 observed_on: 2026-07-21
 root:
   demo_id: JF-DASHBOARDS

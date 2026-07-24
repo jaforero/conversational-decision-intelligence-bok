@@ -13,6 +13,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE = "0.9.0-rc.1"
+ACTIVE_RELEASE = "0.9.0"
 ERRORS: list[str] = []
 CHECKS = 0
 
@@ -93,16 +94,16 @@ content_map = load_yaml("governance/content-map.yml")
 release_registry = load_yaml("governance/releases/index.yml")
 
 check(manifest["release"] == RELEASE, "Sprint 7 manifest release differs")
-check(manifest["status"] == "candidate-ratified-merged-deployed", "Sprint 7 closure status differs")
+check(manifest["status"] == "candidate-ratified-merged-deployed-promoted", "Sprint 7 promotion status differs")
 check(manifest["decisions"] == ["ADR-028"], "Sprint 7 is not governed only by ADR-028")
 check("Scientific validation" in " ".join(manifest["out_of_scope"]), "Scientific validation is not explicitly out of scope")
 check("Redistribution" in " ".join(manifest["out_of_scope"]), "Analyst-report redistribution is not explicitly out of scope")
-check(RELEASE in text("package.json"), "Package does not declare the active release candidate")
-check(content_map["release"] == RELEASE, "Content map release differs")
-check(content_map["public_portal"]["release"] == RELEASE, "Public portal release differs")
-check(translations["release"] == RELEASE, "Translation registry release differs")
-check("Candidato de evidencia v0.9.0-rc.1" in text("overrides/main.html"), "Spanish candidate banner is absent")
-check("Evidence candidate v0.9.0-rc.1" in text("overrides/main.html"), "English candidate banner is absent")
+check(ACTIVE_RELEASE in text("package.json"), "Package does not declare stable v0.9.0")
+check(content_map["release"] == ACTIVE_RELEASE, "Content map release differs")
+check(content_map["public_portal"]["release"] == ACTIVE_RELEASE, "Public portal release differs")
+check(translations["release"] == ACTIVE_RELEASE, "Translation registry release differs")
+check("Portal estable v0.9.0" in text("overrides/main.html"), "Spanish stable banner is absent")
+check("Stable portal v0.9.0" in text("overrides/main.html"), "English stable banner is absent")
 
 source_records = {item["source_id"]: item for item in sources_registry["records"]}
 profiles = {item["source_id"]: item for item in profiles_registry["profiles"]}
@@ -116,7 +117,7 @@ candidate = release_records.get(RELEASE, {})
 check(candidate.get("release_class") == "release-candidate", "Sprint 7 is not registered as a release candidate")
 check(candidate.get("tag") is None, "Sprint 7 invents a candidate tag")
 check(
-    candidate.get("status") == "candidate-ratified-merged-deployed",
+    candidate.get("status") == "candidate-ratified-merged-deployed-promoted",
     "Sprint 7 release-registry closure differs",
 )
 check(
@@ -139,7 +140,8 @@ check(
     manifest["publication"]["merge_commit"] == candidate.get("reference_commit"),
     "Sprint 7 manifest and release registry diverge",
 )
-check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed", "Publication closure differs")
+check(manifest["publication"]["status"] == "candidate-ratified-merged-deployed-promoted", "Publication promotion differs")
+check(manifest["publication"]["promoted_to"] == ACTIVE_RELEASE, "Stable promotion target differs")
 check(manifest["publication"]["portal_verification"].startswith("passed-http-200"), "Portal verification is absent")
 check(
     manifest["publication"]["post_merge_validation_run"].endswith("/30113235439"),
@@ -154,8 +156,8 @@ version_index = text("docs/versions/index.md")
 check("ratificado, fusionado y desplegado" in release_note, "Public Sprint 7 ratification is absent")
 check("no lo convierte en `v0.9.0` estable" in release_note, "Stable-release boundary is absent")
 check(
-    "Candidato ratificado, fusionado y desplegado" in version_index,
-    "Version index does not expose the Sprint 7 closure",
+    "Ratificado, fusionado, desplegado y promovido" in version_index,
+    "Version index does not expose the Sprint 7 promotion",
 )
 
 for source_id, profile in profiles.items():

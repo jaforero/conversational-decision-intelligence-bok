@@ -1,0 +1,43 @@
+schema_version: 1.0.0
+release: 0.9.0
+tag: v0.9.0
+status: stable
+title: CDI-BoK v0.9.0 — Evidence Backbone y estado del arte de Decision Intelligence
+notes_path: governance/releases/v0.9.0-notes.md
+source_candidate: 0.9.0-rc.1
+source_candidate_commit: 3e9ad9937f35d85d737a23813e6ac55a0d74ee64
+closure_commit: a2965f352664bbfa05b94b91f358e261aaa2bc54
+reference: refs/tags/v0.9.0
+released_on: 2026-07-24
+owner: Javier Forero
+ratification:
+  ratified_by: Javier Forero
+  ratified_on: 2026-07-24
+  decision: Promote the ratified Evidence Backbone and DI state-of-the-art candidate as stable v0.9.0 while preserving every component's evidence maturity and methodological limits.
+  governed_by: ADR-029
+stable_scope:
+  - { component: evidence-profile-schema, status: stable-publication-baseline, authority_effect: governance-baseline }
+  - { component: claim-source-compatibility, status: stable-publication-baseline, authority_effect: governance-baseline }
+  - { component: bilingual-research-publication, status: stable-publication-baseline, authority_effect: editorial-baseline }
+  - { component: decision-intelligence-state-of-the-art, status: provisional-synthesis, authority_effect: preserved }
+  - { component: pulse-evidence-map, status: mixed-evidence-and-project-synthesis, authority_effect: preserved }
+  - { component: candidate-learning-measurement-patterns, status: candidate, authority_effect: preserved }
+  - { component: foundational-core-v0.4.0, status: approved, authority_effect: preserved }
+quality_evidence:
+  implementation_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/18
+  implementation_merge: 3e9ad9937f35d85d737a23813e6ac55a0d74ee64
+  quality_evidence_commit: f76f7f82404cb9122460783a511f41deeedab1e8
+  closure_pull_request: https://github.com/jaforero/conversational-decision-intelligence-bok/pull/19
+  closure_merge: a2965f352664bbfa05b94b91f358e261aaa2bc54
+  pull_request_validation: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30112880299
+  visual_accessibility: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30112880356
+  post_merge_validation: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30113235439
+  pages_deployment: https://github.com/jaforero/conversational-decision-intelligence-bok/actions/runs/30113235422
+  stable_gate: .github/workflows/release.yml
+limitations:
+  - The DI state-of-the-art thesis remains provisional and is not a complete systematic review.
+  - Stable publication does not scientifically validate CDI or PULSE.
+  - Evidence profiles and claim compatibility do not eliminate source-quality or interpretation risk.
+  - Assisted syntheses remain discovery aids and cannot establish a PULSE hypothesis.
+  - The B2B case remains instrumented and not executed; no outcome or organizational impact is demonstrated.
+  - Automated accessibility checks do not establish full WCAG 2.2 AA conformance.

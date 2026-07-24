@@ -2,7 +2,7 @@
 title: Conversational Decision Intelligence Body of Knowledge
 description: Learn to turn data, analytics and artificial intelligence into better business decisions, responsible action and measurable learning.
 status: candidate
-version: 0.9.0-rc.1
+version: 0.9.0
 artifact_type: portal-home
 authority_level: guidance
 normative: false
@@ -26,7 +26,7 @@ Learn to **define the decision that matters**, use evidence and context, compare
 [Choose a pattern](08-patterns/index.md){ .md-button }
 </div>
 
-<span class="cdi-release">Candidate portal v0.9.0-rc.1 · Stable baseline v0.8.2 · Approved core v0.4.0</span>
+<span class="cdi-release">Stable portal v0.9.0 · Governed evidence · Approved core v0.4.0</span>
 </div>
 
 <div class="cdi-hero__route" aria-label="Path from priority to measurable learning">

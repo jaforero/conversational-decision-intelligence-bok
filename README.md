@@ -5,24 +5,25 @@ Repositorio fundacional y versionado del **CDI-BoK**, el sistema de conocimiento
 ## Estado
 
 - Release de gobernanza: `v0.2.0`
-- Release estable del portal bilingüe: `v0.8.2`
-- Candidato activo: `v0.9.0-rc.1` — Evidence Backbone y estado del arte de Decision Intelligence
+- Release estable del portal: `v0.9.0` — Evidence Backbone y estado del arte de Decision Intelligence
+- Candidato fuente: `v0.9.0-rc.1` — ratificado, fusionado, desplegado y promovido
 - Núcleo fundacional aprobado: `v0.4.0`
 - Aprendizaje candidato: `v0.6.0-rc.1`
 - Calidad y medición candidata: `v0.7.0-rc.1`
-- Fase activa: Sprint 7 ratificado, fusionado y desplegado como candidato; no estable
+- Fase activa: Sprint 7 promovido a línea base estable de publicación y gobierno de evidencia
 - Idioma canónico durante `0.x`: español
 - Norma fundacional: `governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md`
 - Portal objetivo: `https://decision.javierforero.co`
 - Practice Lab externo: `https://dashboards.javierforero.co`
 - Repositorio oficial: `https://github.com/jaforero/conversational-decision-intelligence-bok`
 
-La release `v0.8.2` permanece como línea base bilingüe estable. El candidato
-`v0.9.0-rc.1` añade gobierno de evidencia y un estado del arte trazable sin
-homogeneizar autoridad: el núcleo `v0.4.0` permanece aprobado; el caso B2B sigue
-instrumentado, no ejecutado bajo `v0.5.0-rc.1`; y aprendizaje, medición, patrones y Research
-conservan estados candidatos. Un backbone más riguroso **no** demuestra que CDI
-o PULSE estén validados científicamente ni que produzcan impacto organizacional.
+`v0.9.0` fija una línea base estable de publicación para el Evidence Backbone,
+el estado del arte trazable y la agenda de investigación. La estabilidad congela
+un bundle reproducible; no homogeneiza autoridad ni fuerza de evidencia: el núcleo
+`v0.4.0` permanece aprobado, el caso B2B `v0.5.0-rc.1` sigue instrumentado y no ejecutado, y
+aprendizaje, medición, patrones, hipótesis PULSE y conclusiones de Research conservan
+sus estados declarados. **No** demuestra que CDI o PULSE estén científicamente
+validados ni que produzcan impacto organizacional.
 
 ## Fuentes de autoridad
 

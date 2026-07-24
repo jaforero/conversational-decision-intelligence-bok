@@ -2,7 +2,7 @@
 title: Versions
 description: Normative releases, portal candidates and CDI-BoK history policy.
 status: candidate
-version: 0.9.0-rc.1
+version: 0.9.0
 artifact_type: version-index
 authority_level: guidance
 normative: false
@@ -17,8 +17,9 @@ last_reviewed: 2026-07-24
 
 | Component | Version | Status | Scope |
 |---|---|---|---|
-| Evidence Backbone and Research | [`v0.9.0-rc.1`](v0.9.0-rc.1.md) | Ratified, merged and deployed candidate | Sources, claim compatibility, DI state of the art, PULSE and research agenda |
-| Bilingual portal | [`v0.8.2`](v0.8.2.md) | Editorially and technically stable | Spanish localization, business clarity and independent ES/EN search |
+| Evidence Backbone and Research | [`v0.9.0`](v0.9.0.md) | Stable publication baseline | Sources, claim compatibility, DI state of the art, PULSE and agenda with maturity preserved |
+| Source candidate | [`v0.9.0-rc.1`](v0.9.0-rc.1.md) | Ratified, merged, deployed and promoted | Traceable source of stable release `v0.9.0` |
+| Previous bilingual portal | [`v0.8.2`](v0.8.2.md) | Stable and historical | Spanish localization, business clarity and independent ES/EN search |
 | Previous bilingual baseline | [`v0.8.1`](v0.8.1.md) | Stable and historical | Complete ES/EN routes, localized interface and translation-drift gates |
 | Source bilingual candidate | [`v0.8.1-rc.1`](v0.8.1-rc.1.md) | Ratified, merged, deployed and promoted | Traceable source of stable `v0.8.1` |
 | CDI-BoK governance | `v0.2.0` | Approved and normative | Architecture, authority, claims, brand and Sprint 0 |
@@ -44,9 +45,9 @@ The portal version does not automatically raise the doctrinal maturity of its co
 ADR-022 replaces ADR-005's initial rule and avoids ambiguous retrospective
 tags. `governance/releases/index.yml` preserves the complete lineage.
 Historical RCs remain intentionally untagged; stable tags are created only by
-their governed post-merge workflows. `v0.9.0-rc.1` remains untagged: it is
-ratified, merged and deployed, but it is not a stable release and does not
-automatically raise the authority of its content.
+their governed post-merge workflows. `v0.9.0-rc.1` remains untagged as the
+promoted source candidate for stable `v0.9.0`; the stable release does not
+automatically raise the authority or evidential strength of its content.
 
 !!! note "Why there is no later v0.1.0"
     The initial roadmap named Sprint 2 as `v0.1.0`, but the sequence had already published `v0.2.0` and `v0.3.0-rc.1`. ADR-014 assigned `v0.4.0-rc.1`; ADR-017 records its ratification and stable promotion to `v0.4.0`.

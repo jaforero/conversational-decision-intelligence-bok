@@ -47,6 +47,7 @@ const foundationalPages = [
   { name: "research-pulse-evidence", path: "/research/pulse-evidence-map/" },
   { name: "research-future-signals", path: "/research/future-signals/" },
   { name: "research-agenda", path: "/research/research-agenda/" },
+  { name: "release-v090", path: "/versions/v0.9.0/" },
   { name: "release-v090rc1", path: "/versions/v0.9.0-rc.1/" },
 ];
 
@@ -88,11 +89,11 @@ test("pattern catalog preserves authority and evidence boundaries", async ({ pag
 
 test("stable release preserves component authority boundaries", async ({ page }) => {
   await stabilizeExternalAssets(page);
-  await page.goto("/versions/v0.8.2/", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("main h1")).toContainText("Release v0.8.2");
-  await expect(page.locator("main")).toContainText("autoridad aprobada sigue limitada");
-  await expect(page.locator("main")).toContainText("Aprendizaje, medición y patrones siguen siendo candidatos");
-  await expect(page.locator("main")).toContainText("no se presenta como científicamente validado");
+  await page.goto("/versions/v0.9.0/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("main h1")).toContainText("Release v0.9.0");
+  await expect(page.locator("main")).toContainText("sigue siendo provisional");
+  await expect(page.locator("main")).toContainText("no queda científicamente validado");
+  await expect(page.locator("main")).toContainText("Un bundle estable no demuestra eficacia");
 });
 
 test("Sprint 7 state of the art preserves evidence and maturity boundaries", async ({ page }) => {
@@ -133,7 +134,7 @@ test("language selector preserves the equivalent page with keyboard navigation",
   expect(englishNav).toContain("5. Action and learning");
   expect(englishNav).toContain("B2B case · Proposal");
   expect(englishNav).not.toMatch(/Enfocar la decisión|Evidencia y contexto|Control humano–IA|Acción y aprendizaje/);
-  await expect(page.locator(".md-banner")).toContainText("Evidence candidate v0.9.0-rc.1");
+  await expect(page.locator(".md-banner")).toContainText("Stable portal v0.9.0");
   await expect(page.locator(".cdi-brand-footer")).toContainText("Source and versions");
   await expect(page.locator('[data-md-component="palette"] .md-option').nth(0)).toHaveAttribute(
     "aria-label",
