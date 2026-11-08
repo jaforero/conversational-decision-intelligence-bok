@@ -51,4 +51,8 @@ La [arquitectura editorial CDI-GOV-001](governance/00_CDI-BoK_Architecture_and_E
 
 ## Derechos y reutilización
 
-Consulta la [decisión de licenciamiento ADR-003](governance/adr/ADR-003-licensing-posture.md). El acceso público permite consultar y auditar el proyecto. Los derechos de reutilización se reservan, incluidos los derechos aplicables a fuentes y activos de terceros.
+**© 2026 Javier Forero. Todos los derechos reservados sobre el contenido original de su autoría.**
+
+Al citar el CDI-BoK o los materiales originales de PULSE, indica el autor, el título, la versión consultada y el enlace. Para el libro, usa [CITATION.cff](CITATION.cff) como referencia.
+
+Para usos que requieran autorización, [solicita permiso previo al autor](https://cv.javierforero.co/#contacto). Los materiales de terceros se rigen por sus propios términos. Consulta la [decisión de licenciamiento ADR-003](governance/adr/ADR-003-licensing-posture.md).
