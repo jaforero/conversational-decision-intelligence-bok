@@ -6,6 +6,10 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ### Añadido
 
+- Portada de GitHub con rutas de lectura, estado de publicación y citación.
+- Políticas de conducta y seguridad, formularios de issues y guía de mantenimiento.
+- Actualizaciones programadas de Actions y npm mediante Dependabot.
+
 - Puente bilingüe de los cinco niveles de analítica a PULSE con un caso de
   práctica sobre SLA y acceso desde PULSE, Empieza aquí y Research.
 - Pregúntale al CDI-BoK en ES/EN, con citas comprobadas al compilar,
@@ -26,6 +30,8 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
   consultada y límites de uso en los registros de fuentes y evidencia.
 
 ### Corregido
+
+- Actions fijadas a commits comprobados y permisos de Pages limitados al trabajo de publicación.
 
 - Destinos Markdown en inglés y rutas de lectura desde ambas guías de uso
   hacia el glosario, fundamentos, Research y calidad de la decisión.

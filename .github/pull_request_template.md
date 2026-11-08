@@ -1,23 +1,14 @@
-## Tipo de cambio
+## Qué cambia y por qué
 
-- [ ] Constitución / gobernanza
-- [ ] Definición o concepto
-- [ ] Claim o evidencia
-- [ ] PULSE
-- [ ] Marca / experiencia visual
-- [ ] Caso o Practice Lab
-- [ ] Infraestructura
+Describe el problema, la decisión editorial o técnica y el resultado esperado. Enlaza el issue y los identificadores de concepto, claim, fuente, activo o ADR que apliquen.
 
-## Decisión afectada
+## Cómo verificarlo
 
-Indique el `concept_id`, `claim_id`, `source_id`, `asset_id` o ADR relacionado.
+Indica pasos, resultados de preflight o pruebas y, para cambios visuales, las rutas y capturas revisadas.
 
-## Control editorial
+## Según el alcance
 
-- [ ] No crea una segunda definición canónica.
-- [ ] Clasifica los claims materiales y enlaza sus fuentes.
-- [ ] Explicita relación con CDI, CDI-BoK y PULSE.
-- [ ] Separa contribución original de estado del arte.
-- [ ] Mantiene los tokens de marca y el objetivo WCAG 2.2 AA.
-- [ ] Actualiza changelog y versión cuando corresponde.
-
+- [ ] Contenido y evidencia. Revisé autoridad, fuentes, límites, enlaces y paridad ES/EN.
+- [ ] Interfaz. Probé las rutas afectadas en escritorio y móvil, con teclado cuando aplica.
+- [ ] Publicación. Revisé configuración, permisos y el impacto en Pages o Releases.
+- [ ] Changelog. Registré los cambios relevantes en `Unreleased`.

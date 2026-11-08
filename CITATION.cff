@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Si citas el CDI-BoK, identifica la versión y, cuando corresponda, el apartado consultado."
+title: "Conversational Decision Intelligence Body of Knowledge"
+authors:
+  - given-names: Javier
+    family-names: Forero
+repository-code: https://github.com/jaforero/conversational-decision-intelligence-bok
+url: https://decision.javierforero.co/
+version: "0.9.0"
+date-released: "2026-07-24"
+abstract: "Referencia bilingüe y versionada sobre inteligencia de decisiones conversacional, PULSE, evidencia y práctica decisional."
+keywords:
+  - decision intelligence
+  - decision governance
+  - conversational analytics
+  - knowledge base
+  - PULSE
