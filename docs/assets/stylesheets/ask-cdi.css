@@ -66,6 +66,14 @@
 }
 .cdi-ask-form button { min-height: var(--jf-target-min); }
 .cdi-ask-form button:disabled { opacity: .65; }
+.cdi-ask-dialog .cdi-ask-form button {
+  padding: .3rem .6rem;
+  border-radius: .25rem;
+  color: var(--jf-white);
+  background: var(--jf-purple);
+  font-weight: 700;
+  cursor: pointer;
+}
 .cdi-ask-evidence { padding: .4rem .55rem; margin: .5rem 0; border-left: 3px solid var(--md-typeset-a-color); }
 .cdi-ask-evidence blockquote { margin: .15rem 0 .45rem; }
 .cdi-ask-evidence small { display: block; }
