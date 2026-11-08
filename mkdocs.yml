@@ -56,7 +56,7 @@ nav:
   - Empieza aquí:
       - Visión general: start-here/index.md
       - Cómo usar el CDI-BoK: start-here/how-to-use.md
-  - Pregúntale al CDI-BoK: ask-cdi.md
+      - Pregúntale al CDI-BoK: ask-cdi.md
   - Aprende:
       - Ruta de aprendizaje: learn/index.md
       - 1. Enfocar la decisión: learn/01-decision-first.md
