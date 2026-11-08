@@ -56,7 +56,6 @@ nav:
   - Empieza aquí:
       - Visión general: start-here/index.md
       - Cómo usar el CDI-BoK: start-here/how-to-use.md
-      - Pregúntale al CDI-BoK: ask-cdi.md
   - Aprende:
       - Ruta de aprendizaje: learn/index.md
       - 1. Enfocar la decisión: learn/01-decision-first.md
@@ -157,7 +156,6 @@ plugins:
             Empieza aquí: Start here
             Visión general: Overview
             Cómo usar el CDI-BoK: How to use the CDI-BoK
-            Pregúntale al CDI-BoK: Ask the CDI-BoK
             Aprende: Learn
             Ruta de aprendizaje: Learning path
             1. Enfocar la decisión: 1. Frame the decision
