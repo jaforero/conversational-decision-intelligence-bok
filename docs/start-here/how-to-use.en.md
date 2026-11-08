@@ -19,9 +19,10 @@ The portal does not require linear reading. Choose a path based on the decision 
 
 | If you need to… | Start with… | Continue with… |
 |---|---|---|
-| Understand the discipline | Start here | CDI-BoK and Research |
+| Understand the discipline | Start here | [CDI-BoK foundations](../00-foundation/index.en.md) and [Research](../research/index.en.md) |
 | Design a decision practice | PULSE | Governance and Practice Lab |
 | Evaluate a claim | Claims and evidence | Source registry |
+| Evaluate the decision process | [Decision Quality](../07-governance-quality/decision-quality.en.md) | [Quality and measurement](../07-governance-quality/index.en.md) |
 | Clarify the meaning of a term | [Controlled glossary](../00-foundation/glossary.en.md) | Definition and usage limits |
 | Implement in an organization | PULSE | Architectures and future cases |
 | Contribute content | Governance | `CONTRIBUTING.md` on GitHub |

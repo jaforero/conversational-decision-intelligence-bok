@@ -21,7 +21,8 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ### Corregido
 
-- Destinos Markdown en inglés y acceso al glosario desde ambas guías de uso.
+- Destinos Markdown en inglés y rutas de lectura desde ambas guías de uso
+  hacia el glosario, fundamentos, Research y calidad de la decisión.
 - Control de conectividad sobre las notas Markdown de las dos ediciones y
   distinción entre notas huérfanas y páginas canónicas sin enlaces entrantes.
 

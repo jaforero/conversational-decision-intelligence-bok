@@ -334,7 +334,7 @@ pairs:
     translation: docs/start-here/how-to-use.en.md
     version: 0.3.0-rc.1
     status: complete
-    source_sha256: 9252fd12d2b88ac8cfbacf1b2f1e1d6398465543202e17cce40ca625c3138fc4
+    source_sha256: 2c06510a8c78f2bd7df63cbee9dee6666f3e5e0b0664ba2d36abd74de0fd6655
     last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-START-HERE-INDEX
