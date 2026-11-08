@@ -4,6 +4,15 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ## [Unreleased]
 
+### Añadido
+
+- Tres ejercicios bilingües en Learn sobre evidencia demográfica, tableros
+  conversacionales y delegación con control humano.
+- Un protocolo candidato bilingüe para comparar GraphRAG con una línea base
+  sin grafo en la agenda de investigación.
+- Cuatro lecturas de Philia Sophia enlazadas en los capítulos, con revisión
+  consultada y límites de uso en los registros de fuentes y evidencia.
+
 ## [0.9.0] - 2026-07-24
 
 ### Promovido

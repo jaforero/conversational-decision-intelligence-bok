@@ -9,7 +9,7 @@ normative: false
 owner: Javier Forero
 domains: [Research, Evidence Quality, Decision Measurement]
 claim_ids: [CLAIM-DI-MATURITY-001, CLAIM-HUMAN-AI-EVIDENCE-001, CLAIM-PULSE-SYNTHESIS-001, CLAIM-PULSE-BIOLOGICAL-LENSES-001]
-source_ids: [SRC-ACADEMIC-HAI-001, SRC-ACADEMIC-AIEVAL-001, SRC-ACADEMIC-RUDIN-001, SRC-ACADEMIC-OUTCOME-BIAS-001, SRC-ACADEMIC-SCORING-RULES-001, SRC-PRACTICE-B2B-001]
+source_ids: [SRC-ACADEMIC-HAI-001, SRC-ACADEMIC-AIEVAL-001, SRC-ACADEMIC-RUDIN-001, SRC-ACADEMIC-OUTCOME-BIAS-001, SRC-ACADEMIC-SCORING-RULES-001, SRC-PRACTICE-B2B-001, SRC-JF-BLOG-3248]
 last_reviewed: 2026-07-24
 ---
 
@@ -55,6 +55,17 @@ Una prueba inicial más segura mediría si PDAMR y el Decision Brief reducen
 omisiones de proceso en decisiones históricas o simuladas, sin permitir que la
 IA ejecute acciones. Ese resultado informaría usabilidad y cobertura, no impacto
 causal en ventas.
+
+## Protocolo candidato · Cuándo incorporar GraphRAG { #graphrag-evaluation }
+
+**Decisión de investigación.** El responsable de la base de conocimiento debe decidir si incorporar recuperación basada en grafos para responder preguntas sobre dependencias, vigencia o procedencia. Las dos exploraciones descritas en el artículo ayudan a formular la prueba. La comparación queda pendiente.
+
+1. Separa preguntas de respuesta directa de aquellas que requieren seguir una relación tipada, por ejemplo, qué documento sustituyó a una regla y a qué casos aplica. Incluye preguntas sin respuesta suficiente y pruebas de acceso restringido.
+2. Compara una línea base de recuperación textual o híbrida sin grafo con la misma configuración enriquecida con relaciones. Conserva el mismo corpus versionado, permisos, preguntas y modelo de respuesta. Un enlace entre documentos solo cuenta como evidencia de una relación cuando el tipo, la vigencia y la procedencia son verificables.
+3. Antes de probar, fija umbrales por tipo de pregunta. Mide acierto con citas verificables, abstención cuando falta evidencia, latencia y costo de mantener relaciones. Cualquier filtración de permisos bloquea la incorporación.
+4. Incorpora el grafo donde la mejora en preguntas relacionales justifique su costo y riesgo. Repite la prueba al cambiar el corpus o los permisos. Si la mejora desaparece, conserva la línea base.
+
+Lectura de Philia Sophia (25 oct 2026) · [Grafos de conocimiento: tu IA no necesita más documentos, necesita las relaciones correctas](https://javierforero.co/2026/10/25/grafos-de-conocimiento-graphrag/).
 
 ## Cadencia de revisión
 

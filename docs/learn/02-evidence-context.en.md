@@ -8,7 +8,7 @@ authority_level: guidance-derived-from-pulse
 normative: false
 owner: Javier Forero
 domains: [Decision Intelligence, Foundations, Data Storytelling]
-source_ids: [SRC-PULSE-DNA-001, SRC-JF-005, SRC-ARCH-001]
+source_ids: [SRC-PULSE-DNA-001, SRC-JF-005, SRC-ARCH-001, SRC-JF-BLOG-3289]
 claim_ids: [CLAIM-PULSE-001]
 last_reviewed: 2026-07-21
 ---
@@ -45,6 +45,16 @@ Context includes operational history, local definitions, incentives, capacity co
 ## When to stop a conclusion
 
 Do not advance to recommendation when a material denominator cannot be reconstructed; definitions changed unadjusted; affected segments are missing; a model is out of population; causal explanation rests only on timing; sensitive data lacks legitimate permission or purpose; or uncertainty changes option ordering. Stopping a conclusion need not stop the decision—it may require a smaller, more reversible option or guardrail.
+
+## Applied case · Planning with demographic composition { #demographic-planning }
+
+**Practice decision.** The planning team must choose where and when to expand a service for people aged 65 and over. The regional total establishes scale. To allocate capacity, the evidence contract should specify the target population, service area, planning horizon and review date.
+
+Use the harmonized series to compare countries and check it against the relevant national projection for local planning. Separate estimated years from projected years and record the source, edition and period. If the two series place a material change in different years, record the documented assumptions behind the gap and which part of the decision is sensitive to it.
+
+**Exercise.** Agree with the decision owner on a threshold for expanding capacity. Compare the decision under both series and record what you would do if they disagree, such as phasing the expansion and setting a review date. Later, check whether observed local demand supports the criterion. This exercise proposes a use for the projections and requires operational data for the actual decision.
+
+Philia Sophia reading (2 Nov 2026) · [Latin America is already aging while it is still growing](https://javierforero.co/2026/11/02/envejecimiento-america-latina/).
 
 ## Stress test
 
