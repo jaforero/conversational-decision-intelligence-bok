@@ -60,6 +60,7 @@ nav:
       - Ruta de aprendizaje: learn/index.md
       - 1. Enfocar la decisión: learn/01-decision-first.md
       - 2. Evidencia y contexto: learn/02-evidence-context.md
+      - La Aldea de los Datos: learn/data-architecture-fable.md
       - 3. Decision Experience: learn/03-decision-experience.md
       - 4. Control humano–IA: learn/04-human-ai-control.md
       - 5. Acción y aprendizaje: learn/05-action-learning.md
@@ -162,6 +163,7 @@ plugins:
             Ruta de aprendizaje: Learning path
             1. Enfocar la decisión: 1. Frame the decision
             2. Evidencia y contexto: 2. Evidence and context
+            La Aldea de los Datos: The Data Village
             4. Control humano–IA: 4. Human–AI control
             5. Acción y aprendizaje: 5. Action and learning
             Plantilla Decision Brief: Decision Brief template

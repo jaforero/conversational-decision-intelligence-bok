@@ -69,4 +69,6 @@ Philia Sophia reading (2 Nov 2026) · [Latin America is already aging while it i
 
 Build one row per material item using the nine contract fields. End with three lists: **we know**, **we infer**, **we do not yet know**.
 
+Read [The Data Village](data-architecture-fable.en.md) to see how an ambiguous definition can change an action and what role each part of the architecture plays.
+
 **Next:** [design the experience connecting evidence to action →](03-decision-experience.en.md)

@@ -43,6 +43,8 @@ const foundationalPages = [
   { name: "b2b-cycle", path: "/practice-lab/b2b-proposal/cycle-log/" },
   { name: "learn-decision", path: "/learn/01-decision-first/" },
   { name: "learn-evidence", path: "/learn/02-evidence-context/" },
+  { name: "data-architecture-fable-es", path: "/learn/data-architecture-fable/" },
+  { name: "data-architecture-fable-en", path: "/en/learn/data-architecture-fable/" },
   { name: "learn-experience", path: "/learn/03-decision-experience/" },
   { name: "learn-control", path: "/learn/04-human-ai-control/" },
   { name: "learn-action", path: "/learn/05-action-learning/" },
@@ -107,6 +109,23 @@ test("the worked FX case opens from the dashboard lab in both languages", async 
     await expect(page).toHaveURL(`${prefix}/practice-lab/fx-worked-case/`);
     await expect(page.locator("main article table").first()).toContainText(index);
     await expect(page.locator("#observed-checks")).toBeVisible();
+  }
+});
+
+test("the data architecture fable connects evidence and the FX case in both languages", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  for (const [prefix, title, fxLink] of [
+    ["", "La Aldea de los Datos", "caso resuelto de tasas de cambio"],
+    ["/en", "The Data Village", "worked exchange rate case"],
+  ]) {
+    await page.goto(`${prefix}/learn/02-evidence-context/`, { waitUntil: "domcontentloaded" });
+    await page.locator("main article").getByRole("link", { name: title, exact: true }).click();
+    await expect(page).toHaveURL(`${prefix}/learn/data-architecture-fable/`);
+    await expect(page.locator("main h1")).toContainText(title);
+    await expect(page.locator("#action-and-learning")).toBeVisible();
+    await expect(page.locator("main article table tbody tr")).toHaveCount(5);
+    await page.locator("main article").getByRole("link", { name: fxLink }).click();
+    await expect(page).toHaveURL(`${prefix}/practice-lab/fx-worked-case/`);
   }
 });
 
