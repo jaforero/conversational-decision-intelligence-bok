@@ -205,6 +205,60 @@ profiles:
     allowed_use: linked-author-pov-and-pedagogical-adaptation
     prohibited_use: claim-support
     profile: { authority: owner-pov, independence: low, method: author-framework-with-examples, directness: decision-design-context, currency: observed-2026-11-08, applicability: bounded-to-described-context, conflicts_of_interest: author-and-framework-owner, verification: canonical-article-reviewed-and-hashed }
+  - source_id: SRC-JF-BLOG-1973
+    sha256: ded9fb8f15f5945193b5e4daa4b252539dfcf7340277840f370415f17551e408
+    source_class: author-pov
+    provenance: author-published-public-web
+    completeness: complete-public-article-as-observed
+    rights: public-access-redistribution-rights-not-asserted
+    allowed_use: linked-author-pov-and-pedagogical-adaptation
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: practitioner-essay, directness: decision-design-context, currency: observed-2026-11-08, applicability: bounded-to-described-context, conflicts_of_interest: author-and-framework-owner, verification: canonical-article-reviewed-and-hashed }
+  - source_id: SRC-JF-BLOG-2705
+    sha256: bec883e930b1c99a172735b10f294c32be8449032c56158595651caf5b241011
+    source_class: author-pov
+    provenance: author-published-public-web
+    completeness: complete-public-article-as-observed
+    rights: public-access-redistribution-rights-not-asserted
+    allowed_use: linked-author-pov-and-pedagogical-adaptation
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: author-framework-with-public-benchmark, directness: decision-design-context, currency: observed-2026-11-08, applicability: bounded-to-described-context, conflicts_of_interest: author-and-framework-owner, verification: canonical-article-reviewed-and-hashed }
+  - source_id: SRC-JF-BLOG-2529
+    sha256: b9d232d51cef86e65c78b81b3a03a57ba31e1753c2a3db4804c0732e1e2e937b
+    source_class: author-pov
+    provenance: author-published-public-web
+    completeness: complete-public-article-as-observed
+    rights: public-access-redistribution-rights-not-asserted
+    allowed_use: linked-author-pov-and-pedagogical-adaptation
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: author-framework-with-examples, directness: decision-design-context, currency: observed-2026-11-08, applicability: bounded-to-described-context, conflicts_of_interest: author-and-framework-owner, verification: canonical-article-reviewed-and-hashed }
+  - source_id: SRC-JF-BLOG-2748
+    sha256: 0c571da21874d5801f9115ba366f764b7190b0d9cf309b5dd499d7960f1c5225
+    source_class: author-pov
+    provenance: author-published-public-web
+    completeness: complete-public-article-as-observed
+    rights: public-access-redistribution-rights-not-asserted
+    allowed_use: linked-author-pov-and-pedagogical-adaptation
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: author-synthesis-of-technical-literature, directness: decision-design-context, currency: observed-2026-11-08, applicability: bounded-to-described-context, conflicts_of_interest: author-and-framework-owner, verification: canonical-article-reviewed-and-hashed }
+  - source_id: SRC-JF-BLOG-2806
+    sha256: f1c2bc0771ebc4dd473c45a8ded83f06fffc162ca35d0bf9ceeb9988c32d6e89
+    source_class: author-pov
+    provenance: author-published-public-web
+    completeness: complete-public-article-as-observed
+    rights: public-access-redistribution-rights-not-asserted
+    allowed_use: linked-author-pov-and-pedagogical-adaptation
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: author-framework-with-examples, directness: decision-design-context, currency: observed-2026-11-08, applicability: bounded-to-described-context, conflicts_of_interest: author-and-framework-owner, verification: canonical-article-reviewed-and-hashed }
+  - source_id: SRC-JF-BLOG-2828
+    sha256: c25704317289c111e1f1e807b192fb9d07c6604e735b0ef1a9f4098e41ac0b4c
+    source_class: author-pov
+    provenance: author-published-public-web
+    completeness: complete-public-article-as-observed
+    rights: public-access-redistribution-rights-not-asserted
+    allowed_use: linked-author-pov-and-pedagogical-adaptation
+    prohibited_use: claim-support
+    profile: { authority: owner-pov, independence: low, method: practitioner-essay-with-examples, directness: decision-design-context, currency: observed-2026-11-08, applicability: bounded-to-described-context, conflicts_of_interest: author-and-framework-owner, verification: canonical-article-reviewed-and-hashed }
   - source_id: SRC-JF-BLOG-2918
     sha256: 1a499c4ce2748587c9557112632d8993e54eca277d2881c22b4d2c15a75de865
     source_class: author-pov

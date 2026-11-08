@@ -384,6 +384,96 @@ records:
     provenance: author-published-public-web
     limits: Propuesta del autor para especificar la delegación. Los ejemplos ilustran decisiones de diseño y requieren validación en cada operación.
     materialized: false
+  - source_id: SRC-JF-BLOG-1973
+    title: "IA predice, tú piensas: 10 verdades para entender la era del hype tecnológico"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2025/11/28/ia-predice-tu-piensas-hype-tecnologico/
+    published_on: 2025-11-28
+    declared_version: "2026-10-25T20:55:36-05:00"
+    observed_on: 2026-11-08
+    sha256: ded9fb8f15f5945193b5e4daa4b252539dfcf7340277840f370415f17551e408
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Distingue la salida del modelo del juicio y la responsabilidad humanos. Se usa como punto de vista del autor.
+    materialized: false
+  - source_id: SRC-JF-BLOG-2705
+    title: "AI-Native no es tener más IA: es aprender a rediseñar el trabajo"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/07/11/ai-native-redisenar-trabajo-empresa/
+    published_on: 2026-07-11
+    declared_version: "2026-10-25T21:02:59-05:00"
+    observed_on: 2026-11-08
+    sha256: bec883e930b1c99a172735b10f294c32be8449032c56158595651caf5b241011
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Propone cinco movimientos para rediseñar el trabajo. El capítulo adapta ese marco a un caso ficticio.
+    materialized: false
+  - source_id: SRC-JF-BLOG-2529
+    title: "Alfabetización en IA: no es saber prompts, es saber juzgar"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/06/11/alfabetizacion-ia-delegar-cocrear-proteger/
+    published_on: 2026-06-11
+    declared_version: "2026-10-25T21:02:43-05:00"
+    observed_on: 2026-11-08
+    sha256: b9d232d51cef86e65c78b81b3a03a57ba31e1753c2a3db4804c0732e1e2e937b
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Propone zonas de juicio para delegar, co-crear y proteger. La aplicación depende del riesgo, del trabajo y del contexto.
+    materialized: false
+  - source_id: SRC-JF-BLOG-2748
+    title: "RAG empresarial: el problema no es buscar, es permitir"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/07/28/rag-empresarial-permisos/
+    published_on: 2026-07-28
+    declared_version: "2026-11-02T09:16:49-05:00"
+    observed_on: 2026-11-08
+    sha256: 0c571da21874d5801f9115ba366f764b7190b0d9cf309b5dd499d7960f1c5225
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Orienta el diseño de recuperación con permisos y trazabilidad. El artículo no valida los controles del piloto simulado.
+    materialized: false
+  - source_id: SRC-JF-BLOG-2806
+    title: "El prompt no es el problema: 2 mapas para usar la IA con criterio"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/08/16/triangulo-ia-modelo-prompt-contexto/
+    published_on: 2026-08-16
+    declared_version: "2026-10-25T21:03:18-05:00"
+    observed_on: 2026-11-08
+    sha256: f1c2bc0771ebc4dd473c45a8ded83f06fffc162ca35d0bf9ceeb9988c32d6e89
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Orienta la elección entre reglas y modelos en tareas con distintos grados de ambigüedad.
+    materialized: false
+  - source_id: SRC-JF-BLOG-2828
+    title: "El ROI de la IA no se calcula: se demuestra"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/08/30/roi-ia-medir-retorno-valor/
+    published_on: 2026-08-30
+    declared_version: "2026-10-25T21:03:23-05:00"
+    observed_on: 2026-11-08
+    sha256: c25704317289c111e1f1e807b192fb9d07c6604e735b0ef1a9f4098e41ac0b4c
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Distingue actividad, mejora operativa y valor capturado. Las cifras del caso no proceden del artículo.
+    materialized: false
   - source_id: SRC-JF-BLOG-2918
     title: "Claude Dashboards no reemplaza tus tableros: pone a prueba tus datos"
     author: Javier Forero Ruiz

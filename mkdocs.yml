@@ -63,6 +63,7 @@ nav:
       - La Aldea de los Datos: learn/data-architecture-fable.md
       - 3. Decision Experience: learn/03-decision-experience.md
       - 4. Control humano–IA: learn/04-human-ai-control.md
+      - Rediseñar el trabajo con IA: learn/ai-work-redesign.md
       - 5. Acción y aprendizaje: learn/05-action-learning.md
       - Plantilla Decision Brief: learn/decision-brief.md
   - Calidad y medición:
@@ -165,6 +166,7 @@ plugins:
             2. Evidencia y contexto: 2. Evidence and context
             La Aldea de los Datos: The Data Village
             4. Control humano–IA: 4. Human–AI control
+            Rediseñar el trabajo con IA: Redesigning Work with AI
             5. Acción y aprendizaje: 5. Action and learning
             Plantilla Decision Brief: Decision Brief template
             Calidad y medición: Quality and measurement

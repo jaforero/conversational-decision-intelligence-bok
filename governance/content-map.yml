@@ -90,6 +90,7 @@ public_portal:
     - { id: PORTAL-LEARN-DATA-FABLE, path: docs/learn/data-architecture-fable.md, status: candidate }
     - { id: PORTAL-LEARN-EXPERIENCE, path: docs/learn/03-decision-experience.md, status: candidate }
     - { id: PORTAL-LEARN-CONTROL, path: docs/learn/04-human-ai-control.md, status: candidate }
+    - { id: PORTAL-LEARN-AI-WORK-REDESIGN, path: docs/learn/ai-work-redesign.md, status: candidate }
     - { id: PORTAL-LEARN-ACTION, path: docs/learn/05-action-learning.md, status: candidate }
     - { id: PORTAL-DECISION-BRIEF, path: docs/learn/decision-brief.md, status: candidate }
     - { id: PORTAL-QUALITY-MEASUREMENT, path: docs/07-governance-quality/index.md, status: candidate }
