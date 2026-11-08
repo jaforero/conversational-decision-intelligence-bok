@@ -29,6 +29,7 @@ Elige según la decisión que quieras practicar. Los laboratorios guían el ejer
 |---|---|
 | [Dashboards de decisión](dashboards.md) | Un brief con indicador verificable, criterio para actuar y fecha de revisión. |
 | [Grafos de conocimiento](knowledge-graph.md) | Un hallazgo de trazabilidad reproducible y una propuesta de mejora para el CDI-BoK. |
+| [Evaluar un asistente con evidencia](conversational-evidence.md) | Un registro de pruebas y una decisión sobre ampliar, mantener o pausar un piloto de consulta. |
 | [Caso B2B · Propuesta](b2b-proposal/index.md) | Un protocolo para evaluar una intervención comercial con datos simulados. |
 
 ## Recursos con fuentes públicas

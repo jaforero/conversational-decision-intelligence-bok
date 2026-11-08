@@ -114,6 +114,7 @@ public_portal:
     - { id: PORTAL-LAB-DASHBOARDS, path: docs/practice-lab/dashboards.md, status: candidate }
     - { id: PORTAL-LAB-GRAPH, path: docs/practice-lab/knowledge-graph.md, status: candidate }
     - { id: PORTAL-LAB-SLA-DECISION-BRIEF, path: docs/practice-lab/sla-decision-brief.md, status: candidate }
+    - { id: PORTAL-LAB-CONVERSATIONAL-EVIDENCE, path: docs/practice-lab/conversational-evidence.md, status: candidate }
     - { id: PORTAL-CASE-B2B, path: docs/practice-lab/b2b-proposal/index.md, status: candidate }
     - { id: PORTAL-CASE-B2B-CONTRACT, path: docs/practice-lab/b2b-proposal/decision-contract.md, status: candidate }
     - { id: PORTAL-CASE-B2B-EVIDENCE, path: docs/practice-lab/b2b-proposal/evidence-protocol.md, status: candidate }

@@ -21,6 +21,7 @@ Choose a resource based on the decision you want to practice. The labs guide the
 |---|---|
 | [Decision dashboards](dashboards.en.md) | A brief with a verifiable indicator, an action criterion and a review date. |
 | [Knowledge graphs](knowledge-graph.en.md) | A reproducible traceability finding and a proposed CDI-BoK improvement. |
+| [Evaluate an assistant against the evidence](conversational-evidence.en.md) | A test record and a decision on whether to expand, keep, or pause a read-only pilot. |
 | [B2B case · Proposal](b2b-proposal/index.en.md) | A protocol for evaluating a commercial intervention using simulated data. |
 
 ## Resources with public sources
