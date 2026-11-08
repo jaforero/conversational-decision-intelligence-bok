@@ -60,6 +60,7 @@ test("GA4 follows consent across languages and omits URL queries", async ({ page
   await reject.click();
   await expect(consent).toBeHidden();
   await expect(tag).toHaveCount(0);
+  await page.unrouteAll({ behavior: "wait" });
 });
 
 test("GA4 does not load on a local preview even with saved consent", async ({ page }) => {
