@@ -142,7 +142,7 @@ pairs:
     translation: docs/about/index.en.md
     version: 0.3.0-rc.1
     status: complete
-    source_sha256: f8ebaefa5f8066fe4e7d75b95df3eeb6e1d3302694bea7c4a90715d6df4ebc2d
+    source_sha256: f98ea0f1ef6c45099f837867b7de810c5545acf0df100c301da15e5758b49cfc
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-GOVERNANCE-ARCHITECTURE

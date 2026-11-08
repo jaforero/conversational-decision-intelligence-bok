@@ -1,0 +1,30 @@
+{# Material invokes this function only after Analytics consent. #}
+<script id="__analytics">
+  function __md_analytics() {
+    const measurementId = {{ config.extra.analytics.property | tojson }};
+    const siteOrigin = new URL({{ config.site_url | tojson }}).origin;
+    if (location.origin !== siteOrigin || document.getElementById("cdi-ga4-tag")) return;
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", measurementId, {
+      send_page_view: false,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      page_location: location.origin + location.pathname,
+      page_referrer: document.referrer ? new URL(document.referrer).origin : ""
+    });
+    gtag("event", "page_view");
+
+    const tag = document.createElement("script");
+    tag.id = "cdi-ga4-tag";
+    tag.async = true;
+    tag.referrerPolicy = "strict-origin";
+    tag.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+    document.head.appendChild(tag);
+  }
+</script>

@@ -134,6 +134,14 @@ plugins:
           build: true
           site_name: CDI-BoK · Conversational Decision Intelligence
           site_description: Learn to turn data, analytics and artificial intelligence into better business decisions, responsible action and measurable learning.
+          extra:
+            consent: &analytics_consent
+              title: Optional analytics
+              description: With your permission, Google Analytics measures visits to the CDI-BoK. You can reject measurement or change your choice from About.
+              actions: [accept, reject, manage]
+              cookies:
+                analytics: Google Analytics
+                github: false
           theme:
             palette:
               - toggle:
@@ -234,6 +242,14 @@ extra_javascript:
   - assets/javascripts/site.js
 
 extra:
+  scope: /
+  analytics:
+    provider: google
+    property: G-MQ3K8EVKV0
+  consent:
+    <<: *analytics_consent
+    title: Medición opcional
+    description: Con tu permiso, Google Analytics mide las visitas al CDI-BoK. Puedes rechazar la medición o cambiar tu elección desde Acerca de.
   release:
     normative: v0.2.0
     portal: v0.9.0
