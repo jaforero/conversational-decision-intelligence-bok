@@ -33,6 +33,8 @@ const foundationalPages = [
   { name: "sla-decision-brief-en", path: "/en/practice-lab/sla-decision-brief/" },
   { name: "conversational-evidence-es", path: "/practice-lab/conversational-evidence/" },
   { name: "conversational-evidence-en", path: "/en/practice-lab/conversational-evidence/" },
+  { name: "fx-worked-case-es", path: "/practice-lab/fx-worked-case/" },
+  { name: "fx-worked-case-en", path: "/en/practice-lab/fx-worked-case/" },
   { name: "knowledge-graph-lab-es", path: "/practice-lab/knowledge-graph/" },
   { name: "knowledge-graph-lab-en", path: "/en/practice-lab/knowledge-graph/" },
   { name: "b2b-case", path: "/practice-lab/b2b-proposal/" },
@@ -91,6 +93,20 @@ test("the conversational evidence lab opens from each language catalog", async (
     await expect(page.locator("main article table tbody tr")).toHaveCount(6);
     await expect(page.locator("#public-data-exercises")).toBeVisible();
     await expect(page.locator("#pilot-decision")).toBeVisible();
+  }
+});
+
+test("the worked FX case opens from the dashboard lab in both languages", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  for (const [prefix, name, index] of [
+    ["", "caso resuelto de tasas de cambio", "100,07"],
+    ["/en", "worked exchange rate case", "100.07"],
+  ]) {
+    await page.goto(`${prefix}/practice-lab/dashboards/`, { waitUntil: "domcontentloaded" });
+    await page.locator("main article").getByRole("link", { name }).click();
+    await expect(page).toHaveURL(`${prefix}/practice-lab/fx-worked-case/`);
+    await expect(page.locator("main article table").first()).toContainText(index);
+    await expect(page.locator("#observed-checks")).toBeVisible();
   }
 });
 

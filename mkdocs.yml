@@ -90,6 +90,7 @@ nav:
       - Catálogo: practice-lab/catalog.md
       - Decision Brief resuelto · SLA: practice-lab/sla-decision-brief.md
       - Evaluar un asistente con evidencia: practice-lab/conversational-evidence.md
+      - Caso resuelto · Tasas de cambio: practice-lab/fx-worked-case.md
       - Caso B2B · Propuesta:
           - Caso instrumentado: practice-lab/b2b-proposal/index.md
           - Contrato de decisión: practice-lab/b2b-proposal/decision-contract.md
@@ -176,6 +177,7 @@ plugins:
             Catálogo: Catalog
             Decision Brief resuelto · SLA: Worked Decision Brief · SLA
             Evaluar un asistente con evidencia: Evaluate an assistant against the evidence
+            Caso resuelto · Tasas de cambio: Worked case · Exchange rates
             Caso B2B · Propuesta: B2B case · Proposal
             Constitución: Constitution
             Alcance y fronteras de CDI: CDI scope and boundaries

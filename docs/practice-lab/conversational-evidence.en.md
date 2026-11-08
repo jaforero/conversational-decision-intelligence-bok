@@ -56,6 +56,8 @@ Choose a dashboard from the [public data portfolio](https://dashboards.javierfor
 
 [Dashboard and methodology](https://dashboards.javierforero.co/tasas-cambio/?lang=en) · [Series and central bank sources](https://github.com/jaforero/fx-bancos-centrales)
 
+The [worked exchange rate case](fx-worked-case.en.md) records the data cut, calculation, and observed responses.
+
 ### AI training compute
 
 **Decision.** Is there enough evidence to update a capacity scenario assumption? Fix the period, model set, and unit. Compare the picture from figures published by the labs with the one that includes labeled estimates. Record how many models appear in each comparison. If the conclusion changes, show its sensitivity to coverage and evidence quality. Training figures inform the scenario. Estimating an inference budget requires additional inputs.

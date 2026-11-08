@@ -56,6 +56,8 @@ Elige un tablero del [portafolio de datos públicos](https://dashboards.javierfo
 
 [Tablero y metodología](https://dashboards.javierforero.co/tasas-cambio/) · [Series y fuentes de los bancos centrales](https://github.com/jaforero/fx-bancos-centrales)
 
+El [caso resuelto de tasas de cambio](fx-worked-case.md) documenta el corte, el cálculo y las respuestas observadas.
+
 ### Cómputo de entrenamiento en IA
 
 **Decisión.** ¿Hay evidencia suficiente para actualizar un supuesto de un escenario de capacidad? Fija el periodo, el conjunto de modelos y la unidad. Compara la lectura que obtienes con las cifras publicadas por los laboratorios y la que incluye estimaciones etiquetadas. Registra cuántos modelos entran en cada lectura. Si cambia la conclusión, deja visible su sensibilidad a la cobertura y al nivel de evidencia. Las cifras de entrenamiento aportan contexto al escenario. Estimar un presupuesto de inferencia exige insumos adicionales.
