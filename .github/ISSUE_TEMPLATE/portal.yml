@@ -1,0 +1,20 @@
+name: Error del portal
+description: Reporta un enlace roto, fallo funcional o barrera de accesibilidad.
+body:
+  - type: markdown
+    attributes:
+      value: "Este issue es público. Para vulnerabilidades o exposición de información, sigue la [política de seguridad](https://github.com/jaforero/conversational-decision-intelligence-bok/security/policy)."
+  - type: input
+    id: location
+    attributes:
+      label: Página o archivo
+      description: Incluye URL o ruta, idioma y versión si la conoces.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Cómo reproducirlo
+      description: Indica los pasos, qué pasó y qué esperabas. Añade navegador o dispositivo si influye.
+    validations:
+      required: true

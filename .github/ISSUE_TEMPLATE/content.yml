@@ -1,0 +1,22 @@
+name: Mejora editorial o de evidencia
+description: Propón una corrección, nueva fuente, enlace o ejercicio de práctica.
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Apartado, archivo o registro afectado
+      description: Incluye URL, idioma o identificador de concepto, claim, fuente o ADR.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Qué cambiarías y por qué
+      description: Explica qué interpretación, decisión o ruta de aprendizaje mejora.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia o referencia
+      description: Enlaza fuentes, indica su alcance y distingue una hipótesis de un hallazgo.

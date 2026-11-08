@@ -1,25 +1,36 @@
 # Contribuir al CDI-BoK
 
-El CDI-BoK acepta contribuciones como cambios gobernados de conocimiento, no como publicaciones aisladas.
+## Elige un punto de entrada
 
-## Antes de proponer contenido
+- **Error del portal, enlaces o accesibilidad.** Registra el idioma, la URL, el resultado observado y los pasos mínimos para reproducirlo.
+- **Mejora de contenido o evidencia.** Identifica el apartado, el claim o la decisión afectada. Enlaza la fuente original e indica qué sostiene, con qué alcance y qué queda incierto.
+- **Cambio pequeño y verificable.** Abre un pull request con un solo propósito. Si cambia autoridad, arquitectura, alcance o licenciamiento, abre primero un issue y consulta la [arquitectura editorial](governance/00_CDI-BoK_Architecture_and_Editorial_Governance.md).
+- **Vulnerabilidad o información sensible.** Usa el [canal privado de seguridad](SECURITY.md).
 
-1. Identifique el dominio, concepto y decisión que el cambio fortalece.
-2. Revise `governance/content-map.yml` y los registros existentes.
-3. Determine si el aporte es definición, evidencia, guía, patrón, caso o propuesta original.
-4. Abra una rama temporal y mantenga un solo propósito por pull request.
+[Abre un issue](https://github.com/jaforero/conversational-decision-intelligence-bok/issues/new/choose) · [Código de conducta](CODE_OF_CONDUCT.md)
 
-## Controles mínimos
+## Prepara el entorno
+
+Desde la raíz del repositorio, con Python 3.12 y Node.js 24:
 
 ```bash
-python3 scripts/preflight_sprint1.py
+python3.12 -m venv .venv
+. .venv/bin/activate
+python -m pip install --require-hashes -r requirements.lock
+npm ci
+python scripts/preflight_release.py
 ```
 
-Todo claim material debe declarar clase, evidencia, alcance y límites. La etiqueta `Original Contribution` requiere comparación documentada con antecedentes; sin ella se utiliza `Original Contribution Proposal`.
+En Windows, crea el entorno con `py -3.12 -m venv .venv` y activa con `.venv\Scripts\Activate.ps1` en PowerShell. La vista local se abre con `python -m mkdocs serve`.
 
-En las páginas inglesas, enlace al archivo `.en.md` cuando exista la traducción del destino. Cada página del libro debe quedar conectada con otra por un enlace Markdown desde el contenido. El control ignora el menú y el HTML de las tarjetas.
+Para verificar un cambio de interfaz, instala Chromium con `npx playwright install chromium` y ejecuta `npm test` después del preflight. Cierra la vista local antes de probar para que Playwright use el build auditado. Las capturas canónicas se toman en GitHub Actions.
 
-## Autoridad
+## Prepara el pull request
 
-Una contribución pública no se vuelve normativa por haber sido fusionada. El estado y la autoridad se determinan mediante CDI-GOV-001, front matter, registros y aprobación explícita del owner correspondiente.
+1. Crea una rama desde `main`. Describe el problema, el cambio y cómo comprobarlo.
+2. Para contenido, consulta el [mapa del corpus](governance/content-map.yml), los [registros](governance/registries/) y el front matter. Identifica el concepto, claim, fuente, activo o ADR afectado cuando aplique.
+3. Usa el hogar canónico de cada definición. Distingue evidencia, hipótesis y síntesis. Reserva `Original Contribution` para aportes con comparación documentada con antecedentes. Usa `Original Contribution Proposal` mientras se evalúa la originalidad.
+4. Enlaza cada página desde el contenido y verifica la ruta en ambos idiomas. En inglés, apunta al archivo `.en.md` si existe. Registra cambios relevantes en [Unreleased](CHANGELOG.md#unreleased).
+5. Adjunta al PR los resultados de la verificación. Para cambios visuales, incluye la evidencia del antes y después, y revisa cualquier cambio de captura en el informe de GitHub Actions.
 
+El estado editorial de cada aporte lo determina su revisión explícita y su registro. Consulta la [guía de mantenimiento](.github/MAINTAINERS.md) para publicar y verificar el despliegue.
