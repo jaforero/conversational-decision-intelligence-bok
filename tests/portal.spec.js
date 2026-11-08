@@ -31,6 +31,8 @@ const foundationalPages = [
   { name: "dashboard-lab-en", path: "/en/practice-lab/dashboards/" },
   { name: "sla-decision-brief-es", path: "/practice-lab/sla-decision-brief/" },
   { name: "sla-decision-brief-en", path: "/en/practice-lab/sla-decision-brief/" },
+  { name: "conversational-evidence-es", path: "/practice-lab/conversational-evidence/" },
+  { name: "conversational-evidence-en", path: "/en/practice-lab/conversational-evidence/" },
   { name: "knowledge-graph-lab-es", path: "/practice-lab/knowledge-graph/" },
   { name: "knowledge-graph-lab-en", path: "/en/practice-lab/knowledge-graph/" },
   { name: "b2b-case", path: "/practice-lab/b2b-proposal/" },
@@ -77,6 +79,18 @@ test("home communicates reader outcomes", async ({ page }) => {
   await expect(page.locator("main")).toContainText("Formular");
   await expect(page.locator("main")).toContainText("Aprender");
   await expect(page.getByRole("link", { name: "Comienza la ruta de aprendizaje" })).toBeVisible();
+});
+
+test("the conversational evidence lab opens from each language catalog", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  for (const [prefix, title] of [["", "Evaluar un asistente con evidencia"], ["/en", "Evaluate an assistant against the evidence"]]) {
+    await page.goto(`${prefix}/practice-lab/catalog/`, { waitUntil: "domcontentloaded" });
+    await page.locator("main article").getByRole("link", { name: title }).click();
+    await expect(page).toHaveURL(`${prefix}/practice-lab/conversational-evidence/`);
+    await expect(page.locator("main h1")).toHaveText(new RegExp(`^${title}`));
+    await expect(page.locator("main article table tbody tr")).toHaveCount(6);
+    await expect(page.locator("#pilot-decision")).toBeVisible();
+  }
 });
 
 test("measurement system preserves quality and outcome boundaries", async ({ page }) => {

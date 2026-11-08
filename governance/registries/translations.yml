@@ -278,7 +278,15 @@ pairs:
     translation: docs/practice-lab/catalog.en.md
     version: 0.5.0-rc.1
     status: complete
-    source_sha256: 52e2ae46b7c1aacfa5ed301406fda5b519b19fe6c00801317e57bfa512c9d96a
+    source_sha256: aaf623ccf9be89faca7db53940ec24f1390edb8533effc45f8d39433b519a730
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-CONVERSATIONAL-EVIDENCE
+    source: docs/practice-lab/conversational-evidence.md
+    translation: docs/practice-lab/conversational-evidence.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: 6e0284d424a69894cf22a5a0138ac22579b1b15bd5bfe5897ce2b00b2524b507
     last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-PRACTICE-LAB-SLA-DECISION-BRIEF
