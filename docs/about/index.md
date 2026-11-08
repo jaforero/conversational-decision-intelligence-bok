@@ -35,3 +35,8 @@ Construir un lenguaje común y una arquitectura de conocimiento para que organiz
 - [Repositorio CDI-BoK](https://github.com/jaforero/conversational-decision-intelligence-bok)
 - [LinkedIn](https://www.linkedin.com/in/jforero/)
 
+## Medición de visitas y privacidad
+
+Puedes usar el CDI-BoK con la medición desactivada. Si aceptas, el portal envía a Google Analytics 4 la vista de página y su ruta, sin la consulta ni el fragmento de la URL. La medición ayuda a entender qué contenidos se encuentran y consultan. La calidad de una decisión requiere evidencia del ejercicio y de sus resultados.
+
+<a href="#__consent">Cambiar preferencias de medición</a>

@@ -33,3 +33,8 @@ Build a common language and knowledge architecture so organizations and professi
 - [AI Dashboards](https://dashboards.javierforero.co)
 - [CDI-BoK repository](https://github.com/jaforero/conversational-decision-intelligence-bok)
 - [LinkedIn](https://www.linkedin.com/in/jforero/)
+## Visit measurement and privacy
+
+You can use the CDI-BoK with analytics disabled. If you accept, the portal sends Google Analytics 4 a page view and its path, with the URL query and fragment omitted. Measurement helps show which content readers find and view. Decision quality requires evidence from the exercise and its outcomes.
+
+<a href="#__consent">Change analytics preferences</a>
