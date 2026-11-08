@@ -13,6 +13,7 @@ copyright: "Javier Forero · javierforero.co"
 
 hooks:
   - scripts/localize_portal.py
+  - scripts/ask_cdi_index.py
   - scripts/knowledge_graph.py
 
 theme:
@@ -55,6 +56,7 @@ nav:
   - Empieza aquí:
       - Visión general: start-here/index.md
       - Cómo usar el CDI-BoK: start-here/how-to-use.md
+  - Pregúntale al CDI-BoK: ask-cdi.md
   - Aprende:
       - Ruta de aprendizaje: learn/index.md
       - 1. Enfocar la decisión: learn/01-decision-first.md
@@ -155,6 +157,7 @@ plugins:
             Empieza aquí: Start here
             Visión general: Overview
             Cómo usar el CDI-BoK: How to use the CDI-BoK
+            Pregúntale al CDI-BoK: Ask the CDI-BoK
             Aprende: Learn
             Ruta de aprendizaje: Learning path
             1. Enfocar la decisión: 1. Frame the decision
@@ -240,9 +243,11 @@ markdown_extensions:
 extra_css:
   - assets/stylesheets/brand-tokens.css
   - assets/stylesheets/brand.css
+  - assets/stylesheets/ask-cdi.css
   - assets/stylesheets/cdi-bok.css
 
 extra_javascript:
+  - assets/javascripts/ask-cdi.js
   - assets/javascripts/site.js
 
 extra:

@@ -350,7 +350,7 @@ pairs:
     translation: docs/start-here/index.en.md
     version: 0.4.0
     status: complete
-    source_sha256: a342923f6e89e435ef6a441f84581d5e659a0355b90ce5746dbc7f85a2bb6e09
+    source_sha256: 5c6a47fd8d79c304036300b534bd153c95ae47818f40a14a013ea13bc4d73c2c
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-VERSIONS-INDEX
@@ -471,5 +471,13 @@ pairs:
     version: 0.9.0
     status: complete
     source_sha256: 399a389e84516baf06db649b3d46ea66fff4374d6a35b03b6a64d2240ab63c0b
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-ASK-CDI
+    source: docs/ask-cdi.md
+    translation: docs/ask-cdi.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: c138f51e78226b9a98cff32eb4ff3e040b62678b2d104a57892b32718e6c54e1
     last_reviewed: 2026-11-08
     owner: Javier Forero
