@@ -12,6 +12,8 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
   de navegación, fuentes y afirmaciones y páginas candidatas a revisar.
 - Enlaces contextuales a Acerca de e Historial de versiones, identificados
   durante la primera revisión del grafo.
+- Decision Brief bilingüe resuelto sobre SLA, con evidencia previa, umbral
+  para pronosticar y una decisión de reversión en un caso simulado.
 - Tres ejercicios bilingües en Learn sobre evidencia demográfica, tableros
   conversacionales y delegación con control humano.
 - Un protocolo candidato bilingüe para comparar GraphRAG con una línea base

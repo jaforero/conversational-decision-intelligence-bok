@@ -23,6 +23,8 @@ const foundationalPages = [
   { name: "practice-catalog", path: "/practice-lab/catalog/" },
   { name: "dashboard-lab-es", path: "/practice-lab/dashboards/" },
   { name: "dashboard-lab-en", path: "/en/practice-lab/dashboards/" },
+  { name: "sla-decision-brief-es", path: "/practice-lab/sla-decision-brief/" },
+  { name: "sla-decision-brief-en", path: "/en/practice-lab/sla-decision-brief/" },
   { name: "knowledge-graph-lab-es", path: "/practice-lab/knowledge-graph/" },
   { name: "knowledge-graph-lab-en", path: "/en/practice-lab/knowledge-graph/" },
   { name: "b2b-case", path: "/practice-lab/b2b-proposal/" },

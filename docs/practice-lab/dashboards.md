@@ -39,4 +39,6 @@ last_reviewed: 2026-11-08
 | Revisar una alerta financiera antes de comprometer presupuesto | [Pulso financiero](https://dashboards.javierforero.co/claude/pulso-financiero/) | Horizonte, referencia del pronóstico, error observado en el backtest y responsable de la acción. La demo usa datos simulados. |
 | Elegir una intervención comercial reversible | [Desempeño comercial](https://dashboards.javierforero.co/claude/desempeno-comercial/) | Alternativas, baseline simulado y criterio para observar el resultado. Continúa con el [caso B2B instrumentado](b2b-proposal/index.md). |
 
+En la ruta de SLA, el [Decision Brief resuelto](sla-decision-brief.md) muestra por qué bastó la evidencia para actuar, cuándo haría falta pronosticar y cómo el umbral de la otra ruta cambió la decisión.
+
 Para pilotear preguntas conversacionales, añade las [pruebas de referencia y acceso](../learn/03-decision-experience.md#conversational-dashboard-pilot). Consulta el [catálogo del Practice Lab](catalog.md) para identificar los datos que usa cada recurso.

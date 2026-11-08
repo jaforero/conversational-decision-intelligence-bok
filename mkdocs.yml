@@ -86,6 +86,7 @@ nav:
   - Practice Lab:
       - Visión general: practice-lab/index.md
       - Catálogo: practice-lab/catalog.md
+      - Decision Brief resuelto · SLA: practice-lab/sla-decision-brief.md
       - Caso B2B · Propuesta:
           - Caso instrumentado: practice-lab/b2b-proposal/index.md
           - Contrato de decisión: practice-lab/b2b-proposal/decision-contract.md
@@ -162,6 +163,7 @@ plugins:
             Anti-patrones: Anti-patterns
             Aplicación B2B: B2B application
             Catálogo: Catalog
+            Decision Brief resuelto · SLA: Worked Decision Brief · SLA
             Caso B2B · Propuesta: B2B case · Proposal
             Constitución: Constitution
             Alcance y fronteras de CDI: CDI scope and boundaries

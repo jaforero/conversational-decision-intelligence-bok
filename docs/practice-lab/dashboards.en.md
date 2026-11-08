@@ -39,4 +39,6 @@ last_reviewed: 2026-11-08
 | Review a financial alert before committing budget | [Financial Pulse](https://dashboards.javierforero.co/claude/pulso-financiero/?lang=en) | Horizon, forecast benchmark, observed backtest error and action owner. The demo uses simulated data. |
 | Choose a reversible commercial intervention | [Commercial performance](https://dashboards.javierforero.co/claude/desempeno-comercial/?lang=en) | Options, simulated baseline and criterion for observing the outcome. Continue with the [instrumented B2B case](b2b-proposal/index.en.md). |
 
+In the SLA route, the [worked Decision Brief](sla-decision-brief.en.md) shows why the evidence was sufficient to act, when a forecast would be needed, and how the other route's threshold changed the decision.
+
 To pilot conversational questions, add the [reference-answer and access checks](../learn/03-decision-experience.en.md#conversational-dashboard-pilot). Use the [Practice Lab catalog](catalog.en.md) to identify what data each resource uses.
