@@ -50,6 +50,8 @@ This trajectory is an organizing hypothesis, not an inevitable law. Interfaces c
 
 If you come from reporting, BI or data science, [the bridge from the five levels of analytics to PULSE](../03-pulse/from-five-levels.en.md) explains how those capabilities fit into a decision cycle.
 
+You can [ask the CDI-BoK](../ask-cdi.en.md) and check the response against its published section.
+
 ## Continue
 
 - [Learn how to use the CDI-BoK](how-to-use.en.md).

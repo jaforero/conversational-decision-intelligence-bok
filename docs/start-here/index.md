@@ -53,6 +53,8 @@ Esta trayectoria es una hipótesis organizadora, no una ley inevitable. Las inte
 
 Si vienes de reportes, BI o ciencia de datos, [el puente entre los cinco niveles de analítica y PULSE](../03-pulse/from-five-levels.md) explica cómo esas capacidades se integran en un ciclo de decisión.
 
+Puedes [preguntarle al CDI-BoK](../ask-cdi.md) y comprobar la respuesta en la sección publicada que la sustenta.
+
 ## Cómo continuar
 
 - [Aprende a usar el CDI-BoK](how-to-use.md).

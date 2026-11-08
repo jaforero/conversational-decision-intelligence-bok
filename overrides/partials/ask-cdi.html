@@ -1,0 +1,15 @@
+{% macro ask_form(id, english) %}
+<div data-ask-cdi data-language="{{ 'en' if english else 'es' }}">
+  <p>{{ 'Your question stays in this browser. The assistant retrieves published excerpts and cites their sections.' if english else 'Tu pregunta se queda en este navegador. El asistente recupera extractos publicados y cita sus apartados.' }}</p>
+  <p data-ask-context hidden></p>
+  <div class="cdi-ask-suggestions" data-ask-suggestions></div>
+  <form class="cdi-ask-form">
+    <label for="{{ id }}">{{ 'Ask a question' if english else 'Escribe una pregunta' }}</label>
+    <input id="{{ id }}" type="search" maxlength="240" minlength="3" autocomplete="off" required disabled>
+    <button type="submit" class="md-button md-button--primary" disabled>{{ 'Ask' if english else 'Consultar' }}</button>
+  </form>
+  <p role="status" data-ask-status></p>
+  <div data-ask-results></div>
+  <noscript><p>{{ 'Enable JavaScript to query locally. The published pages remain available.' if english else 'Activa JavaScript para consultar localmente. Las páginas publicadas siguen disponibles.' }}</p></noscript>
+</div>
+{% endmacro %}

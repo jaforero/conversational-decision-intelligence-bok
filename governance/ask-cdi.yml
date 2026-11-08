@@ -1,0 +1,64 @@
+es:
+  - question: ¿Qué es PULSE?
+    aliases: [PULSE, Definición de PULSE]
+    source: /03-pulse/#definicion-oficial
+    excerpt: PULSE es una metodología y filosofía operativa de Decision Intelligence centrada en las personas, que reduce la distancia entre la realidad organizacional y mejores decisiones al convertir datos confiables y contexto en entendimiento compartido, acción y aprendizaje medible.
+  - question: ¿Cómo paso de los cinco niveles de analítica a PULSE?
+    aliases: [De los cinco niveles a PULSE, Cómo aplicar PULSE a la analítica]
+    source: /03-pulse/from-five-levels/#que-cambia-al-aplicar-pulse
+    excerpt: PDAMR precisa la prioridad, la elección y su responsable, la acción, la métrica y el riesgo. Esa definición indica qué evidencia y capacidad hacen falta.
+  - question: ¿Qué debe incluir un Decision Brief?
+    aliases: [Qué contiene un Decision Brief, Cuándo está completo un Decision Brief]
+    source: /learn/decision-brief/#criterio-de-completitud
+    excerpt: "qué se decide, por qué y antes de cuándo; quién tiene autoridad y quién será afectado; qué alternativas se comparan; qué evidencia sustenta o debilita cada opción; qué acción ocurrirá; qué puede hacer la IA y qué permanece bajo control humano; qué resultado se espera y qué cambiaría la conclusión."
+  - question: ¿Cuándo haría falta un pronóstico en el caso de SLA?
+    aliases: [Cuándo pronosticar en el caso de SLA, Cuándo se necesita un pronóstico en SLA]
+    source: /practice-lab/sla-decision-brief/#4-experiencia-de-decision-y-umbral-para-pronosticar
+    excerpt: Si una parte importante de la demanda aún no está confirmada y puede consumir la reserva de B, o si el traslado debe durar varias semanas y resulta más costoso revertirlo. En ese caso, estima rangos de demanda por ruta y compáralos con la capacidad posterior al traslado.
+    note: Caso simulado de SLA. El pasaje describe las condiciones del ejercicio.
+  - question: ¿Por qué se revierte el traslado en el caso de SLA?
+    aliases: [Por qué se revirtió el traslado en SLA, Qué ocurrió en la semana 5 del caso SLA]
+    source: /practice-lab/sla-decision-brief/#7-resultado-simulado-y-decision-revisada
+    excerpt: Se usaron 5 de 5 ventanas y la reserva de B se mantuvo en el plan diario. Aun así, al cierre B quedó por debajo del umbral. Operaciones revierte el traslado el lunes de la semana 6 y revisa si la reserva operativa de B cubre la variabilidad de la semana.
+    note: Resultado simulado. La comparación antes y después tiene alcance descriptivo.
+  - question: ¿Qué autoridad conserva la persona al delegar en IA?
+    aliases: [Qué significa Human-in-Control, Qué es el control humano en PULSE]
+    source: /03-pulse/specification/#human-in-control
+    excerpt: "Para decisiones materiales, humanos o instituciones legítimas conservan autoridad sobre: propósito y objetivos; criterios y restricciones; límites éticos y riesgo tolerable; permisos de datos y acción; aprobación, override, stop y escalamiento; accountability y consecuencias."
+  - question: ¿Ya se comparó GraphRAG con la búsqueda sin grafo?
+    aliases: [La evaluación de GraphRAG ya se hizo, Qué evidencia hay de GraphRAG]
+    source: /research/research-agenda/#graphrag-evaluation
+    excerpt: Las dos exploraciones descritas en el artículo ayudan a formular la prueba. La comparación queda pendiente.
+    note: Protocolo candidato de investigación del CDI-BoK.
+en:
+  - question: What is PULSE?
+    aliases: [PULSE, Definition of PULSE]
+    source: /en/03-pulse/specification/#official-definition
+    excerpt: PULSE is a human-centered Decision Intelligence methodology and operating philosophy that reduces the distance between organizational reality and better decisions by turning trusted data and context into shared understanding, action, and measurable learning.
+  - question: How do the five levels of analytics connect to PULSE?
+    aliases: [From the five levels to PULSE, How to apply PULSE to analytics]
+    source: /en/03-pulse/from-five-levels/#what-changes-when-you-apply-pulse
+    excerpt: PDAMR specifies the priority, the choice and its owner, the action, the metric and the risk. This determines what evidence and capability are needed.
+  - question: What should a Decision Brief include?
+    aliases: [What is in a Decision Brief, When is a Decision Brief complete]
+    source: /en/learn/decision-brief/#completeness-criterion
+    excerpt: Another person should be able to identify what is decided, why and by when; authority and affected groups; alternatives; supporting and weakening evidence; subsequent action; AI permissions and human control; expected result; and what would change the conclusion—without reconstructing private conversations.
+  - question: When would a forecast be needed in the SLA case?
+    aliases: [When to forecast in the SLA case, When is a forecast needed in SLA]
+    source: /en/practice-lab/sla-decision-brief/#4-decision-experience-and-the-threshold-for-forecasting
+    excerpt: If a material share of demand is unconfirmed and could consume B's reserve, or if the transfer must last several weeks and becomes more costly to reverse. In that case, estimate demand ranges by route and compare them with capacity after the transfer.
+    note: Simulated SLA case. The passage describes the exercise conditions.
+  - question: Why was the transfer reversed in the SLA case?
+    aliases: [Why was the SLA transfer reversed, What happened in week 5 of the SLA case]
+    source: /en/practice-lab/sla-decision-brief/#7-simulated-outcome-and-revised-decision
+    excerpt: Dispatch used 5 of 5 windows and B's reserve was retained in the daily plan. Even so, B finished below the threshold. Operations reverses the transfer on Monday of week 6 and checks whether B's operating reserve covers weekly variability.
+    note: Simulated outcome. The before-and-after comparison is descriptive.
+  - question: What authority do people retain when delegating to AI?
+    aliases: [What does Human-in-Control mean, What is human control in PULSE]
+    source: /en/03-pulse/specification/#human-in-control
+    excerpt: For material decisions, legitimate people or institutions retain authority over purpose and objectives; criteria and constraints; ethical limits and risk tolerance; data and action permissions; approval, override, stop and escalation; and accountability and consequences.
+  - question: Has GraphRAG been compared with retrieval without a graph?
+    aliases: [Has GraphRAG been evaluated, What evidence is there for GraphRAG]
+    source: /en/research/research-agenda/#graphrag-evaluation
+    excerpt: The two explorations described in the article help frame the test. The comparison remains to be run.
+    note: CDI-BoK candidate research protocol.

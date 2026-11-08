@@ -74,3 +74,33 @@
     </div>
   </footer>
 {% endblock %}
+
+{% block content %}
+  {{ super() }}
+  {% if page and page.file.src_uri in ("ask-cdi.md", "ask-cdi.en.md") %}
+    {% from "partials/ask-cdi.html" import ask_form %}
+    {{ ask_form("ask-cdi-page-input", i18n_page_locale == "en") }}
+  {% endif %}
+{% endblock %}
+
+{% block scripts %}
+  {% if page and page.file.src_uri not in ("ask-cdi.md", "ask-cdi.en.md") %}
+    {% from "partials/ask-cdi.html" import ask_form %}
+    {% set english = i18n_page_locale == "en" %}
+    {% set ask_title = "Ask the CDI-BoK" if english else "Pregúntale al CDI-BoK" %}
+    <button class="cdi-ask-launcher" type="button" data-ask-launcher aria-label="{{ ask_title }}" aria-haspopup="dialog" hidden>
+      <span aria-hidden="true">?</span><span class="cdi-ask-launcher-label">{{ ask_title }}</span>
+    </button>
+    <dialog class="cdi-ask-dialog" id="ask-cdi-dialog" aria-labelledby="ask-cdi-title">
+      <header class="cdi-ask-header">
+        <h2 id="ask-cdi-title">{{ ask_title }}</h2>
+        <form method="dialog">
+          <button class="cdi-ask-close" aria-label="{{ 'Close' if english else 'Cerrar' }}">×</button>
+        </form>
+      </header>
+      {{ ask_form("ask-cdi-panel-input", english) }}
+      <p><a href="{{ '/en/ask-cdi/' if english else '/ask-cdi/' }}">{{ 'Open the full experience' if english else 'Abrir la experiencia completa' }}</a></p>
+    </dialog>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
