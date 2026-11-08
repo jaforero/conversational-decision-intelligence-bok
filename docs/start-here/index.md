@@ -51,6 +51,8 @@ flowchart TD
 
 Esta trayectoria es una hipótesis organizadora, no una ley inevitable. Las interfaces cambian; la decisión, su contexto, sus consecuencias y su responsabilidad permanecen.
 
+Si vienes de reportes, BI o ciencia de datos, [el puente entre los cinco niveles de analítica y PULSE](../03-pulse/from-five-levels.md) explica cómo esas capacidades se integran en un ciclo de decisión.
+
 ## Cómo continuar
 
 - [Aprende a usar el CDI-BoK](how-to-use.md).

@@ -38,6 +38,10 @@ flowchart TD
     D --> E["Resultado y aprendizaje"]
 ```
 
+## De los cinco niveles a PULSE
+
+Los niveles ayudan a elegir una capacidad analítica. PULSE sitúa esa capacidad dentro de una decisión con responsable, acción y aprendizaje. Lee [de los cinco niveles de analítica a PULSE](from-five-levels.md) para ver el linaje y aplicarlo a un caso de SLA.
+
 ## Posiciones que PULSE preserva
 
 - comienza con una decisión que vale la pena mejorar;

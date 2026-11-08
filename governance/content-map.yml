@@ -106,6 +106,7 @@ public_portal:
     - { id: PORTAL-GLOSSARY, path: docs/00-foundation/glossary.md, status: approved }
     - { id: PORTAL-DOMAINS, path: docs/00-foundation/domain-map.md, status: approved }
     - { id: PORTAL-PULSE, path: docs/03-pulse/index.md, status: approved }
+    - { id: PORTAL-PULSE-FIVE-LEVELS, path: docs/03-pulse/from-five-levels.md, status: candidate }
     - { id: PORTAL-PULSE-SPEC, path: docs/03-pulse/specification.md, status: approved }
     - { id: PORTAL-PRACTICE, path: docs/practice-lab/index.md, status: candidate }
     - { id: PORTAL-PRACTICE-CATALOG, path: docs/practice-lab/catalog.md, status: candidate }

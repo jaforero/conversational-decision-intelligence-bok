@@ -53,6 +53,8 @@ with Decision First if interpreted as a requirement to “move up” before
 defining the decision. It remains a pedagogical taxonomy, not a mandatory
 maturity path.
 
+The guide [From the five levels of analytics to PULSE](../03-pulse/from-five-levels.en.md) documents the lineage and shows how to choose capabilities based on what the decision needs.
+
 ### Biological metaphor versus causal explanation
 
 Interoception and allostasis can generate useful questions about signals,
