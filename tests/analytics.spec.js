@@ -10,6 +10,9 @@ test("GA4 follows consent across languages and omits URL queries", async ({ page
     const response = await route.fetch({ url: baseURL + url.pathname + url.search });
     await route.fulfill({ response });
   });
+  // Search initialization can outlive navigation and is independent of consent.
+  await page.route(`${site}/**/workers/search.*.js`, (route) => route.abort());
+  await page.route(`${site}/**/sitemap.xml`, (route) => route.abort());
   await page.route(tagUrl, (route) => route.fulfill({
     contentType: "application/javascript",
     body: "/* Analytics stub. No requests leave the browser test. */",
