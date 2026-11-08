@@ -23,6 +23,8 @@ const foundationalPages = [
   { name: "cdi-scope", path: "/00-foundation/cdi-scope-boundaries/" },
   { name: "glossary", path: "/00-foundation/glossary/" },
   { name: "domain-map", path: "/00-foundation/domain-map/" },
+  { name: "pulse-five-levels-es", path: "/03-pulse/from-five-levels/" },
+  { name: "pulse-five-levels-en", path: "/en/03-pulse/from-five-levels/" },
   { name: "pulse-spec", path: "/03-pulse/specification/" },
   { name: "practice-catalog", path: "/practice-lab/catalog/" },
   { name: "dashboard-lab-es", path: "/practice-lab/dashboards/" },

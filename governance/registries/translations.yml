@@ -54,7 +54,7 @@ pairs:
     translation: docs/03-pulse/index.en.md
     version: 0.4.0
     status: complete
-    source_sha256: d6cf6dcc7d0046d588e9ac57b4bd2b113fddeeb6c283cc23d18ac09a462445d1
+    source_sha256: b476ee2a79b673e0b93911fe166a94c89b153184115a1e4a316b160a3352acf5
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-03-PULSE-SPECIFICATION
@@ -318,7 +318,7 @@ pairs:
     translation: docs/research/pulse-evidence-map.en.md
     version: 0.9.0-rc.1
     status: complete
-    source_sha256: b9d0dc43643701922c6acab8c0f626adcd909a3011a07e9d7084045965d756f0
+    source_sha256: 2fc754b9f864675f488c93acf7852d1d03f1061b5f504a11d4a239efc33a8da2
     last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-RESEARCH-FUTURE-SIGNALS
@@ -350,7 +350,7 @@ pairs:
     translation: docs/start-here/index.en.md
     version: 0.4.0
     status: complete
-    source_sha256: 89546ca18c8af6a0db81dfb4a9b9ae7a476ab4092567f0befe9841b7941a6e5d
+    source_sha256: a342923f6e89e435ef6a441f84581d5e659a0355b90ce5746dbc7f85a2bb6e09
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-VERSIONS-INDEX
@@ -463,5 +463,13 @@ pairs:
     version: 0.9.0
     status: complete
     source_sha256: 8ec60031c79e03faf321305ebe5e963d163f41d6045534a404761e09f18e89fc
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-03-PULSE-FROM-FIVE-LEVELS
+    source: docs/03-pulse/from-five-levels.md
+    translation: docs/03-pulse/from-five-levels.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: 399a389e84516baf06db649b3d46ea66fff4374d6a35b03b6a64d2240ab63c0b
     last_reviewed: 2026-11-08
     owner: Javier Forero

@@ -6,6 +6,8 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ### Añadido
 
+- Puente bilingüe de los cinco niveles de analítica a PULSE con un caso de
+  práctica sobre SLA y acceso desde PULSE, Empieza aquí y Research.
 - Catálogo del Practice Lab organizado por decisión, con recursos públicos y
   demos simuladas separados, y dos laboratorios guiados en ES/EN.
 - Exportación del grafo editorial del CDI-BoK en cada build, con relaciones

@@ -29,6 +29,10 @@ PULSE provides the decision orientation and complete cycle used by this ecosyste
 - conversational analytics may exist without PULSE;
 - a CDI application in this ecosystem must preserve decision, evidence, action, governance and learning.
 
+## From the five levels to PULSE
+
+The levels help you choose an analytics capability. PULSE places that capability within a decision with an owner, an action and a learning loop. Read [from the five levels of analytics to PULSE](from-five-levels.en.md) for the lineage and an SLA example.
+
 ## Positions PULSE preserves
 
 - start with **What decision do we want to improve?**

@@ -48,6 +48,8 @@ flowchart TD
 
 This trajectory is an organizing hypothesis, not an inevitable law. Interfaces change; the decision, its context, consequences and accountability remain.
 
+If you come from reporting, BI or data science, [the bridge from the five levels of analytics to PULSE](../03-pulse/from-five-levels.en.md) explains how those capabilities fit into a decision cycle.
+
 ## Continue
 
 - [Learn how to use the CDI-BoK](how-to-use.en.md).

@@ -82,6 +82,7 @@ nav:
       - Mapa de dominios: 00-foundation/domain-map.md
   - PULSE:
       - Identidad y función: 03-pulse/index.md
+      - De los cinco niveles a PULSE: 03-pulse/from-five-levels.md
       - Especificación nuclear: 03-pulse/specification.md
   - Practice Lab:
       - Visión general: practice-lab/index.md
@@ -178,6 +179,7 @@ plugins:
             Glosario: Glossary
             Mapa de dominios: Domain map
             Identidad y función: Identity and role
+            De los cinco niveles a PULSE: From five levels to PULSE
             Especificación nuclear: Core specification
             Caso instrumentado: Instrumented case
             Contrato de decisión: Decision contract

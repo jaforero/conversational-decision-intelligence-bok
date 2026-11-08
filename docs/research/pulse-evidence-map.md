@@ -53,6 +53,8 @@ pero se vuelve incompatible con Decision First si se interpreta como “subir de
 nivel” antes de definir la decisión. Se conserva como taxonomía pedagógica, no
 como madurez obligatoria.
 
+La guía [De los cinco niveles de analítica a PULSE](../03-pulse/from-five-levels.md) documenta el linaje y muestra cómo elegir capacidades según lo que la decisión necesita.
+
 ### Metáfora biológica frente a explicación causal
 
 Interocepción y alostasis pueden generar preguntas útiles sobre señales,

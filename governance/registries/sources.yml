@@ -94,6 +94,7 @@ records:
     materialized: false
   - source_id: SRC-JF-006
     title: Analítica de datos en cinco niveles
+    url: https://javierforero.co/2026/01/26/analitica-datos-5-niveles/
     source_file_name: analitica-datos-5-niveles_.md
     library_file_id: libfile_13da0bcce7f081919a26111483bf9cee
     authority_level: author-framework
@@ -420,4 +421,19 @@ records:
     authority_level: owner-public-practice-property
     status: active-background
     purpose: Exploración interactiva de enlaces y backlinks de un corpus documental.
+    materialized: false
+  - source_id: SRC-JF-PULSE-PUBLIC-001
+    title: "PULSE: tómale el pulso a tus decisiones y decide mejor que tu competencia"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/06/30/pulse-decidir-mejor-con-datos/
+    published_on: 2026-06-30
+    declared_version: "2026-10-26T08:22:07-05:00"
+    observed_on: 2026-11-08
+    sha256: a20def5334288e9d40ea8af60883ddc2d723b0f93a64e6ee0e88c10e3da56080
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Fuente de linaje editorial. Su metáfora del organismo y los ejemplos orientan la práctica.
     materialized: false
