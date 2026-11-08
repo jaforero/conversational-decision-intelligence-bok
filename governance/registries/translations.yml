@@ -198,8 +198,16 @@ pairs:
     translation: docs/learn/02-evidence-context.en.md
     version: 0.6.0-rc.1
     status: complete
-    source_sha256: f6c17f48ce7c369682b7306dae01cce72b3685cf45b8c13be8893bd14f9ecc8c
-    last_reviewed: 2026-07-21
+    source_sha256: 71561ac3584f0ae39074b4259107702e9d3732c45e74285431cdfb6633c4f0c9
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-LEARN-DATA-ARCHITECTURE-FABLE
+    source: docs/learn/data-architecture-fable.md
+    translation: docs/learn/data-architecture-fable.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: f02caa1237ae93dc7aa6b9f8468a61b09b8f86559b97f95008246f2db29a920c
+    last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-LEARN-03-DECISION-EXPERIENCE
     source: docs/learn/03-decision-experience.md

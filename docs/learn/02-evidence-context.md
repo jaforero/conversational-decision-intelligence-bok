@@ -110,4 +110,6 @@ Lectura de Philia Sophia (2 nov 2026) · [América Latina no envejecerá cuando 
 
 Construye una tabla con una fila por evidencia material y las nueve columnas del contrato. Cierra con tres listas: **sabemos**, **inferimos**, **aún no sabemos**.
 
+Lee [La Aldea de los Datos](data-architecture-fable.md) para ver cómo una definición ambigua puede cambiar una acción y qué papel cumple cada parte de la arquitectura.
+
 **Siguiente:** [diseñar la experiencia que conecta evidencia y acción →](03-decision-experience.md)

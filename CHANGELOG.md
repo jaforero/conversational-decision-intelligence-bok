@@ -6,6 +6,7 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ### Añadido
 
+- Capítulo narrativo bilingüe de arquitectura de datos que continúa la fábula de Javier Forero y la enlaza con el contrato de evidencia y el caso de tasas de cambio.
 - Caso resuelto bilingüe de tasas de cambio con un corte reproducible, contraste con el tablero y un umbral presupuestario simulado.
 - Laboratorio bilingüe para evaluar un asistente de SLA con evidencia y
   decidir si conviene ampliar, mantener o pausar un piloto de consulta.

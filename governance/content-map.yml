@@ -87,6 +87,7 @@ public_portal:
     - { id: PORTAL-LEARN, path: docs/learn/index.md, status: candidate }
     - { id: PORTAL-LEARN-DECISION, path: docs/learn/01-decision-first.md, status: candidate }
     - { id: PORTAL-LEARN-EVIDENCE, path: docs/learn/02-evidence-context.md, status: candidate }
+    - { id: PORTAL-LEARN-DATA-FABLE, path: docs/learn/data-architecture-fable.md, status: candidate }
     - { id: PORTAL-LEARN-EXPERIENCE, path: docs/learn/03-decision-experience.md, status: candidate }
     - { id: PORTAL-LEARN-CONTROL, path: docs/learn/04-human-ai-control.md, status: candidate }
     - { id: PORTAL-LEARN-ACTION, path: docs/learn/05-action-learning.md, status: candidate }

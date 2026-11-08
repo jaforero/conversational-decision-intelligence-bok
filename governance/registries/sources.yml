@@ -78,6 +78,7 @@ records:
     materialized: false
   - source_id: SRC-JF-004
     title: Arquitectura de datos moderna, fábula
+    url: https://javierforero.co/2025/04/02/arquitectura-de-datos-moderna-fabula/
     source_file_name: arquitectura-de-datos-moderna-fabula_.md
     library_file_id: libfile_1558b9c2aab48191ab29e6d72cbbbf6f
     authority_level: pedagogical-example
