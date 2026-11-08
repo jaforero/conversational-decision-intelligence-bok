@@ -32,7 +32,10 @@ test("GA4 follows consent across languages and omits URL queries", async ({ page
   await page.getByRole("link", { name: "Change analytics preferences" }).click();
   await expect(consent).toBeVisible();
   await consent.locator('label[for="__settings"]').click();
-  await consent.locator('input[name="analytics"]').check();
+  const analyticsOption = consent.locator('input[name="analytics"]');
+  await expect(analyticsOption).not.toBeChecked();
+  await consent.getByText("Google Analytics", { exact: true }).click();
+  await expect(analyticsOption).toBeChecked();
   await Promise.all([page.waitForRequest(tagUrl), accept.click()]);
   await expect(tag).toHaveAttribute("src", tagUrl);
 
