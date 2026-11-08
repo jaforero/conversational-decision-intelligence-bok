@@ -19,9 +19,9 @@ Choose a resource based on the decision you want to practice. The labs guide the
 
 | Start with | What you produce |
 |---|---|
-| [Decision dashboards](dashboards.md) | A brief with a verifiable indicator, an action criterion and a review date. |
-| [Knowledge graphs](knowledge-graph.md) | A reproducible traceability finding and a proposed CDI-BoK improvement. |
-| [B2B case · Proposal](b2b-proposal/index.md) | A protocol for evaluating a commercial intervention using simulated data. |
+| [Decision dashboards](dashboards.en.md) | A brief with a verifiable indicator, an action criterion and a review date. |
+| [Knowledge graphs](knowledge-graph.en.md) | A reproducible traceability finding and a proposed CDI-BoK improvement. |
+| [B2B case · Proposal](b2b-proposal/index.en.md) | A protocol for evaluating a commercial intervention using simulated data. |
 
 ## Resources with public sources
 
@@ -47,4 +47,4 @@ The [ChatGPT Work collection](https://javier-dashboards.jforero.chatgpt.site/en)
 
 ## Instrumented case
 
-The CDI-BoK selected **B2B Commercial · Proposal** for its recurring decision, three simulated sources, available baseline and reversible intervention. Running it requires a confirmed owner and a viable comparison. The [instrumented, not executed](b2b-proposal/index.md) status distinguishes the protocol from results of a real pilot.
+The CDI-BoK selected **B2B Commercial · Proposal** for its recurring decision, three simulated sources, available baseline and reversible intervention. Running it requires a confirmed owner and a viable comparison. The [instrumented, not executed](b2b-proposal/index.en.md) status distinguishes the protocol from results of a real pilot.

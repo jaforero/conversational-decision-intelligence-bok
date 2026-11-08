@@ -68,7 +68,7 @@ Each material answer should expose metric definition and provenance; filters, po
 
 Philia Sophia reading (10 Oct 2026) · [Claude Dashboards puts your data to the test](https://javierforero.co/2026/10/10/claude-dashboards-analitica-conversacional/).
 
-The [dashboard lab](../practice-lab/dashboards.md) lets you practice reading base 100, checking dates and connecting the signal to a review criterion.
+The [dashboard lab](../practice-lab/dashboards.en.md) lets you practice reading base 100, checking dates and connecting the signal to a review criterion.
 
 ## Minimum blueprint
 
@@ -85,4 +85,4 @@ The [dashboard lab](../practice-lab/dashboards.md) lets you practice reading bas
 
 Ask whether the logic remains clear without AI, whether the interface supports choice rather than only exploration, whether attention can be captured by unimportant content, whether recommendations expose alternatives and change conditions, whether a safe exit exists, and whether feedback returns to the originating system. Draw the six layers and annotate content, actor, permission and risk before choosing components.
 
-**Next:** [define human control and AI boundaries →](04-human-ai-control.md)
+**Next:** [define human control and AI boundaries →](04-human-ai-control.en.md)

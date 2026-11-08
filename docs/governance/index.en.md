@@ -49,7 +49,7 @@ Architecture decisions use ADRs and releases preserve history.
 
 ## Key documents
 
-- [Editorial architecture and governance](architecture.md)
-- [Claims and evidence](claims-evidence.md)
-- [Publishing and domain](publication-runbook.md)
+- [Editorial architecture and governance](architecture.en.md)
+- [Claims and evidence](claims-evidence.en.md)
+- [Publishing and domain](publication-runbook.en.md)
 - [Repository and registries](https://github.com/jaforero/conversational-decision-intelligence-bok/tree/main/governance)

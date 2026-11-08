@@ -53,7 +53,7 @@ This does not guarantee a good decision. It makes the decision more explicit, ch
 
 - **Sequential:** work from module 1 through 5 when building judgment from scratch.
 - **By friction:** begin where the current chain breaks—decision, evidence, experience, control or learning.
-- **Existing-solution review:** complete the [Decision Brief](decision-brief.md), then return to the first module with an undefended field.
+- **Existing-solution review:** complete the [Decision Brief](decision-brief.en.md), then return to the first module with an undefended field.
 
 !!! tip "Practical rule"
     If you cannot state the decision in one sentence, you need framing before more data. If you can state it but cannot say what evidence would change your choice, you need an evidence contract. If both are clear and nothing changes afterward, the gap is action, governance or learning.
@@ -62,4 +62,4 @@ This does not guarantee a good decision. It makes the decision more explicit, ch
 
 This path does not replace specialist training in statistics, causality, ethics, law, security, product design or change management. It does not turn an exercise into impact evidence. It reveals which additional discipline a specific decision requires.
 
-[Start with the decision →](01-decision-first.md){ .md-button .md-button--primary }
+[Start with the decision →](01-decision-first.en.md){ .md-button .md-button--primary }

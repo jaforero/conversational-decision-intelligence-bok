@@ -50,9 +50,9 @@ This trajectory is an organizing hypothesis, not an inevitable law. Interfaces c
 
 ## Continue
 
-- [Learn how to use the CDI-BoK](how-to-use.md).
-- [Read the approved Constitution](../00-foundation/constitution.md).
-- [Review CDI scope and boundaries](../00-foundation/cdi-scope-boundaries.md).
-- [Explore the knowledge architecture](../00-foundation/domain-map.md).
-- [Meet PULSE](../03-pulse/index.md).
-- [Review the authority system](../governance/index.md).
+- [Learn how to use the CDI-BoK](how-to-use.en.md).
+- [Read the approved Constitution](../00-foundation/constitution.en.md).
+- [Review CDI scope and boundaries](../00-foundation/cdi-scope-boundaries.en.md).
+- [Explore the knowledge architecture](../00-foundation/domain-map.en.md).
+- [Meet PULSE](../03-pulse/index.en.md).
+- [Review the authority system](../governance/index.en.md).

@@ -15,7 +15,7 @@ last_reviewed: 2026-07-21
 
 # Decision Measurement Record
 
-This record complements the [Decision Brief](../learn/decision-brief.md). The Brief structures the choice; the Measurement Record preserves the observation plan and later review.
+This record complements the [Decision Brief](../learn/decision-brief.en.md). The Brief structures the choice; the Measurement Record preserves the observation plan and later review.
 
 ## Two snapshots, one history
 
@@ -54,4 +54,4 @@ The template preserves unknowns as `null` and results as `not-observed`. Product
 
 A complete record proves **traceability**, not effectiveness. Causal claims need a defensible identification design, adequate data and explicit limits. Claims that CDI or PULSE improve decisions require multiple cases and external evaluation; this template does not provide that evidence.
 
-[Return to the measurement system](decision-measurement-system.md){ .md-button }
+[Return to the measurement system](decision-measurement-system.en.md){ .md-button }

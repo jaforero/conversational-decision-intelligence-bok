@@ -145,5 +145,5 @@ has already been scientifically validated.
 - [Evaluation of human, human+AI and AI alone](https://arxiv.org/abs/2403.12108)
 - [Interpretable models for high-stakes decisions](https://doi.org/10.1038/s42256-019-0048-x)
 
-Continue with the [PULSE evidence map](pulse-evidence-map.md) or the
-[research agenda](research-agenda.md).
+Continue with the [PULSE evidence map](pulse-evidence-map.en.md) or the
+[research agenda](research-agenda.en.md).

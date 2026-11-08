@@ -21,9 +21,11 @@ El portal no exige una lectura lineal. Elija una ruta según la decisión que ne
 
 | Si necesita… | Comience por… | Continúe con… |
 |---|---|---|
-| Comprender la disciplina | Empieza aquí | CDI-BoK y Research |
+| Comprender la disciplina | Empieza aquí | [Fundamentos del CDI-BoK](../00-foundation/index.md) y [Research](../research/index.md) |
 | Diseñar una práctica decisional | PULSE | Governance y Practice Lab |
 | Evaluar una afirmación | Claims y evidencia | Registro de fuentes |
+| Evaluar el proceso de decisión | [Calidad de la decisión](../07-governance-quality/decision-quality.md) | [Calidad y medición](../07-governance-quality/index.md) |
+| Aclarar el significado de un término | [Glosario normativo](../00-foundation/glossary.md) | Definición y límites de uso |
 | Implementar en una organización | PULSE | Arquitecturas y casos futuros |
 | Contribuir contenido | Governance | `CONTRIBUTING.md` en GitHub |
 | Identificar la versión que está citando | [Historial de versiones](../versions/index.md) | Nota de la versión correspondiente |

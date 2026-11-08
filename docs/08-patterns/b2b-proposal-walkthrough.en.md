@@ -66,9 +66,9 @@ Within the artifact, patterns can reveal omissions, preserve evidence classes an
 
 ### Potentially superior alternative
 
-For the current state, completing the [decision contract](../practice-lab/b2b-proposal/decision-contract.md) with the owner is more defensible than building a copilot. Consider conversation only after recurring cycles reveal access or deliberation friction that the manual protocol cannot solve.
+For the current state, completing the [decision contract](../practice-lab/b2b-proposal/decision-contract.en.md) with the owner is more defensible than building a copilot. Consider conversation only after recurring cycles reveal access or deliberation friction that the manual protocol cannot solve.
 
 <div class="cdi-actions" markdown>
-[Review the case](../practice-lab/b2b-proposal/index.md){ .md-button .md-button--primary }
-[Return to catalog](catalog.md){ .md-button }
+[Review the case](../practice-lab/b2b-proposal/index.en.md){ .md-button .md-button--primary }
+[Return to catalog](catalog.en.md){ .md-button }
 </div>

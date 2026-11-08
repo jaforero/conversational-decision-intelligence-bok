@@ -92,4 +92,4 @@ Avoid decision count, speed without quality or risk, adoption or query volume, R
 
 Aggregate only comparable definitions, horizons, stakes and populations; show distributions and segments before means. Rare critical decisions require case review. Six-lens instrumentation can cost more than the decision's value and become ritual. The answer is proportionality and a minimum set. Longitudinal real-decision data could test reliability, context sensitivity, gaming and outcome relation—and simplify or replace this candidate.
 
-[Create a Measurement Record →](measurement-record.md){ .md-button .md-button--primary }
+[Create a Measurement Record →](measurement-record.en.md){ .md-button .md-button--primary }

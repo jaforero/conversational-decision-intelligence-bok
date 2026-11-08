@@ -47,7 +47,7 @@ Decision Maturity · Enterprise Implementation · Case Studies · Research</div>
 
 ## Growth principle
 
-See [About the CDI-BoK](../about/index.md) for its authorship, editorial status and contribution channels.
+See [About the CDI-BoK](../about/index.en.md) for its authorship, editorial status and contribution channels.
 
 The taxonomy does not require chapters to fill boxes. First identify a decision need; then determine which domain owns the concept, what evidence exists and what minimum asset adds value without duplicating knowledge.
 

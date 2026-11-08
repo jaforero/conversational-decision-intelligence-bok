@@ -40,4 +40,4 @@ PULSE provides the decision orientation and complete cycle used by this ecosyste
 
 ## Core specification
 
-Read the [controlled PULSE core specification](specification.md). If it conflicts with the constitutional sources, `00_PULSE_DNA.md`, `00A_PULSE_Documentation_Map.md` and `00_PULSE_Identity.md` prevail within their respective authority.
+Read the [controlled PULSE core specification](specification.en.md). If it conflicts with the constitutional sources, `00_PULSE_DNA.md`, `00A_PULSE_Documentation_Map.md` and `00_PULSE_Identity.md` prevail within their respective authority.

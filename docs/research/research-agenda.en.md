@@ -67,7 +67,7 @@ sales impact.
 
 Philia Sophia reading (25 Oct 2026) · [Knowledge graphs: your AI needs the right relationships](https://javierforero.co/2026/10/25/grafos-de-conocimiento-graphrag/).
 
-Apply the [knowledge graph lab](../practice-lab/knowledge-graph.md) to the CDI-BoK to check reading paths and editorial provenance before designing a retrieval test.
+Apply the [knowledge graph lab](../practice-lab/knowledge-graph.en.md) to the CDI-BoK to check reading paths and editorial provenance before designing a retrieval test.
 
 ## Review cadence
 

@@ -26,6 +26,8 @@ last_reviewed: 2026-11-08
 3. Clasifica un hallazgo. Un **enlace roto** apunta a un destino que no se resuelve. Una **página sin enlaces entrantes desde el contenido** puede seguir siendo accesible por navegación. Una **relación implícita** requiere comprobar ambos documentos antes de añadir un enlace editorial.
 4. Valida en el portal y en GitHub. Las convenciones de MkDocs y las traducciones `.en.md` pueden producir diferencias con un explorador genérico de Markdown. Registra origen, destino esperado, edición, evidencia, responsable y corrección propuesta. Verifica ambas ediciones después del cambio.
 
+El panel **Salud** del explorador cuenta los archivos Markdown de ambos idiomas y señala las notas que carecen de enlaces entrantes y salientes reconocidos. El inventario editorial de abajo mide otra propiedad: páginas canónicas renderizadas que carecen de enlaces entrantes desde el contenido. Compara cada conteo con el mismo corpus y criterio. Para que los enlaces funcionen en el portal y en el explorador, las referencias Markdown en inglés apuntan al archivo `.en.md` correspondiente.
+
 **Entregable.** Prepara un hallazgo reproducible y una corrección pequeña. Si una relación ya existe, úsala como control y documenta qué comprobaste.
 
 ## Inspecciona el grafo editorial del CDI-BoK { #editorial-graph }

@@ -22,8 +22,8 @@ last_reviewed: 2026-07-24
 Learn to **define the decision that matters**, use evidence and context, compare options, act responsibly and learn from outcomes.
 
 <div class="cdi-actions" markdown>
-[Start the learning path](learn/index.md){ .md-button .md-button--primary }
-[Choose a pattern](08-patterns/index.md){ .md-button }
+[Start the learning path](learn/index.en.md){ .md-button .md-button--primary }
+[Choose a pattern](08-patterns/index.en.md){ .md-button }
 </div>
 
 <span class="cdi-release">Stable portal v0.9.0 · Governed evidence · Approved core v0.4.0</span>
@@ -73,8 +73,8 @@ The CDI-BoK turns interdisciplinary knowledge into practical capability. Every p
 Technology can support the entire chain but cannot replace purpose, judgment, authority or accountability. **PULSE** provides the framework of practice; **CDI** studies and designs conversational collaboration; the **CDI-BoK** organizes knowledge, sources and limits.
 
 <div class="cdi-actions" markdown>
-[Understand CDI, CDI-BoK and PULSE](start-here/index.md){ .md-button .md-button--primary }
-[Explore the 29 domains](00-foundation/domain-map.md){ .md-button }
+[Understand CDI, CDI-BoK and PULSE](start-here/index.en.md){ .md-button .md-button--primary }
+[Explore the 29 domains](00-foundation/domain-map.en.md){ .md-button }
 </div>
 
 ## Depth with traceability
@@ -93,8 +93,8 @@ Technology can support the entire chain but cannot replace purpose, judgment, au
 The Practice Lab contains demonstrations and instrumentation. The current B2B case uses simulated data and remains **instrumented, not executed**. It shows how a decision is framed, a weak claim is blocked and a protocol is prepared; it does not demonstrate organizational impact.
 
 <div class="cdi-actions" markdown>
-[Explore the Practice Lab](practice-lab/index.md){ .md-button }
-[Review the case and its limits](practice-lab/b2b-proposal/index.md){ .md-button }
+[Explore the Practice Lab](practice-lab/index.en.md){ .md-button }
+[Review the case and its limits](practice-lab/b2b-proposal/index.en.md){ .md-button }
 </div>
 
 <div class="cdi-transparency" markdown>

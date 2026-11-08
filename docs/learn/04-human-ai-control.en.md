@@ -77,4 +77,4 @@ Philia Sophia reading (17 Oct 2026) · [An agent is more than its model: four pa
 
 Ask whether approval is informed or habitual; whether many small actions can accumulate major harm; who detects context shift or degradation; what happens if the owner is unavailable; whether evidence and version can be reconstructed; and whether affected groups can appeal or correct. Complete one row per action. If **stop**, **reverse** and **answer** cannot be assigned, automation is not ready.
 
-**Next:** [connect action, result and learning →](05-action-learning.md)
+**Next:** [connect action, result and learning →](05-action-learning.en.md)

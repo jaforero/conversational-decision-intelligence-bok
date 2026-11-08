@@ -44,4 +44,4 @@ The minimum unit is an **identified decision cycle**, not a tool, person or AI i
 
 PULSE requires observable value and learning that compares expectation with result. This section operationalizes those requirements for the CDI-BoK; it neither redefines PULSE nor proves that instrumentation improves outcomes.
 
-[Design decision measurement →](decision-measurement-system.md){ .md-button .md-button--primary }
+[Design decision measurement →](decision-measurement-system.en.md){ .md-button .md-button--primary }

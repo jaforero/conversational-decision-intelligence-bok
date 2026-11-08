@@ -80,4 +80,4 @@ Cost of delay:
 Reversibility:
 ```
 
-**Next:** [ground the decision in evidence and context →](02-evidence-context.md)
+**Next:** [ground the decision in evidence and context →](02-evidence-context.en.md)
