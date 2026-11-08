@@ -118,4 +118,6 @@ Lectura de Philia Sophia (17 oct 2026) · [Un agente no es solo el modelo: cuatr
 
 Completa una fila por acción en la matriz. Si no puedes asignar “detener”, “revertir” y “responder”, el diseño no está listo para automatizarse.
 
+En [La promesa del jueves](ai-work-redesign.md), una mesa de servicio usa estas reglas para rediseñar el trabajo, probar un asistente y decidir si conviene ampliar su alcance.
+
 **Siguiente:** [conectar acción, resultado y aprendizaje →](05-action-learning.md)

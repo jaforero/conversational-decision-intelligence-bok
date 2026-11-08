@@ -222,8 +222,16 @@ pairs:
     translation: docs/learn/04-human-ai-control.en.md
     version: 0.6.0-rc.1
     status: complete
-    source_sha256: 4578a5f769705e3e7e640cb023f412b44171072c1008994681c991bfcbcdfa20
-    last_reviewed: 2026-07-21
+    source_sha256: c372919596d90258c291936678ba201879ca2b6a1a154c12958d06d451664792
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-LEARN-AI-WORK-REDESIGN
+    source: docs/learn/ai-work-redesign.md
+    translation: docs/learn/ai-work-redesign.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: ac1a699775b0fc8bd92eea2e5a043c9e52ece3e234861281f6f8fbdf1242f9f4
+    last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-LEARN-05-ACTION-LEARNING
     source: docs/learn/05-action-learning.md

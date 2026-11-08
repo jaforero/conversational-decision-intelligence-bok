@@ -47,6 +47,8 @@ const foundationalPages = [
   { name: "data-architecture-fable-en", path: "/en/learn/data-architecture-fable/" },
   { name: "learn-experience", path: "/learn/03-decision-experience/" },
   { name: "learn-control", path: "/learn/04-human-ai-control/" },
+  { name: "ai-work-redesign-es", path: "/learn/ai-work-redesign/" },
+  { name: "ai-work-redesign-en", path: "/en/learn/ai-work-redesign/" },
   { name: "learn-action", path: "/learn/05-action-learning/" },
   { name: "decision-brief", path: "/learn/decision-brief/" },
   { name: "quality-measurement", path: "/07-governance-quality/" },
@@ -126,6 +128,22 @@ test("the data architecture fable connects evidence and the FX case in both lang
     await expect(page.locator("main article table tbody tr")).toHaveCount(5);
     await page.locator("main article").getByRole("link", { name: fxLink }).click();
     await expect(page).toHaveURL(`${prefix}/practice-lab/fx-worked-case/`);
+  }
+});
+
+test("the AI work redesign chapter connects judgment, decision rights, and pilot evidence in both languages", async ({ page }) => {
+  await stabilizeExternalAssets(page);
+  for (const [prefix, link] of [["", "La promesa del jueves"], ["/en", "Thursday's Promise"]]) {
+    await page.goto(`${prefix}/learn/04-human-ai-control/`, { waitUntil: "domcontentloaded" });
+    const article = page.locator("main article");
+    await article.getByRole("link", { name: link, exact: true }).click();
+    await expect(page).toHaveURL(`${prefix}/learn/ai-work-redesign/`);
+    await expect(article.locator("#prediction-and-judgment")).toBeVisible();
+    await expect(article.locator("#decision-rights")).toBeVisible();
+    await expect(article.locator("#pilot-and-learning")).toBeVisible();
+    await expect(article.locator("table").last().locator("tbody tr")).toHaveCount(7);
+    await article.getByRole("link", { name: "Decision Brief", exact: true }).click();
+    await expect(page).toHaveURL(`${prefix}/learn/decision-brief/`);
   }
 });
 
