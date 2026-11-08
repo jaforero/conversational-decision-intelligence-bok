@@ -89,6 +89,7 @@ test("the conversational evidence lab opens from each language catalog", async (
     await expect(page).toHaveURL(`${prefix}/practice-lab/conversational-evidence/`);
     await expect(page.locator("main h1")).toHaveText(new RegExp(`^${title}`));
     await expect(page.locator("main article table tbody tr")).toHaveCount(6);
+    await expect(page.locator("#public-data-exercises")).toBeVisible();
     await expect(page.locator("#pilot-decision")).toBeVisible();
   }
 });

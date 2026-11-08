@@ -8,6 +8,7 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 - Laboratorio bilingüe para evaluar un asistente de SLA con evidencia y
   decidir si conviene ampliar, mantener o pausar un piloto de consulta.
+  Incluye cuatro ejercicios con tableros y datos públicos trazables.
 - Portada de GitHub con rutas de lectura, estado de publicación y citación.
 - Políticas de conducta y seguridad, formularios de issues y guía de mantenimiento.
 - Actualizaciones programadas de Actions y npm mediante Dependabot.

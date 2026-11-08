@@ -8,7 +8,7 @@ authority_level: pedagogical
 normative: false
 owner: Javier Forero
 domains: [Conversational Analytics, Decision Intelligence, Decision Governance]
-source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001, SRC-PRACTICE-POP-001, SRC-PRACTICE-FX-001, SRC-PRACTICE-COMPUTE-001, SRC-PRACTICE-COST-001, SRC-PRACTICE-POP-KAGGLE-001]
 claim_ids: []
 last_reviewed: 2026-11-08
 ---
@@ -40,6 +40,34 @@ Each row is an independent scenario. Change only the stated condition so you can
 
 Repeat critical questions with different wording and test the permissions of the roles that would use the pilot. Open citations and verify that the cited passage supports the response. To practice checking citations in a public corpus, use [Ask the CDI-BoK](../ask-cdi.en.md), which retrieves published excerpts and related passages.
 
+## Take the test to public data { #public-data-exercises }
+
+Choose a dashboard from the [public data portfolio](https://dashboards.javierforero.co/?lang=en) and turn a real question into an acceptance case. Before asking the assistant, fix the filter, period, and expected result. Save the primary source, the file or version used, and any transformation. The dashboard helps you explore. The source file lets you verify the figure. When using an edition from [Kaggle](https://www.kaggle.com/jaforero), record its version and check it against the dashboard's data cut and each source's terms of use.
+
+### Official population data for Latin America
+
+**Decision.** Which market warrants a closer assessment of demand for a service for older adults? Select one country, two years, and an age group in the population pyramid. Reconstruct its share using the corresponding total. Check whether each figure is observed, estimated, or projected, and whether the source or edition changes between years. Ask the assistant to explain that limitation before suggesting where to investigate. A decision to add capacity also requires local demand and supply data.
+
+[Dashboard](https://dashboards.javierforero.co/poblacion-latam/?lang=en) · [Data, pipeline, and source registry](https://github.com/jaforero/latam-population-official) · [Public Kaggle edition](https://www.kaggle.com/datasets/jaforero/latin-america-population-20-countries)
+
+### Official exchange rates
+
+**Decision.** Which currency pair warrants the first review in an import budget? Compare two series in local currency units per USD from a common start date. Reconstruct the index as `100 × daily rate / base rate`. The base rate is the first official observation in each series from the chosen start date. Choose a holiday or a day with inputs from different dates and check whether the assistant distinguishes an official observation, a carried-forward value, and a calculated cross-rate. Record the common market date of the cross-rate inputs. The exercise helps prioritize a budget review. Pricing a transaction requires the rate applicable to that transaction.
+
+[Dashboard and methodology](https://dashboards.javierforero.co/tasas-cambio/?lang=en) · [Series and central bank sources](https://github.com/jaforero/fx-bancos-centrales)
+
+### AI training compute
+
+**Decision.** Is there enough evidence to update a capacity scenario assumption? Fix the period, model set, and unit. Compare the picture from figures published by the labs with the one that includes labeled estimates. Record how many models appear in each comparison. If the conclusion changes, show its sensitivity to coverage and evidence quality. Training figures inform the scenario. Estimating an inference budget requires additional inputs.
+
+[Dashboard](https://dashboards.javierforero.co/ia-compute/?lang=en) · [Visualization code](https://github.com/jaforero/dashboards/tree/main/ia-compute) · [Epoch AI model database](https://epoch.ai/data/ai-models)
+
+### Cost of living by city in Colombia
+
+**Decision.** Which city warrants a local quote before designing a relocation allowance? Compare two geographic domains in the same year. Verify the per-person monetary poverty line, the index benchmark, and the municipalities in each domain. Ask the assistant to keep the basket level separate from the change in CPI. Use the index to choose what to verify, then price expenses for the household profile that would receive the allowance.
+
+[Dashboard](https://dashboards.javierforero.co/claude/costo-vida-colombia/?lang=en) · [Visualization code and data](https://github.com/jaforero/dashboards/tree/main/claude/costo-vida-colombia) · [DANE monetary poverty data](https://www.dane.gov.co/index.php/estadisticas-por-tema/pobreza-y-condiciones-de-vida/pobreza-monetaria)
+
 ## Decide whether to expand the pilot { #pilot-decision }
 
 For each case and role, record the expected and observed behavior, the source used, time to a usable response, and the verdict. An expected abstention counts as a pass. A fast response with an incorrect figure counts as a failure. Identify whether the problem came from the source, the definition, permissions, or the response itself.
@@ -50,4 +78,4 @@ For each case and role, record the expected and observed behavior, the source us
 
 A favorable result in these cases supports a decision about the scope tested. To assess an effect on deliveries, measure actual SLA after the intervention and use a design that separates that effect from other operational changes. The [action and learning module](../learn/05-action-learning.en.md) explains how to record that distinction.
 
-*Editorial note. Drafting and translation received AI assistance. The figures and expected responses are simulated teaching material.*
+*Editorial note. Drafting and translation received AI assistance. The figures and expected responses in the SLA case are simulated. Use the linked sources to complete the public data exercises.*
