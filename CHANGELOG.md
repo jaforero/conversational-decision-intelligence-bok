@@ -6,6 +6,12 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ### Añadido
 
+- Catálogo del Practice Lab organizado por decisión, con recursos públicos y
+  demos simuladas separados, y dos laboratorios guiados en ES/EN.
+- Exportación del grafo editorial del CDI-BoK en cada build, con relaciones
+  de navegación, fuentes y afirmaciones y páginas candidatas a revisar.
+- Enlaces contextuales a Acerca de e Historial de versiones, identificados
+  durante la primera revisión del grafo.
 - Tres ejercicios bilingües en Learn sobre evidencia demográfica, tableros
   conversacionales y delegación con control humano.
 - Un protocolo candidato bilingüe para comparar GraphRAG con una línea base

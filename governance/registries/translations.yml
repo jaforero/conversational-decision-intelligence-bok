@@ -46,8 +46,8 @@ pairs:
     translation: docs/00-foundation/index.en.md
     version: 0.4.0
     status: complete
-    source_sha256: 3110b8b52735a7d3053b9934d201aa66bca5ff1a9de12e7e543eb95fcdc94029
-    last_reviewed: 2026-07-21
+    source_sha256: 884e6aee6c56db8dea5de4fc205a0e22f1cc862ffebda8e2bf78cd7d5bfb4ac0
+    last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-03-PULSE-INDEX
     source: docs/03-pulse/index.md
@@ -206,8 +206,8 @@ pairs:
     translation: docs/learn/03-decision-experience.en.md
     version: 0.6.0-rc.1
     status: complete
-    source_sha256: 0d98201af73fc034319ed37604566c1065ee91c809d67377f2c96cec77a5074d
-    last_reviewed: 2026-07-21
+    source_sha256: 5ead1813856619b657653c7bd22a4c22189ff4f6d1b0992bccd8b5e06856c766
+    last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-LEARN-04-HUMAN-AI-CONTROL
     source: docs/learn/04-human-ai-control.md
@@ -278,8 +278,8 @@ pairs:
     translation: docs/practice-lab/catalog.en.md
     version: 0.5.0-rc.1
     status: complete
-    source_sha256: 2cca36313f9599adb64df403a5f00f5164bbcd6026f27ae80ab9e4180c71e02a
-    last_reviewed: 2026-07-21
+    source_sha256: 52e2ae46b7c1aacfa5ed301406fda5b519b19fe6c00801317e57bfa512c9d96a
+    last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-PRACTICE-LAB-INDEX
     source: docs/practice-lab/index.md
@@ -326,16 +326,16 @@ pairs:
     translation: docs/research/research-agenda.en.md
     version: 0.9.0-rc.1
     status: complete
-    source_sha256: 90509f4c5b013b32e434ef6e56100be4fb82096aaf5ea3a50203cf650ccd6ebb
-    last_reviewed: 2026-07-24
+    source_sha256: 677010e215013938384aa35f814d7d6370911a77154d71ed52119416c3da894e
+    last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-START-HERE-HOW-TO-USE
     source: docs/start-here/how-to-use.md
     translation: docs/start-here/how-to-use.en.md
     version: 0.3.0-rc.1
     status: complete
-    source_sha256: 7120cf507d2874bcf7c24898e5ed0e375b36e66815fd7c81208386c078b6ede7
-    last_reviewed: 2026-07-21
+    source_sha256: 825c8f6e7cbf7f612dbadb820d20b6e9a58ba62a1b44367e866ae3784b1f3190
+    last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-START-HERE-INDEX
     source: docs/start-here/index.md
@@ -440,4 +440,20 @@ pairs:
     status: complete
     source_sha256: c742fb22fb2cdeba4be6efb596e550067c355875751ba3207a27be243a61b922
     last_reviewed: 2026-07-22
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-DASHBOARDS
+    source: docs/practice-lab/dashboards.md
+    translation: docs/practice-lab/dashboards.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: 685035a05e04f8bd548b3d3e86ea3934c08c2242d32aa31d86261baac8ad1e8a
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-KNOWLEDGE-GRAPH
+    source: docs/practice-lab/knowledge-graph.md
+    translation: docs/practice-lab/knowledge-graph.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: f9a17d26ca900af19050307eada43d44963e1db74876814ca6331aae16a09fa9
+    last_reviewed: 2026-11-08
     owner: Javier Forero

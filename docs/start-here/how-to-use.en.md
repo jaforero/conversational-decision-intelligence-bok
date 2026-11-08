@@ -24,6 +24,7 @@ The portal does not require linear reading. Choose a path based on the decision 
 | Evaluate a claim | Claims and evidence | Source registry |
 | Implement in an organization | PULSE | Architectures and future cases |
 | Contribute content | Governance | `CONTRIBUTING.md` on GitHub |
+| Identify the version you are citing | [Version history](../versions/index.md) | The corresponding release note |
 
 ## Always read four signals
 

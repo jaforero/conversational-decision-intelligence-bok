@@ -74,6 +74,10 @@ class PageAudit(HTMLParser):
 html_files = sorted(SITE.rglob("*.html"))
 if not html_files:
     ERRORS.append("No generated HTML files found")
+page_routes = {
+    path.relative_to(SITE).as_posix().removesuffix("index.html")
+    for path in html_files if path.name == "index.html"
+}
 for path in html_files:
     parser = PageAudit()
     text = path.read_text(encoding="utf-8")
@@ -155,12 +159,31 @@ else:
         ERRORS.append("Spanish search index contains no documents or leaks English routes")
     if not english_documents or any(not str(doc.get("location", "")).startswith("en/") for doc in english_documents):
         ERRORS.append("English search index contains no documents or leaks Spanish routes")
-    spanish_pages = [doc for doc in spanish_documents if "#" not in str(doc.get("location", ""))]
-    english_pages = [doc for doc in english_documents if "#" not in str(doc.get("location", ""))]
-    if len(spanish_pages) != 54 or len(english_pages) != 54:
-        ERRORS.append(
-            f"Expected 54 page roots in each search index; got ES={len(spanish_pages)}, EN={len(english_pages)}"
-        )
+    for language, entries in (("ES", spanish_documents), ("EN", english_documents)):
+        locations = [doc["location"] for doc in entries if "#" not in doc["location"]]
+        expected = {route for route in page_routes if route.startswith("en/") == (language == "EN")}
+        if set(locations) != expected or len(locations) != len(expected):
+            ERRORS.append(f"Search page roots differ from built {language} pages")
+
+graph_path = SITE / "assets/data/cdi-knowledge-graph.json"
+if not graph_path.exists():
+    ERRORS.append("The editorial graph was not generated")
+else:
+    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    nodes = {node["id"]: node for node in graph["nodes"]}
+    edges = {(edge["from"], edge["relation"], edge["to"]) for edge in graph["edges"]}
+    graph_routes = {node["url"].lstrip("/") for node in nodes.values() if node["kind"] == "page"}
+    if graph_routes != {route for route in page_routes if not route.startswith("en/")}:
+        ERRORS.append("The editorial graph does not cover the canonical site routes")
+    if len(nodes) != len(graph["nodes"]) or len(edges) != len(graph["edges"]):
+        ERRORS.append("The editorial graph has duplicate nodes or edges")
+    for start, _, end in edges:
+        if start not in nodes or end not in nodes:
+            ERRORS.append(f"The editorial graph has a missing endpoint: {start} → {end}")
+    if ("PORTAL-PRACTICE-CATALOG", "page_links_to_page", "PORTAL-LAB-GRAPH") not in edges:
+        ERRORS.append("The editorial graph is missing the catalog-to-lab content link")
+    if ("PORTAL-LAB-GRAPH", "page_lists_source", "SRC-PRACTICE-GRAPH-001") not in edges:
+        ERRORS.append("The editorial graph is missing the graph lab source")
 
 if not (SITE / "CNAME").exists():
     ERRORS.append("CNAME was not copied into the site artifact")

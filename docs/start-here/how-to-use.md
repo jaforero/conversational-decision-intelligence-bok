@@ -26,6 +26,7 @@ El portal no exige una lectura lineal. Elija una ruta según la decisión que ne
 | Evaluar una afirmación | Claims y evidencia | Registro de fuentes |
 | Implementar en una organización | PULSE | Arquitecturas y casos futuros |
 | Contribuir contenido | Governance | `CONTRIBUTING.md` en GitHub |
+| Identificar la versión que está citando | [Historial de versiones](../versions/index.md) | Nota de la versión correspondiente |
 
 ## Lea siempre cuatro señales
 

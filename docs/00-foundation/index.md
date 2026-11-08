@@ -93,6 +93,8 @@ Decision Maturity · Enterprise Implementation · Case Studies · Research
 
 ## Principio de crecimiento
 
+Consulta [Acerca del CDI-BoK](../about/index.md) para identificar su autoría, el estado editorial y los canales de contribución.
+
 La taxonomía no obliga a redactar capítulos para llenar casillas. Primero se identifica una necesidad decisional; después se determina qué dominio posee el concepto, qué evidencia existe y qué activo mínimo agrega valor sin duplicar conocimiento.
 
 !!! warning "Autoridad calibrada"

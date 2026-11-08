@@ -13,6 +13,7 @@ copyright: "Javier Forero · javierforero.co"
 
 hooks:
   - scripts/localize_portal.py
+  - scripts/knowledge_graph.py
 
 theme:
   name: material

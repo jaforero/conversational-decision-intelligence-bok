@@ -68,6 +68,8 @@ Each material answer should expose metric definition and provenance; filters, po
 
 Philia Sophia reading (10 Oct 2026) · [Claude Dashboards puts your data to the test](https://javierforero.co/2026/10/10/claude-dashboards-analitica-conversacional/).
 
+The [dashboard lab](../practice-lab/dashboards.md) lets you practice reading base 100, checking dates and connecting the signal to a review criterion.
+
 ## Minimum blueprint
 
 | Layer | Question | Possible component |

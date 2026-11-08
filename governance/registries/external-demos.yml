@@ -79,3 +79,68 @@ demos:
     public_status: forthcoming
     data_nature: not-observable
     case_readiness: not-evaluable
+  - demo_id: JF-PUBLIC-FX
+    name: Tasas de cambio oficiales
+    portfolio: Dashboards con IA
+    url: https://dashboards.javierforero.co/tasas-cambio/
+    public_status: available
+    data_nature: official-series-and-derived-crosses
+    case_readiness: pedagogical-resource
+    decision: Revisar un supuesto de exposición cambiaria.
+    audience: Planeación y analítica.
+    domains: [Semantic Layers, Conversational Analytics]
+    interface: interactive-dashboard
+    evidence_limits: Tasas de referencia y cálculos del tablero. Una decisión financiera exige datos de exposición.
+    last_verified: 2026-11-08
+  - demo_id: JF-PUBLIC-POP
+    name: Población oficial de América Latina
+    portfolio: Dashboards con IA
+    url: https://dashboards.javierforero.co/poblacion-latam/
+    public_status: available
+    data_nature: official-population-series-and-projections
+    case_readiness: pedagogical-resource
+    decision: Evaluar si cambia un supuesto de capacidad de servicio.
+    audience: Planeación y analítica.
+    domains: [Decision Intelligence, Data Storytelling]
+    interface: interactive-dashboard
+    evidence_limits: La transferencia a una decisión requiere una población, un territorio y un horizonte compatibles.
+    last_verified: 2026-11-08
+  - demo_id: JF-PUBLIC-GRAPH
+    name: Explorador de grafos de conocimiento
+    portfolio: Claude
+    url: https://dashboards.javierforero.co/claude/grafo-conocimiento/
+    public_status: available
+    data_nature: selected-document-corpus
+    case_readiness: pedagogical-resource
+    decision: Priorizar una mejora de trazabilidad editorial.
+    audience: Editores y mantenedores del libro.
+    domains: [Knowledge Graphs, Decision Governance]
+    interface: document-graph-explorer
+    evidence_limits: Los enlaces observados describen navegación documental. La evaluación de GraphRAG requiere otra prueba.
+    last_verified: 2026-11-08
+  - demo_id: JF-PUBLIC-COST
+    name: Costo de vida por ciudad en Colombia
+    portfolio: Dashboards con IA
+    url: https://dashboards.javierforero.co/claude/costo-vida-colombia/
+    public_status: available
+    data_nature: public-indicators-and-derived-comparisons
+    case_readiness: pedagogical-resource
+    decision: Determinar si el promedio nacional sirve como referencia de comparación.
+    audience: Lectores y analistas.
+    domains: [Data Storytelling]
+    interface: interactive-explainer
+    evidence_limits: Comparación descriptiva condicionada por la canasta y la cobertura territorial.
+    last_verified: 2026-11-08
+  - demo_id: JF-PUBLIC-COMPUTE
+    name: Cómputo de entrenamiento en IA
+    portfolio: Dashboards con IA
+    url: https://dashboards.javierforero.co/ia-compute/
+    public_status: available
+    data_nature: public-compilation-of-reported-and-estimated-values
+    case_readiness: pedagogical-resource
+    decision: Determinar si la evidencia sustenta una tendencia de cómputo.
+    audience: Lectores y analistas.
+    domains: [Data Storytelling, Research]
+    interface: interactive-explainer
+    evidence_limits: Comparabilidad condicionada por definiciones, cobertura y naturaleza reportada o estimada de cada dato.
+    last_verified: 2026-11-08

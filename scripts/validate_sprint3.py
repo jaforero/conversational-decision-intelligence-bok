@@ -190,8 +190,14 @@ check("no hay acción ejecutada" in claim_by_id["CLAIM-PRACTICE-B2B-HYP-001"]["l
 adr_by_id = {item["id"]: item for item in adr_index["decisions"]}
 for adr_id in ["ADR-018", "ADR-019"]:
     check(adr_by_id.get(adr_id, {}).get("status") == "accepted", f"Missing accepted {adr_id}")
-check(len(external_demos["demos"]) == 9, "External demo catalog does not contain nine observed/announced entries")
 demo_by_id = {item["demo_id"]: item for item in external_demos["demos"]}
+sprint3_demos = {
+    "JF-CLAUDE-SLA", "JF-CLAUDE-FINANCE", "JF-CLAUDE-COMMERCIAL",
+    "JF-GPT-FINANCE", "JF-GPT-SLA", "JF-GPT-COMMERCIAL", "JF-GPT-WORLDCUP",
+    "JF-GPT-TABLEAU", "JF-GPT-PULSE",
+}
+check(sprint3_demos <= set(demo_by_id), "The catalog is missing entries from the Sprint 3 baseline")
+check(len(demo_by_id) == len(external_demos["demos"]), "External demo identifiers must be unique")
 check(demo_by_id["JF-CLAUDE-COMMERCIAL"]["selected_case_id"] == "B2B-PROP-001", "Primary demo is not linked to the case")
 check(demo_by_id["JF-GPT-COMMERCIAL"]["related_case_id"] == "B2B-PROP-001", "Related ChatGPT demo is not linked to the case")
 

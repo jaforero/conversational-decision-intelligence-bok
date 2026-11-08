@@ -109,6 +109,8 @@ public_portal:
     - { id: PORTAL-PULSE-SPEC, path: docs/03-pulse/specification.md, status: approved }
     - { id: PORTAL-PRACTICE, path: docs/practice-lab/index.md, status: candidate }
     - { id: PORTAL-PRACTICE-CATALOG, path: docs/practice-lab/catalog.md, status: candidate }
+    - { id: PORTAL-LAB-DASHBOARDS, path: docs/practice-lab/dashboards.md, status: candidate }
+    - { id: PORTAL-LAB-GRAPH, path: docs/practice-lab/knowledge-graph.md, status: candidate }
     - { id: PORTAL-CASE-B2B, path: docs/practice-lab/b2b-proposal/index.md, status: candidate }
     - { id: PORTAL-CASE-B2B-CONTRACT, path: docs/practice-lab/b2b-proposal/decision-contract.md, status: candidate }
     - { id: PORTAL-CASE-B2B-EVIDENCE, path: docs/practice-lab/b2b-proposal/evidence-protocol.md, status: candidate }
