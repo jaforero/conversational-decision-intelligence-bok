@@ -230,7 +230,7 @@ pairs:
     translation: docs/learn/decision-brief.en.md
     version: 0.7.0-rc.1
     status: complete
-    source_sha256: 6d00c4778cc763fed3812a002d3c732f1dfe1e74d9a7a66a350177b33e5218e0
+    source_sha256: b44f6720e1a656efe9d8f9d46a6fc465d30cd80a0e2bf1c5b5caa06fb7fa415c
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-LEARN-INDEX
@@ -279,6 +279,14 @@ pairs:
     version: 0.5.0-rc.1
     status: complete
     source_sha256: 52e2ae46b7c1aacfa5ed301406fda5b519b19fe6c00801317e57bfa512c9d96a
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-SLA-DECISION-BRIEF
+    source: docs/practice-lab/sla-decision-brief.md
+    translation: docs/practice-lab/sla-decision-brief.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: d1ef2a640795e4da2cd9d03c6997f549544b49640eca435d3ee8cb5a3f1b49f8
     last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-PRACTICE-LAB-INDEX
@@ -446,7 +454,7 @@ pairs:
     translation: docs/practice-lab/dashboards.en.md
     version: 0.9.0
     status: complete
-    source_sha256: 685035a05e04f8bd548b3d3e86ea3934c08c2242d32aa31d86261baac8ad1e8a
+    source_sha256: 01fc69912a06d8a9363bb206f6807f2482236497175c2ce3b96fca69d3ffd044
     last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-PRACTICE-LAB-KNOWLEDGE-GRAPH

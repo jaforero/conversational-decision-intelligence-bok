@@ -125,5 +125,6 @@ Decision Brief — [nombre de la decisión]
 
 Completa primero el brief sin IA para revelar tu modelo mental. Después usa una conversación para cuestionar supuestos, generar alternativas o detectar campos faltantes. No delegues al sistema la autoridad para definir la prioridad, inventar evidencia o aprobar sus propias acciones.
 
+[Ver un Decision Brief resuelto sobre SLA](../practice-lab/sla-decision-brief.md){ .md-button .md-button--primary }
 [Volver a la ruta de aprendizaje](index.md){ .md-button }
 [Crear el Measurement Record](../07-governance-quality/measurement-record.md){ .md-button }
