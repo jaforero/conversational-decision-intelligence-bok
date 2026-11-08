@@ -397,3 +397,27 @@ records:
     provenance: author-published-public-web
     limits: Lectura sobre preparación semántica y control de respuestas, con una demostración de tasas de cambio. La demostración no estima eficacia general de la herramienta.
     materialized: false
+  - source_id: SRC-PRACTICE-FX-001
+    title: Tasas de cambio oficiales de bancos centrales
+    url: https://dashboards.javierforero.co/tasas-cambio/
+    observed_on: 2026-11-08
+    authority_level: owner-public-practice-property
+    status: active-background
+    purpose: Entorno del ejercicio de dashboards. La página distingue tasas oficiales, cruces calculados y valores repetidos.
+    materialized: false
+  - source_id: SRC-PRACTICE-POP-001
+    title: Población oficial de América Latina
+    url: https://dashboards.javierforero.co/poblacion-latam/
+    observed_on: 2026-11-08
+    authority_level: owner-public-practice-property
+    status: active-background
+    purpose: Entorno del ejercicio demográfico con series oficiales y proyecciones.
+    materialized: false
+  - source_id: SRC-PRACTICE-GRAPH-001
+    title: Explorador de grafos de conocimiento
+    url: https://dashboards.javierforero.co/claude/grafo-conocimiento/
+    observed_on: 2026-11-08
+    authority_level: owner-public-practice-property
+    status: active-background
+    purpose: Exploración interactiva de enlaces y backlinks de un corpus documental.
+    materialized: false

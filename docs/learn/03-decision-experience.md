@@ -101,6 +101,8 @@ La conversación no es una fuente de verdad. Es una interfaz sobre datos, semán
 
 Lectura de Philia Sophia (10 oct 2026) · [Claude Dashboards no reemplaza tus tableros: pone a prueba tus datos](https://javierforero.co/2026/10/10/claude-dashboards-analitica-conversacional/).
 
+El [laboratorio de dashboards](../practice-lab/dashboards.md) permite practicar la lectura de base 100, verificar fechas y conectar la señal con un criterio de revisión.
+
 ## Blueprint mínimo
 
 | Capa | Pregunta | Componente posible |

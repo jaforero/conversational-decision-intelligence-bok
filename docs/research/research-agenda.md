@@ -67,6 +67,8 @@ causal en ventas.
 
 Lectura de Philia Sophia (25 oct 2026) · [Grafos de conocimiento: tu IA no necesita más documentos, necesita las relaciones correctas](https://javierforero.co/2026/10/25/grafos-de-conocimiento-graphrag/).
 
+Aplica el [laboratorio de grafos](../practice-lab/knowledge-graph.md) al CDI-BoK para comprobar rutas y procedencia editorial antes de diseñar una prueba de recuperación.
+
 ## Cadencia de revisión
 
 - trimestral: estándares, marcos y señales futuras;
