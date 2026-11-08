@@ -414,6 +414,30 @@ records:
     status: active-background
     purpose: Entorno del ejercicio demográfico con series oficiales y proyecciones.
     materialized: false
+  - source_id: SRC-PRACTICE-COMPUTE-001
+    title: La aceleración del cómputo en IA
+    url: https://dashboards.javierforero.co/ia-compute/
+    observed_on: 2026-11-08
+    authority_level: owner-public-practice-property
+    status: active-background
+    purpose: Ejercicio sobre sensibilidad a la cobertura y a los niveles de evidencia de cifras de cómputo.
+    materialized: false
+  - source_id: SRC-PRACTICE-COST-001
+    title: Costo de vida por ciudad en Colombia
+    url: https://dashboards.javierforero.co/claude/costo-vida-colombia/
+    observed_on: 2026-11-08
+    authority_level: owner-public-practice-property
+    status: active-background
+    purpose: Ejercicio que distingue la canasta de la línea de pobreza monetaria, el territorio y la variación del IPC.
+    materialized: false
+  - source_id: SRC-PRACTICE-POP-KAGGLE-001
+    title: "Latin America Population: 20 Countries"
+    url: https://www.kaggle.com/datasets/jaforero/latin-america-population-20-countries
+    observed_on: 2026-11-08
+    authority_level: owner-public-practice-property
+    status: active-background
+    purpose: Edición pública del conjunto demográfico para practicar reproducción y comparación de cortes.
+    materialized: false
   - source_id: SRC-PRACTICE-GRAPH-001
     title: Explorador de grafos de conocimiento
     url: https://dashboards.javierforero.co/claude/grafo-conocimiento/

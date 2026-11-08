@@ -8,7 +8,7 @@ authority_level: pedagogical
 normative: false
 owner: Javier Forero
 domains: [Conversational Analytics, Decision Intelligence, Decision Governance]
-source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001, SRC-PRACTICE-POP-001, SRC-PRACTICE-FX-001, SRC-PRACTICE-COMPUTE-001, SRC-PRACTICE-COST-001, SRC-PRACTICE-POP-KAGGLE-001]
 claim_ids: []
 last_reviewed: 2026-11-08
 ---
@@ -40,6 +40,34 @@ Cada fila es un escenario independiente. Cambia únicamente la condición indica
 
 Repite las preguntas críticas con otras formulaciones y comprueba los permisos con los roles que usarían el piloto. Abre las citas y verifica que el fragmento respalde la respuesta. Para practicar esa lectura en un corpus público, usa [Pregúntale al CDI-BoK](../ask-cdi.md), que recupera extractos y pasajes publicados.
 
+## Lleva la prueba a datos públicos { #public-data-exercises }
+
+Elige un tablero del [portafolio de datos públicos](https://dashboards.javierforero.co/) y convierte una pregunta real en un caso de aceptación. Antes de consultar al asistente, fija el filtro, el periodo y el resultado esperado. Guarda la fuente primaria, el archivo o la versión utilizada y cualquier transformación. El tablero ayuda a explorar. El archivo de origen permite comprobar la cifra. Cuando uses una edición de [Kaggle](https://www.kaggle.com/jaforero), registra su versión y revisa si coincide con el corte del tablero y con las condiciones de uso de cada fuente.
+
+### Población oficial de América Latina
+
+**Decisión.** ¿Qué mercado merece una evaluación más detallada de la demanda de un servicio para personas mayores? Selecciona un país, dos años y un grupo de edad en la pirámide. Reconstruye su proporción con el total correspondiente. Comprueba si cada cifra es observada, estimada o proyectada, y si hay un cambio de fuente o edición entre los años. Pide al asistente que explique ese límite antes de sugerir dónde investigar. La decisión de abrir capacidad también requiere datos locales de demanda y oferta.
+
+[Tablero](https://dashboards.javierforero.co/poblacion-latam/) · [Datos, pipeline y registro de fuentes](https://github.com/jaforero/latam-population-official) · [Edición pública en Kaggle](https://www.kaggle.com/datasets/jaforero/latin-america-population-20-countries)
+
+### Tasas de cambio oficiales
+
+**Decisión.** ¿Qué par merece revisar primero en un presupuesto de importación? Compara dos series en unidades de moneda local por USD desde una fecha de inicio común. Reconstruye el índice como `100 × tasa del día / tasa base`. La tasa base es la primera observación oficial de cada serie desde el inicio elegido. Elige un festivo o un día con insumos desalineados y comprueba si el asistente distingue una observación oficial, un arrastre y una tasa cruzada calculada. Registra el día de mercado común de los insumos de la cruzada. El ejercicio ayuda a priorizar una revisión del presupuesto. Para cotizar una transacción se requiere el precio aplicable a esa operación.
+
+[Tablero y metodología](https://dashboards.javierforero.co/tasas-cambio/) · [Series y fuentes de los bancos centrales](https://github.com/jaforero/fx-bancos-centrales)
+
+### Cómputo de entrenamiento en IA
+
+**Decisión.** ¿Hay evidencia suficiente para actualizar un supuesto de un escenario de capacidad? Fija el periodo, el conjunto de modelos y la unidad. Compara la lectura que obtienes con las cifras publicadas por los laboratorios y la que incluye estimaciones etiquetadas. Registra cuántos modelos entran en cada lectura. Si cambia la conclusión, deja visible su sensibilidad a la cobertura y al nivel de evidencia. Las cifras de entrenamiento aportan contexto al escenario. Estimar un presupuesto de inferencia exige insumos adicionales.
+
+[Tablero](https://dashboards.javierforero.co/ia-compute/) · [Código de la visualización](https://github.com/jaforero/dashboards/tree/main/ia-compute) · [Base de modelos de Epoch AI](https://epoch.ai/data/ai-models)
+
+### Costo de vida por ciudad en Colombia
+
+**Decisión.** ¿Qué ciudad merece una cotización local antes de diseñar un apoyo de movilidad? Compara dos dominios geográficos en el mismo año. Verifica la línea de pobreza monetaria por persona, la referencia del índice y los municipios que incluye cada dominio. Pide al asistente que mantenga separados el nivel de la canasta y la variación del IPC. Usa el índice para seleccionar qué contrastar y cotiza el gasto del perfil de hogar que recibirá el apoyo.
+
+[Tablero](https://dashboards.javierforero.co/claude/costo-vida-colombia/) · [Código y datos de la visualización](https://github.com/jaforero/dashboards/tree/main/claude/costo-vida-colombia) · [Pobreza monetaria del DANE](https://www.dane.gov.co/index.php/estadisticas-por-tema/pobreza-y-condiciones-de-vida/pobreza-monetaria)
+
 ## Decide si amplías el piloto { #pilot-decision }
 
 Registra, por caso y rol, el comportamiento esperado, el observado, la fuente consultada, el tiempo hasta una respuesta utilizable y el veredicto. Una abstención esperada cuenta como acierto. Una respuesta rápida con una cifra equivocada cuenta como fallo. Distingue si el origen fue la fuente, la definición, los permisos o la forma de responder.
@@ -50,4 +78,4 @@ Registra, por caso y rol, el comportamiento esperado, el observado, la fuente co
 
 Un resultado favorable en estos casos respalda una decisión sobre el alcance probado. Para evaluar un efecto sobre las entregas, mide el SLA real tras la intervención y usa un diseño que permita separar ese efecto de otros cambios operativos. El [módulo de acción y aprendizaje](../learn/05-action-learning.md) explica cómo registrar esa diferencia.
 
-*Nota editorial. La redacción y la traducción recibieron asistencia de IA. Las cifras y las respuestas esperadas son material didáctico simulado.*
+*Nota editorial. La redacción y la traducción recibieron asistencia de IA. Las cifras y respuestas esperadas del caso de SLA son simuladas. Los ejercicios con datos públicos se resuelven con las fuentes enlazadas.*
