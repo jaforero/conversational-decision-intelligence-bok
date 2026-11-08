@@ -17,19 +17,19 @@ last_reviewed: 2026-07-24
 
 | Component | Version | Status | Scope |
 |---|---|---|---|
-| Evidence Backbone and Research | [`v0.9.0`](v0.9.0.md) | Stable publication baseline | Sources, claim compatibility, DI state of the art, PULSE and agenda with maturity preserved |
-| Source candidate | [`v0.9.0-rc.1`](v0.9.0-rc.1.md) | Ratified, merged, deployed and promoted | Traceable source of stable release `v0.9.0` |
-| Previous bilingual portal | [`v0.8.2`](v0.8.2.md) | Stable and historical | Spanish localization, business clarity and independent ES/EN search |
-| Previous bilingual baseline | [`v0.8.1`](v0.8.1.md) | Stable and historical | Complete ES/EN routes, localized interface and translation-drift gates |
-| Source bilingual candidate | [`v0.8.1-rc.1`](v0.8.1-rc.1.md) | Ratified, merged, deployed and promoted | Traceable source of stable `v0.8.1` |
+| Evidence Backbone and Research | [`v0.9.0`](v0.9.0.en.md) | Stable publication baseline | Sources, claim compatibility, DI state of the art, PULSE and agenda with maturity preserved |
+| Source candidate | [`v0.9.0-rc.1`](v0.9.0-rc.1.en.md) | Ratified, merged, deployed and promoted | Traceable source of stable release `v0.9.0` |
+| Previous bilingual portal | [`v0.8.2`](v0.8.2.en.md) | Stable and historical | Spanish localization, business clarity and independent ES/EN search |
+| Previous bilingual baseline | [`v0.8.1`](v0.8.1.en.md) | Stable and historical | Complete ES/EN routes, localized interface and translation-drift gates |
+| Source bilingual candidate | [`v0.8.1-rc.1`](v0.8.1-rc.1.en.md) | Ratified, merged, deployed and promoted | Traceable source of stable `v0.8.1` |
 | CDI-BoK governance | `v0.2.0` | Approved and normative | Architecture, authority, claims, brand and Sprint 0 |
 | Technical portal | `v0.3.0-rc.1` | Integrated and deployed | MkDocs, navigation, CI/CD, checks and custom domain |
-| Foundational core | [`v0.4.0`](v0.4.0.md) | Stable | Constitution, CDI boundaries, glossary, domains and PULSE specification |
-| Practice and evidence | [`v0.5.0-rc.1`](v0.5.0-rc.1.md) | Deployed candidate, not ratified | Catalog and first instrumented B2B case, without observed outcome |
-| Learning experience | [`v0.6.0-rc.1`](v0.6.0-rc.1.md) | Ratified and deployed candidate | Outcome-oriented home, five modules and Decision Brief |
-| Quality and measurement | [`v0.7.0-rc.1`](v0.7.0-rc.1.md) | Ratified and deployed candidate | Decision Quality, six lenses, anti-metrics and Measurement Record |
-| Conversational patterns | [`v0.8.0-rc.1`](v0.8.0-rc.1.md) | Ratified, merged and deployed candidate | Five patterns, six anti-patterns, language, template and stopped B2B demonstration |
-| Stable portal baseline | [`v0.8.0`](v0.8.0.md) | Editorially and technically stable | Reproducible build, navigation, traceability, gates and authority boundaries |
+| Foundational core | [`v0.4.0`](v0.4.0.en.md) | Stable | Constitution, CDI boundaries, glossary, domains and PULSE specification |
+| Practice and evidence | [`v0.5.0-rc.1`](v0.5.0-rc.1.en.md) | Deployed candidate, not ratified | Catalog and first instrumented B2B case, without observed outcome |
+| Learning experience | [`v0.6.0-rc.1`](v0.6.0-rc.1.en.md) | Ratified and deployed candidate | Outcome-oriented home, five modules and Decision Brief |
+| Quality and measurement | [`v0.7.0-rc.1`](v0.7.0-rc.1.en.md) | Ratified and deployed candidate | Decision Quality, six lenses, anti-metrics and Measurement Record |
+| Conversational patterns | [`v0.8.0-rc.1`](v0.8.0-rc.1.en.md) | Ratified, merged and deployed candidate | Five patterns, six anti-patterns, language, template and stopped B2B demonstration |
+| Stable portal baseline | [`v0.8.0`](v0.8.0.en.md) | Editorially and technically stable | Reproducible build, navigation, traceability, gates and authority boundaries |
 
 The portal version does not automatically raise the doctrinal maturity of its content. Infrastructure, knowledge and evidence may evolve at different rates, but must remain traceable.
 

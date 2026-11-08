@@ -27,8 +27,8 @@ The commercial demo uses **simulated data** and shows deterioration concentrated
 
 <div class="cdi-actions" markdown>
 [View the primary dashboard](https://dashboards.javierforero.co/claude/desempeno-comercial/){ .md-button .md-button--primary }
-[Review the contract](decision-contract.md){ .md-button }
-[Audit the evidence](evidence-protocol.md){ .md-button }
+[Review the contract](decision-contract.en.md){ .md-button }
+[Audit the evidence](evidence-protocol.en.md){ .md-button }
 </div>
 
 ## What we know about the simulated demo
@@ -77,4 +77,4 @@ The source described event and referral as significantly superior to digital. Re
 
 ## Next gate
 
-The case advances only after owner, selected option, expectation, group assignment and at least two cycles. See the [evidence protocol](evidence-protocol.md) and [cycle record](cycle-log.md).
+The case advances only after owner, selected option, expectation, group assignment and at least two cycles. See the [evidence protocol](evidence-protocol.en.md) and [cycle record](cycle-log.en.md).

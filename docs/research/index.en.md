@@ -26,10 +26,10 @@ the claim it is intended to support.
 
 | If you need to… | Route | Outcome |
 |---|---|---|
-| understand DI and the maturity of the field | [DI state of the art](decision-intelligence-state-of-the-art.md) | foundations, boundaries, disputes and limits |
-| know what authority each PULSE component has | [PULSE evidence map](pulse-evidence-map.md) | constitutional, derived, candidate, hypothesis or unevaluated |
-| use trends without treating them as facts | [Future signals](future-signals.md) | scenarios, horizons and update conditions |
-| decide what to study next | [Research agenda](research-agenda.md) | falsifiable questions and minimum designs |
+| understand DI and the maturity of the field | [DI state of the art](decision-intelligence-state-of-the-art.en.md) | foundations, boundaries, disputes and limits |
+| know what authority each PULSE component has | [PULSE evidence map](pulse-evidence-map.en.md) | constitutional, derived, candidate, hypothesis or unevaluated |
+| use trends without treating them as facts | [Future signals](future-signals.en.md) | scenarios, horizons and update conditions |
+| decide what to study next | [Research agenda](research-agenda.en.md) | falsifiable questions and minimum designs |
 
 ## How knowledge is organized
 

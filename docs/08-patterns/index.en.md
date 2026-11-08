@@ -49,14 +49,14 @@ Use the minimum move for low-risk reversible choices; add sources, alternatives,
 
 ## Two catalogs, one discipline
 
-The [pattern catalog](catalog.md) describes structures that may advance a decision. The [anti-pattern catalog](anti-patterns.md) describes recurring behaviors that impair traceability, control or learning. The [language and template](pattern-language.md) governs new entries. The [B2B walkthrough](b2b-proposal-walkthrough.md) demonstrates that a protocol must stop before inventing an owner or outcome.
+The [pattern catalog](catalog.en.md) describes structures that may advance a decision. The [anti-pattern catalog](anti-patterns.en.md) describes recurring behaviors that impair traceability, control or learning. The [language and template](pattern-language.en.md) governs new entries. The [B2B walkthrough](b2b-proposal-walkthrough.en.md) demonstrates that a protocol must stop before inventing an owner or outcome.
 
 ## Authority boundaries
 
 This candidate derives from PULSE without redefining it; implements an institutional taxonomy, not an academic standard; separates reuse, conformance and effectiveness; does not require a conversational interface; and grants no AI system implicit decision or execution rights.
 
 <div class="cdi-actions" markdown>
-[Choose a pattern](catalog.md){ .md-button .md-button--primary }
-[Recognize anti-patterns](anti-patterns.md){ .md-button }
-[Use the template](pattern-language.md){ .md-button }
+[Choose a pattern](catalog.en.md){ .md-button .md-button--primary }
+[Recognize anti-patterns](anti-patterns.en.md){ .md-button }
+[Use the template](pattern-language.en.md){ .md-button }
 </div>

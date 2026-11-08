@@ -17,6 +17,8 @@ python3 scripts/preflight_sprint1.py
 
 Todo claim material debe declarar clase, evidencia, alcance y límites. La etiqueta `Original Contribution` requiere comparación documentada con antecedentes; sin ella se utiliza `Original Contribution Proposal`.
 
+En las páginas inglesas, enlace al archivo `.en.md` cuando exista la traducción del destino. Cada página del libro debe quedar conectada con otra por un enlace Markdown desde el contenido. El control ignora el menú y el HTML de las tarjetas.
+
 ## Autoridad
 
 Una contribución pública no se vuelve normativa por haber sido fusionada. El estado y la autoridad se determinan mediante CDI-GOV-001, front matter, registros y aprobación explícita del owner correspondiente.

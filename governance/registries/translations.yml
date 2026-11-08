@@ -334,7 +334,7 @@ pairs:
     translation: docs/start-here/how-to-use.en.md
     version: 0.3.0-rc.1
     status: complete
-    source_sha256: 825c8f6e7cbf7f612dbadb820d20b6e9a58ba62a1b44367e866ae3784b1f3190
+    source_sha256: 9252fd12d2b88ac8cfbacf1b2f1e1d6398465543202e17cce40ca625c3138fc4
     last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-START-HERE-INDEX
@@ -454,6 +454,6 @@ pairs:
     translation: docs/practice-lab/knowledge-graph.en.md
     version: 0.9.0
     status: complete
-    source_sha256: f9a17d26ca900af19050307eada43d44963e1db74876814ca6331aae16a09fa9
+    source_sha256: 8ec60031c79e03faf321305ebe5e963d163f41d6045534a404761e09f18e89fc
     last_reviewed: 2026-11-08
     owner: Javier Forero

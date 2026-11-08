@@ -26,6 +26,8 @@ last_reviewed: 2026-11-08
 3. Classify one finding. A **broken link** points to a target that fails to resolve. A **page without inbound content links** can still be reachable through navigation. An **implicit relationship** requires checking both documents before adding an editorial link.
 4. Verify in the portal and on GitHub. MkDocs conventions and `.en.md` translations may behave differently in a generic Markdown explorer. Record the source page, expected target, edition, evidence, owner and proposed correction. Verify both editions after the change.
 
+The explorer's **Health** panel counts Markdown files in both languages and flags notes with neither recognized incoming nor outgoing links. The editorial inventory below measures a different property: rendered canonical pages with no inbound content links. Compare each count using the same corpus and criterion. English Markdown references point to the matching `.en.md` file so the links work in the portal and in the explorer.
+
 **Deliverable.** Prepare one reproducible finding and a small correction. If a relationship already exists, use it as a control and record what you checked.
 
 ## Inspect the CDI-BoK editorial graph { #editorial-graph }
@@ -34,6 +36,6 @@ On each build, the site generates a JSON inventory from registered canonical pag
 
 <a href="/assets/data/cdi-knowledge-graph.json" download>Download the editorial graph as JSON</a>
 
-The `pages_without_inbound_content_links` field lists review candidates, excluding the home page. Navigation links are excluded and each page is counted once, in the canonical Spanish edition. A declared reference helps trace provenance. Its relevance and strength require [reviewing the evidence](../governance/claims-evidence.md).
+The `pages_without_inbound_content_links` field lists review candidates, excluding the home page. Navigation links are excluded and each page is counted once, in the canonical Spanish edition. A declared reference helps trace provenance. Its relevance and strength require [reviewing the evidence](../governance/claims-evidence.en.md).
 
-**Acceptance criterion.** Trace a path from a page to a source or claim, check it against the original file, and document what editorial action would change. The [GraphRAG protocol](../research/research-agenda.md#graphrag-evaluation) describes the additional test for relationship-based retrieval.
+**Acceptance criterion.** Trace a path from a page to a source or claim, check it against the original file, and document what editorial action would change. The [GraphRAG protocol](../research/research-agenda.en.md#graphrag-evaluation) describes the additional test for relationship-based retrieval.

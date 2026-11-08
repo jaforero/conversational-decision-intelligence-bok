@@ -60,4 +60,4 @@ It must not compare teams through averages hiding blockers; reward documentation
 
 A qualitative rubric can become bureaucratic and still depends on judgment. Correct. This version therefore preserves evidence by dimension, blockers and proportionality and does not claim psychometric validation. Field evidence showing redundant dimensions, low inter-rater agreement or a less gameable predictive alternative would change this architecture.
 
-[Build the measurement system →](decision-measurement-system.md){ .md-button .md-button--primary }
+[Build the measurement system →](decision-measurement-system.en.md){ .md-button .md-button--primary }

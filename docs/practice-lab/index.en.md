@@ -24,7 +24,7 @@ The Practice Lab connects the Body of Knowledge to observable experiences. Its e
 
 Explore AI-built analytical interfaces and the transition from visualization toward decision experiences.
 
-[Open the verified catalog](catalog.md){ .md-button .md-button--primary }
+[Open the verified catalog](catalog.en.md){ .md-button .md-button--primary }
 [Visit dashboards.javierforero.co](https://dashboards.javierforero.co){ .md-button }
 </div>
 
@@ -39,7 +39,7 @@ The case turns three simulated sources—sales, funnel and CRM pipeline—into a
 
 **Status:** instrumented, not executed. No commercial-impact evidence exists.
 
-[Examine the case](b2b-proposal/index.md){ .md-button .md-button--primary }
+[Examine the case](b2b-proposal/index.en.md){ .md-button .md-button--primary }
 </div>
 
 ## A demo is not yet a case

@@ -9,6 +9,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 
 import yaml
+from markdown import Markdown
+from markdown.treeprocessors import Treeprocessor
 from mkdocs.config import load_config
 
 
@@ -40,6 +42,13 @@ def flatten_nav(value):
             yield from flatten_nav(item)
 
 
+class NoteLinks(Treeprocessor):
+    """Collect Markdown links before the renderer reinserts raw HTML."""
+
+    def run(self, root):
+        self.targets = [link.get("href") for link in root.iter("a") if link.get("href")]
+
+
 config = load_config(str(ROOT / "mkdocs.yml"))
 nav_paths = list(flatten_nav(config["nav"]))
 if len(nav_paths) != len(set(nav_paths)):
@@ -59,6 +68,11 @@ for path in nav_paths:
         ERRORS.append(f"Navigable document is absent from content-map.yml: {registered_path}")
 
 markdown_files = sorted(DOCS.rglob("*.md"))
+notes = set(markdown_files)
+connected_notes: set[Path] = set()
+renderer = Markdown(extensions=["fenced_code", "tables", "md_in_html"])
+note_links = NoteLinks(renderer)
+renderer.treeprocessors.register(note_links, "collect_note_links", 1)
 for path in markdown_files:
     relative = path.relative_to(ROOT).as_posix()
     text = path.read_text(encoding="utf-8")
@@ -68,6 +82,20 @@ for path in markdown_files:
     parts = text.split("---", 2)
     metadata = yaml.safe_load(parts[1]) or {}
     body = parts[2]
+    renderer.reset().convert(body)
+    for href in note_links.targets:
+        link = urlparse(href)
+        if link.scheme or link.netloc or not link.path.endswith(".md"):
+            continue
+        target = unquote(link.path)
+        destination = ((DOCS / target.lstrip("/")) if target.startswith("/") else (path.parent / target)).resolve()
+        if destination not in notes or destination == path:
+            continue
+        connected_notes.update((path, destination))
+        if path.name.endswith(".en.md") and not destination.name.endswith(".en.md"):
+            translation = destination.with_suffix(".en.md")
+            if translation in notes:
+                ERRORS.append(f"English Markdown link must target {translation.name}: {relative}")
     if relative != "docs/governance/architecture.md":
         missing = REQUIRED - metadata.keys()
         if missing:
@@ -101,6 +129,9 @@ for path in markdown_files:
         if not any(option.exists() for option in options):
             ERRORS.append(f"Broken internal link {target}: {relative}")
 
+for path in sorted(notes - connected_notes):
+    ERRORS.append(f"Markdown note has no incoming or outgoing Markdown page link: {path.relative_to(ROOT)}")
+
 if (DOCS / "CNAME").read_text(encoding="utf-8").strip() != "decision.javierforero.co":
     ERRORS.append("docs/CNAME does not contain the canonical subdomain")
 
@@ -115,4 +146,4 @@ if ERRORS:
         print(f"- {error}", file=sys.stderr)
     sys.exit(1)
 
-print(f"PASS: content audit ({len(markdown_files)} Markdown files, {len(nav_paths)} navigation targets)")
+print(f"PASS: content audit ({len(connected_notes)} connected Markdown notes, {len(nav_paths)} navigation targets)")

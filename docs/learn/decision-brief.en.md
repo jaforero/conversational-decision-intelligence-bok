@@ -99,5 +99,5 @@ Decision Brief — [decision name]
 
 Complete the brief without AI first to expose your mental model. Then use conversation to challenge assumptions, generate alternatives or detect missing fields. Do not delegate authority to define the priority, invent evidence or approve the system's own actions.
 
-[Return to learning path](index.md){ .md-button }
-[Create the Measurement Record](../07-governance-quality/measurement-record.md){ .md-button }
+[Return to learning path](index.en.md){ .md-button }
+[Create the Measurement Record](../07-governance-quality/measurement-record.en.md){ .md-button }

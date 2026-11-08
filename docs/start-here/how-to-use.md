@@ -24,6 +24,7 @@ El portal no exige una lectura lineal. Elija una ruta según la decisión que ne
 | Comprender la disciplina | Empieza aquí | CDI-BoK y Research |
 | Diseñar una práctica decisional | PULSE | Governance y Practice Lab |
 | Evaluar una afirmación | Claims y evidencia | Registro de fuentes |
+| Aclarar el significado de un término | [Glosario normativo](../00-foundation/glossary.md) | Definición y límites de uso |
 | Implementar en una organización | PULSE | Arquitecturas y casos futuros |
 | Contribuir contenido | Governance | `CONTRIBUTING.md` en GitHub |
 | Identificar la versión que está citando | [Historial de versiones](../versions/index.md) | Nota de la versión correspondiente |

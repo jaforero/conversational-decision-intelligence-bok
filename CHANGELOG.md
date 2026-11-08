@@ -19,6 +19,12 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 - Cuatro lecturas de Philia Sophia enlazadas en los capítulos, con revisión
   consultada y límites de uso en los registros de fuentes y evidencia.
 
+### Corregido
+
+- Destinos Markdown en inglés y acceso al glosario desde ambas guías de uso.
+- Control de conectividad sobre las notas Markdown de las dos ediciones y
+  distinción entre notas huérfanas y páginas canónicas sin enlaces entrantes.
+
 ## [0.9.0] - 2026-07-24
 
 ### Promovido

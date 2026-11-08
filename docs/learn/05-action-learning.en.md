@@ -74,4 +74,4 @@ Can the metric improve without the real priority improving? Can execution capaci
 
 A demo can teach the method. Organizational-impact claims require a real decision, owner, observed action and sufficient evidence. The CDI-BoK keeps these learning classes separate.
 
-**Next:** [integrate the modules in a Decision Brief →](decision-brief.md) or [design the measurement system →](../07-governance-quality/decision-measurement-system.md)
+**Next:** [integrate the modules in a Decision Brief →](decision-brief.en.md) or [design the measurement system →](../07-governance-quality/decision-measurement-system.en.md)
