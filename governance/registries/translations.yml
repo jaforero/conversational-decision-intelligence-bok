@@ -198,7 +198,7 @@ pairs:
     translation: docs/learn/02-evidence-context.en.md
     version: 0.6.0-rc.1
     status: complete
-    source_sha256: eeaccdb82d52bc65125562cd7ff74e14422aed52a56d52b66755fe1ff62fd973
+    source_sha256: f6c17f48ce7c369682b7306dae01cce72b3685cf45b8c13be8893bd14f9ecc8c
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-LEARN-03-DECISION-EXPERIENCE
@@ -206,7 +206,7 @@ pairs:
     translation: docs/learn/03-decision-experience.en.md
     version: 0.6.0-rc.1
     status: complete
-    source_sha256: 078c78fd58d95e71489da415dd296e03e569ea330dd8cee0ae293c1961ea1a0a
+    source_sha256: 0d98201af73fc034319ed37604566c1065ee91c809d67377f2c96cec77a5074d
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-LEARN-04-HUMAN-AI-CONTROL
@@ -214,7 +214,7 @@ pairs:
     translation: docs/learn/04-human-ai-control.en.md
     version: 0.6.0-rc.1
     status: complete
-    source_sha256: e38a6e7f3d3c27a4c0c5f33a73e71a2b382d60f8bfb1f9c9925ba372a47846f0
+    source_sha256: 4578a5f769705e3e7e640cb023f412b44171072c1008994681c991bfcbcdfa20
     last_reviewed: 2026-07-21
     owner: Javier Forero
   - id: TR-LEARN-05-ACTION-LEARNING
@@ -326,7 +326,7 @@ pairs:
     translation: docs/research/research-agenda.en.md
     version: 0.9.0-rc.1
     status: complete
-    source_sha256: 2db54a387740c32a3c9033b97d67f101f0e2a4822a17aa3ccf848002dfb60f29
+    source_sha256: 90509f4c5b013b32e434ef6e56100be4fb82096aaf5ea3a50203cf650ccd6ebb
     last_reviewed: 2026-07-24
     owner: Javier Forero
   - id: TR-START-HERE-HOW-TO-USE

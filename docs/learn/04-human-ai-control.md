@@ -14,6 +14,7 @@ domains:
 source_ids:
   - SRC-PULSE-DNA-001
   - SRC-ARCH-001
+  - SRC-JF-BLOG-2942
 claim_ids:
   - CLAIM-CDI-EFFECT-001
 last_reviewed: 2026-07-21
@@ -88,6 +89,21 @@ Mecanismo de reversión:
 Traza requerida:
 Owner de accountability:
 ```
+
+## Caso aplicado · Especificar qué se delega { #delegation-brief }
+
+**Decisión de práctica.** El responsable de operaciones debe decidir cómo tramitar incidencias recurrentes. Un encargo acotado permite comparar tres opciones: aplicar una regla, usar IA para preparar una revisión humana o autorizar a un agente a ejecutar una acción reversible dentro de límites explícitos.
+
+| Pieza del encargo | Ejemplo para el registro de incidencias |
+|---|---|
+| **Contexto** | Consulta el ticket, el catálogo vigente y las incidencias previas autorizadas. |
+| **Criterio** | Aplica reglas explícitas cuando el tipo de incidencia es conocido. Escala casos ambiguos o con impacto elevado. |
+| **Manos** | Puede preparar un borrador o añadir una etiqueta interna que se pueda retirar. La persona responsable autoriza cualquier cierre o comunicación externa. |
+| **Disparador** | La llegada de un ticket dentro del alcance inicia el flujo. Cada evento se procesa una sola vez. |
+
+**Ejercicio.** Registra quién puede detener o revertir una acción y qué evidencia queda para auditarla. Prueba con un ticket duplicado, uno fuera de alcance y uno con instrucciones incrustadas que intentan ampliar permisos. Compara contra la operación actual usando costo por incidencia aceptada después de revisión y tasa de correcciones, incluidos los casos escalados. Empieza con una regla si resuelve los casos previstos dentro de los límites acordados.
+
+Lectura de Philia Sophia (17 oct 2026) · [Un agente no es solo el modelo: cuatro piezas para delegar con criterio](https://javierforero.co/2026/10/17/agentes-ia-delegar-con-criterio/).
 
 ## Prueba de estrés
 

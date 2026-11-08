@@ -9,7 +9,7 @@ normative: false
 owner: Javier Forero
 domains: [Research, Evidence Quality, Decision Measurement]
 claim_ids: [CLAIM-DI-MATURITY-001, CLAIM-HUMAN-AI-EVIDENCE-001, CLAIM-PULSE-SYNTHESIS-001, CLAIM-PULSE-BIOLOGICAL-LENSES-001]
-source_ids: [SRC-ACADEMIC-HAI-001, SRC-ACADEMIC-AIEVAL-001, SRC-ACADEMIC-RUDIN-001, SRC-ACADEMIC-OUTCOME-BIAS-001, SRC-ACADEMIC-SCORING-RULES-001, SRC-PRACTICE-B2B-001]
+source_ids: [SRC-ACADEMIC-HAI-001, SRC-ACADEMIC-AIEVAL-001, SRC-ACADEMIC-RUDIN-001, SRC-ACADEMIC-OUTCOME-BIAS-001, SRC-ACADEMIC-SCORING-RULES-001, SRC-PRACTICE-B2B-001, SRC-JF-BLOG-3248]
 last_reviewed: 2026-07-24
 ---
 
@@ -55,6 +55,17 @@ A safer initial test would measure whether PDAMR and the Decision Brief reduce
 process omissions in historical or simulated decisions without allowing AI to
 execute actions. That result would inform usability and coverage, not causal
 sales impact.
+
+## Candidate protocol · When to add GraphRAG { #graphrag-evaluation }
+
+**Research decision.** The knowledge-base owner must decide whether to add graph-based retrieval for questions about dependencies, currency or provenance. The two explorations described in the article help frame the test. The comparison remains to be run.
+
+1. Separate questions with direct answers from those that require following a typed relationship, such as which document superseded a rule and which cases it applies to. Include questions with insufficient evidence and restricted-access tests.
+2. Compare a text or hybrid retrieval baseline without a graph against the same setup enriched with relationships. Keep the versioned corpus, permissions, questions and response model the same. A link between documents counts as evidence of a relationship only when its type, validity and provenance can be verified.
+3. Set thresholds by question type before testing. Measure accuracy with verifiable citations, appropriate abstention, latency and the cost of maintaining relationships. Any unauthorized disclosure blocks adoption.
+4. Add the graph where the gain on relationship questions justifies its cost and risk. Repeat the test when the corpus or permissions change. If the gain disappears, keep the baseline.
+
+Philia Sophia reading (25 Oct 2026) · [Knowledge graphs: your AI needs the right relationships](https://javierforero.co/2026/10/25/grafos-de-conocimiento-graphrag/).
 
 ## Review cadence
 

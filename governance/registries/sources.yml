@@ -337,3 +337,63 @@ records:
     as_of: 2026-07-24
     limits: Marco voluntario para riesgo y confiabilidad de sistemas de IA; no define Decision Quality ni valida la síntesis CDI.
     materialized: false
+  - source_id: SRC-JF-BLOG-3289
+    title: "América Latina no envejecerá cuando deje de crecer: ya está envejeciendo"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/11/02/envejecimiento-america-latina/
+    published_on: 2026-11-02
+    declared_version: "2026-11-08T10:25:08-05:00"
+    observed_on: 2026-11-08
+    sha256: b03bed4f344392334f3bf120003940982b8f924a4c959623a673e0a7f7b3c4fb
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Análisis aplicado de composición, comparabilidad y revisiones de proyecciones. Las implicaciones para una decisión concreta requieren evidencia local.
+    materialized: false
+  - source_id: SRC-JF-BLOG-3248
+    title: "Grafos de conocimiento: tu IA no necesita más documentos, necesita las relaciones correctas"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/10/25/grafos-de-conocimiento-graphrag/
+    published_on: 2026-10-25
+    declared_version: "2026-11-02T09:16:59-05:00"
+    observed_on: 2026-11-08
+    sha256: feecd3138c02d5b2bbfb6f856539dbe0a59bbcb09fb8214996acfb031355b4b1
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Artículo del autor con dos exploraciones propias. Orienta un diseño comparativo sin establecer superioridad general de GraphRAG.
+    materialized: false
+  - source_id: SRC-JF-BLOG-2942
+    title: "Un agente no es solo el modelo: cuatro piezas para delegar con criterio"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/10/17/agentes-ia-delegar-con-criterio/
+    published_on: 2026-10-17
+    declared_version: "2026-11-08T09:31:49-05:00"
+    observed_on: 2026-11-08
+    sha256: 1911437cf588687a12e7011de6988bd064fcfd9f1e34af4187971a028975fae4
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Propuesta del autor para especificar la delegación. Los ejemplos ilustran decisiones de diseño y requieren validación en cada operación.
+    materialized: false
+  - source_id: SRC-JF-BLOG-2918
+    title: "Claude Dashboards no reemplaza tus tableros: pone a prueba tus datos"
+    author: Javier Forero Ruiz
+    publication: Philia Sophia
+    url: https://javierforero.co/2026/10/10/claude-dashboards-analitica-conversacional/
+    published_on: 2026-10-10
+    declared_version: "2026-11-02T09:16:54-05:00"
+    observed_on: 2026-11-08
+    sha256: 1a499c4ce2748587c9557112632d8993e54eca277d2881c22b4d2c15a75de865
+    hash_scope: inner-html-of-wp-block-post-content-utf8
+    authority_level: author-pov
+    status: active-background
+    provenance: author-published-public-web
+    limits: Lectura sobre preparación semántica y control de respuestas, con una demostración de tasas de cambio. La demostración no estima eficacia general de la herramienta.
+    materialized: false

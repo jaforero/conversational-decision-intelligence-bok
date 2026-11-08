@@ -8,7 +8,7 @@ authority_level: guidance-derived-from-pulse
 normative: false
 owner: Javier Forero
 domains: [Decision Architectures, Decision Narratives, Conversational Analytics]
-source_ids: [SRC-PULSE-DNA-001, SRC-JF-002, SRC-ARCH-001]
+source_ids: [SRC-PULSE-DNA-001, SRC-JF-002, SRC-ARCH-001, SRC-JF-BLOG-2918]
 claim_ids: [CLAIM-PULSE-ROLE-001, CLAIM-CDI-EFFECT-001]
 last_reviewed: 2026-07-21
 ---
@@ -52,6 +52,21 @@ Progressive disclosure may reduce load but must never hide a limitation that cou
 ## Structured conversation
 
 Each material answer should expose metric definition and provenance; filters, population and period; calculation or method; uncertainty and assumptions; counterevidence; applied permissions; link to the decision; and authorized next action. Conversation is an interface over data, semantics, context and governance—not a source of truth.
+
+## Applied case · Testing a conversational dashboard { #conversational-dashboard-pilot }
+
+**Practice decision.** The analytics lead must decide whether to enable natural-language questions about official exchange rates for a pilot group. Before expanding access, agree with the data owner on each series' unit, quotation direction, source, calendar and treatment of missing observations.
+
+| Test question | Expected behavior |
+|---|---|
+| What was a currency's reference rate on a date with an observation? | Matches the agreed official series and shows the unit, source and date. |
+| How much did “the dollar” move this month? | Asks for the counterpart currency and period when they are ambiguous. |
+| What was the rate on a day with no observation? | Explains the gap and labels any permitted substitute with its actual date. |
+| Can you query a series outside my access scope? | Rejects the query and avoids exposing restricted data or metadata. |
+
+**Exercise.** Set the expected answer before testing. Compare the existing dashboard and the conversational experience with the same questions, permissions and data. Record correct answers with provenance, resolved ambiguities, time to a usable answer and authorization failures. Any unauthorized disclosure blocks the pilot. If conversation helps exploration, retain the dashboard for recurring views that users already understand.
+
+Philia Sophia reading (10 Oct 2026) · [Claude Dashboards puts your data to the test](https://javierforero.co/2026/10/10/claude-dashboards-analitica-conversacional/).
 
 ## Minimum blueprint
 

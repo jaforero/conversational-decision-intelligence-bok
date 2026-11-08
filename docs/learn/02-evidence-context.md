@@ -15,6 +15,7 @@ source_ids:
   - SRC-PULSE-DNA-001
   - SRC-JF-005
   - SRC-ARCH-001
+  - SRC-JF-BLOG-3289
 claim_ids:
   - CLAIM-PULSE-001
 last_reviewed: 2026-07-21
@@ -85,6 +86,16 @@ No avances a recomendación si ocurre alguno de estos casos y el defecto es mate
 - la incertidumbre cambia el orden de las alternativas.
 
 Detener una conclusión no siempre detiene la decisión. Puede obligar a elegir una opción más reversible, reducir alcance o incorporar un guardrail.
+
+## Caso aplicado · Planear con estructura demográfica { #demographic-planning }
+
+**Decisión de práctica.** El equipo de planeación debe elegir dónde y cuándo ampliar un servicio para personas de 65 años o más. El total regional sirve para dimensionar el contexto. Para asignar capacidad, el contrato de evidencia debe especificar población objetivo, territorio de operación, horizonte y fecha de revisión.
+
+Usa la serie armonizada para comparar países y contrástala con la proyección nacional pertinente para planear en cada territorio. Separa los años estimados de los proyectados y registra fuente, edición y tramo. Si las dos series ubican un cambio relevante en años distintos, anota qué supuestos explican la brecha si están documentados y qué parte de la decisión es sensible a ella.
+
+**Ejercicio.** Define con el responsable qué umbral justificaría ampliar capacidad. Compara la decisión bajo ambas series y documenta qué harías si difieren, por ejemplo, programar una ampliación por etapas y fijar una fecha de revisión. Evalúa después si la demanda local observada confirma el criterio. El ejercicio propone un uso de las proyecciones y requiere datos operativos para decidir.
+
+Lectura de Philia Sophia (2 nov 2026) · [América Latina no envejecerá cuando deje de crecer: ya está envejeciendo](https://javierforero.co/2026/11/02/envejecimiento-america-latina/).
 
 ## Prueba de estrés
 

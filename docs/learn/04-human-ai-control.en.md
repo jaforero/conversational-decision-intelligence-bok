@@ -8,7 +8,7 @@ authority_level: guidance-derived-from-pulse
 normative: false
 owner: Javier Forero
 domains: [Responsible AI, Decision Governance, Decision Agents]
-source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001]
+source_ids: [SRC-PULSE-DNA-001, SRC-ARCH-001, SRC-JF-BLOG-2942]
 claim_ids: [CLAIM-CDI-EFFECT-001]
 last_reviewed: 2026-07-21
 ---
@@ -57,6 +57,21 @@ Reversal mechanism:
 Required trace:
 Accountability owner:
 ```
+
+## Applied case · Specifying what to delegate { #delegation-brief }
+
+**Practice decision.** The operations owner must decide how to handle recurring incidents. A bounded assignment lets the team compare three options: apply a rule, use AI to prepare a human review, or authorize an agent to take a reversible action within explicit limits.
+
+| Part of the assignment | Example for the incident log |
+|---|---|
+| **Context** | Consult the ticket, the current catalog and authorized prior incidents. |
+| **Criteria** | Apply explicit rules for known incident types. Escalate ambiguous or high-impact cases. |
+| **Tools and permissions** | May draft a classification or add an internal tag that can be removed. The responsible person authorizes any closure or external communication. |
+| **Trigger** | A new in-scope ticket starts the workflow. Each event is processed once. |
+
+**Exercise.** Record who can stop or reverse an action and what evidence remains for audit. Test a duplicate ticket, an out-of-scope ticket and one with embedded instructions that try to expand permissions. Compare with current operations using cost per incident accepted after review and the correction rate, including escalated cases. Start with a rule if it handles the expected cases within the agreed limits.
+
+Philia Sophia reading (17 Oct 2026) · [An agent is more than its model: four parts of effective delegation](https://javierforero.co/2026/10/17/agentes-ia-delegar-con-criterio/).
 
 ## Stress test and deliverable
 

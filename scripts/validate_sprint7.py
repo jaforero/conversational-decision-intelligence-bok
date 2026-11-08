@@ -110,7 +110,20 @@ profiles = {item["source_id"]: item for item in profiles_registry["profiles"]}
 claims = {item["claim_id"]: item for item in claims_registry["claims"]}
 release_records = {item["version"]: item for item in release_registry["releases"]}
 
-check(set(profiles) == ADDITIONAL_SOURCE_IDS, "Evidence profile inventory is not exactly the 12 authorized sources")
+editorial_profiles = {
+    source_id for source_id, profile in profiles.items()
+    if profile.get("provenance") == "author-published-public-web"
+}
+check(set(profiles) - editorial_profiles == ADDITIONAL_SOURCE_IDS, "Sprint 7 profile inventory differs from the 12 authorized sources")
+editorial_sources = {
+    source_id for source_id, source in source_records.items()
+    if source.get("provenance") == "author-published-public-web"
+}
+check(editorial_profiles == editorial_sources, "Editorial sources and evidence profiles differ")
+for source_id in editorial_profiles:
+    profile = profiles[source_id]
+    check(profile["source_class"] == "author-pov", f"Editorial reading misclassified: {source_id}")
+    check(profile["prohibited_use"] == "claim-support", f"Editorial reading can support claims: {source_id}")
 check(ADDITIONAL_SOURCE_IDS <= set(source_records), "One or more audited sources are absent from the source registry")
 check(MATERIAL_CLAIMS <= set(claims), "One or more Sprint 7 material claims are absent")
 candidate = release_records.get(RELEASE, {})
@@ -193,6 +206,7 @@ for claim_id, claim in claims.items():
     check(claim_sources <= set(source_records), f"Unknown source in claim: {claim_id}")
     check(not claim_sources & INCOMPLETE_IDS, f"Incomplete source supports claim: {claim_id}")
     check(not claim_sources & AI_SYNTHESIS_IDS, f"AI-assisted map directly supports claim: {claim_id}")
+    check(not claim_sources & editorial_profiles, f"Editorial reading supports claim: {claim_id}")
     if claim_sources & FORECAST_IDS:
         check(claim["claim_class"] == "forecast-governance-rule", f"Forecast source supports non-forecast claim: {claim_id}")
 

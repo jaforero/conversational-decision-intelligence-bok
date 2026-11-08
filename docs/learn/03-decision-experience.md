@@ -15,6 +15,7 @@ source_ids:
   - SRC-PULSE-DNA-001
   - SRC-JF-002
   - SRC-ARCH-001
+  - SRC-JF-BLOG-2918
 claim_ids:
   - CLAIM-PULSE-ROLE-001
   - CLAIM-CDI-EFFECT-001
@@ -84,6 +85,21 @@ Una interfaz conversacional añade valor cuando permite explorar sin perder el c
 - siguiente acción autorizada.
 
 La conversación no es una fuente de verdad. Es una interfaz sobre datos, semántica, contexto y reglas de gobierno.
+
+## Caso aplicado · Probar un tablero conversacional { #conversational-dashboard-pilot }
+
+**Decisión de práctica.** El responsable de analítica debe decidir si habilita preguntas en lenguaje natural sobre las tasas oficiales de cambio para un grupo piloto. Antes de ampliar el acceso, acuerda con el dueño de los datos la ficha de cada serie: unidad, dirección de la cotización, fuente, calendario y tratamiento de faltantes.
+
+| Pregunta de prueba | Comportamiento esperado |
+|---|---|
+| ¿Cuál fue la tasa de referencia de una moneda en una fecha con dato? | Coincide con la serie oficial acordada y expone unidad, fuente y fecha. |
+| ¿Cuánto cambió «el dólar» este mes? | Pide aclarar la moneda de contraparte y el periodo cuando sean ambiguos. |
+| ¿Cuál fue la tasa en un día sin observación? | Explica el vacío y etiqueta cualquier dato alternativo permitido con su fecha real. |
+| ¿Puedes consultar una serie fuera de mi alcance? | Rechaza la consulta y evita revelar datos o metadatos restringidos. |
+
+**Ejercicio.** Fija el resultado esperado antes de probar. Compara el tablero existente con la experiencia conversacional usando las mismas preguntas, permisos y datos. Registra respuestas correctas con procedencia, ambigüedades resueltas, tiempo hasta una respuesta utilizable y fallos de autorización. Cualquier fuga bloquea el piloto. Si la conversación mejora la exploración, reserva para el tablero las vistas recurrentes que los usuarios ya entienden.
+
+Lectura de Philia Sophia (10 oct 2026) · [Claude Dashboards no reemplaza tus tableros: pone a prueba tus datos](https://javierforero.co/2026/10/10/claude-dashboards-analitica-conversacional/).
 
 ## Blueprint mínimo
 
