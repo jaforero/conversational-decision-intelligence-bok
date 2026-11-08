@@ -6,6 +6,7 @@ Todos los cambios relevantes del CDI-BoK se documentan en este archivo.
 
 ### Añadido
 
+- Caso resuelto bilingüe de tasas de cambio con un corte reproducible, contraste con el tablero y un umbral presupuestario simulado.
 - Laboratorio bilingüe para evaluar un asistente de SLA con evidencia y
   decidir si conviene ampliar, mantener o pausar un piloto de consulta.
   Incluye cuatro ejercicios con tableros y datos públicos trazables.

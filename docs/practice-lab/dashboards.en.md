@@ -30,6 +30,8 @@ last_reviewed: 2026-11-08
 
 **Acceptance criterion.** A colleague can reproduce your interpretation using the same pair, period and source. The brief explains what would change the action and distinguishes official reference rates from a rate the organization could negotiate.
 
+Use the [worked exchange rate case](fx-worked-case.en.md) to reconstruct the index and compare the result with the dashboard and an assisted response.
+
 ## Other practice routes
 
 | Decision to practice | Demo | What to record |

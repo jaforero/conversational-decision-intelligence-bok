@@ -30,6 +30,8 @@ last_reviewed: 2026-11-08
 
 **Criterio de aceptación.** Otra persona puede reconstruir tu lectura con el mismo par, periodo y fuente. El brief explica qué cambiaría la acción y distingue las tasas oficiales de referencia de una tasa que la organización podría negociar.
 
+Consulta el [caso resuelto de tasas de cambio](fx-worked-case.md) para reconstruir el índice y comparar el resultado con el tablero y una respuesta asistida.
+
 ## Otras rutas de práctica
 
 | Decisión que quieres practicar | Demo | Qué debes registrar |

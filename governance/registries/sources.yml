@@ -406,6 +406,15 @@ records:
     status: active-background
     purpose: Entorno del ejercicio de dashboards. La página distingue tasas oficiales, cruces calculados y valores repetidos.
     materialized: false
+  - source_id: SRC-PRACTICE-FX-SNAPSHOT-001
+    title: Corte de series cambiarias al 8 de noviembre de 2026
+    url: https://github.com/jaforero/fx-bancos-centrales/tree/dd7a205e147ccb7c00171bbd319e4b0b5fed5e52/data/series
+    declared_version: dd7a205e147ccb7c00171bbd319e4b0b5fed5e52
+    observed_on: 2026-11-08
+    authority_level: owner-public-practice-property
+    status: active-background
+    purpose: Corte fijo para reconstruir índices, verificar el arrastre del FIX y comprobar la cruzada MXN-COP con fechas de mercado compatibles.
+    materialized: false
   - source_id: SRC-PRACTICE-POP-001
     title: Población oficial de América Latina
     url: https://dashboards.javierforero.co/poblacion-latam/

@@ -286,7 +286,15 @@ pairs:
     translation: docs/practice-lab/conversational-evidence.en.md
     version: 0.9.0
     status: complete
-    source_sha256: 0929e902c718a2a043877871117dea84ed3b655fdefc94e57c8ee5f6ce2f0888
+    source_sha256: e5110be99fa10e02217be4f660801f4bffd0702ef26b67f43d77107bc5c9c026
+    last_reviewed: 2026-11-08
+    owner: Javier Forero
+  - id: TR-PRACTICE-LAB-FX-WORKED-CASE
+    source: docs/practice-lab/fx-worked-case.md
+    translation: docs/practice-lab/fx-worked-case.en.md
+    version: 0.9.0
+    status: complete
+    source_sha256: 44e7ebfbf1d60f4ca203e4891355bdc08a81611e61ee6009dea9c90cfd9220a3
     last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-PRACTICE-LAB-SLA-DECISION-BRIEF
@@ -462,7 +470,7 @@ pairs:
     translation: docs/practice-lab/dashboards.en.md
     version: 0.9.0
     status: complete
-    source_sha256: 01fc69912a06d8a9363bb206f6807f2482236497175c2ce3b96fca69d3ffd044
+    source_sha256: 8472948dded11ea12ec7651645410019279fdaf396a636041d0ef8a411729974
     last_reviewed: 2026-11-08
     owner: Javier Forero
   - id: TR-PRACTICE-LAB-KNOWLEDGE-GRAPH
