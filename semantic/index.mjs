@@ -49,7 +49,7 @@ for (const file of files) {
 }
 const all = [...data.es, ...data.en], missing = [];
 for (const chunk of all) {
-  const key = hash(MODEL_KEY + "\n" + chunk.text);
+  const key = hash(MODEL_KEY + "\n" + chunk.heading + ": " + chunk.text);
   chunk.vectorKey = key;
   if (!Array.isArray(cache.vectors[key]) || cache.vectors[key].length !== DIM ||
       !cache.vectors[key].every(Number.isFinite)) missing.push(chunk);
@@ -95,7 +95,7 @@ for (const lang of ["es", "en"]) {
   if (!chunks.length) throw new Error("Empty " + lang + " corpus");
   await writeFile(path.join(dest, "index-" + lang + ".json"), JSON.stringify(payload));
 }
-const validKeys = new Set(all.map((chunk) => hash(MODEL_KEY + "\n" + chunk.text)));
+const validKeys = new Set(all.map((chunk) => hash(MODEL_KEY + "\n" + chunk.heading + ": " + chunk.text)));
 cache.vectors = Object.fromEntries(Object.entries(cache.vectors).filter(([key]) => validKeys.has(key)));
 const temp = cacheFile + ".partial";
 await writeFile(temp, JSON.stringify(cache));
