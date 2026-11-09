@@ -79,7 +79,7 @@
   {{ super() }}
   {% if page and page.file.src_uri in ("ask-cdi.md", "ask-cdi.en.md") %}
     {% from "partials/ask-cdi.html" import ask_form %}
-    {{ ask_form("ask-cdi-page-input", i18n_page_locale == "en") }}
+    {{ ask_form("ask-cdi-page-input", i18n_page_locale == "en", config.site_url) }}
   {% endif %}
 {% endblock %}
 
@@ -98,7 +98,7 @@
           <button class="cdi-ask-close" aria-label="{{ 'Close' if english else 'Cerrar' }}">×</button>
         </form>
       </header>
-      {{ ask_form("ask-cdi-panel-input", english) }}
+      {{ ask_form("ask-cdi-panel-input", english, config.site_url) }}
       <p><a href="{{ '/en/ask-cdi/' if english else '/ask-cdi/' }}">{{ 'Open the full experience' if english else 'Abrir la experiencia completa' }}</a></p>
     </dialog>
   {% endif %}
