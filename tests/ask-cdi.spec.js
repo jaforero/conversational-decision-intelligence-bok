@@ -47,7 +47,7 @@ test("Spanish panel loads on demand, cites the SLA simulation and keeps input lo
   await panel.locator("[data-ask-suggestions] button").first().click();
   await expect(panel.getByRole("status")).toContainText("Respuesta editorial");
   await expect(panel.locator("[data-ask-results]")).toContainText("Resultado simulado");
-  const citation = panel.locator("[data-ask-results] a");
+  const citation = panel.locator("[data-ask-results] a").first();
   await expect(citation).toHaveAttribute("href", /\/practice-lab\/sla-decision-brief\/#7-resultado-simulado-y-decision-revisada$/);
 
   await page.route("**/assets/semantic/index-es.json", (route) => route.fulfill({ status: 503, body: "Unavailable" }));

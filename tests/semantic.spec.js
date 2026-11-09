@@ -9,6 +9,9 @@ test("Node and browser produce equivalent local q8 E5 embeddings, without remote
     if (new URL(request.url()).origin !== "http://127.0.0.1:8000") external.push(request.url());
   });
   await page.goto("/ask-cdi/");
+  await page.waitForLoadState("networkidle");
+  // Existing theme assets may load during navigation; audit only the actual query.
+  external.length = 0;
   const parity = await page.evaluate(async () => {
     const index = await (await fetch("/assets/semantic/index-es.json")).json();
     const { embedQuestion } = await import("/assets/semantic/embed.mjs");
