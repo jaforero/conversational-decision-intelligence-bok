@@ -56,3 +56,9 @@ La [arquitectura editorial CDI-GOV-001](governance/00_CDI-BoK_Architecture_and_E
 Al citar el CDI-BoK o los materiales originales de PULSE, indica el autor, el título, la versión consultada y el enlace. Para el libro, usa [CITATION.cff](CITATION.cff) como referencia.
 
 Para usos que requieran autorización, [solicita permiso previo al autor](https://cv.javierforero.co/#contacto). Los materiales de terceros se rigen por sus propios términos. Consulta la [decisión de licenciamiento ADR-003](governance/adr/ADR-003-licensing-posture.md).
+
+## Búsqueda híbrida semántica local (candidata)
+
+La experiencia [Pregúntale al CDI-BoK](https://decision.javierforero.co/ask-cdi/) incorpora un motor de recuperación **E5 multilingüe + BM25 + fusión RRF**, ejecutado localmente por cada navegador, sin LLM ni API de inferencia. Los fragmentos nuevos citan Markdown y líneas del commit exacto; se conserva la biblioteca de respuestas editoriales.
+
+La indexación y evaluación se realizan en GitHub Actions; GitHub Pages sirve el índice, modelo ONNX y WASM desde el propio dominio. La primera consulta semántica descarga archivos de unos 140 MB, de forma diferida y con caché. El acceso gratuito no garantiza ancho de banda ilimitado. Consulta la [documentación técnica, mantenimiento, costos y limitaciones](semantic/README.md) y el [informe de evaluación generado](https://decision.javierforero.co/assets/semantic/evaluation.json) una vez publicado el cambio en main. Para una reconstrucción completa usa workflow_dispatch del despliegue; el caché incremental es descartable.

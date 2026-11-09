@@ -1,7 +1,8 @@
 {% macro ask_form(id, english) %}
-<div data-ask-cdi data-language="{{ 'en' if english else 'es' }}">
+<div data-ask-cdi data-language="{{ 'en' if english else 'es' }}" data-site-url="{{ config.site_url }}">
   <p>{{ 'Your question stays in this browser. The assistant retrieves published excerpts and cites their sections.' if english else 'Tu pregunta se queda en este navegador. El asistente recupera extractos publicados y cita sus apartados.' }}</p>
   <p data-ask-context hidden></p>
+  <p class="cdi-ask-local-note">{{ 'The 384-dimensional multilingual model runs in your browser only. The first non-editorial search downloads model files (about 140 MB), then caches them locally.' if english else 'El modelo multilingüe de 384 dimensiones se ejecuta solo en tu navegador. La primera búsqueda no editorial descarga archivos (aprox. 140 MB) y luego los conserva en caché.' }}</p>
   <div class="cdi-ask-suggestions" data-ask-suggestions></div>
   <form class="cdi-ask-form">
     <label for="{{ id }}">{{ 'Ask a question' if english else 'Escribe una pregunta' }}</label>

@@ -34,6 +34,14 @@ jobs:
           node-version: "24"
           cache: npm
 
+      - name: Restore incremental semantic cache
+        uses: actions/cache@v4
+        with:
+          path: .semantic-cache
+          key: semantic-q8-v1-${{ runner.os }}-${{ hashFiles('docs/**/*.md', 'semantic/model.mjs') }}
+          restore-keys: |
+            semantic-q8-v1-${{ runner.os }}-
+
       - name: Install Python dependencies
         run: python -m pip install --require-hashes -r requirements.lock
 
@@ -42,6 +50,26 @@ jobs:
 
       - name: Build and audit the portal
         run: python scripts/preflight_release.py
+
+      - name: Install pinned semantic build tools
+        run: npm install --prefix semantic --no-package-lock --no-audit --no-fund
+
+      - name: Test hybrid retrieval and Markdown chunking
+        run: node --test semantic/tests.mjs
+
+      - name: Stage verified ONNX model entirely on Pages
+        run: node semantic/download-model.mjs
+
+      - name: Build incremental E5 embeddings and BM25 index
+        run: node semantic/index.mjs
+
+      - name: Calibrate abstention and measure recall
+        run: node semantic/evaluate.mjs
+
+      - name: Vendor browser runtime and validate complete artifact
+        run: |
+          node semantic/build.mjs
+          node semantic/validate.mjs
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium

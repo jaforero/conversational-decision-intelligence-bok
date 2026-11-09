@@ -1,0 +1,10 @@
+{
+  "name": "cdi-static-semantic",
+  "private": true,
+  "type": "module",
+  "description": "Build-time and browser-local hybrid retrieval (no inference API)",
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "esbuild": "0.25.12"
+  }
+}
