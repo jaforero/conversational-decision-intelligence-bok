@@ -43,7 +43,7 @@ The deployed assets are under /assets/semantic/ in the custom domain and under <
 
 The file evaluation-questions.json supplies 20 documented bilingual prompts, both answerable and unsupported, labeled train/test. evaluate.mjs chooses the cosine abstention threshold by maximizing balanced accuracy on the train portion (with tie-breaks favoring specificity), then publishes observed BM25 Recall@5, hybrid Recall@5, correct abstentions and query-embedding latency for the held-out portion in evaluation.json. The small hand-picked sample and reused domains **are insufficient to claim population-level accuracy**. Errors must be inspected and the evaluation expanded with independent questions before calling the search reliable.
 
-The abstention does not establish lack of information in the world; only lack of sufficiently supported evidence in this corpus. RRF score itself cannot be read as a calibrated probability. If calibration is missing or incompatible, the system abstains instead of inventing a relevance cutoff.
+The threshold is calibrated against the cosine of the **first RRF result**, matching the same feature used by the browser (rather than calibrating on the highest cosine of a potentially different result). The abstention does not establish lack of information in the world; only lack of sufficiently supported evidence in this corpus. RRF score itself cannot be read as a calibrated probability. If calibration is missing or incompatible, the system abstains instead of inventing a relevance cutoff.
 
 ## Production limits and costs
 
@@ -57,6 +57,6 @@ The site currently offers optional Google Analytics subject to consent. That pre
 
 - First semantic query is a large download: show on-demand status and cache the model, keep curated answers immediate.
 - Older phones may run out of memory: disclose local model initialization failure and do not secretly fall back to lexical-only search.
-- Quantization differs between browser/Node: compare reference embeddings in a browser against the index, and block release on mismatch.
+- Quantization differs between browser/Node: the UI checks cosine parity (minimum 0.995) against the Actions-generated pinned reference before showing hybrid results; a failed check blocks semantic answers. CI headless-browser parity still needs a separate automated E2E gate.
 - Semantic matches can be topically plausible but fail to answer: every excerpt is labeled and linked to the exact source; abstain if empirical gate rejects.
 - Operational failures: last published Pages artifact is not replaced unless Actions succeeds. On a failed release, inspect CI logs, resolve, and re-run.
