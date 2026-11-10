@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { parseMarkdown } from "./markdown.mjs";
+import { curatedCandidates, matchCurated, extractPassage } from "./answers.mjs";
 import { buildLexicon, lexical, semantic, rank, shouldAbstain, terms } from "./retrieval.mjs";
 test("Markdown extracts frontmatter, headings and 1-based line references", () => {
   const source = "---\ntitle: Demo\nstatus: candidate\n---\n# Title\n\n## Section\n\nHola mundo importante.\n\nOtro párrafo.\n";
@@ -44,4 +45,25 @@ test("gibberish should not be considered lexical evidence", () => {
   const chunks=[{heading:"A",text:"Evidence about decisions",vector:[1,0]}];
   const i={chunks,lexicon:buildLexicon(chunks)};
   assert.equal(lexical(i,"zxyznotfound").length, 0); 
+});
+
+test("semantic editorial routing matches a paraphrase, never unsupported low-score queries", () => {
+  const index = {modelKey:"test",curated:[
+    {question:"Choose data architecture",source:"/learn/data-architecture-fable/#architecture-map",vector:[1,0]},
+    {question:"Human governance",source:"/03-pulse/specification/#human-in-control",vector:[0,1]},
+  ]};
+  const candidates = curatedCandidates(index,[0.98,0.2]);
+  assert.equal(candidates[0].item.source,"/learn/data-architecture-fable/#architecture-map");
+  const calibration = {modelKey:"test",curatedMinCosine:0.9};
+  assert.equal(matchCurated(index,[0.98,0.2],calibration)?.source,
+    "/learn/data-architecture-fable/#architecture-map");
+  assert.equal(matchCurated(index,[0.55,0.55],calibration),null);
+  assert.equal(matchCurated(index,[1,0],{modelKey:"wrong",curatedMinCosine:0.5}),null);
+});
+test("fallback answer is a literal paragraph rather than generated prose", () => {
+  const passage = "A same-platform design can cover more than one responsibility.\nSecond paragraph with further evidence.";
+  const result = extractPassage([{text:passage,path:"docs/example.md"}]);
+  assert.equal(result.excerpt, "A same-platform design can cover more than one responsibility.");
+  assert.equal(result.item.path,"docs/example.md");
+  assert.equal(extractPassage([]),null);
 });
