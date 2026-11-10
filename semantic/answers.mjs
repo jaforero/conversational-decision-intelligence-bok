@@ -7,7 +7,11 @@ export function dotVectors(a, b) {
 }
 export function curatedCandidates(index, vector) {
   return (index.curated || [])
-    .map((item) => ({ item, similarity: dotVectors(item.vector, vector) }))
+    .map((item) => ({
+      item,
+      similarity: Math.max(...(item.vectors || [item.vector]).map((candidate) =>
+        dotVectors(candidate, vector))),
+    }))
     .sort((a,b) => b.similarity - a.similarity);
 }
 export function matchCurated(index, vector, calibration) {
