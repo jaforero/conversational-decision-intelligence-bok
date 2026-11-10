@@ -98,7 +98,7 @@ console.log("Held-out curated score audit: " + JSON.stringify(
       match:x.curatedSource, cosine:Number(x.curatedScore.toFixed(4))}))));
 console.log("Held-out answer routing misses: " + JSON.stringify(
   observations.filter((x) => x.split === "test" &&
-    (x.curatedScore >= curatedChoice.threshold ? x.curatedSource : null) !==
+    (x.curatedEligible && x.curatedScore >= curatedChoice.threshold ? x.curatedSource : null) !==
     (x.curatedExpected || null))
   .map((x) => ({question:x.question, expected:x.curatedExpected || null,
     chosen:x.curatedSource, score:Number(x.curatedScore.toFixed(4)),
