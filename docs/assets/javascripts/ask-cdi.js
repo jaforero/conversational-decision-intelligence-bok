@@ -322,7 +322,7 @@
         if (current !== requestId) return;
         // Semantic routing is calibrated on named, source-verified editorial topics.
         // Unlike exact aliases, it can recognize paraphrases of documented questions.
-        const curated = local.answers.matchCurated(local.index, vector, local.calibration);
+        const curated = local.answers.matchCurated(local.index, vector, local.calibration, question);
         if (curated && curated.answer) {
           status.textContent = copy.editorialAnswer;
           renderAnswer(results, curated, question, language, base, copy);
