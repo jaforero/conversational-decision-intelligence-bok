@@ -91,6 +91,10 @@ const result = { note: "Small, hand-authored evaluation set. Not a population es
     curatedScore: Number(x.curatedScore.toFixed(5)) })) };
 await writeFile(path.join(base, "evaluation.json"), JSON.stringify(result, null, 2));
 console.log("Held-out evaluation: " + JSON.stringify(result.heldOut));
+console.log("Held-out curated score audit: " + JSON.stringify(
+  observations.filter((x) => x.split === "test")
+    .map((x) => ({question:x.question, expected:x.curatedExpected || null,
+      match:x.curatedSource, cosine:Number(x.curatedScore.toFixed(4))}))));
 console.log("Held-out answer routing misses: " + JSON.stringify(
   observations.filter((x) => x.split === "test" &&
     (x.curatedScore >= curatedChoice.threshold ? x.curatedSource : null) !==
