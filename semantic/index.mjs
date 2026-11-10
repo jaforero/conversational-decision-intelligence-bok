@@ -82,6 +82,34 @@ for (const chunk of all) {
   if (chunk.vector.length !== DIM) throw new Error("Invalid vector: " + chunk.path);
   delete chunk.vectorKey;
 }
+// Curated answers are source-verified by the MkDocs hook. Their vectors enable
+// semantic paraphrase matching without a generative model or keyword hardcoding.
+const curatedByLanguage = { es: [], en: [] };
+const curatedKeys = new Set();
+for (const lang of ["es", "en"]) {
+  const editorial = JSON.parse(await readFile(path.join(root, "site/assets/data/ask-cdi-" + lang + ".json"), "utf8")).editorial;
+  for (const item of editorial) {
+    const topic = [item.question, ...item.aliases].join(". ");
+    const key = hash(MODEL_KEY + "\ncurated\n" + topic);
+    curatedKeys.add(key);
+    if (!Array.isArray(cache.vectors[key]) || cache.vectors[key].length !== DIM ||
+        !cache.vectors[key].every(Number.isFinite)) {
+      cache.vectors[key] = await embed(topic, "passage");
+    }
+    const evidence = data[lang].find((chunk) =>
+      chunk.path === item.source_path && chunk.text.includes(item.excerpt));
+    if (item.answer && !evidence) {
+      throw new Error("Curated answer missing exact Markdown support: " + item.source_path);
+    }
+    curatedByLanguage[lang].push({
+      question: item.question, aliases: item.aliases, answer: item.answer || null,
+      bullets: item.bullets || [], excerpt: item.excerpt, note: item.note || null,
+      source: item.source, sourcePath: item.source_path,
+      sourceUrl: evidence?.url || item.github_url, status: item.status,
+      sourceSha: sha, vector: cache.vectors[key],
+    });
+  }
+}
 const digest = hash(sourceDigest.sort().join("\n"));
 const oldManifest = await readFile(path.join(cacheDir, "manifest.json"), "utf8").then(JSON.parse).catch(() => null);
 let reference = oldManifest?.sourceDigest === digest && oldManifest?.modelKey === MODEL_KEY
@@ -91,12 +119,12 @@ for (const lang of ["es", "en"]) {
   const chunks = data[lang], lexicon = buildLexicon(chunks);
   const payload = { format: 1, modelKey: MODEL_KEY, dimension: DIM, sourceSha: sha,
     sourceDigest: digest, language: lang, reference, documents: new Set(chunks.map((c) => c.path)).size,
-    chunks, lexicon };
+    chunks, lexicon, curated: curatedByLanguage[lang] };
   if (!chunks.length) throw new Error("Empty " + lang + " corpus");
   await writeFile(path.join(dest, "index-" + lang + ".json"), JSON.stringify(payload));
 }
 const validKeys = new Set(all.map((chunk) => hash(MODEL_KEY + "\n" + chunk.heading + ": " + chunk.text)));
-cache.vectors = Object.fromEntries(Object.entries(cache.vectors).filter(([key]) => validKeys.has(key)));
+cache.vectors = Object.fromEntries(Object.entries(cache.vectors).filter(([key]) => validKeys.has(key) || curatedKeys.has(key)));
 const temp = cacheFile + ".partial";
 await writeFile(temp, JSON.stringify(cache));
 await rename(temp, cacheFile);
