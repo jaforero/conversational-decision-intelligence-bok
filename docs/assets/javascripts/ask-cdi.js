@@ -79,6 +79,13 @@
       modelUnavailable: "La búsqueda semántica no está disponible en este navegador. Las respuestas editoriales siguen accesibles; no se ha sustituido silenciosamente por búsqueda textual.",
       semanticRelated: "Fragmentos recuperados por búsqueda híbrida · verifica las citas en GitHub.",
       semanticInsufficient: "No encontré información suficiente en los documentos para responder esta pregunta.",
+      editorialAnswer: "Respuesta editorial basada en la documentación",
+      sourceExtract: "Extracto literal de la documentación",
+      otherEvidence: "Ver evidencia y fuentes relacionadas",
+      original: "Consultar Markdown en GitHub",
+      readSection: "Leer sección en el CDI-BoK",
+      limited: "Este extracto es evidencia relacionada; no representa una respuesta redactada ni una recomendación personalizada.",
+      editorialSynthesis: "Síntesis editorial con fuente verificable",
     },
     en: {
       loading: "Loading the published section index…",
@@ -95,6 +102,13 @@
       modelUnavailable: "Semantic retrieval could not run in this browser. Editorial answers remain available; text search has not silently replaced semantics.",
       semanticRelated: "Hybrid search passages · verify the GitHub citations.",
       semanticInsufficient: "I could not find sufficient information in the documents to answer this question.",
+      editorialAnswer: "Editorial answer grounded in the documentation",
+      sourceExtract: "Verbatim excerpt from the documentation",
+      otherEvidence: "Show evidence and related sources",
+      original: "Inspect Markdown on GitHub",
+      readSection: "Read section in the CDI-BoK",
+      limited: "This excerpt is related evidence, not a composed answer or personalized recommendation.",
+      editorialSynthesis: "Editorial synthesis with verifiable source",
     },
   };
 
@@ -152,11 +166,12 @@
         loadJson("calibration.json"),
         import(new URL("retrieval.mjs", root).href),
         import(new URL("embed.mjs", root).href),
-      ]).then(([index, calibration, retrieval, embedding]) => {
+        import(new URL("answers.mjs", root).href),
+      ]).then(([index, calibration, retrieval, embedding, answers]) => {
         if (index.modelKey !== calibration.modelKey || index.dimension !== 384) {
           throw new Error("Model/index/calibration mismatch");
         }
-        return { index, calibration, retrieval, embedding };
+        return { index, calibration, retrieval, embedding, answers };
       }).catch((error) => {
         hybridCache.delete(key);
         throw error;
@@ -173,6 +188,81 @@
     for (const piece of value.split(regex)) {
       if (needles.includes(piece.toLowerCase())) append(parent, "mark", piece);
       else parent.append(document.createTextNode(piece));
+    }
+  }
+
+  // Direct answer first; provenance remains available without dominating the screen.
+  // All authored summaries are reviewed in governance/ask-cdi.yml and validated
+  // against the source excerpts by the existing MkDocs build hook.
+  function renderAnswer(container, item, question, language, base, copy) {
+    const card = append(container, "section", "");
+    card.className = "cdi-ask-answer";
+    append(card, "p", item.answer ? copy.editorialAnswer : copy.sourceExtract)
+      .className = "cdi-ask-answer-label";
+    const response = append(card, item.answer ? "p" : "blockquote", "");
+    response.className = "cdi-ask-answer-text";
+    if (item.answer) response.textContent = item.answer;
+    else highlight(response, item.excerpt, question);
+    if (item.bullets?.length) {
+      const list = append(card, "ul", "");
+      list.className = "cdi-ask-answer-points";
+      for (const point of item.bullets) append(list, "li", point);
+    }
+    const footer = append(card, "div", "");
+    footer.className = "cdi-ask-answer-footer";
+    const internal = append(footer, "a", copy.readSection);
+    internal.href = sourceUrl(item.source, language, base).href;
+    const github = item.sourceUrl || item.github_url;
+    if (github) {
+      const original = append(footer, "a", copy.original);
+      original.href = github;
+      original.target = "_blank";
+      original.rel = "noopener noreferrer";
+    }
+    if (item.note) append(card, "small", item.note).className = "cdi-ask-answer-note";
+    const details = append(card, "details", "");
+    const summary = append(details, "summary", copy.otherEvidence);
+    summary.className = "cdi-ask-evidence-toggle";
+    const quote = append(details, "blockquote", item.excerpt);
+    quote.className = "cdi-ask-source-quote";
+    append(details, "small", (item.sourcePath || item.source_path || "") +
+      " · " + (item.sourceSha || item.source_sha || ""));
+    append(details, "small", copy[item.status] || item.status || "");
+  }
+
+  function renderRetrieved(container, local, found, question, copy) {
+    const selected = local.answers.extractPassage(found.ranked);
+    if (!selected) return;
+    const card = append(container, "section", "");
+    card.className = "cdi-ask-answer cdi-ask-answer-extractive";
+    append(card, "p", copy.sourceExtract).className = "cdi-ask-answer-label";
+    const quote = append(card, "blockquote", "");
+    quote.className = "cdi-ask-answer-text";
+    highlight(quote, selected.excerpt, question);
+    append(card, "p", copy.limited).className = "cdi-ask-answer-note";
+    const link = append(card, "a", copy.original);
+    link.href = selected.item.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    const details = append(container, "details", "");
+    details.className = "cdi-ask-related";
+    append(details, "summary", copy.otherEvidence);
+    const seen = new Set();
+    for (const item of found.ranked) {
+      if (seen.has(item.path) || seen.size >= 3) continue;
+      seen.add(item.path);
+      const article = append(details, "article", "");
+      article.className = "cdi-ask-evidence";
+      append(article, "strong", item.page + " · " + item.heading);
+      const snippet = append(article, "blockquote", "");
+      highlight(snippet, excerptText(item.text), question);
+      const original = append(article, "a", copy.original);
+      original.href = item.url;
+      original.target = "_blank";
+      original.rel = "noopener noreferrer";
+      append(article, "small", item.path + " · L" + item.lineStart + "–L" + item.lineEnd);
+      append(article, "small", "Commit SHA: " + local.index.sourceSha);
+      append(article, "small", copy[item.status] || item.status);
     }
   }
 
@@ -202,21 +292,7 @@
       if (result.kind === "editorial") {
         status.textContent = copy.editorial;
         for (const item of result.items) {
-          const url = sourceUrl(item.source, language, base);
-          const article = append(results, "article", "");
-          article.className = "cdi-ask-evidence";
-          append(article, "blockquote", excerptText(item.excerpt));
-          if (item.note || item.simulated) append(article, "p", item.note || copy.simulated);
-          const link = append(article, "a", item.page + " · " + item.title);
-          link.href = url.href;
-          if (item.github_url && item.source_sha) {
-            const original = append(article, "a", language === "en" ? " · Original Markdown at this commit" : " · Markdown original en este commit");
-            original.href = item.github_url;
-            original.target = "_blank";
-            original.rel = "noopener noreferrer";
-            append(article, "small", item.source_path + " · Commit SHA: " + item.source_sha);
-          }
-          append(article, "small", copy[item.status]);
+          renderAnswer(results, item, question, language, base, copy);
         }
         return;
       }
@@ -244,29 +320,19 @@
         await parityChecks.get(parityKey);
         const vector = await local.embedding.embedQuestion(question, base);
         if (current !== requestId) return;
+        // Semantic routing is calibrated on named, source-verified editorial topics.
+        // Unlike exact aliases, it can recognize paraphrases of documented questions.
+        const curated = local.answers.matchCurated(local.index, vector, local.calibration);
+        if (curated && curated.answer) {
+          status.textContent = copy.editorialAnswer;
+          renderAnswer(results, curated, question, language, base, copy);
+          return;
+        }
         const found = local.retrieval.rank(local.index, question, vector);
         const abstain = local.retrieval.shouldAbstain(local.index, found.ranked, local.calibration);
         status.textContent = abstain ? copy.semanticInsufficient : copy.semanticRelated;
         if (abstain) return;
-        const usedPaths = new Set();
-        for (const item of found.ranked) {
-          if (usedPaths.has(item.path)) continue;
-          usedPaths.add(item.path);
-          const article = append(results, "article", "");
-          article.className = "cdi-ask-evidence";
-          const caption = append(article, "strong", item.page + " · " + item.heading);
-          caption.className = "cdi-ask-section-title";
-          const quote = append(article, "blockquote", "");
-          highlight(quote, excerptText(item.text), question);
-          if (item.simulated) append(article, "p", copy.simulated);
-          const source = append(article, "a", language === "en" ? "Verify original Markdown" : "Verificar Markdown original");
-          source.href = item.url;
-          source.target = "_blank";
-          source.rel = "noopener noreferrer";
-          append(article, "small", item.path + " · L" + item.lineStart + "–L" + item.lineEnd);
-          append(article, "small", "Commit SHA: " + local.index.sourceSha);
-          append(article, "small", copy[item.status] || item.status);
-        }
+        renderRetrieved(results, local, found, question, copy);
       } catch (error) {
         console.error("Local semantic retrieval failed:", error);
         if (current === requestId) status.textContent = copy.modelUnavailable;
