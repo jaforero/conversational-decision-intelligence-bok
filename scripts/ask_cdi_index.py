@@ -112,9 +112,17 @@ def on_post_build(config, **kwargs) -> None:
             source_path = source_node["path"]
             if lang == "en":
                 source_path = source_path.removesuffix(".md") + ".en.md"
+            # Prefer a line-anchored, commit-pinned original when the verified
+            # excerpt occurs verbatim within a Markdown source line.
+            source_lines = (root / source_path).read_text(encoding="utf-8").splitlines()
+            line_number = next((i for i, line in enumerate(source_lines, 1)
+                                if item["excerpt"] in line), None)
+            github_url = f"https://github.com/jaforero/conversational-decision-intelligence-bok/blob/{source_sha}/{source_path}"
+            if line_number is not None:
+                github_url += f"#L{line_number}-L{line_number}"
             editorial.append({**item, "title": section["title"], "page": section["page"],
                 "status": section["status"], "source_sha": source_sha, "source_path": source_path,
-                "github_url": f"https://github.com/jaforero/conversational-decision-intelligence-bok/blob/{source_sha}/{source_path}"})
+                "github_url": github_url})
 
         payload = {"editorial": editorial, "sections": [section for section in sections.values() if section["retrievable"]]}
         (assets / f"ask-cdi-{lang}.json").write_text(

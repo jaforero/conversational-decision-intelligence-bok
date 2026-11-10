@@ -80,3 +80,22 @@ test("English full experience cites a rendered English section", async ({ page }
   const link = page.locator("[data-ask-results] a").first();
   await expect(link).toHaveAttribute("href", /\/en\/03-pulse\/specification\/#official-definition$/);
 });
+
+test("Architecture question shows a direct sourced answer instead of a document list", async ({ page }) => {
+  await page.goto("/ask-cdi/");
+  const question = page.getByLabel("Escribe una pregunta");
+  await question.fill("Como determinar que arquitectura de datos usar?");
+  await page.getByRole("button", { name: "Consultar" }).click();
+  const answer = page.locator("[data-ask-results] .cdi-ask-answer");
+  await expect(answer).toContainText("Empieza por la decisión");
+  await expect(answer.locator("li")).toHaveCount(5);
+  await expect(answer).toContainText("Data Lake");
+  await expect(answer).toContainText("Data Fabric");
+  await expect(page.locator("[data-ask-results] .cdi-ask-evidence")).toHaveCount(0);
+  const details = answer.locator("details");
+  await expect(details).not.toHaveAttribute("open");
+  await details.locator("summary").click();
+  await expect(details).toContainText("Elige lo que necesitas según la decisión");
+  await expect(answer.getByText("Consultar Markdown en GitHub")).toHaveAttribute(
+    "href", /\/blob\/[a-f0-9]{40}\/docs\/learn\/data-architecture-fable\.md#L\d+-L\d+$/);
+});

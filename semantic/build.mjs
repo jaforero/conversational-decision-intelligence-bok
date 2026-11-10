@@ -7,6 +7,7 @@ await build({ entryPoints: ["semantic/browser-model.mjs"], platform: "browser",
   format: "esm", target: ["es2022"], bundle: true, minify: true,
   outfile: path.join(dest, "embed.mjs"), logLevel: "warning" });
 await cp("semantic/retrieval.mjs", path.join(dest, "retrieval.mjs"));
+await cp("semantic/answers.mjs", path.join(dest, "answers.mjs"));
 const wasmRoot = path.join(root, "semantic/node_modules/onnxruntime-web/dist");
 const ortDest = path.join(dest, "ort");
 await mkdir(ortDest, { recursive: true });

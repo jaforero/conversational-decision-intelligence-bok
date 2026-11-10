@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { parseMarkdown } from "./markdown.mjs";
+import { curatedCandidates, matchCurated, matchesNamedConcept, extractPassage } from "./answers.mjs";
 import { buildLexicon, lexical, semantic, rank, shouldAbstain, terms } from "./retrieval.mjs";
 test("Markdown extracts frontmatter, headings and 1-based line references", () => {
   const source = "---\ntitle: Demo\nstatus: candidate\n---\n# Title\n\n## Section\n\nHola mundo importante.\n\nOtro párrafo.\n";
@@ -44,4 +45,44 @@ test("gibberish should not be considered lexical evidence", () => {
   const chunks=[{heading:"A",text:"Evidence about decisions",vector:[1,0]}];
   const i={chunks,lexicon:buildLexicon(chunks)};
   assert.equal(lexical(i,"zxyznotfound").length, 0); 
+});
+
+test("semantic editorial routing matches a paraphrase, never unsupported low-score queries", () => {
+  const index = {modelKey:"test",curated:[
+    {question:"Choose data architecture",source:"/learn/data-architecture-fable/#architecture-map",vectors:[[1,0],[0.8,0.6]]},
+    {question:"Human governance",source:"/03-pulse/specification/#human-in-control",vectors:[[0,1],[0.1,0.9]]},
+  ]};
+  const candidates = curatedCandidates(index,[0.98,0.2]);
+  assert.equal(candidates[0].item.source,"/learn/data-architecture-fable/#architecture-map");
+  const calibration = {modelKey:"test",curatedMinCosine:0.9};
+  assert.equal(matchCurated(index,[0.98,0.2],calibration)?.source,
+    "/learn/data-architecture-fable/#architecture-map");
+  assert.equal(matchCurated(index,[0.55,0.55],calibration),null);
+  assert.equal(matchCurated(index,[1,0],{modelKey:"wrong",curatedMinCosine:0.5}),null);
+});
+test("fallback answer is a literal paragraph rather than generated prose", () => {
+  const passage = "A same-platform design can cover more than one responsibility.\nSecond paragraph with further evidence.";
+  const result = extractPassage([{text:passage,path:"docs/example.md"}]);
+  assert.equal(result.excerpt, "A same-platform design can cover more than one responsibility.");
+  assert.equal(result.item.path,"docs/example.md");
+  assert.equal(extractPassage([]),null);
+});
+
+test("named technical concepts cannot be answered with an unrelated generic editorial card", () => {
+  const pulse = {
+    question:"What is PULSE?", aliases:["Definition of PULSE"],
+    answer:"PULSE is a decision intelligence methodology.", bullets:[],
+    excerpt:"PULSE links context to action.", vectors:[[1,0]]
+  };
+  const architecture = {
+    question:"How do I choose data architecture?", aliases:["Choosing Data Lake"],
+    answer:"Data Lake and Data Warehouse support different decisions.",
+    bullets:["Data Mesh assigns domain ownership."],
+    excerpt:"Choose what you need.",vectors:[[0,1]]
+  };
+  assert.equal(matchesNamedConcept("What is the Decision Circle in PULSE?", pulse),false);
+  assert.equal(matchesNamedConcept("How to choose Data Lake architecture?", architecture),true);
+  assert.equal(matchesNamedConcept("How do I choose architecture?", architecture),true);
+  assert.equal(matchCurated({modelKey:"test",curated:[pulse]},[1,0],
+    {modelKey:"test",curatedMinCosine:0.7},"What is the Decision Circle in PULSE?"),null);
 });

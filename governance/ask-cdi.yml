@@ -1,4 +1,16 @@
 es:
+  - question: ¿Cómo determinar qué arquitectura de datos usar?
+    aliases: [Como determinar que arquitectura de datos usar, Cómo elegir una arquitectura de datos, Qué arquitectura de datos conviene a mi empresa, Cómo sé si necesito Data Lake o Data Warehouse, Cómo seleccionar entre Data Lake Data Warehouse Data Mart Data Mesh y Data Fabric, Qué arquitectura permite conservar registros originales y consolidar cifras, Cómo elegir entre datos centralizados y responsabilidad por dominios]
+    source: /learn/data-architecture-fable/#architecture-map
+    excerpt: Elige lo que necesitas según la decisión, el riesgo y el costo de operar cada pieza.
+    answer: "Empieza por la decisión que necesitas mejorar: identifica qué datos y definiciones requiere, quién responde por ellos, cómo deben integrarse y cuánto cuesta operar cada componente. No son cinco opciones necesariamente excluyentes: una misma solución puede cubrir varias responsabilidades."
+    bullets:
+      - "Data Lake: conserva registros originales de distintas fuentes, con procedencia y acceso controlado."
+      - "Data Warehouse: integra registros, diferencia eventos y permite reconstruir cifras confiables."
+      - "Data Mart: ofrece a un equipo una vista específica para actuar a tiempo."
+      - "Data Mesh: asigna responsabilidades por dominio y establece acuerdos sobre definiciones compartidas."
+      - "Data Fabric: facilita conectar sistemas y seguir la evidencia hasta su origen."
+    note: "Síntesis editorial del apartado «Del cuento al diseño». El caso narrativo es ficticio y pedagógico; el capítulo es candidato."
   - question: ¿Qué es PULSE?
     aliases: [PULSE, Definición de PULSE]
     source: /03-pulse/#definicion-oficial
@@ -31,6 +43,18 @@ es:
     excerpt: Las dos exploraciones descritas en el artículo ayudan a formular la prueba. La comparación queda pendiente.
     note: Protocolo candidato de investigación del CDI-BoK.
 en:
+  - question: How do I choose the right data architecture?
+    aliases: [How can I determine which data architecture to use, Should I choose a data lake or data warehouse, How do I decide between data mesh and data fabric, Which data architecture fits my organization, How do I handle raw records integrated reporting and domain ownership, Choosing between centralized data and domain responsibility]
+    source: /en/learn/data-architecture-fable/#architecture-map
+    excerpt: Choose what you need based on the decision, the risk, and the cost of operating each piece.
+    answer: "Start from the decision to improve: identify the data and definitions it needs, who owns them, how evidence must be integrated, and the operating cost of each component. These are not necessarily exclusive options: one solution may cover several responsibilities."
+    bullets:
+      - "Data Lake: retains original records with provenance and controlled access."
+      - "Data Warehouse: integrates events and makes counts auditable."
+      - "Data Mart: provides a decision team with a focused operational view."
+      - "Data Mesh: clarifies domain ownership and shared definitions."
+      - "Data Fabric: connects systems and traces evidence back to its source."
+    note: "Editorial synthesis of «From story to design». The narrative case is fictional and pedagogical; the chapter is a candidate."
   - question: What is PULSE?
     aliases: [PULSE, Definition of PULSE]
     source: /en/03-pulse/specification/#official-definition

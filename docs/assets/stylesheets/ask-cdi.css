@@ -92,3 +92,72 @@
 .cdi-ask-section-title { display: block; margin-bottom: .35rem; line-height: 1.35; }
 .cdi-ask-evidence mark { background: #f5a62377; border-radius: 2px; }
 .cdi-ask-evidence small { margin-top: .18rem; overflow-wrap: anywhere; }
+
+/* Answer-first UX: short readable answer; citations available on demand. */
+.cdi-ask-answer {
+  padding: 1rem 1.1rem;
+  margin: .8rem 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .75rem;
+  background: var(--md-code-bg-color);
+  overflow-wrap: anywhere;
+}
+.cdi-ask-answer-label {
+  margin: 0 0 .5rem;
+  color: var(--md-typeset-a-color);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.cdi-ask-answer-text {
+  margin: .35rem 0 .7rem;
+  font-size: .94rem;
+  line-height: 1.65;
+  color: var(--md-default-fg-color);
+}
+.cdi-ask-answer-points {
+  margin: .55rem 0 .85rem;
+  padding-left: 1.25rem;
+  line-height: 1.55;
+}
+.cdi-ask-answer-points li { margin: .35rem 0; }
+.cdi-ask-answer-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem 1rem;
+  font-size: .82rem;
+  margin: .7rem 0;
+}
+.cdi-ask-answer-footer a, .cdi-ask-answer > a {
+  color: var(--md-typeset-a-color);
+  font-weight: 600;
+}
+.cdi-ask-answer-note {
+  display: block;
+  margin: .5rem 0;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.5;
+  font-size: .74rem;
+}
+.cdi-ask-answer details, .cdi-ask-related {
+  margin-top: .6rem;
+  padding-top: .45rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+.cdi-ask-answer summary, .cdi-ask-related summary {
+  color: var(--md-typeset-a-color);
+  font-size: .84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cdi-ask-source-quote { font-size: .8rem; line-height: 1.5; }
+.cdi-ask-evidence { margin: .65rem 0; padding: .4rem .7rem; font-size: .85rem; }
+.cdi-ask-related .cdi-ask-evidence + .cdi-ask-evidence {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+.cdi-ask-related .cdi-ask-evidence blockquote { max-height: 9rem; overflow: auto; }
+@media (max-width: 40rem) {
+  .cdi-ask-answer { padding: .75rem .85rem; }
+  .cdi-ask-answer-text { font-size: .9rem; }
+  .cdi-ask-answer-footer { flex-direction: column; }
+}

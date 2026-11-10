@@ -3,6 +3,7 @@ import path from "node:path";
 import { env, pipeline } from "@huggingface/transformers";
 import { MODEL, MODEL_KEY, DTYPE, embedText, normalizedVector } from "./model.mjs";
 import { rank, lexical } from "./retrieval.mjs";
+import { curatedCandidates, matchesNamedConcept } from "./answers.mjs";
 
 const base = path.resolve("site/assets/semantic");
 const fixtures = JSON.parse(await readFile("semantic/evaluation-questions.json", "utf8"));
@@ -23,7 +24,11 @@ for (const fixture of fixtures) {
   const index = indexes[fixture.lang];
   const fused = rank(index, fixture.question, vector);
   const lex = lexical(index, fixture.question);
-    observations.push({ ...fixture, durationMs: performance.now() - started,
+    const curated = curatedCandidates(index, vector)[0];
+  observations.push({ ...fixture,
+    curatedScore: curated?.similarity ?? -1, curatedSource: curated?.item.source ?? null,
+    curatedEligible: curated ? matchesNamedConcept(fixture.question, curated.item) : false,
+    durationMs: performance.now() - started,
     score: fused.ranked[0]?.cosine ?? -1,
     bm25Hit: fixture.path ? lex.slice(0, 5).some((x) => index.chunks[x.i].path === fixture.path) : null,
     hybridHit: fixture.path ? fused.ranked.some((x) => x.path === fixture.path) : null,
@@ -43,7 +48,24 @@ const balanced = (threshold) => {
 };
 const choice = candidates.map((threshold) => ({ threshold, ...balanced(threshold) }))
   .sort((a,b) => b.value-a.value || b.tnr-a.tnr || b.threshold-a.threshold)[0];
-const calibration = { format: 1, modelKey: MODEL_KEY, minCosine: choice.threshold,
+// Calibrate answer-card routing separately from passage abstention.
+const curatedScores = [...new Set(train.map((x) => x.curatedScore))].sort((a,b) => a-b);
+const curatedCandidatesThresholds = [curatedScores[0] - 0.000001,
+  ...curatedScores.slice(1).map((v,i) => (v+curatedScores[i])/2), curatedScores.at(-1)+0.000001];
+const curatedPositives = train.filter((x) => x.curatedExpected);
+const curatedNegatives = train.filter((x) => !x.curatedExpected);
+if (curatedPositives.length < 2 || curatedNegatives.length < 2) {
+  throw new Error("Curated answer calibration requires positive and negative questions");
+}
+const curatedChoice = curatedCandidatesThresholds.map((threshold) => ({
+  threshold,
+  tpr: curatedPositives.filter((x) => x.curatedScore >= threshold &&
+    x.curatedSource === x.curatedExpected).length / curatedPositives.length,
+  tnr: curatedNegatives.filter((x) => x.curatedScore < threshold).length / curatedNegatives.length
+})).map((x) => ({...x, value:(x.tpr+x.tnr)/2}))
+  .sort((a,b) => b.value-a.value || b.tnr-a.tnr || b.threshold-a.threshold)[0];
+const calibration = { format: 2, modelKey: MODEL_KEY, minCosine: choice.threshold,
+  curatedMinCosine: curatedChoice.threshold,
   method: "Maximize balanced accuracy on declared training examples; ties prefer specificity",
   trainCount: train.length, testCount: observations.length - train.length };
 await writeFile(path.join(base, "calibration.json"), JSON.stringify(calibration));
@@ -55,14 +77,31 @@ const summarize = (part) => {
     recall5Hybrid: rate(positive.filter((x) => x.hybridHit).length, positive.length),
     abstentionAccuracy: rate(negative.filter((x) => x.score < choice.threshold).length, negative.length),
     answerableCoverage: rate(positive.filter((x) => x.score >= choice.threshold).length, positive.length),
-    meanEmbeddingMs: rate(part.reduce((s,x) => s + x.durationMs,0),part.length) };
+    meanEmbeddingMs: rate(part.reduce((s,x) => s + x.durationMs,0),part.length),
+    curatedAnswerAccuracy: rate(part.filter((x) =>
+      (x.curatedEligible && x.curatedScore >= curatedChoice.threshold ? x.curatedSource : null) ===
+      (x.curatedExpected || null)).length, part.length) };
 };
 const result = { note: "Small, hand-authored evaluation set. Not a population estimate; review the held-out split.",
   modelKey: MODEL_KEY, calibration, train: summarize(train),
   heldOut: summarize(observations.filter((x) => x.split === "test")),
   samples: observations.map((x) => ({ question: x.question, expectedPath: x.path,
     split: x.split, bestPath: x.bestPath, cosine: Number(x.score.toFixed(5)),
-    bm25Hit: x.bm25Hit, hybridHit: x.hybridHit })) };
+    bm25Hit: x.bm25Hit, hybridHit: x.hybridHit,
+    curatedExpected: x.curatedExpected || null, curatedSource: x.curatedSource,
+    curatedScore: Number(x.curatedScore.toFixed(5)), curatedEligible: x.curatedEligible })) };
 await writeFile(path.join(base, "evaluation.json"), JSON.stringify(result, null, 2));
 console.log("Held-out evaluation: " + JSON.stringify(result.heldOut));
+console.log("Held-out curated score audit: " + JSON.stringify(
+  observations.filter((x) => x.split === "test")
+    .map((x) => ({question:x.question, expected:x.curatedExpected || null,
+      match:x.curatedSource, cosine:Number(x.curatedScore.toFixed(4))}))));
+console.log("Held-out answer routing misses: " + JSON.stringify(
+  observations.filter((x) => x.split === "test" &&
+    (x.curatedEligible && x.curatedScore >= curatedChoice.threshold ? x.curatedSource : null) !==
+    (x.curatedExpected || null))
+  .map((x) => ({question:x.question, expected:x.curatedExpected || null,
+    chosen:x.curatedSource, score:Number(x.curatedScore.toFixed(4)),
+    threshold:Number(curatedChoice.threshold.toFixed(4))}))));
+
 if (extractor.dispose) await extractor.dispose();
