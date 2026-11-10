@@ -4,7 +4,7 @@ Status: **candidate engineering feature**. This does not modify the normative PU
 
 ## What it actually does
 
-The public CDI-BoK uses MkDocs Material with Spanish/English Markdown under docs/. The existing curated "Ask the CDI-BoK" answers remain in place. Questions outside the curated answers use **two local retrieval channels**:
+The answer-first interface shows a concise, editorially authored synthesis when available, not simply a ranked list of documents. Each synthesis is checked against a passage in the committed Markdown at build time, and its provenance remains expandable. For unknown questions the fallback is an exact excerpt, explicitly labeled as such. Bilingual editorial topics are embedded at build time for query paraphrases, and their routing threshold is calibrated on declared train cases and reported on held-out cases. This is **not** LLM answer generation, and topical similarity is not the same as logical entailment.\n\nThe public CDI-BoK uses MkDocs Material with Spanish/English Markdown under docs/. The existing curated "Ask the CDI-BoK" answers remain in place. Questions outside the curated answers use **two local retrieval channels**:
 
 1. multilingual-e5-small, 384-dimensional cosine nearest neighbors over Markdown chunks;
 2. a published BM25 posting index for technical terms, codes, and names.
@@ -41,7 +41,7 @@ The deployed assets are under /assets/semantic/ in the custom domain and under <
 
 ## Evaluation and abstention
 
-The file evaluation-questions.json supplies 20 documented bilingual prompts, both answerable and unsupported, labeled train/test. evaluate.mjs chooses the cosine abstention threshold by maximizing balanced accuracy on the train portion (with tie-breaks favoring specificity), then publishes observed BM25 Recall@5, hybrid Recall@5, correct abstentions and query-embedding latency for the held-out portion in evaluation.json. The small hand-picked sample and reused domains **are insufficient to claim population-level accuracy**. Errors must be inspected and the evaluation expanded with independent questions before calling the search reliable.
+The file evaluation-questions.json supplies 26 documented bilingual prompts, both answerable and unsupported, labeled train/test. evaluate.mjs chooses the cosine abstention threshold by maximizing balanced accuracy on the train portion (with tie-breaks favoring specificity), then publishes observed BM25 Recall@5, hybrid Recall@5, correct abstentions and query-embedding latency for the held-out portion in evaluation.json. The small hand-picked sample and reused domains **are insufficient to claim population-level accuracy**. Errors must be inspected and the evaluation expanded with independent questions before calling the search reliable.
 
 The threshold is calibrated against the cosine of the **first RRF result**, matching the same feature used by the browser (rather than calibrating on the highest cosine of a potentially different result). The abstention does not establish lack of information in the world; only lack of sufficiently supported evidence in this corpus. RRF score itself cannot be read as a calibrated probability. If calibration is missing or incompatible, the system abstains instead of inventing a relevance cutoff.
 
@@ -60,3 +60,7 @@ The site currently offers optional Google Analytics subject to consent. That pre
 - Quantization differs between browser/Node: the UI checks cosine parity (minimum 0.995) against the Actions-generated pinned reference before showing hybrid results; a failed check blocks semantic answers. CI headless-browser parity still needs a separate automated E2E gate.
 - Semantic matches can be topically plausible but fail to answer: every excerpt is labeled and linked to the exact source; abstain if empirical gate rejects.
 - Operational failures: last published Pages artifact is not replaced unless Actions succeeds. On a failed release, inspect CI logs, resolve, and re-run.
+
+## Updating answer coverage
+
+Add a question, paraphrases, a short reviewer-authored `answer`, optional `bullets`, the exact `excerpt` and its canonical `source` in `governance/ask-cdi.yml` (ES/EN). The MkDocs build hook rejects excerpts missing from the corresponding published source, and `semantic/validate.mjs` checks that answer cards carry a commit-pinned, line-specific citation. Do not copy user questions into generic source Markdown to manipulate retrieval. Every curated summary requires manual verification and should clearly disclose fictional/candidate source status. To inspect metrics run the Pages/PR workflow and review `site/assets/semantic/evaluation.json`. The present validation set is too small to justify a global accuracy claim.
