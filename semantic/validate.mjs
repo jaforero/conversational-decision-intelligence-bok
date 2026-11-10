@@ -21,8 +21,11 @@ for(const lang of ["es","en"]) {
   assert.deepEqual(index.lexicon,buildLexicon(index.chunks));
   assert.ok(index.curated.length>=7);
   for (const answer of index.curated) {
-    assert.equal(answer.vector.length,DIM);
-    assert.ok(answer.vector.every(Number.isFinite));
+    assert.ok(Array.isArray(answer.vectors) && answer.vectors.length >= 2);
+    for (const vector of answer.vectors) {
+      assert.equal(vector.length,DIM);
+      assert.ok(vector.every(Number.isFinite));
+    }
     assert.equal(answer.sourceSha,sha);
     assert.ok(answer.sourceUrl.includes("/blob/"+sha+"/"));
     assert.ok(answer.sourcePath.startsWith("docs/"));
