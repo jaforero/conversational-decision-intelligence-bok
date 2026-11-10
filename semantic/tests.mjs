@@ -28,6 +28,18 @@ test("BM25 matches exact codes and RRF adds semantic paraphrases", () => {
   assert.equal(shouldAbstain(index,result.ranked,{modelKey:"test",minCosine:0.5}),false);
   assert.equal(shouldAbstain(index,result.ranked,{modelKey:"other",minCosine:0.5}),true);
 });
+test("abstention applies calibrated cosine to the RRF top hit, not the semantic best hit", () => {
+  const chunks = [
+    {heading:"Alpha",text:"generic background",vector:[0.8,0.6]},
+    {heading:"Beta",text:"DTC2PT specific exact code",vector:[0.6,0.8]},
+  ];
+  const index = {modelKey:"test",chunks,lexicon:buildLexicon(chunks)};
+  const found = rank(index,"DTC2PT",[1,0]);
+  assert.equal(found.ranked[0].heading,"Beta");
+  assert.ok(semantic(index,[1,0])[0].score > found.ranked[0].cosine);
+  assert.equal(shouldAbstain(index,found.ranked,{modelKey:"test",minCosine:0.7}),true);
+  assert.equal(shouldAbstain(index,[{cosine:NaN}],{modelKey:"test",minCosine:0.7}),true);
+});
 test("gibberish should not be considered lexical evidence", () => {
   const chunks=[{heading:"A",text:"Evidence about decisions",vector:[1,0]}];
   const i={chunks,lexicon:buildLexicon(chunks)};
