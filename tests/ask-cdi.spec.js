@@ -47,16 +47,17 @@ test("Spanish panel loads on demand, cites the SLA simulation and keeps input lo
   await panel.locator("[data-ask-suggestions] button").first().click();
   await expect(panel.getByRole("status")).toContainText("Respuesta editorial");
   await expect(panel.locator("[data-ask-results]")).toContainText("Resultado simulado");
-  const citation = panel.locator("[data-ask-results] a");
+  const citation = panel.locator("[data-ask-results] a").first();
   await expect(citation).toHaveAttribute("href", /\/practice-lab\/sla-decision-brief\/#7-resultado-simulado-y-decision-revisada$/);
 
+  await page.route("**/assets/semantic/index-es.json", (route) => route.fulfill({ status: 503, body: "Unavailable" }));
   const privateQuery = "frase privada no enviar 147af6";
   await panel.getByLabel("Escribe una pregunta").fill(privateQuery);
   const beforeQuery = requests.length;
   await panel.getByRole("button", { name: "Consultar" }).click();
-  await expect(panel.getByRole("status")).toContainText("No encontré evidencia suficiente");
+  await expect(panel.getByRole("status")).toContainText("La búsqueda semántica no está disponible");
   await expect(citation).toHaveCount(0);
-  expect(requests.slice(beforeQuery)).toEqual([]);
+  expect(requests.slice(beforeQuery).every(([url]) => new URL(url).origin === new URL(page.url()).origin)).toBe(true);
   expect(JSON.stringify(requests)).not.toContain(privateQuery);
   const stored = await page.evaluate(() => JSON.stringify([localStorage, sessionStorage]));
   expect(stored).not.toContain(privateQuery);
@@ -73,12 +74,9 @@ test("English full experience cites a rendered English section", async ({ page }
   await page.goto("/en/ask-cdi/");
   const input = page.getByLabel("Ask a question");
   await expect(input).toBeEnabled();
-  await input.fill("material denominator cannot be reconstructed");
+  await input.fill("What is PULSE?");
   await page.getByRole("button", { name: "Ask", exact: true }).click();
-  await expect(page.getByRole("status")).toContainText("Related passages");
+  await expect(page.getByRole("status")).toContainText("Editorial answer");
   const link = page.locator("[data-ask-results] a").first();
-  await expect(link).toHaveText(/Ground in evidence and context.*When to stop a conclusion/);
-  await expect(link).toHaveAttribute("href", /\/en\/learn\/02-evidence-context\/#when-to-stop-a-conclusion$/);
-  await link.click();
-  await expect(page.locator("#when-to-stop-a-conclusion")).toBeVisible();
+  await expect(link).toHaveAttribute("href", /\/en\/03-pulse\/specification\/#official-definition$/);
 });

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from functools import cache
 from html.parser import HTMLParser
 from pathlib import Path
@@ -61,6 +62,7 @@ def on_post_build(config, **kwargs) -> None:
     root = Path(config.config_file_path).resolve().parent
     site = Path(config.site_dir)
     assets = site / "assets/data"
+    source_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
     catalog = yaml.safe_load((root / "governance/ask-cdi.yml").read_text(encoding="utf-8"))
     graph = json.loads((assets / "cdi-knowledge-graph.json").read_text(encoding="utf-8"))
     pages = {node["url"]: node for node in graph["nodes"] if node["kind"] == "page"}
@@ -102,7 +104,17 @@ def on_post_build(config, **kwargs) -> None:
             section = sections.get(item["source"])
             if not section or item["excerpt"] not in " ".join(section["passages"]):
                 raise PluginError(f"Ask CDI: excerpt absent from published source {item['source']}")
-            editorial.append({**item, "title": section["title"], "page": section["page"], "status": section["status"]})
+            section_route = item["source"].split("#", 1)[0]
+            canonical_route = "/" + section_route.lstrip("/").removeprefix(prefix)
+            source_node = pages.get(canonical_route)
+            if not source_node:
+                raise PluginError(f"Ask CDI: cannot locate editorial file {section_route}")
+            source_path = source_node["path"]
+            if lang == "en":
+                source_path = source_path.removesuffix(".md") + ".en.md"
+            editorial.append({**item, "title": section["title"], "page": section["page"],
+                "status": section["status"], "source_sha": source_sha, "source_path": source_path,
+                "github_url": f"https://github.com/jaforero/conversational-decision-intelligence-bok/blob/{source_sha}/{source_path}"})
 
         payload = {"editorial": editorial, "sections": [section for section in sections.values() if section["retrievable"]]}
         (assets / f"ask-cdi-{lang}.json").write_text(

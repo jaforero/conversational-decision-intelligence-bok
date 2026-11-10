@@ -1,0 +1,22 @@
+[
+ {"lang":"es","question":"¿Qué es PULSE y para qué se utiliza?","path":"docs/03-pulse/index.md","split":"train"},
+ {"lang":"es","question":"¿Qué significa PDAMR para organizar una decisión?","path":"docs/03-pulse/specification.md","split":"train"},
+ {"lang":"es","question":"¿Qué debe contener un Decision Brief?","path":"docs/learn/decision-brief.md","split":"train"},
+ {"lang":"es","question":"¿Qué significa mantener control humano sobre la IA?","path":"docs/learn/04-human-ai-control.md","split":"train"},
+ {"lang":"es","question":"¿Para qué sirve medir la calidad de una decisión?","path":"docs/07-governance-quality/decision-quality.md","split":"train"},
+ {"lang":"es","question":"¿Qué hizo Operaciones cuando la reserva B no alcanzó en el ejercicio SLA?","path":"docs/practice-lab/sla-decision-brief.md","split":"test"},
+ {"lang":"es","question":"¿En qué se diferencia un dashboard de una experiencia para decidir?","path":"docs/learn/03-decision-experience.md","split":"test"},
+ {"lang":"es","question":"¿Cómo verificar la calidad de evidencia en un asistente de preguntas?","path":"docs/practice-lab/conversational-evidence.md","split":"test"},
+ {"lang":"es","question":"¿Para qué sirven las relaciones entre documentos en un grafo de conocimiento?","path":"docs/practice-lab/knowledge-graph.md","split":"test"},
+ {"lang":"es","question":"¿Qué pasa si no es posible reconstruir un denominador?","path":"docs/learn/02-evidence-context.md","split":"test"},
+ {"lang":"en","question":"What is the Decision Circle in PULSE?","path":"docs/03-pulse/specification.en.md","split":"test"},
+ {"lang":"en","question":"How can we measure learning from business decisions?","path":"docs/07-governance-quality/decision-measurement-system.en.md","split":"train"},
+ {"lang":"en","question":"How do decision patterns help teams?","path":"docs/08-patterns/catalog.en.md","split":"test"},
+ {"lang":"en","question":"What must be checked before accepting an AI answer?","path":"docs/practice-lab/conversational-evidence.en.md","split":"test"},
+ {"lang":"es","question":"¿Cuál es la temperatura exacta de Bogotá ahora?","path":null,"split":"train"},
+ {"lang":"es","question":"¿Qué restaurante tiene una mesa disponible esta noche?","path":null,"split":"train"},
+ {"lang":"en","question":"Who won the 2026 World Cup final?","path":null,"split":"train"},
+ {"lang":"es","question":"¿Cuál es el valor actual de las acciones de Tesla?","path":null,"split":"test"},
+ {"lang":"en","question":"What is my bank account balance right now?","path":null,"split":"test"},
+ {"lang":"es","question":"¿Cuánto demora un vuelo directo a Singapur desde Bogotá mañana?","path":null,"split":"test"}
+]

@@ -87,3 +87,8 @@
   .cdi-ask-launcher { justify-content: center; }
   .cdi-ask-dialog { width: calc(100% - 1rem); }
 }
+
+.cdi-ask-local-note { margin: .5rem 0; color: var(--md-default-fg-color--light); font-size: .75rem; }
+.cdi-ask-section-title { display: block; margin-bottom: .35rem; line-height: 1.35; }
+.cdi-ask-evidence mark { background: #f5a62377; border-radius: 2px; }
+.cdi-ask-evidence small { margin-top: .18rem; overflow-wrap: anywhere; }
