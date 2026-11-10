@@ -290,7 +290,7 @@
       results.replaceChildren();
       const result = search(question);
       if (result.kind === "editorial") {
-        status.textContent = copy.editorial;
+        status.textContent = result.items.some((item) => item.answer) ? copy.editorialAnswer : copy.editorial;
         for (const item of result.items) {
           renderAnswer(results, item, question, language, base, copy);
         }
