@@ -49,8 +49,8 @@ test("gibberish should not be considered lexical evidence", () => {
 
 test("semantic editorial routing matches a paraphrase, never unsupported low-score queries", () => {
   const index = {modelKey:"test",curated:[
-    {question:"Choose data architecture",source:"/learn/data-architecture-fable/#architecture-map",vector:[1,0]},
-    {question:"Human governance",source:"/03-pulse/specification/#human-in-control",vector:[0,1]},
+    {question:"Choose data architecture",source:"/learn/data-architecture-fable/#architecture-map",vectors:[[1,0],[0.8,0.6]]},
+    {question:"Human governance",source:"/03-pulse/specification/#human-in-control",vectors:[[0,1],[0.1,0.9]]},
   ]};
   const candidates = curatedCandidates(index,[0.98,0.2]);
   assert.equal(candidates[0].item.source,"/learn/data-architecture-fable/#architecture-map");
