@@ -14,11 +14,24 @@ export function curatedCandidates(index, vector) {
     }))
     .sort((a,b) => b.similarity - a.similarity);
 }
-export function matchCurated(index, vector, calibration) {
+// Reject a generic editorial answer when the question names a more specific
+// title-cased concept absent from its evidence (e.g. "Decision Circle" vs PULSE).
+// This is a narrow guard; ordinary semantic paraphrases remain supported.
+export function matchesNamedConcept(question, item) {
+  const named = String(question).match(/\b[A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,})+\b/g) || [];
+  if (!named.length) return true;
+  const plain = (value) => String(value).normalize("NFD").replace(/\p{M}/gu, "")
+    .toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const corpus = plain([item.question, ...(item.aliases || []), item.answer || "",
+    ...(item.bullets || []), item.excerpt || ""].join(" "));
+  return named.every((phrase) => corpus.includes(plain(phrase)));
+}
+export function matchCurated(index, vector, calibration, question = "") {
   if (!calibration || index.modelKey !== calibration.modelKey ||
       !Number.isFinite(calibration.curatedMinCosine)) return null;
   const first = curatedCandidates(index, vector)[0];
-  return first && first.similarity >= calibration.curatedMinCosine ? first.item : null;
+  return first && first.similarity >= calibration.curatedMinCosine &&
+    matchesNamedConcept(question, first.item) ? first.item : null;
 }
 // A fallback is a literal, unmodified source quotation, never a synthesized answer.
 // Keep only one substantive paragraph; the reader can expand full evidence below.
