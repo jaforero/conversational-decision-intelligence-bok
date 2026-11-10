@@ -20,3 +20,6 @@ Ask a question to learn from the published corpus. An **editorial answer** shows
 The query is processed in your browser, without generative AI. The index is rebuilt with every publication and preserves the source language and editorial status. Simulated cases are labeled. This teaching demonstration draws on [Ask the Handbook](https://actuaria.javierforero.co/ask-the-handbook/) (in Spanish).
 
 Try the [PULSE specification](03-pulse/specification.en.md), the [SLA Decision Brief](practice-lab/sla-decision-brief.en.md), or the [candidate GraphRAG protocol](research/research-agenda.en.md#graphrag-evaluation).
+
+
+For a practical example, ask **“How do I choose the right data architecture?”** The short editorial answer is grounded in [The Data Village](learn/data-architecture-fable.en.md#architecture-map). Other queries return literal source excerpts, never an LLM-generated answer.
