@@ -3,7 +3,7 @@ import path from "node:path";
 import { env, pipeline } from "@huggingface/transformers";
 import { MODEL, MODEL_KEY, DTYPE, embedText, normalizedVector } from "./model.mjs";
 import { rank, lexical } from "./retrieval.mjs";
-import { curatedCandidates } from "./answers.mjs";
+import { curatedCandidates, matchesNamedConcept } from "./answers.mjs";
 
 const base = path.resolve("site/assets/semantic");
 const fixtures = JSON.parse(await readFile("semantic/evaluation-questions.json", "utf8"));
@@ -27,6 +27,7 @@ for (const fixture of fixtures) {
     const curated = curatedCandidates(index, vector)[0];
   observations.push({ ...fixture,
     curatedScore: curated?.similarity ?? -1, curatedSource: curated?.item.source ?? null,
+    curatedEligible: curated ? matchesNamedConcept(fixture.question, curated.item) : false,
     durationMs: performance.now() - started,
     score: fused.ranked[0]?.cosine ?? -1,
     bm25Hit: fixture.path ? lex.slice(0, 5).some((x) => index.chunks[x.i].path === fixture.path) : null,
@@ -78,7 +79,7 @@ const summarize = (part) => {
     answerableCoverage: rate(positive.filter((x) => x.score >= choice.threshold).length, positive.length),
     meanEmbeddingMs: rate(part.reduce((s,x) => s + x.durationMs,0),part.length),
     curatedAnswerAccuracy: rate(part.filter((x) =>
-      (x.curatedScore >= curatedChoice.threshold ? x.curatedSource : null) ===
+      (x.curatedEligible && x.curatedScore >= curatedChoice.threshold ? x.curatedSource : null) ===
       (x.curatedExpected || null)).length, part.length) };
 };
 const result = { note: "Small, hand-authored evaluation set. Not a population estimate; review the held-out split.",
@@ -88,7 +89,7 @@ const result = { note: "Small, hand-authored evaluation set. Not a population es
     split: x.split, bestPath: x.bestPath, cosine: Number(x.score.toFixed(5)),
     bm25Hit: x.bm25Hit, hybridHit: x.hybridHit,
     curatedExpected: x.curatedExpected || null, curatedSource: x.curatedSource,
-    curatedScore: Number(x.curatedScore.toFixed(5)) })) };
+    curatedScore: Number(x.curatedScore.toFixed(5)), curatedEligible: x.curatedEligible })) };
 await writeFile(path.join(base, "evaluation.json"), JSON.stringify(result, null, 2));
 console.log("Held-out evaluation: " + JSON.stringify(result.heldOut));
 console.log("Held-out curated score audit: " + JSON.stringify(
