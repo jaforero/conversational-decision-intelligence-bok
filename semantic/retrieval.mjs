@@ -53,5 +53,5 @@ export function rank(index, query, vector, options = {}) {
 }
 export function shouldAbstain(index, ranked, calibration) {
   if (!ranked.length || !calibration || calibration.modelKey !== index.modelKey) return true;
-  return ranked[0].cosine < calibration.minCosine;
+  return !Number.isFinite(ranked[0].cosine) || ranked[0].cosine < calibration.minCosine;
 }

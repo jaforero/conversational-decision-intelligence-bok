@@ -138,6 +138,7 @@
   }
 
   const hybridCache = new Map();
+  const parityChecks = new Map();
   function loadHybrid(language, base) {
     const key = base.href + language;
     if (!hybridCache.has(key)) {
@@ -225,12 +226,24 @@
       try {
         const local = await loadHybrid(language, base);
         status.textContent = copy.searching;
+        // Verify browser-WASM and CI/Node embeddings before trusting semantic scores.
+        // The index reference was built by the same pinned E5 model in GitHub Actions.
+        const parityKey = base.href + local.index.modelKey;
+        if (!parityChecks.has(parityKey)) {
+          const check = local.embedding.embedQuestion("What is PULSE?", base).then((reference) => {
+            const cosine = local.retrieval.dot(reference, local.index.reference);
+            if (!Number.isFinite(cosine) || cosine < 0.995) {
+              throw new Error("Browser/Actions E5 embedding parity check failed");
+            }
+          }).catch((error) => {
+            parityChecks.delete(parityKey);
+            throw error;
+          });
+          parityChecks.set(parityKey, check);
+        }
+        await parityChecks.get(parityKey);
         const vector = await local.embedding.embedQuestion(question, base);
         if (current !== requestId) return;
-        // Exact same E5 preprocessing, q8 weights, mean pooling and L2 normalization.
-        if (local.retrieval.dot(vector, local.index.reference) > 1.01) {
-          throw new Error("Inconsistent embedding dimensions");
-        }
         const found = local.retrieval.rank(local.index, question, vector);
         const abstain = local.retrieval.shouldAbstain(local.index, found.ranked, local.calibration);
         status.textContent = abstain ? copy.semanticInsufficient : copy.semanticRelated;
