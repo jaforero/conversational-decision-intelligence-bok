@@ -16,13 +16,19 @@ test("Node and browser produce equivalent local q8 E5 embeddings, without remote
     const index = await (await fetch("/assets/semantic/index-es.json")).json();
     const { embedQuestion } = await import("/assets/semantic/embed.mjs");
     const { dot } = await import("/assets/semantic/retrieval.mjs");
+    const { matchCurated } = await import("/assets/semantic/answers.mjs");
+    const calibration = await (await fetch("/assets/semantic/calibration.json")).json();
     const vector = await embedQuestion("What is PULSE?", new URL("/", location.origin));
+    const arch = "¿Qué me orienta al decidir entre conservar registros crudos, integrar cifras y repartir la responsabilidad por dominios?";
+    const architectureVector = await embedQuestion(arch, new URL("/", location.origin));
+    const architecture = matchCurated(index, architectureVector, calibration, arch)?.source;
     return { cosine: dot(vector, index.reference), dimension: vector.length,
-      revision: index.modelKey, sha: index.sourceSha };
+      revision: index.modelKey, sha: index.sourceSha, architecture };
   });
   expect(parity.dimension).toBe(384);
   expect(parity.cosine).toBeGreaterThan(0.995);
   expect(parity.revision).toContain("multilingual-e5-small");
+  expect(parity.architecture).toBe("/learn/data-architecture-fable/#architecture-map");
   expect(parity.sha).toMatch(/^[0-9a-f]{40}$/);
   expect(external).toEqual([]);
 });
