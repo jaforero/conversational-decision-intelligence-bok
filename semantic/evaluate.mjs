@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { env, pipeline } from "@huggingface/transformers";
 import { MODEL, MODEL_KEY, DTYPE, embedText, normalizedVector } from "./model.mjs";
-import { rank, lexical, semantic } from "./retrieval.mjs";
+import { rank, lexical } from "./retrieval.mjs";
 
 const base = path.resolve("site/assets/semantic");
 const fixtures = JSON.parse(await readFile("semantic/evaluation-questions.json", "utf8"));
@@ -23,9 +23,8 @@ for (const fixture of fixtures) {
   const index = indexes[fixture.lang];
   const fused = rank(index, fixture.question, vector);
   const lex = lexical(index, fixture.question);
-  const sem = semantic(index, vector);
-  observations.push({ ...fixture, durationMs: performance.now() - started,
-    score: sem[0]?.score || 0,
+    observations.push({ ...fixture, durationMs: performance.now() - started,
+    score: fused.ranked[0]?.cosine ?? -1,
     bm25Hit: fixture.path ? lex.slice(0, 5).some((x) => index.chunks[x.i].path === fixture.path) : null,
     hybridHit: fixture.path ? fused.ranked.some((x) => x.path === fixture.path) : null,
     bestPath: fused.ranked[0]?.path || null });
