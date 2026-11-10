@@ -89,12 +89,19 @@ const curatedKeys = new Set();
 for (const lang of ["es", "en"]) {
   const editorial = JSON.parse(await readFile(path.join(root, "site/assets/data/ask-cdi-" + lang + ".json"), "utf8")).editorial;
   for (const item of editorial) {
-    const topic = [item.question, ...item.aliases].join(". ");
-    const key = hash(MODEL_KEY + "\ncurated\n" + topic);
-    curatedKeys.add(key);
-    if (!Array.isArray(cache.vectors[key]) || cache.vectors[key].length !== DIM ||
-        !cache.vectors[key].every(Number.isFinite)) {
-      cache.vectors[key] = await embed(topic, "passage");
+    // Represent each paraphrase and every grounded concept separately.
+    // One concatenated alias embedding dilutes multi-facet decision questions.
+    const variants = [...new Set([item.question, ...item.aliases,
+      item.answer, ...(item.bullets || [])].filter(Boolean))];
+    const vectors = [];
+    for (const text of variants) {
+      const key = hash(MODEL_KEY + "\ncurated-v2\n" + text);
+      curatedKeys.add(key);
+      if (!Array.isArray(cache.vectors[key]) || cache.vectors[key].length !== DIM ||
+          !cache.vectors[key].every(Number.isFinite)) {
+        cache.vectors[key] = await embed(text, "passage");
+      }
+      vectors.push(cache.vectors[key]);
     }
     const evidence = data[lang].find((chunk) =>
       chunk.path === item.source_path && chunk.text.includes(item.excerpt));
@@ -106,7 +113,7 @@ for (const lang of ["es", "en"]) {
       bullets: item.bullets || [], excerpt: item.excerpt, note: item.note || null,
       source: item.source, sourcePath: item.source_path,
       sourceUrl: evidence?.url || item.github_url, status: item.status,
-      sourceSha: sha, vector: cache.vectors[key],
+      sourceSha: sha, vectors,
     });
   }
 }
