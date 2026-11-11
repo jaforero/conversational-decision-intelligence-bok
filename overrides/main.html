@@ -103,4 +103,6 @@
     </dialog>
   {% endif %}
   {{ super() }}
+  {# Keep the Ask client cache coherent with the deployed index on every commit. #}
+  <script src="{{ 'assets/javascripts/ask-cdi.js' | url }}?v={{ config.extra.ask_asset_rev | default('unknown') }}"></script>
 {% endblock %}
