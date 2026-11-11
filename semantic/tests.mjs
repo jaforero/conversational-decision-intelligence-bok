@@ -90,7 +90,7 @@ test("named technical concepts cannot be answered with an unrelated generic edit
 test("extractive evidence is literal, brief and linked to its source", () => {
   const ranked = [
     {path:"docs/learn/example.md", heading:"Usar datos", url:"https://github.com/example#L20-L24",
-      cosine:0.85, text:"Para seleccionar una arquitectura, identifica la decisión que cambia y sus restricciones.\\nLa calidad de los datos se comprueba mediante el origen documentado y su definición."},
+      cosine:0.85, text:"Para seleccionar una arquitectura, identifica la decisión que cambia y sus restricciones.\nLa calidad de los datos se comprueba mediante el origen documentado y su definición."},
     {path:"docs/governance/example.md",heading:"Plataforma",cosine:0.42,
       text:"El repositorio utiliza GitHub Actions para publicar la plataforma de documentación."}
   ];
