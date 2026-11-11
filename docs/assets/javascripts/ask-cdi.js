@@ -77,10 +77,10 @@
       preparing: "Preparando búsqueda híbrida local. La primera consulta descarga aproximadamente 140 MB del modelo y tokenizer…",
       searching: "Buscando en los documentos con embeddings y BM25, sin enviar tu pregunta…",
       modelUnavailable: "La búsqueda semántica no está disponible en este navegador. Las respuestas editoriales siguen accesibles; no se ha sustituido silenciosamente por búsqueda textual.",
-      semanticRelated: "Fragmentos recuperados por búsqueda híbrida · verifica las citas en GitHub.",
+      semanticRelated: "La documentación contiene estos pasajes relacionados con tu pregunta.",
       semanticInsufficient: "No encontré información suficiente en los documentos para responder esta pregunta.",
       editorialAnswer: "Respuesta editorial basada en la documentación",
-      sourceExtract: "Extracto literal de la documentación",
+      sourceExtract: "Qué indica la documentación (citas literales)",
       otherEvidence: "Ver evidencia y fuentes relacionadas",
       original: "Consultar Markdown en GitHub",
       readSection: "Leer sección en el CDI-BoK",
@@ -100,10 +100,10 @@
       preparing: "Preparing local hybrid retrieval. The first query downloads approximately 140 MB of model assets…",
       searching: "Searching locally using embeddings and BM25. Your question is not transmitted…",
       modelUnavailable: "Semantic retrieval could not run in this browser. Editorial answers remain available; text search has not silently replaced semantics.",
-      semanticRelated: "Hybrid search passages · verify the GitHub citations.",
+      semanticRelated: "These source passages relate to your question.",
       semanticInsufficient: "I could not find sufficient information in the documents to answer this question.",
       editorialAnswer: "Editorial answer grounded in the documentation",
-      sourceExtract: "Verbatim excerpt from the documentation",
+      sourceExtract: "What the documentation says (verbatim evidence)",
       otherEvidence: "Show evidence and related sources",
       original: "Inspect Markdown on GitHub",
       readSection: "Read section in the CDI-BoK",
@@ -138,7 +138,7 @@
   function loadIndex(language, base) {
     const key = base.href + language;
     if (!indexes.has(key)) {
-      indexes.set(key, fetch(new URL("assets/data/ask-cdi-" + language + ".json", base), { mode: "same-origin" })
+      indexes.set(key, fetch(new URL("assets/data/ask-cdi-" + language + ".json", base), { mode: "same-origin", cache: "no-cache" })
         .then((response) => {
           if (!response.ok) throw new Error("Evidence index unavailable");
           return response.json();
@@ -157,7 +157,7 @@
     const key = base.href + language;
     if (!hybridCache.has(key)) {
       const root = new URL("assets/semantic/", base);
-      const loadJson = (filename) => fetch(new URL(filename, root), { mode: "same-origin" }).then((response) => {
+      const loadJson = (filename) => fetch(new URL(filename, root), { mode: "same-origin", cache: "no-cache" }).then((response) => {
         if (!response.ok) throw new Error("Missing static semantic index: " + filename);
         return response.json();
       });
@@ -181,7 +181,7 @@
   }
 
   function highlight(parent, value, question) {
-    const needles = [...new Set(normalize(question).split(" ").filter((v) => v.length > 3))]
+    const needles = [...new Set(normalize(question).split(" ").filter((v) => v.length > 3 && !stop.has(v)))]
       .filter((word) => /^[a-z0-9]+$/.test(word));
     if (!needles.length) { parent.textContent = value; return; }
     const regex = new RegExp("(" + needles.sort((a, b) => b.length - a.length).join("|") + ")", "gi");
@@ -219,6 +219,9 @@
       original.target = "_blank";
       original.rel = "noopener noreferrer";
     }
+    const sourceSha = item.sourceSha || item.source_sha;
+    if (sourceSha) append(footer, "small", (language === "en" ? "Source version: " : "Versión documental: ") +
+      sourceSha.slice(0, 10)).className = "cdi-ask-commit";
     if (item.note) append(card, "small", item.note).className = "cdi-ask-answer-note";
     const details = append(card, "details", "");
     const summary = append(details, "summary", copy.otherEvidence);
@@ -231,19 +234,28 @@
   }
 
   function renderRetrieved(container, local, found, question, copy) {
-    const selected = local.answers.extractPassage(found.ranked);
-    if (!selected) return;
+    const evidence = local.answers.extractEvidence(found.ranked, question, 3);
+    if (!evidence.length) return;
     const card = append(container, "section", "");
     card.className = "cdi-ask-answer cdi-ask-answer-extractive";
     append(card, "p", copy.sourceExtract).className = "cdi-ask-answer-label";
-    const quote = append(card, "blockquote", "");
-    quote.className = "cdi-ask-answer-text";
-    highlight(quote, selected.excerpt, question);
+    const list = append(card, "ol", "");
+    list.className = "cdi-ask-answer-evidence-list";
+    for (const {excerpt, item} of evidence) {
+      const li = append(list, "li", "");
+      const quote = append(li, "blockquote", "");
+      quote.className = "cdi-ask-answer-text";
+      highlight(quote, excerpt, question);
+      const source = append(li, "a", item.page + " · " + copy.original);
+      source.href = item.url;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      append(li, "small", item.path + " · L" + item.lineStart + "–L" + item.lineEnd);
+    }
     append(card, "p", copy.limited).className = "cdi-ask-answer-note";
-    const link = append(card, "a", copy.original);
-    link.href = selected.item.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+    append(card, "small", (local.index.language === "en" ? "Source version: " : "Versión documental: ") +
+      local.index.sourceSha.slice(0, 10)).className = "cdi-ask-commit";
+
     const details = append(container, "details", "");
     details.className = "cdi-ask-related";
     append(details, "summary", copy.otherEvidence);
@@ -328,7 +340,7 @@
           renderAnswer(results, curated, question, language, base, copy);
           return;
         }
-        const found = local.retrieval.rank(local.index, question, vector);
+        const found = local.retrieval.rank(local.index, question, vector, {limit: 12});
         const abstain = local.retrieval.shouldAbstain(local.index, found.ranked, local.calibration);
         status.textContent = abstain ? copy.semanticInsufficient : copy.semanticRelated;
         if (abstain) return;
