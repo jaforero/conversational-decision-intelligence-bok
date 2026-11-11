@@ -44,3 +44,46 @@ export function extractPassage(ranked) {
     value.slice(0, 480).replace(/\s+\S*$/, "") + "…";
   return { excerpt, item };
 }
+
+
+// A non-generative fallback: short literal passages selected from independently
+// cited chunks. These are evidence, not a newly inferred answer.
+export function extractEvidence(ranked, question, limit = 3) {
+  const stop = new Set(["como","para","cual","cuales","sobre","porque","quiero","puedo",
+    "que","una","uno","los","las","con","del","por","the","what","which","how",
+    "where","when","from","with","into","this","that","can","should"]);
+  const tokenize = (value) => String(value).normalize("NFD").replace(/\p{M}/gu, "")
+    .toLowerCase().match(/[\p{L}\p{N}]+/gu) || [];
+  const queryTerms = new Set(tokenize(question).filter((w) => w.length > 2 && !stop.has(w)));
+  const pool = [];
+  (ranked || []).slice(0, 12).forEach((item, rankPosition) => {
+    const chunks = String(item.text || "").split(/\n+/);
+    for (const paragraph of chunks) {
+      // Long Markdown tables and navigation lists should not become answer prose.
+      if (paragraph.includes(" | ") || paragraph.trim().startsWith("|")) continue;
+      const sentences = paragraph.match(/[^.!?]+(?:[.!?]+|$)/g) || [paragraph];
+      for (const sentence of sentences) {
+        const excerpt = sentence.trim();
+        if (excerpt.length < 42 || excerpt.length > 420) continue;
+        const tokens = new Set(tokenize(excerpt));
+        const overlap = [...queryTerms].filter((w) => tokens.has(w)).length;
+        const heading = new Set(tokenize(item.heading || ""));
+        const headingOverlap = [...queryTerms].filter((w) => heading.has(w)).length;
+        const score = 1 / (rankPosition + 2) + 0.12 * overlap +
+          0.05 * headingOverlap + 0.1 * Math.max(0, item.cosine || 0);
+        pool.push({item, excerpt, score});
+      }
+    }
+  });
+  pool.sort((a, b) => b.score - a.score);
+  const seenTexts = new Set(), pageCounts = new Map(), selected = [];
+  for (const result of pool) {
+    const key = tokenize(result.excerpt).join(" ");
+    if (seenTexts.has(key) || (pageCounts.get(result.item.path) || 0) >= 2) continue;
+    seenTexts.add(key);
+    pageCounts.set(result.item.path, (pageCounts.get(result.item.path) || 0) + 1);
+    selected.push({excerpt: result.excerpt, item: result.item});
+    if (selected.length >= limit) break;
+  }
+  return selected;
+}

@@ -161,3 +161,13 @@
   .cdi-ask-answer-text { font-size: .9rem; }
   .cdi-ask-answer-footer { flex-direction: column; }
 }
+
+/* A few readable evidence sentences replace long rank-ordered document dumps. */
+.cdi-ask-answer-evidence-list { margin: .45rem 0 .75rem; padding-left: 1.35rem; }
+.cdi-ask-answer-evidence-list li { padding: .3rem 0; margin-bottom: .55rem; }
+.cdi-ask-answer-evidence-list blockquote { margin: 0 0 .25rem; padding: 0; border: 0; }
+.cdi-ask-answer-evidence-list a { display: inline-block; font-size: .81rem; }
+.cdi-ask-answer-evidence-list small, .cdi-ask-commit {
+  display: block; margin-top: .15rem; font-size: .71rem;
+  color: var(--md-default-fg-color--light); overflow-wrap: anywhere;
+}

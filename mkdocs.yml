@@ -253,7 +253,6 @@ extra_css:
   - assets/stylesheets/cdi-bok.css
 
 extra_javascript:
-  - assets/javascripts/ask-cdi.js
   - assets/javascripts/site.js
 
 extra:

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { parseMarkdown } from "./markdown.mjs";
-import { curatedCandidates, matchCurated, matchesNamedConcept, extractPassage } from "./answers.mjs";
+import { curatedCandidates, matchCurated, matchesNamedConcept, extractPassage, extractEvidence } from "./answers.mjs";
 import { buildLexicon, lexical, semantic, rank, shouldAbstain, terms } from "./retrieval.mjs";
 test("Markdown extracts frontmatter, headings and 1-based line references", () => {
   const source = "---\ntitle: Demo\nstatus: candidate\n---\n# Title\n\n## Section\n\nHola mundo importante.\n\nOtro párrafo.\n";
@@ -85,4 +85,20 @@ test("named technical concepts cannot be answered with an unrelated generic edit
   assert.equal(matchesNamedConcept("How do I choose architecture?", architecture),true);
   assert.equal(matchCurated({modelKey:"test",curated:[pulse]},[1,0],
     {modelKey:"test",curatedMinCosine:0.7},"What is the Decision Circle in PULSE?"),null);
+});
+
+test("extractive evidence is literal, brief and linked to its source", () => {
+  const ranked = [
+    {path:"docs/learn/example.md", heading:"Usar datos", url:"https://github.com/example#L20-L24",
+      cosine:0.85, text:"Para seleccionar una arquitectura, identifica la decisión que cambia y sus restricciones.\nLa calidad de los datos se comprueba mediante el origen documentado y su definición."},
+    {path:"docs/governance/example.md",heading:"Plataforma",cosine:0.42,
+      text:"El repositorio utiliza GitHub Actions para publicar la plataforma de documentación."}
+  ];
+  const result = extractEvidence(ranked,"¿Cómo seleccionar una arquitectura de datos?",3);
+  assert.ok(result.length >= 2);
+  assert.equal(result[0].item.path,"docs/learn/example.md");
+  for (const part of result) {
+    assert.ok(part.item.text.includes(part.excerpt));
+    assert.ok(part.excerpt.length <= 420);
+  }
 });
