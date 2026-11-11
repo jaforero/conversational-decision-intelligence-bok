@@ -4,14 +4,14 @@ Status: **candidate engineering feature**. This does not modify the normative PU
 
 ## What it actually does
 
-The answer-first interface shows a concise, editorially authored synthesis when available, not simply a ranked list of documents. Each synthesis is checked against a passage in the committed Markdown at build time, and its provenance remains expandable. For unknown questions the fallback is an exact excerpt, explicitly labeled as such. Bilingual editorial topics are embedded at build time for query paraphrases, and their routing threshold is calibrated on declared train cases and reported on held-out cases. This is **not** LLM answer generation, and topical similarity is not the same as logical entailment.\n\nThe public CDI-BoK uses MkDocs Material with Spanish/English Markdown under docs/. The existing curated "Ask the CDI-BoK" answers remain in place. Questions outside the curated answers use **two local retrieval channels**:
+The answer-first interface shows a concise, editorially authored synthesis when available, not simply a ranked list of documents. Each synthesis is checked against a passage in the committed Markdown at build time, and its provenance remains expandable. For unknown questions the fallback presents up to three short, verbatim evidence sentences with a separate commit-pinned citation for each; it does not invent connective conclusions. Bilingual editorial topics are embedded at build time for query paraphrases, and their routing threshold is calibrated on declared train cases and reported on held-out cases. This is **not** LLM answer generation, and topical similarity is not the same as logical entailment.\n\nThe public CDI-BoK uses MkDocs Material with Spanish/English Markdown under docs/. The existing curated "Ask the CDI-BoK" answers remain in place. Questions outside the curated answers use **two local retrieval channels**:
 
 1. multilingual-e5-small, 384-dimensional cosine nearest neighbors over Markdown chunks;
 2. a published BM25 posting index for technical terms, codes, and names.
 
 The top 40 results from each channel are combined by reciprocal rank fusion (RRF, k=60); default weights 1:1. No LLM is loaded and the extracts are **not synthesized answers**. Citations link to the exact committed Markdown file and line range. Editorial status and simulated cases remain labeled.
 
-This index deliberately covers the *publicly published* bilingual docs/ corpus (approved/candidate pages). Sources under sources/constitutional/, private drafts and governance registries are not silently promoted to reader-facing evidence. No authoring Markdown is modified by indexing. To include those other repositories of text, first make an explicit editorial scope decision.
+This index covers the reader-facing bilingual docs/ corpus (approved/candidate pages), omitting version release notes from semantic retrieval to reduce irrelevant matches. Sources under sources/constitutional/, private drafts and governance registries are not silently promoted to reader-facing evidence. No authoring Markdown is modified by indexing. To include those other repositories of text, first make an explicit editorial scope decision.
 
 ## Model and licensing
 
@@ -64,3 +64,8 @@ The site currently offers optional Google Analytics subject to consent. That pre
 ## Updating answer coverage
 
 Add a question, paraphrases, a short reviewer-authored `answer`, optional `bullets`, the exact `excerpt` and its canonical `source` in `governance/ask-cdi.yml` (ES/EN). The MkDocs build hook rejects excerpts missing from the corresponding published source, and `semantic/validate.mjs` checks that answer cards carry a commit-pinned, line-specific citation. Do not copy user questions into generic source Markdown to manipulate retrieval. Every curated summary requires manual verification and should clearly disclose fictional/candidate source status. To inspect metrics run the Pages/PR workflow and review `site/assets/semantic/evaluation.json`. The present validation set is too small to justify a global accuracy claim.
+
+
+## Browser cache and evidence UX
+
+Ask client assets are commit-versioned at build time; each new Pages publication changes the JavaScript URL, while JSON indexes are fetched using cache revalidation. The interface displays the source commit to help diagnose stale versions. Model ONNX weights remain cacheable across documentation updates.
