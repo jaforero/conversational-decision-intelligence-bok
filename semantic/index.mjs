@@ -35,6 +35,8 @@ const sourceDigest = [];
 for (const file of files) {
   const relative = path.relative(root, file).replaceAll(path.sep, "/");
   if (/^docs\/(ask-cdi|index)(\.en)?\.md$/.test(relative)) continue;
+  // Version notes describe releases, not decision guidance.
+  if (relative.startsWith("docs/versions/")) continue;
   const source = await readFile(file, "utf8");
   const lang = relative.endsWith(".en.md") ? "en" : "es";
   const { metadata, chunks } = parseMarkdown(source, relative);
