@@ -52,12 +52,12 @@ export function extractEvidence(ranked, question, limit = 3) {
   const stop = new Set(["como","para","cual","cuales","sobre","porque","quiero","puedo",
     "que","una","uno","los","las","con","del","por","the","what","which","how",
     "where","when","from","with","into","this","that","can","should"]);
-  const tokenize = (value) => String(value).normalize("NFD").replace(/\\p{M}/gu, "")
-    .toLowerCase().match(/[\\p{L}\\p{N}]+/gu) || [];
+  const tokenize = (value) => String(value).normalize("NFD").replace(/\p{M}/gu, "")
+    .toLowerCase().match(/[\p{L}\p{N}]+/gu) || [];
   const queryTerms = new Set(tokenize(question).filter((w) => w.length > 2 && !stop.has(w)));
   const pool = [];
   (ranked || []).slice(0, 12).forEach((item, rankPosition) => {
-    const chunks = String(item.text || "").split(/\\n+/);
+    const chunks = String(item.text || "").split(/\n+/);
     for (const paragraph of chunks) {
       // Long Markdown tables and navigation lists should not become answer prose.
       if (paragraph.includes(" | ") || paragraph.trim().startsWith("|")) continue;
