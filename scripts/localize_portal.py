@@ -3,10 +3,21 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 
 from mkdocs.exceptions import PluginError
 from mkdocs.plugins import event_priority
+
+
+def on_config(config, **kwargs):
+    """Version the client script per commit to prevent stale UX after a Pages release."""
+    root = Path(config.config_file_path).resolve().parent
+    sha = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=root, text=True
+    ).strip()
+    config.extra["ask_asset_rev"] = sha[:12]
+    return config
 
 
 def on_page_content(output: str, page, **kwargs) -> str:
